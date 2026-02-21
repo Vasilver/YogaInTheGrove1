@@ -1,0 +1,323 @@
+/* ============================================================
+   Yoga in the Grove — Practice Page
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   Nav: cream from the start (light-opening page)
+   ------------------------------------------------------------ */
+.site-nav {
+  background-color: color-mix(in srgb, var(--warm-cream) 92%, transparent);
+  border-bottom-color: var(--cream-dark);
+}
+
+.nav-wordmark,
+.nav-links a {
+  color: var(--warm-bark);
+}
+
+.nav-links a:hover {
+  color: var(--deep-forest);
+}
+
+.nav-toggle span {
+  background-color: var(--warm-bark);
+}
+
+
+/* ------------------------------------------------------------
+   Page intro strip
+   ------------------------------------------------------------ */
+.practice-intro {
+  background-color: var(--warm-cream);
+  padding: calc(var(--nav-height) + var(--space-xl)) var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.practice-intro__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.practice-intro__label {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.practice-intro__text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--deep-forest);
+  line-height: 1.35;
+  max-width: 640px;
+}
+
+/* Index of practices — horizontal pill list */
+.practice-intro__index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--cream-dark);
+}
+
+.practice-intro__index a {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: lowercase;
+  color: var(--warm-bark);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.practice-intro__index a:hover {
+  color: var(--ochre);
+}
+
+.practice-intro__index span {
+  color: var(--sage-light);
+  user-select: none;
+}
+
+
+/* ------------------------------------------------------------
+   Practice sections — base
+   ------------------------------------------------------------ */
+.practice-section {
+  padding: var(--space-xl) var(--space-md);
+}
+
+.practice-section__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+/* Section label */
+.practice-section__label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+/* Large decorative headline */
+.practice-section__headline {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: var(--space-lg);
+}
+
+/* Body prose */
+.practice-section__body p {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-md);
+  line-height: var(--leading-body);
+}
+
+.practice-section__body p + p {
+  margin-top: var(--space-md);
+}
+
+/* First paragraph drop cap */
+.practice-section__body > p:first-of-type::first-letter {
+  font-family: var(--font-heading);
+  font-size: 4.25rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.75;
+  float: left;
+  margin-right: 0.08em;
+  margin-top: 0.1em;
+}
+
+/* Thin rule before each section label */
+.practice-section__rule {
+  width: 36px;
+  height: 1px;
+  border: none;
+  margin-bottom: var(--space-md);
+}
+
+
+/* ------------------------------------------------------------
+   Light variant — Warm Cream
+   ------------------------------------------------------------ */
+.practice-section--light {
+  background-color: var(--warm-cream);
+}
+
+.practice-section--light .practice-section__rule {
+  background-color: var(--sage-light);
+}
+
+.practice-section--light .practice-section__label {
+  color: var(--sage);
+}
+
+.practice-section--light .practice-section__headline {
+  color: var(--deep-forest);
+}
+
+.practice-section--light .practice-section__body p {
+  color: var(--warm-bark);
+}
+
+.practice-section--light .practice-section__body > p:first-of-type::first-letter {
+  color: var(--ochre);
+}
+
+
+/* ------------------------------------------------------------
+   Dark variant — Deep Forest
+   ------------------------------------------------------------ */
+.practice-section--dark {
+  background-color: var(--deep-forest);
+}
+
+.practice-section--dark .practice-section__rule {
+  background-color: rgba(122, 140, 110, 0.4);
+}
+
+.practice-section--dark .practice-section__label {
+  color: var(--sage);
+}
+
+.practice-section--dark .practice-section__headline {
+  color: var(--warm-cream);
+}
+
+.practice-section--dark .practice-section__body p {
+  color: rgba(245, 240, 232, 0.7);
+}
+
+.practice-section--dark .practice-section__body > p:first-of-type::first-letter {
+  color: var(--ochre-muted);
+}
+
+
+/* ------------------------------------------------------------
+   Earth variant — Warm Bark (Seva)
+   ------------------------------------------------------------ */
+.practice-section--earth {
+  background-color: var(--warm-bark);
+}
+
+.practice-section--earth .practice-section__rule {
+  background-color: rgba(196, 149, 74, 0.45);
+}
+
+.practice-section--earth .practice-section__label {
+  color: var(--ochre-muted);
+}
+
+.practice-section--earth .practice-section__headline {
+  color: var(--warm-cream);
+}
+
+.practice-section--earth .practice-section__body p {
+  color: rgba(245, 240, 232, 0.72);
+}
+
+.practice-section--earth .practice-section__body > p:first-of-type::first-letter {
+  color: var(--ochre-muted);
+}
+
+
+/* ------------------------------------------------------------
+   Divider between same-color adjacent sections
+   ------------------------------------------------------------ */
+.practice-section--light + .practice-section--light {
+  border-top: 1px solid var(--cream-dark);
+}
+
+
+/* ------------------------------------------------------------
+   CTA
+   ------------------------------------------------------------ */
+.practice-cta {
+  background-color: var(--deep-forest);
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+  border-top: 1px solid rgba(122, 140, 110, 0.15);
+}
+
+/* Prevent double dark — if Seva (--earth) comes before this */
+.practice-section--earth + .practice-cta {
+  border-top: 1px solid rgba(245, 240, 232, 0.08);
+}
+
+.practice-cta__inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.practice-cta__question {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--warm-cream);
+  line-height: 1.25;
+  margin-bottom: var(--space-lg);
+}
+
+.practice-cta__question em {
+  font-style: normal;
+  color: var(--ochre-muted);
+}
+
+.btn--ochre {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: lowercase;
+  padding: 0.9rem 2.4rem;
+  border-radius: 2px;
+  background-color: var(--ochre);
+  color: var(--warm-cream);
+  transition: background-color 0.25s ease;
+}
+
+.btn--ochre:hover {
+  background-color: #b3843e;
+}
+
+
+/* ------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------ */
+.site-footer {
+  background-color: var(--deep-forest);
+  padding: var(--space-md);
+  text-align: center;
+  border-top: 1px solid rgba(122, 140, 110, 0.1);
+}
+
+.site-footer__inner {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: rgba(245, 240, 232, 0.3);
+  text-transform: lowercase;
+}
