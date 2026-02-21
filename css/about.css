@@ -1,0 +1,449 @@
+/* ============================================================
+   Yoga in the Grove — Our Story Page
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   Nav: transparent over dark opening, cream once scrolled
+   ------------------------------------------------------------ */
+.site-nav {
+  background-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.site-nav.is-scrolled {
+  background-color: color-mix(in srgb, var(--warm-cream) 92%, transparent);
+  border-bottom-color: var(--cream-dark);
+}
+
+.nav-wordmark,
+.nav-links a {
+  color: var(--warm-cream);
+}
+
+.site-nav.is-scrolled .nav-wordmark,
+.site-nav.is-scrolled .nav-links a {
+  color: var(--warm-bark);
+}
+
+.site-nav.is-scrolled .nav-links a:hover {
+  color: var(--deep-forest);
+}
+
+.nav-toggle span {
+  background-color: var(--warm-cream);
+}
+
+.site-nav.is-scrolled .nav-toggle span {
+  background-color: var(--warm-bark);
+}
+
+@media (max-width: 800px) {
+  .nav-links a {
+    color: var(--warm-bark);
+  }
+}
+
+
+/* ------------------------------------------------------------
+   Shared prose layout
+   ------------------------------------------------------------ */
+.prose {
+  max-width: var(--content-width);
+  margin-inline: auto;
+}
+
+.prose p {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-md);
+  line-height: var(--leading-body);
+  color: var(--warm-bark);
+}
+
+.prose p + p {
+  margin-top: var(--space-md);
+}
+
+/* Drop cap on the first paragraph of a prose block */
+.prose--drop-cap > p:first-of-type::first-letter {
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.75;
+  float: left;
+  margin-right: 0.1em;
+  margin-top: 0.08em;
+  color: var(--ochre);
+}
+
+
+/* ------------------------------------------------------------
+   1. Opening pull-quote
+   ------------------------------------------------------------ */
+.about-opening {
+  min-height: 100vh;
+  background-color: var(--deep-forest);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--nav-height) + var(--space-xl)) var(--space-md) var(--space-xl);
+  position: relative;
+}
+
+/* Vignette */
+.about-opening::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, transparent 40%, rgba(0,0,0,0.22) 100%);
+  pointer-events: none;
+}
+
+.about-opening__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+}
+
+.about-opening__label {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: var(--space-lg);
+  display: block;
+}
+
+.about-opening__quote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3.8vw, 3.25rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--warm-cream);
+  line-height: 1.35;
+  margin-bottom: 0;
+}
+
+/* Thin ornamental rule beneath the quote */
+.about-opening__rule {
+  width: 1px;
+  height: 72px;
+  background-color: var(--sage-light);
+  margin: var(--space-lg) auto 0;
+  opacity: 0.5;
+  display: block;
+}
+
+
+/* ------------------------------------------------------------
+   2. Lineage: Bhakti & Hatha
+   ------------------------------------------------------------ */
+.lineage {
+  background-color: var(--warm-cream);
+  padding: var(--space-xl) var(--space-md);
+}
+
+.lineage__header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.lineage__eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: var(--space-sm);
+}
+
+.lineage__intro {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-style: italic;
+  color: var(--warm-bark);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+.lineage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: var(--max-width);
+  margin: var(--space-lg) auto 0;
+  border-top: 1px solid var(--cream-dark);
+}
+
+.lineage-col {
+  padding: var(--space-lg) var(--space-md) var(--space-md);
+}
+
+.lineage-col + .lineage-col {
+  border-left: 1px solid var(--cream-dark);
+}
+
+.lineage-col__tradition {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--ochre);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.lineage-col__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--deep-forest);
+  margin-bottom: var(--space-md);
+  line-height: 1.1;
+}
+
+.lineage-col__body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  color: var(--warm-bark);
+}
+
+.lineage-col__body p + p {
+  margin-top: var(--space-sm);
+}
+
+@media (max-width: 680px) {
+  .lineage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lineage-col + .lineage-col {
+    border-left: none;
+    border-top: 1px solid var(--cream-dark);
+  }
+}
+
+
+/* ------------------------------------------------------------
+   3. Full-width callout
+   ------------------------------------------------------------ */
+.callout {
+  background-color: var(--warm-bark);
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+}
+
+.callout__inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.callout__opening-mark {
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  font-style: italic;
+  line-height: 0.5;
+  color: var(--ochre);
+  display: block;
+  margin-bottom: var(--space-sm);
+  user-select: none;
+}
+
+.callout__text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3.6vw, 3.25rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--warm-cream);
+  line-height: 1.32;
+}
+
+
+/* ------------------------------------------------------------
+   4. "Yoga means union" — definition section
+   ------------------------------------------------------------ */
+.definition-section {
+  background-color: var(--warm-cream);
+  padding: var(--space-xl) var(--space-md);
+}
+
+.definition-section__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.definition-entry {
+  border-top: 1px solid var(--cream-dark);
+  padding-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.definition-entry__word {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--deep-forest);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.definition-entry__meta {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.definition-entry__phonetic {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  color: var(--sage);
+  font-style: italic;
+}
+
+.definition-entry__pos {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--sage-light);
+}
+
+.definition-entry__origin {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  color: var(--sage);
+  font-style: italic;
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-sm);
+  border-left: 2px solid var(--sage-light);
+}
+
+.definition-entry__meaning {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-style: italic;
+  color: var(--deep-forest);
+  line-height: 1.3;
+  margin-bottom: var(--space-md);
+}
+
+.definition-entry__body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-md);
+  line-height: var(--leading-body);
+  color: var(--warm-bark);
+}
+
+.definition-entry__body p + p {
+  margin-top: var(--space-sm);
+}
+
+
+/* ------------------------------------------------------------
+   5. Closing
+   ------------------------------------------------------------ */
+.about-closing {
+  background-color: var(--deep-forest);
+  padding: var(--space-xl) var(--space-md) var(--space-2xl);
+}
+
+.about-closing__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.about-closing__label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: var(--space-lg);
+}
+
+.about-closing__body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-md);
+  line-height: var(--leading-body);
+  color: rgba(245, 240, 232, 0.72);
+}
+
+.about-closing__body p + p {
+  margin-top: var(--space-md);
+}
+
+/* Final sentence — slightly lifted */
+.about-closing__final {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--warm-cream);
+  line-height: 1.5;
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(122, 140, 110, 0.3);
+}
+
+.about-closing__cta {
+  margin-top: var(--space-xl);
+}
+
+.btn--outline-cream {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: lowercase;
+  padding: 0.9rem 2.4rem;
+  border-radius: 2px;
+  border: 1px solid rgba(245, 240, 232, 0.35);
+  color: var(--warm-cream);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn--outline-cream:hover {
+  border-color: var(--warm-cream);
+  background-color: rgba(245, 240, 232, 0.07);
+}
+
+
+/* ------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------ */
+.site-footer {
+  background-color: var(--deep-forest);
+  padding: var(--space-md);
+  text-align: center;
+  border-top: 1px solid rgba(122, 140, 110, 0.15);
+}
+
+.site-footer__inner {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: rgba(245, 240, 232, 0.3);
+  text-transform: lowercase;
+}
