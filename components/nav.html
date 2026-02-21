@@ -1,0 +1,59 @@
+<!-- ============================================================
+     Yoga in the Grove — Reusable Navigation
+     Copy this block into every page <body>, above .page-content.
+     Set aria-current="page" on the active link.
+     ============================================================ -->
+
+<header>
+  <nav class="site-nav" aria-label="Main navigation">
+
+    <!-- Wordmark -->
+    <a href="/" class="nav-wordmark">
+      yoga in <span>the grove</span>
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="visually-hidden">Open menu</span>
+    </button>
+
+    <!-- Links -->
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="/"                 aria-current="page">home</a></li>
+      <li><a href="/our-story.html"              >our story</a></li>
+      <li><a href="/teachers.html"               >teachers</a></li>
+      <li><a href="/practice.html"               >practice</a></li>
+      <li><a href="/gather.html"                 >gather</a></li>
+      <li><a href="/community.html"              >community</a></li>
+      <li><a href="/find-us.html"                >find us</a></li>
+    </ul>
+
+  </nav>
+</header>
+
+<!-- Mobile nav toggle script — inline so it works without a bundler -->
+<script>
+  (function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var links  = document.querySelector('.nav-links');
+    if (!toggle || !links) return;
+
+    toggle.addEventListener('click', function () {
+      var isOpen = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    // Close menu when a link is clicked
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  })();
+</script>

@@ -1,0 +1,328 @@
+/* ============================================================
+   Yoga in the Grove — Global Stylesheet
+   3220 Virginia Street, Coconut Grove FL 33133
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Google Fonts
+   Cormorant Garamond: headlines (italic, regular, semibold)
+   Jost 300: body text
+   ------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400&display=swap');
+
+
+/* ------------------------------------------------------------
+   Color Palette
+   ------------------------------------------------------------ */
+:root {
+  --deep-forest:  #2b2d22;
+  --warm-cream:   #f5f0e8;
+  --sage:         #7a8c6e;
+  --ochre:        #c4954a;
+  --warm-bark:    #4a3f30;
+
+  /* Derived utility tints */
+  --sage-light:   #a8b89a;
+  --cream-dark:   #e8e2d6;
+  --ochre-muted:  #d4aa72;
+
+  /* Functional aliases */
+  --color-bg:       var(--warm-cream);
+  --color-text:     var(--warm-bark);
+  --color-heading:  var(--deep-forest);
+  --color-accent:   var(--ochre);
+  --color-subtle:   var(--sage);
+}
+
+
+/* ------------------------------------------------------------
+   Typography Scale
+   ------------------------------------------------------------ */
+:root {
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Jost', system-ui, sans-serif;
+
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-md:   1.125rem;  /* 18px */
+  --text-lg:   1.375rem;  /* 22px */
+  --text-xl:   1.75rem;   /* 28px */
+  --text-2xl:  2.25rem;   /* 36px */
+  --text-3xl:  3rem;      /* 48px */
+  --text-4xl:  4rem;      /* 64px */
+
+  --leading-tight:  1.2;
+  --leading-body:   1.7;
+  --leading-loose:  2;
+
+  --tracking-wide:  0.08em;
+  --tracking-wider: 0.14em;
+}
+
+
+/* ------------------------------------------------------------
+   Spacing & Layout
+   ------------------------------------------------------------ */
+:root {
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  6rem;
+  --space-2xl: 10rem;
+
+  --max-width:       1200px;
+  --content-width:   760px;
+  --nav-height:      72px;
+  --section-padding: var(--space-xl) var(--space-md);
+}
+
+
+/* ------------------------------------------------------------
+   Base Reset
+   ------------------------------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: var(--leading-tight);
+  color: var(--color-heading);
+}
+
+p + p {
+  margin-top: var(--space-sm);
+}
+
+
+/* ------------------------------------------------------------
+   Navigation
+   ------------------------------------------------------------ */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-md);
+
+  background-color: color-mix(in srgb, var(--warm-cream) 92%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--cream-dark);
+
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+/* When scrolled over dark sections, the nav may need a dark variant */
+.site-nav.nav--dark {
+  background-color: color-mix(in srgb, var(--deep-forest) 90%, transparent);
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+
+.site-nav.nav--dark .nav-wordmark,
+.site-nav.nav--dark .nav-links a {
+  color: var(--warm-cream);
+}
+
+.site-nav.nav--dark .nav-links a::after {
+  background-color: var(--ochre);
+}
+
+/* Wordmark / Logo */
+.nav-wordmark {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--deep-forest);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.nav-wordmark span {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  color: var(--warm-bark);
+  text-transform: lowercase;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.25s ease;
+}
+
+/* Underline grow on hover */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--ochre);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--deep-forest);
+}
+
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--deep-forest);
+}
+
+/* Dot separators between links */
+.nav-links a + a::before {
+  content: '·';
+  position: absolute;
+  left: calc(-1 * var(--space-md) / 2);
+  transform: translateX(-50%);
+  color: var(--sage-light);
+  font-size: var(--text-base);
+  pointer-events: none;
+}
+
+/* Hamburger toggle — hidden on desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  cursor: pointer;
+  aria-label: "Open menu";
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--warm-bark);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mobile nav */
+@media (max-width: 800px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    inset: var(--nav-height) 0 0 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-md);
+    background-color: var(--warm-cream);
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-links.is-open {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: var(--text-lg);
+  }
+
+  /* Hide dot separators on mobile */
+  .nav-links a + a::before {
+    display: none;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   Utility classes
+   ------------------------------------------------------------ */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Push page content below fixed nav */
+.page-content {
+  padding-top: var(--nav-height);
+}

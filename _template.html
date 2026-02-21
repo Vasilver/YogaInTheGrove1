@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page title: update per page -->
+  <title>Page Title — Yoga in the Grove</title>
+
+  <meta name="description" content="Yoga in the Grove — 3220 Virginia Street, Coconut Grove FL 33133">
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="/css/global.css">
+
+  <!-- Page-specific styles (optional) -->
+  <!-- <link rel="stylesheet" href="/css/page-name.css"> -->
+</head>
+<body>
+
+  <!-- ── Navigation ──────────────────────────────────────────
+       Copy from /components/nav.html.
+       Set aria-current="page" on the active <a>.
+  ─────────────────────────────────────────────────────────── -->
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+
+      <a href="/" class="nav-wordmark">
+        yoga in <span>the grove</span>
+      </a>
+
+      <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="visually-hidden">Open menu</span>
+      </button>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="/"                >home</a></li>
+        <li><a href="/our-story.html"  >our story</a></li>
+        <li><a href="/teachers.html"   >teachers</a></li>
+        <li><a href="/practice.html"   >practice</a></li>
+        <li><a href="/gather.html"     >gather</a></li>
+        <li><a href="/community.html"  >community</a></li>
+        <li><a href="/find-us.html"    >find us</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- ── Page Content ──────────────────────────────────────── -->
+  <main class="page-content">
+
+    <!-- page sections go here -->
+
+  </main>
+
+  <!-- ── Footer (to be built) ──────────────────────────────── -->
+  <footer>
+  </footer>
+
+  <!-- Mobile nav toggle -->
+  <script>
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var links  = document.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = links.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      links.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          links.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+  </script>
+
+  <!-- Page-specific scripts (optional) -->
+  <!-- <script src="/js/page-name.js"></script> -->
+</body>
+</html>
