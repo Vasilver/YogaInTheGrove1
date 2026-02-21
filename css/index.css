@@ -156,28 +156,8 @@
    What We Offer
    ------------------------------------------------------------ */
 .offers {
-  background-color: var(--warm-cream);             /* fallback */
-  background-image: url('../img/kirtan.jpg.png');
-  background-size: cover;
-  background-position: center 40%;
-  background-repeat: no-repeat;
+  background-color: var(--warm-cream);
   padding: var(--space-xl) var(--space-md);
-  position: relative;
-}
-
-/* Warm cream overlay so cards remain legible */
-.offers::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(245, 240, 232, 0.78);
-  pointer-events: none;
-}
-
-/* Lift content above the overlay */
-.offers > * {
-  position: relative;
-  z-index: 1;
 }
 
 .section-header {
@@ -215,9 +195,6 @@
 .offer-card {
   padding: var(--space-md) var(--space-md) var(--space-lg);
   border-top: 1px solid var(--cream-dark);
-  background-color: rgba(245, 240, 232, 0.72);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
 }
 
 .offer-card + .offer-card {
@@ -266,9 +243,29 @@
    Community
    ------------------------------------------------------------ */
 .community {
-  background-color: var(--deep-forest);
+  background-color: var(--deep-forest);             /* fallback */
+  background-image: url('../img/kirtan.jpg.png');
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
   padding: var(--space-xl) var(--space-md);
   text-align: center;
+  position: relative;
+}
+
+/* Dark overlay so cream text stays readable over the photo */
+.community::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(43, 45, 34, 0.72);
+  pointer-events: none;
+}
+
+/* Lift content above the overlay */
+.community > * {
+  position: relative;
+  z-index: 1;
 }
 
 .community__inner {
