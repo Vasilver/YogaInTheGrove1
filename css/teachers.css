@@ -69,46 +69,16 @@
 
 .teachers-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* auto-fill so the 5th card never orphans alone on a half-empty row */
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
   gap: var(--space-lg) var(--space-md);
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
-/* Center the orphaned cards in the last row when there are
-   fewer items than columns. Works for a 5-card, 3-col grid. */
-.teachers-grid::after {
-  content: '';
-  grid-column: span 1;
-}
-
-@media (min-width: 901px) {
-  /* 5 cards in a 3-col grid: row 1 has 3, row 2 has 2.
-     Offset row-2 cards by half a column to visually center them. */
-  .teacher-card:nth-child(4) {
-    grid-column: 1 / 2;
-    margin-left: calc(50% + var(--space-md) / 2);
-  }
-
-  .teacher-card:nth-child(5) {
-    grid-column: 2 / 3;
-    margin-left: calc(50% + var(--space-md) / 2);
-  }
-}
-
-@media (max-width: 900px) {
+@media (min-width: 900px) {
   .teachers-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .teachers-grid::after {
-    display: none;
-  }
-}
-
-@media (max-width: 560px) {
-  .teachers-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

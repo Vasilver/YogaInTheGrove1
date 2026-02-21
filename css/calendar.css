@@ -112,8 +112,22 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: var(--space-sm) var(--space-md);
   flex-wrap: wrap;
+}
+
+@media (max-width: 560px) {
+  .cal-controls { padding: var(--space-sm); }
+
+  .filter-bar {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+    width: 100%;
+  }
+
+  .filter-btn { flex-shrink: 0; }
 }
 
 /* View toggle */

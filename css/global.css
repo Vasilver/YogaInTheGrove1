@@ -193,6 +193,10 @@ p + p {
   font-weight: 600;
 }
 
+.nav-wordmark:hover {
+  opacity: 0.75;
+}
+
 /* Nav Links */
 .nav-links {
   display: flex;
@@ -235,8 +239,19 @@ p + p {
   transform: scaleX(1);
 }
 
+/* Active link: inherits whatever color the page overrides to,
+   so it works correctly on both light and dark nav backgrounds.
+   Only the ochre underline is forced here. */
 .nav-links a[aria-current="page"] {
-  color: var(--deep-forest);
+  font-weight: 400;
+}
+
+/* Keyboard focus — visible on all nav contexts */
+.nav-links a:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--ochre);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 /* Dot separators between links */
@@ -320,6 +335,26 @@ p + p {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Global utility used across pages */
+.is-hidden {
+  display: none !important;
+}
+
+/* Universal focus ring for interactive elements */
+:focus-visible {
+  outline: 2px solid var(--ochre);
+  outline-offset: 3px;
+}
+
+/* Smooth anchor scrolling (supplements html rule) */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
 
 /* Push page content below fixed nav */

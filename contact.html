@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Us — Yoga in the Grove</title>
+  <meta name="description" content="Yoga in the Grove — 3220 Virginia Street, Coconut Grove FL 33133. Classes, directions, and how to get in touch.">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────── -->
+  <header>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+
+      <a href="index.html" class="nav-wordmark">
+        yoga in <span>the grove</span>
+      </a>
+
+      <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">
+        <span></span><span></span><span></span>
+        <span class="visually-hidden">Open menu</span>
+      </button>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="index.html"                            >home</a></li>
+        <li><a href="about.html"                            >our story</a></li>
+        <li><a href="teachers.html"                         >teachers</a></li>
+        <li><a href="practice.html"                         >practice</a></li>
+        <li><a href="gather.html"                           >gather</a></li>
+        <li><a href="community.html"                        >community</a></li>
+        <li><a href="contact.html"  aria-current="page"     >find us</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+
+  <main class="page-content">
+
+    <!-- ── Page header ──────────────────────────────────────── -->
+    <section class="contact-header">
+      <div class="contact-header__inner">
+        <span class="contact-header__label">find us</span>
+        <h1 class="contact-header__title">
+          We're on Virginia Street,<br>
+          in the heart of the Grove.
+        </h1>
+      </div>
+    </section>
+
+
+    <!-- ── Studio info + map ────────────────────────────────── -->
+    <section class="contact-info-section" aria-label="Studio information and map">
+      <div class="contact-info-grid">
+
+        <!-- Details column -->
+        <div class="studio-details">
+
+          <span class="studio-details__label">the studio</span>
+
+          <div class="studio-details__block">
+            <p class="studio-details__block-heading">Address</p>
+            <address class="studio-details__address">
+              <em>Yoga in the Grove</em>
+              3220 Virginia Street<br>
+              Coconut Grove, FL 33133
+            </address>
+          </div>
+
+          <div class="studio-details__block">
+            <p class="studio-details__block-heading">Hours</p>
+            <dl class="studio-hours">
+              <dt>Monday – Friday</dt>
+              <dd>7:00 am – 8:00 pm</dd>
+              <dt>Saturday</dt>
+              <dd>8:00 am – 6:00 pm</dd>
+              <dt>Sunday</dt>
+              <dd>9:00 am – 2:00 pm</dd>
+            </dl>
+          </div>
+
+          <div class="studio-details__block">
+            <p class="studio-details__block-heading">Contact</p>
+            <a href="mailto:hello@yogainthegrove.com" class="studio-details__link">
+              hello@yogainthegrove.com
+            </a>
+          </div>
+
+          <div class="studio-details__block">
+            <p class="studio-details__block-heading">Getting here</p>
+            <p style="font-family:var(--font-body);font-weight:300;font-size:var(--text-sm);color:var(--warm-bark);line-height:var(--leading-body);">
+              Street parking is available on Virginia Street and nearby side
+              streets. We're a short walk from the Coconut Grove Metrorail
+              station, and a five-minute ride from Brickell.
+            </p>
+          </div>
+
+          <a
+            href="https://maps.google.com/maps?q=3220+Virginia+Street,+Coconut+Grove,+FL+33133"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="studio-details__directions"
+          >
+            get directions &rarr;
+          </a>
+
+        </div><!-- /studio-details -->
+
+        <!-- Map column -->
+        <div class="map-col">
+          <iframe
+            class="map-frame"
+            title="Yoga in the Grove location map"
+            src="https://maps.google.com/maps?q=3220+Virginia+Street,+Coconut+Grove,+FL+33133&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <p class="map-col__caption">3220 Virginia Street, Coconut Grove FL 33133</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── Contact form ─────────────────────────────────────── -->
+    <section class="contact-form-section" aria-labelledby="contact-form-heading">
+      <div class="contact-form-section__inner">
+
+        <span class="contact-form-section__label">get in touch</span>
+        <h2 class="contact-form-section__title" id="contact-form-heading">
+          We read every message.
+        </h2>
+
+        <div id="contact-form-wrap">
+          <form class="contact-form" id="contact-form" novalidate>
+
+            <div class="form-field">
+              <label for="c-name">Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="c-name" name="name" required
+                     autocomplete="name" placeholder="Your name">
+            </div>
+
+            <div class="form-field">
+              <label for="c-email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="c-email" name="email" required
+                     autocomplete="email" placeholder="you@example.com">
+            </div>
+
+            <div class="form-field">
+              <label for="c-subject">Subject</label>
+              <div class="field-select-wrap">
+                <select id="c-subject" name="subject">
+                  <option value="">Select a subject…</option>
+                  <option value="general">General inquiry</option>
+                  <option value="joining">Joining a class</option>
+                  <option value="private">Private sessions</option>
+                  <option value="workshops">Workshops &amp; special events</option>
+                  <option value="seva">Seva &amp; volunteering</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="c-message">Message <span aria-hidden="true">*</span></label>
+              <textarea id="c-message" name="message" required rows="5"
+                        placeholder="What's on your mind?"></textarea>
+            </div>
+
+            <button type="submit" class="btn-contact-submit">send it</button>
+
+          </form>
+
+          <div class="contact-success is-hidden" id="contact-success" role="status" tabindex="-1">
+            <strong>Message received.</strong>
+            We'll be back in touch within a day or two.
+            In the meantime, you're always welcome to just show up.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      yoga in the grove &nbsp;·&nbsp; 3220 virginia street, coconut grove fl 33133
+    </div>
+  </footer>
+
+
+  <!-- ── Scripts ───────────────────────────────────────────── -->
+  <script>
+    // Contact form submit
+    (function () {
+      var form    = document.getElementById('contact-form');
+      var success = document.getElementById('contact-success');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var required = form.querySelectorAll('[required]');
+        var valid = true;
+        required.forEach(function (el) {
+          if (!el.value.trim()) { el.focus(); valid = false; }
+        });
+        if (!valid) return;
+
+        form.classList.add('is-hidden');
+        success.classList.remove('is-hidden');
+        success.focus();
+      });
+    })();
+
+    // Mobile nav toggle
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var links  = document.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      toggle.addEventListener('click', function () {
+        var open = links.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      links.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          links.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

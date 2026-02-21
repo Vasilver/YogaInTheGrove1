@@ -1,0 +1,373 @@
+/* ============================================================
+   Yoga in the Grove — Contact / Find Us Page
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   Nav: cream from the start
+   ------------------------------------------------------------ */
+.site-nav {
+  background-color: color-mix(in srgb, var(--warm-cream) 92%, transparent);
+  border-bottom-color: var(--cream-dark);
+}
+
+.nav-wordmark,
+.nav-links a {
+  color: var(--warm-bark);
+}
+
+.nav-links a:hover {
+  color: var(--deep-forest);
+}
+
+.nav-toggle span {
+  background-color: var(--warm-bark);
+}
+
+
+/* ------------------------------------------------------------
+   Page header
+   ------------------------------------------------------------ */
+.contact-header {
+  background-color: var(--warm-cream);
+  padding: calc(var(--nav-height) + var(--space-xl)) var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.contact-header__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.contact-header__label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: var(--space-sm);
+}
+
+.contact-header__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--deep-forest);
+  line-height: 1.1;
+}
+
+
+/* ------------------------------------------------------------
+   Studio info + map two-column layout
+   ------------------------------------------------------------ */
+.contact-info-section {
+  background-color: var(--warm-cream);
+  padding: var(--space-xl) var(--space-md);
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* Studio details column */
+.studio-details__label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: var(--space-md);
+}
+
+.studio-details__block {
+  margin-bottom: var(--space-lg);
+}
+
+.studio-details__block-heading {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--sage-light);
+  margin-bottom: var(--space-xs);
+}
+
+.studio-details__address {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-style: italic;
+  color: var(--deep-forest);
+  line-height: 1.35;
+  font-style: normal;
+}
+
+.studio-details__address em {
+  font-style: italic;
+  display: block;
+  font-size: var(--text-lg);
+  color: var(--ochre);
+}
+
+.studio-details__link {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-base);
+  color: var(--warm-bark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.studio-details__link:hover {
+  color: var(--ochre);
+}
+
+.studio-hours {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem var(--space-md);
+}
+
+.studio-hours dt {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  color: var(--sage);
+  text-transform: lowercase;
+  letter-spacing: 0.03em;
+}
+
+.studio-hours dd {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  color: var(--warm-bark);
+}
+
+.studio-details__directions {
+  display: inline-block;
+  margin-top: var(--space-md);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: lowercase;
+  padding: 0.7rem 1.6rem;
+  border-radius: 2px;
+  border: 1px solid var(--cream-dark);
+  color: var(--warm-bark);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.studio-details__directions:hover {
+  border-color: var(--ochre);
+  color: var(--ochre);
+}
+
+/* Map column */
+.map-col {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-md));
+}
+
+.map-frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: none;
+  display: block;
+  filter: grayscale(20%) sepia(10%);
+}
+
+.map-col__caption {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  color: var(--sage);
+  margin-top: var(--space-xs);
+  font-style: italic;
+}
+
+@media (max-width: 760px) {
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-col {
+    position: static;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   Contact form section
+   ------------------------------------------------------------ */
+.contact-form-section {
+  background-color: var(--cream-dark);
+  padding: var(--space-xl) var(--space-md);
+}
+
+.contact-form-section__inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.contact-form-section__label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: var(--space-sm);
+}
+
+.contact-form-section__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--deep-forest);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+/* Form fields — shared with other pages */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-field label {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  color: var(--warm-bark);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-base);
+  color: var(--deep-forest);
+  background-color: #fff;
+  border: 1px solid var(--cream-dark);
+  padding: 0.6rem 0.8rem;
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--sage);
+}
+
+/* Custom select arrow */
+.field-select-wrap {
+  position: relative;
+}
+
+.field-select-wrap select {
+  padding-right: 2.5rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.field-select-wrap::after {
+  content: '';
+  position: absolute;
+  right: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--sage-light);
+  pointer-events: none;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-contact-submit {
+  align-self: flex-start;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: lowercase;
+  padding: 0.9rem 2.4rem;
+  border-radius: 2px;
+  background-color: var(--ochre);
+  color: var(--warm-cream);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.btn-contact-submit:hover { background-color: #b3843e; }
+
+.contact-success {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-style: italic;
+  color: var(--sage);
+  text-align: center;
+  padding: var(--space-xl) 0;
+  line-height: 1.45;
+}
+
+.contact-success strong {
+  display: block;
+  font-weight: 400;
+  color: var(--deep-forest);
+  margin-bottom: var(--space-xs);
+}
+
+
+/* ------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------ */
+.site-footer {
+  background-color: var(--deep-forest);
+  padding: var(--space-md);
+  text-align: center;
+  border-top: 1px solid rgba(122, 140, 110, 0.1);
+}
+
+.site-footer__inner {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: rgba(245, 240, 232, 0.3);
+  text-transform: lowercase;
+}
