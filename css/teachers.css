@@ -1,0 +1,270 @@
+/* ============================================================
+   Yoga in the Grove — Teachers Page
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   Nav: cream from the start (light-opening page)
+   ------------------------------------------------------------ */
+.site-nav {
+  background-color: color-mix(in srgb, var(--warm-cream) 92%, transparent);
+  border-bottom-color: var(--cream-dark);
+}
+
+.nav-wordmark,
+.nav-links a {
+  color: var(--warm-bark);
+}
+
+.nav-links a:hover {
+  color: var(--deep-forest);
+}
+
+.nav-toggle span {
+  background-color: var(--warm-bark);
+}
+
+
+/* ------------------------------------------------------------
+   Page intro
+   ------------------------------------------------------------ */
+.teachers-intro {
+  background-color: var(--warm-cream);
+  padding: calc(var(--nav-height) + var(--space-xl)) var(--space-md) var(--space-lg);
+}
+
+.teachers-intro__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.teachers-intro__label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: var(--space-md);
+}
+
+.teachers-intro__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--deep-forest);
+  line-height: 1.25;
+}
+
+
+/* ------------------------------------------------------------
+   Teachers grid
+   ------------------------------------------------------------ */
+.teachers-grid-section {
+  background-color: var(--warm-cream);
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+}
+
+.teachers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg) var(--space-md);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Center the orphaned cards in the last row when there are
+   fewer items than columns. Works for a 5-card, 3-col grid. */
+.teachers-grid::after {
+  content: '';
+  grid-column: span 1;
+}
+
+@media (min-width: 901px) {
+  /* 5 cards in a 3-col grid: row 1 has 3, row 2 has 2.
+     Offset row-2 cards by half a column to visually center them. */
+  .teacher-card:nth-child(4) {
+    grid-column: 1 / 2;
+    margin-left: calc(50% + var(--space-md) / 2);
+  }
+
+  .teacher-card:nth-child(5) {
+    grid-column: 2 / 3;
+    margin-left: calc(50% + var(--space-md) / 2);
+  }
+}
+
+@media (max-width: 900px) {
+  .teachers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .teachers-grid::after {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .teachers-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   Teacher card
+   ------------------------------------------------------------ */
+.teacher-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Photo placeholder */
+.teacher-card__photo {
+  aspect-ratio: 4 / 5;
+  background-color: var(--sage);
+  background-image:
+    radial-gradient(ellipse at 30% 20%, rgba(196, 149, 74, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(43, 45, 34, 0.22) 0%, transparent 55%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--space-sm);
+  margin-bottom: var(--space-md);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle grain texture via SVG filter */
+.teacher-card__photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.07'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.teacher-card__photo-label {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.55);
+  position: relative;
+  z-index: 1;
+}
+
+/* Card body */
+.teacher-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.teacher-card__specialty {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--ochre);
+  margin-bottom: var(--space-xs);
+}
+
+.teacher-card__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--deep-forest);
+  line-height: 1.1;
+  margin-bottom: var(--space-sm);
+}
+
+.teacher-card__bio {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  color: var(--warm-bark);
+  flex: 1;
+}
+
+/* Philosophy pull-line */
+.teacher-card__philosophy {
+  font-family: var(--font-heading);
+  font-size: var(--text-md);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sage);
+  line-height: 1.45;
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  padding-left: var(--space-sm);
+  border-top: 1px solid var(--cream-dark);
+  border-left: 2px solid var(--ochre-muted);
+  quotes: none;
+}
+
+
+/* ------------------------------------------------------------
+   Closing note
+   ------------------------------------------------------------ */
+.teachers-closing {
+  background-color: var(--deep-forest);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+}
+
+.teachers-closing__inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.teachers-closing__text {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-style: italic;
+  color: rgba(245, 240, 232, 0.65);
+  line-height: 1.45;
+  margin-bottom: var(--space-md);
+}
+
+.teachers-closing__link {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: lowercase;
+  color: var(--sage);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.teachers-closing__link:hover {
+  color: var(--warm-cream);
+}
+
+
+/* ------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------ */
+.site-footer {
+  background-color: var(--deep-forest);
+  padding: var(--space-md);
+  text-align: center;
+  border-top: 1px solid rgba(122, 140, 110, 0.15);
+}
+
+.site-footer__inner {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: rgba(245, 240, 232, 0.3);
+  text-transform: lowercase;
+}
