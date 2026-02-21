@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar — Yoga in the Grove</title>
+  <meta name="description" content="Upcoming classes and events at Yoga in the Grove — Hatha Asana, Kirtan, Meditation, Seva, and Workshops in Coconut Grove, FL.">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/calendar.css">
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────── -->
+  <header>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+
+      <a href="index.html" class="nav-wordmark">
+        yoga in <span>the grove</span>
+      </a>
+
+      <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">
+        <span></span><span></span><span></span>
+        <span class="visually-hidden">Open menu</span>
+      </button>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="index.html"                           >home</a></li>
+        <li><a href="about.html"                           >our story</a></li>
+        <li><a href="teachers.html"                        >teachers</a></li>
+        <li><a href="practice.html"                        >practice</a></li>
+        <li><a href="gather.html"                          >gather</a></li>
+        <li><a href="community.html"                       >community</a></li>
+        <li><a href="find-us.html"                         >find us</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+
+  <main class="page-content">
+
+    <!-- ── Page header ──────────────────────────────────────── -->
+    <section class="cal-page-header">
+      <div class="cal-page-header__inner">
+        <div>
+          <span class="cal-page-header__label">calendar</span>
+          <h1 class="cal-page-header__title">What's coming up</h1>
+        </div>
+        <span class="cal-page-header__month" id="cal-month-display">February 2026</span>
+      </div>
+    </section>
+
+
+    <!-- ── Controls ─────────────────────────────────────────── -->
+    <div class="cal-controls" role="toolbar" aria-label="Calendar controls">
+      <div class="cal-controls__inner">
+
+        <!-- View toggle -->
+        <div class="view-toggle" role="group" aria-label="View">
+          <button class="view-btn is-active" data-view="list">
+            <!-- List icon -->
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <rect x="1" y="2" width="14" height="2" rx="1" fill="currentColor"/>
+              <rect x="1" y="7" width="14" height="2" rx="1" fill="currentColor"/>
+              <rect x="1" y="12" width="14" height="2" rx="1" fill="currentColor"/>
+            </svg>
+            list
+          </button>
+          <button class="view-btn" data-view="grid">
+            <!-- Grid icon -->
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <rect x="1" y="1" width="6" height="6" rx="1" fill="currentColor"/>
+              <rect x="9" y="1" width="6" height="6" rx="1" fill="currentColor"/>
+              <rect x="1" y="9" width="6" height="6" rx="1" fill="currentColor"/>
+              <rect x="9" y="9" width="6" height="6" rx="1" fill="currentColor"/>
+            </svg>
+            grid
+          </button>
+        </div>
+
+        <!-- Filters -->
+        <div class="filter-bar" role="group" aria-label="Filter by type">
+          <button class="filter-btn is-active" data-filter="all">all</button>
+          <button class="filter-btn" data-filter="asana">asana</button>
+          <button class="filter-btn" data-filter="kirtan">kirtan</button>
+          <button class="filter-btn" data-filter="meditation">meditation</button>
+          <button class="filter-btn" data-filter="seva">seva</button>
+          <button class="filter-btn" data-filter="workshop">workshop</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ── Calendar content ─────────────────────────────────── -->
+    <div class="cal-content">
+      <div class="cal-content__inner">
+        <div id="events-list"    class="events-list"></div>
+        <div id="calendar-grid"  class="calendar-grid-view is-hidden"></div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      yoga in the grove &nbsp;·&nbsp; 3220 virginia street, coconut grove fl 33133
+    </div>
+  </footer>
+
+
+  <!-- ── RSVP Modal ────────────────────────────────────────── -->
+  <div class="modal-overlay" id="modal-overlay" aria-hidden="true">
+    <div class="modal" id="rsvp-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+      <button class="modal__close" id="modal-close" aria-label="Close">&times;</button>
+
+      <!-- Form -->
+      <div id="modal-form-section">
+
+        <div class="modal__header">
+          <p class="modal__eyebrow">reserve your spot</p>
+          <h2 class="modal__title" id="modal-title">Loading&hellip;</h2>
+        </div>
+
+        <form class="rsvp-form" id="rsvp-form" novalidate>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="field-first-name">First Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="field-first-name" name="firstName"
+                     required autocomplete="given-name" placeholder="Sita">
+            </div>
+            <div class="form-field">
+              <label for="field-last-name">Last Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="field-last-name" name="lastName"
+                     required autocomplete="family-name" placeholder="Ramachandran">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="field-email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="field-email" name="email"
+                     required autocomplete="email" placeholder="you@example.com">
+            </div>
+            <div class="form-field">
+              <label for="field-phone">
+                Phone <span class="form-optional">(optional)</span>
+              </label>
+              <input type="tel" id="field-phone" name="phone"
+                     autocomplete="tel" placeholder="(305) 555-0100">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="field-event">Event</label>
+            <input type="text" id="field-event" name="event" readonly>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="field-attendees">Number of Attendees</label>
+              <input type="number" id="field-attendees" name="attendees"
+                     min="1" max="10" value="1">
+            </div>
+            <div class="form-field">
+              <fieldset class="form-fieldset">
+                <legend>Is this your first visit?</legend>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input type="radio" name="firstVisit" value="yes"> Yes
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="firstVisit" value="no" checked> No
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="field-message">
+              Anything you'd like us to know
+              <span class="form-optional">(optional)</span>
+            </label>
+            <textarea id="field-message" name="message" rows="3"
+                      placeholder="Injuries, questions, or just a hello&hellip;"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">hold my spot</button>
+
+        </form>
+      </div><!-- /modal-form-section -->
+
+      <!-- Confirmation (shown after submit) -->
+      <div id="modal-confirm-section" class="modal-confirm is-hidden" role="status">
+        <span class="modal-confirm__mark" aria-hidden="true">&#10022;</span>
+        <p class="modal-confirm__message">
+          Your spot is held.<br>
+          We look forward to breathing with you.
+        </p>
+        <button class="modal-confirm__close" id="modal-confirm-close">close</button>
+      </div>
+
+    </div><!-- /modal -->
+  </div><!-- /modal-overlay -->
+
+
+  <!-- ── Scripts ───────────────────────────────────────────── -->
+  <script>
+  (function () {
+
+    /* ── Event data ─────────────────────────────────────── */
+    var MONTH = 1;   // February (JS 0-indexed)
+    var YEAR  = 2026;
+
+    var EVENTS = [
+      {
+        id: 1,
+        title:       'Morning Hatha',
+        teacher:     '[Teacher Name]',
+        day:         3,
+        timeDisplay: '7:00 am',
+        duration:    '75 min',
+        type:        'asana',
+        desc:        'A grounded morning practice with emphasis on breath and slow alignment. No experience necessary — we meet you exactly where you are.'
+      },
+      {
+        id: 2,
+        title:       'New Moon Kirtan',
+        teacher:     '[Teacher Name]',
+        day:         7,
+        timeDisplay: '7:00 pm',
+        duration:    '90 min',
+        type:        'kirtan',
+        desc:        'A candlelit evening of call-and-response chanting with live harmonium. Come as you are, voice and all. No musical experience required.'
+      },
+      {
+        id: 3,
+        title:       'Seated Meditation',
+        teacher:     '[Teacher Name]',
+        day:         11,
+        timeDisplay: '6:30 pm',
+        duration:    '60 min',
+        type:        'meditation',
+        desc:        'A guided sit for beginners and longtime practitioners alike. We start from stillness and investigate what arises — gently, without agenda.'
+      },
+      {
+        id: 4,
+        title:       'Community Seva Morning',
+        teacher:     'Community',
+        day:         15,
+        timeDisplay: '9:00 am',
+        duration:    '3 hrs',
+        type:        'seva',
+        desc:        'A morning of collective service in Coconut Grove. We work together, share a meal, and leave having given something back to the neighborhood.'
+      },
+      {
+        id: 5,
+        title:       'Yin & Alignment Workshop',
+        teacher:     '[Teacher Name]',
+        day:         21,
+        timeDisplay: '2:00 pm',
+        duration:    '2 hrs',
+        type:        'workshop',
+        desc:        'A deep dive into connective tissue — long holds, breath work, and careful attention to how the body opens when we stop pushing it.'
+      },
+      {
+        id: 6,
+        title:       'Evening Hatha',
+        teacher:     '[Teacher Name]',
+        day:         26,
+        timeDisplay: '6:00 pm',
+        duration:    '75 min',
+        type:        'asana',
+        desc:        'A steady evening practice to unwind the body and settle the mind. A good place to end the week, or begin the weekend.'
+      }
+    ];
+
+    var TYPE_LABELS = {
+      asana:       'Asana',
+      kirtan:      'Kirtan',
+      meditation:  'Meditation',
+      seva:        'Seva',
+      workshop:    'Workshop'
+    };
+
+    var DAY_ABBR   = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    var MONTH_NAME = ['January','February','March','April','May','June',
+                      'July','August','September','October','November','December'];
+
+    /* ── State ──────────────────────────────────────────── */
+    var activeView   = 'list';
+    var activeFilter = 'all';
+
+    /* ── DOM refs ───────────────────────────────────────── */
+    var listEl     = document.getElementById('events-list');
+    var gridEl     = document.getElementById('calendar-grid');
+    var overlayEl  = document.getElementById('modal-overlay');
+    var formSect   = document.getElementById('modal-form-section');
+    var confSect   = document.getElementById('modal-confirm-section');
+    var rsvpForm   = document.getElementById('rsvp-form');
+    var titleEl    = document.getElementById('modal-title');
+    var eventField = document.getElementById('field-event');
+
+    /* ── Helpers ────────────────────────────────────────── */
+    function filtered() {
+      if (activeFilter === 'all') return EVENTS;
+      return EVENTS.filter(function (e) { return e.type === activeFilter; });
+    }
+
+    function formatDate(day) {
+      var d = new Date(YEAR, MONTH, day);
+      return DAY_ABBR[d.getDay()] + ', ' + MONTH_NAME[MONTH] + ' ' + day;
+    }
+
+    function isToday(day) {
+      var t = new Date();
+      return t.getFullYear() === YEAR && t.getMonth() === MONTH && t.getDate() === day;
+    }
+
+    function isPast(day) {
+      var t = new Date(); t.setHours(0,0,0,0);
+      return new Date(YEAR, MONTH, day) < t;
+    }
+
+    function escHtml(str) {
+      return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    /* ── Render: list ───────────────────────────────────── */
+    function renderList() {
+      var evs = filtered();
+      if (!evs.length) {
+        listEl.innerHTML = '<p class="no-events">No events of this type in ' + MONTH_NAME[MONTH] + '.</p>';
+        return;
+      }
+      listEl.innerHTML = evs.map(function (ev) {
+        var past = isPast(ev.day) ? ' event-card--past' : '';
+        return '<article class="event-card type--' + ev.type + past + '" data-id="' + ev.id + '">' +
+          '<span class="event-card__type type--' + ev.type + '">' + TYPE_LABELS[ev.type] + '</span>' +
+          '<h2 class="event-card__title">' + escHtml(ev.title) + '</h2>' +
+          '<p class="event-card__teacher">' + escHtml(ev.teacher) + '</p>' +
+          '<ul class="event-card__meta" role="list">' +
+            '<li>' + formatDate(ev.day) + '</li>' +
+            '<li>' + ev.timeDisplay + '</li>' +
+            '<li>' + ev.duration + '</li>' +
+          '</ul>' +
+          '<p class="event-card__desc">' + escHtml(ev.desc) + '</p>' +
+          '<button class="event-card__rsvp" data-rsvp="' + ev.id + '"' +
+            (isPast(ev.day) ? ' disabled aria-disabled="true"' : '') + '>' +
+            (isPast(ev.day) ? 'past' : 'rsvp') +
+          '</button>' +
+        '</article>';
+      }).join('');
+    }
+
+    /* ── Render: grid ───────────────────────────────────── */
+    function renderGrid() {
+      var firstDow    = new Date(YEAR, MONTH, 1).getDay();
+      var daysInMonth = new Date(YEAR, MONTH + 1, 0).getDate();
+
+      /* build events-by-day lookup */
+      var byDay = {};
+      filtered().forEach(function (ev) {
+        if (!byDay[ev.day]) byDay[ev.day] = [];
+        byDay[ev.day].push(ev);
+      });
+
+      var html = '<div class="cal-month-header">' +
+        '<h2 class="cal-month-title">' + MONTH_NAME[MONTH] + ' ' + YEAR + '</h2>' +
+        '</div>' +
+        '<div class="cal-grid">';
+
+      /* day-of-week headers */
+      DAY_ABBR.forEach(function (d) {
+        html += '<div class="cal-day-header">' + d + '</div>';
+      });
+
+      /* empty leading cells */
+      for (var i = 0; i < firstDow; i++) {
+        html += '<div class="cal-cell cal-cell--empty"></div>';
+      }
+
+      /* day cells */
+      for (var day = 1; day <= daysInMonth; day++) {
+        var cls = 'cal-cell';
+        if (isToday(day))           cls += ' cal-cell--today';
+        else if (isPast(day))       cls += ' cal-cell--past';
+
+        html += '<div class="' + cls + '">' +
+          '<span class="cal-cell__number">' + day + '</span>';
+
+        if (byDay[day]) {
+          byDay[day].forEach(function (ev) {
+            html += '<button class="cal-chip type--' + ev.type + '" data-rsvp="' + ev.id + '"' +
+              ' title="' + escHtml(ev.title) + ' — ' + ev.timeDisplay + '">' +
+              '<span class="cal-chip__time">' + ev.timeDisplay + '</span>' +
+              '<span class="cal-chip__title">' + escHtml(ev.title) + '</span>' +
+              '</button>';
+          });
+        }
+
+        html += '</div>';
+      }
+
+      html += '</div>'; /* .cal-grid */
+      gridEl.innerHTML = html;
+    }
+
+    /* ── View switching ─────────────────────────────────── */
+    function setView(v) {
+      activeView = v;
+      document.querySelectorAll('.view-btn').forEach(function (btn) {
+        btn.classList.toggle('is-active', btn.dataset.view === v);
+      });
+      if (v === 'list') {
+        listEl.classList.remove('is-hidden');
+        gridEl.classList.add('is-hidden');
+        renderList();
+      } else {
+        listEl.classList.add('is-hidden');
+        gridEl.classList.remove('is-hidden');
+        renderGrid();
+      }
+    }
+
+    /* ── Filter ─────────────────────────────────────────── */
+    function setFilter(f) {
+      activeFilter = f;
+      document.querySelectorAll('.filter-btn').forEach(function (btn) {
+        btn.classList.toggle('is-active', btn.dataset.filter === f);
+      });
+      activeView === 'list' ? renderList() : renderGrid();
+    }
+
+    /* ── Modal ──────────────────────────────────────────── */
+    function openModal(id) {
+      var ev = null;
+      for (var i = 0; i < EVENTS.length; i++) {
+        if (EVENTS[i].id === id) { ev = EVENTS[i]; break; }
+      }
+      if (!ev) return;
+
+      /* populate */
+      titleEl.textContent = ev.title;
+      eventField.value    = ev.title + ' — ' + formatDate(ev.day) + ' at ' + ev.timeDisplay;
+
+      /* reset fields (except the readonly event field) */
+      rsvpForm.reset();
+      eventField.value = ev.title + ' — ' + formatDate(ev.day) + ' at ' + ev.timeDisplay;
+
+      /* show form, hide confirmation */
+      formSect.classList.remove('is-hidden');
+      confSect.classList.add('is-hidden');
+
+      /* open overlay */
+      overlayEl.classList.add('is-open');
+      overlayEl.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      /* focus first field */
+      setTimeout(function () {
+        var f = document.getElementById('field-first-name');
+        if (f) f.focus();
+      }, 80);
+    }
+
+    function closeModal() {
+      overlayEl.classList.remove('is-open');
+      overlayEl.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    /* ── Form submit ────────────────────────────────────── */
+    rsvpForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      /* Basic required-field check */
+      var required = rsvpForm.querySelectorAll('[required]');
+      var valid = true;
+      required.forEach(function (el) {
+        if (!el.value.trim()) { el.focus(); valid = false; }
+      });
+      if (!valid) return;
+
+      formSect.classList.add('is-hidden');
+      confSect.classList.remove('is-hidden');
+    });
+
+    /* ── Event delegation ───────────────────────────────── */
+    document.addEventListener('click', function (e) {
+
+      /* RSVP / chip buttons */
+      var rsvp = e.target.closest('[data-rsvp]');
+      if (rsvp && !rsvp.disabled) {
+        openModal(parseInt(rsvp.dataset.rsvp, 10));
+        return;
+      }
+
+      /* View toggle */
+      var vBtn = e.target.closest('.view-btn');
+      if (vBtn) { setView(vBtn.dataset.view); return; }
+
+      /* Filter */
+      var fBtn = e.target.closest('.filter-btn');
+      if (fBtn) { setFilter(fBtn.dataset.filter); return; }
+
+      /* Modal close button */
+      if (e.target.closest('#modal-close') || e.target.closest('#modal-confirm-close')) {
+        closeModal(); return;
+      }
+
+      /* Overlay click-outside */
+      if (e.target === overlayEl) { closeModal(); return; }
+    });
+
+    /* Escape key */
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    /* ── Mobile nav toggle ──────────────────────────────── */
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var links  = document.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      toggle.addEventListener('click', function () {
+        var open = links.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      links.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          links.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+
+    /* ── Init ───────────────────────────────────────────── */
+    setView('list');
+
+  })();
+  </script>
+
+</body>
+</html>
