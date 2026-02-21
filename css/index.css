@@ -54,7 +54,11 @@
    ------------------------------------------------------------ */
 .hero {
   min-height: 100vh;
-  background-color: var(--deep-forest);
+  background-color: var(--deep-forest); /* fallback */
+  background-image: url('../img/hero-grove.jpg');
+  background-size: cover;
+  background-position: center 30%; /* keep the canopy + people in frame */
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,12 +68,18 @@
   overflow: hidden;
 }
 
-/* Soft vignette — adds depth without an image */
+/* Layered overlay: warm dark gradient so headline always reads cleanly */
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 60% 40%, transparent 35%, rgba(0,0,0,0.28) 100%);
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(43, 45, 34, 0.55) 0%,
+      rgba(43, 45, 34, 0.35) 40%,
+      rgba(43, 45, 34, 0.72) 100%
+    );
   pointer-events: none;
 }
 
@@ -104,7 +114,7 @@
   font-weight: 300;
   font-size: var(--text-md);
   line-height: var(--leading-body);
-  color: rgba(245, 240, 232, 0.68);
+  color: rgba(245, 240, 232, 0.82);
   max-width: 540px;
   margin: 0 auto var(--space-lg);
 }
