@@ -16,11 +16,6 @@
   border-bottom-color: var(--cream-dark);
 }
 
-/* Wordmark 2× larger on the home page */
-.nav-wordmark {
-  font-size: 2.75rem; /* 2× the global 1.375rem */
-}
-
 /* Wordmark + links are cream over the dark hero */
 .nav-wordmark,
 .nav-links a {
