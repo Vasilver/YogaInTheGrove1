@@ -772,6 +772,65 @@
 
 
 /* ------------------------------------------------------------
+   Kirtan Feature Section
+   ------------------------------------------------------------ */
+.kirtan-feature {
+  background-color: var(--warm-cream);
+  padding: var(--space-xl) var(--space-md);
+}
+
+.kirtan-feature__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.kirtan-feature__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--deep-forest);
+  line-height: 1.18;
+  margin: var(--space-sm) 0 var(--space-md);
+}
+
+.kirtan-feature__body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-md);
+  line-height: var(--leading-body);
+  color: var(--warm-bark);
+  margin-bottom: var(--space-lg);
+}
+
+/* 16:9 responsive video wrapper */
+.kirtan-feature__video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.kirtan-feature__video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 760px) {
+  .kirtan-feature__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ------------------------------------------------------------
    Footer
    ------------------------------------------------------------ */
 .site-footer {
