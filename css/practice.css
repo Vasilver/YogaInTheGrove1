@@ -112,6 +112,14 @@
   align-items: start;
 }
 
+/* Stacked video column */
+.practice-section__videos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-self: center;
+}
+
 /* 16:9 responsive video wrapper */
 .practice-section__video {
   position: relative;
