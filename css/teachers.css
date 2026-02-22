@@ -163,6 +163,10 @@
   flex: 1;
 }
 
+.teacher-card__bio + .teacher-card__bio {
+  margin-top: var(--space-sm);
+}
+
 /* Philosophy pull-line */
 .teacher-card__philosophy {
   font-family: var(--font-heading);
