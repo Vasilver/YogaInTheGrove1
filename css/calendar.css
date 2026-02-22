@@ -236,9 +236,26 @@
 
 
 /* ------------------------------------------------------------
-   List view — event cards
+   List view — month groups + event cards
    ------------------------------------------------------------ */
 .events-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.events-month-label {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sage);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.events-month-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-md);
@@ -354,7 +371,7 @@
 }
 
 @media (max-width: 700px) {
-  .events-list {
+  .events-month-cards {
     grid-template-columns: 1fr;
   }
 }
@@ -366,6 +383,14 @@
 .calendar-grid-view {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.cal-month-block {
+  margin-bottom: var(--space-xl);
+}
+
+.cal-month-block:last-child {
+  margin-bottom: 0;
 }
 
 .cal-month-header {
