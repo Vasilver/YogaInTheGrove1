@@ -191,6 +191,28 @@
   border-left: 1px solid var(--cream-dark);
 }
 
+/* Bhakti column — Prabhupada photo background */
+.lineage-col--bhakti {
+  position: relative;
+  background-image: url('../img/Srila-Prabhupada.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.lineage-col--bhakti::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 240, 232, 0.82);
+  pointer-events: none;
+}
+
+.lineage-col--bhakti > * {
+  position: relative;
+  z-index: 1;
+}
+
 .lineage-col__tradition {
   font-family: var(--font-body);
   font-weight: 300;
