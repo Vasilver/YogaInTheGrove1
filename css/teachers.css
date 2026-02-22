@@ -128,6 +128,17 @@
   z-index: 1;
 }
 
+/* Real photo overrides */
+.teacher-card__photo--indranudzha {
+  background-image: url('../img/1000029697.jpg');
+  background-size: cover;
+  background-position: center top;
+}
+
+.teacher-card__photo--indranudzha .teacher-card__photo-label {
+  display: none;
+}
+
 /* Card body */
 .teacher-card__body {
   flex: 1;
