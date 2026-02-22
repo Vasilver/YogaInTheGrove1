@@ -123,10 +123,10 @@
 /* 16:9 responsive video wrapper */
 .practice-section__video {
   position: relative;
+  width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: 2px;
   overflow: hidden;
-  align-self: center;
 }
 
 .practice-section__video iframe {
