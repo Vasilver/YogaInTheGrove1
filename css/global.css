@@ -361,3 +361,27 @@ p + p {
 .page-content {
   padding-top: var(--nav-height);
 }
+
+
+/* ------------------------------------------------------------
+   Prasadam banner — shared across home, practice, community
+   ------------------------------------------------------------ */
+.prasadam-banner {
+  background-color: var(--ochre);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+}
+
+.prasadam-banner__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.prasadam-banner__text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--warm-cream);
+  line-height: 1.5;
+}
