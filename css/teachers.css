@@ -129,6 +129,16 @@
 }
 
 /* Real photo overrides */
+.teacher-card__photo--vishal {
+  background-image: url('../img/VishalYogaPose.png');
+  background-size: cover;
+  background-position: center top;
+}
+
+.teacher-card__photo--vishal .teacher-card__photo-label {
+  display: none;
+}
+
 .teacher-card__photo--indranudzha {
   background-image: url('../img/1000029697.jpg');
   background-size: cover;
@@ -136,6 +146,16 @@
 }
 
 .teacher-card__photo--indranudzha .teacher-card__photo-label {
+  display: none;
+}
+
+.teacher-card__photo--chandra {
+  background-image: url('../img/ChandraPic.jpg');
+  background-size: cover;
+  background-position: center top;
+}
+
+.teacher-card__photo--chandra .teacher-card__photo-label {
   display: none;
 }
 
