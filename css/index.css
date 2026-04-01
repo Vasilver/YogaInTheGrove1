@@ -42,10 +42,27 @@
   background-color: var(--warm-bark);
 }
 
-/* Mobile drawer: white text */
+/* Mobile drawer: dark background so text is always readable.
+   Both scrolled and non-scrolled states are covered to prevent
+   the higher-specificity .is-scrolled rule from overriding on mobile. */
 @media (max-width: 800px) {
-  .site-nav .nav-links a {
-    color: #ffffff;
+  /* Background: deep-forest matches the hero, gives cream text clear contrast */
+  .nav-links {
+    background-color: var(--deep-forest);
+  }
+
+  /* Default text: warm-cream on deep-forest */
+  .site-nav .nav-links a,
+  .site-nav.is-scrolled .nav-links a {
+    color: var(--warm-cream);
+  }
+
+  /* Hover / focus: ochre accent, consistent with the rest of the site */
+  .site-nav .nav-links a:hover,
+  .site-nav .nav-links a:focus-visible,
+  .site-nav.is-scrolled .nav-links a:hover,
+  .site-nav.is-scrolled .nav-links a:focus-visible {
+    color: var(--ochre);
   }
 }
 
