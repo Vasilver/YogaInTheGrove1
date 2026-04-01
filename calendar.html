@@ -257,11 +257,11 @@
         for (var d = 1; d <= dim; d++) {
           var dow = new Date(yr, mo, d).getDay();
 
-          if (dow === 1) {               /* Mon → Morning Hatha 8:00 am */
+          if (dow === 3) {               /* Wed → Morning Hatha 6:00 pm */
             list.push({
               id: id++, title: 'Morning Hatha', teacher: 'Vishal Das',
               year: yr, month: mo, day: d,
-              timeDisplay: '8:00 am', duration: '75 min', type: 'asana',
+              timeDisplay: '6:00 pm', duration: '75 min', type: 'asana',
               desc: 'A grounded morning practice with emphasis on breath and slow alignment. No experience necessary — we meet you exactly where you are.'
             });
           }
