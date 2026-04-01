@@ -154,39 +154,7 @@
         <p class="events__source-note">pulled from the calendar — check back often</p>
       </div>
 
-      <div class="events-grid">
-
-        <!-- Event 1 -->
-        <article class="event-card">
-          <p class="event-card__date">Sat, Mar 8 · 7:00 pm</p>
-          <h3 class="event-card__title">New Moon Kirtan</h3>
-          <p class="event-card__body">
-            A candlelit evening of call-and-response chanting with live harmonium.
-            Open to all — no experience needed, just an open heart.
-          </p>
-        </article>
-
-        <!-- Event 2 -->
-        <article class="event-card">
-          <p class="event-card__date">Sun, Mar 16 · 10:00 am</p>
-          <h3 class="event-card__title">Introduction to Hatha</h3>
-          <p class="event-card__body">
-            A six-week series for those new to yoga or returning after a long pause.
-            Small group, slow pace, and a lot of room to ask questions.
-          </p>
-        </article>
-
-        <!-- Event 3 -->
-        <article class="event-card">
-          <p class="event-card__date">Sat, Mar 22 · 9:00 am</p>
-          <h3 class="event-card__title">Community Seva Morning</h3>
-          <p class="event-card__body">
-            Join us for a morning of giving back to Coconut Grove. We'll gather,
-            work together, and share a meal afterward. All are welcome.
-          </p>
-        </article>
-
-      </div>
+      <div class="events-grid" id="featured-events-grid"></div>
 
       <a href="practice.html" class="events__all-link">view the full schedule →</a>
 
@@ -213,6 +181,76 @@
     </div>
   </footer>
 
+
+  <!-- ── Featured events ──────────────────────────────────────
+       Generates the next 3 upcoming events using the same recurring
+       rules as calendar.html. Update the rules here if the schedule changes.
+  ──────────────────────────────────────────────────────────── -->
+  <script>
+  (function () {
+    var DAY_ABBR   = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    var MONTH_NAME = ['January','February','March','April','May','June',
+                      'July','August','September','October','November','December'];
+
+    /* Generate 3 months of recurring events starting from the current month */
+    var now = new Date();
+    var events = [];
+
+    for (var m = 0; m < 3; m++) {
+      var absMonth = now.getFullYear() * 12 + now.getMonth() + m;
+      var yr  = Math.floor(absMonth / 12);
+      var mo  = absMonth % 12;
+      var dim = new Date(yr, mo + 1, 0).getDate();
+
+      for (var d = 1; d <= dim; d++) {
+        var dow = new Date(yr, mo, d).getDay();
+
+        if (dow === 6) { /* Saturday — Morning Hatha 9:00 am */
+          events.push({ title: 'Morning Hatha', year: yr, month: mo, day: d,
+            timeDisplay: '9:00 am',
+            desc: 'A grounded morning practice with emphasis on breath and slow alignment. No experience necessary — we meet you exactly where you are.' });
+        }
+        if (dow === 3) { /* Wednesday — Evening Hatha 6:00 pm */
+          events.push({ title: 'Evening Hatha', year: yr, month: mo, day: d,
+            timeDisplay: '6:00 pm',
+            desc: 'A grounded evening practice with emphasis on breath and slow alignment. No experience necessary — we meet you exactly where you are.' });
+        }
+        if (dow === 3) { /* Wednesday — Kirtan 7:00 pm */
+          events.push({ title: 'Kirtan in the Grove', year: yr, month: mo, day: d,
+            timeDisplay: '7:00 pm',
+            desc: 'A candlelit evening of call-and-response chanting with live harmonium. Come as you are, voice and all. No musical experience required.' });
+        }
+        if (dow === 0) { /* Sunday — Community Seva 9:00 am */
+          events.push({ title: 'Community Seva Morning', year: yr, month: mo, day: d,
+            timeDisplay: '9:00 am',
+            desc: 'A morning of collective service in Coconut Grove. We work together, share a meal, and leave having given something back to the neighborhood.' });
+        }
+      }
+    }
+
+    /* Sort, filter to today-or-future, take first 3 */
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    events.sort(function (a, b) {
+      return new Date(a.year, a.month, a.day) - new Date(b.year, b.month, b.day);
+    });
+    var featured = events.filter(function (ev) {
+      return new Date(ev.year, ev.month, ev.day) >= today;
+    }).slice(0, 3);
+
+    var grid = document.getElementById('featured-events-grid');
+    if (!grid) return;
+
+    grid.innerHTML = featured.map(function (ev) {
+      var date = new Date(ev.year, ev.month, ev.day);
+      var label = DAY_ABBR[date.getDay()] + ', ' + MONTH_NAME[ev.month] + ' ' + ev.day + ' \xb7 ' + ev.timeDisplay;
+      return '<article class="event-card">' +
+        '<p class="event-card__date">' + label + '</p>' +
+        '<h3 class="event-card__title">' + ev.title + '</h3>' +
+        '<p class="event-card__body">' + ev.desc + '</p>' +
+        '</article>';
+    }).join('');
+  })();
+  </script>
 
   <!-- ── Scripts ───────────────────────────────────────────── -->
   <script>
