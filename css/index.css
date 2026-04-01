@@ -46,9 +46,9 @@
    Both scrolled and non-scrolled states are covered to prevent
    the higher-specificity .is-scrolled rule from overriding on mobile. */
 @media (max-width: 800px) {
-  /* Background: deep-forest matches the hero, gives cream text clear contrast */
+  /* Background: warm-bark is visually distinct from the dark hero behind it */
   .nav-links {
-    background-color: var(--deep-forest);
+    background-color: var(--warm-bark);
   }
 
   /* Default text: warm-cream on deep-forest */
