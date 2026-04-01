@@ -285,6 +285,15 @@ p + p {
 
 /* Mobile nav */
 @media (max-width: 800px) {
+  /* backdrop-filter on .site-nav causes Android/WebKit to treat it as the
+     containing block for position:fixed children. With the nav only 72px tall,
+     top:72px and bottom:0 resolve to the same point → zero-height dropdown.
+     Removing backdrop-filter restores the viewport as the containing block. */
+  .site-nav {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
   .nav-toggle {
     display: flex;
   }
