@@ -221,6 +221,7 @@
 .parking-section__inner {
   max-width: var(--max-width);
   margin: 0 auto;
+  text-align: center;
 }
 
 .parking-section__label {
@@ -249,11 +250,14 @@
   max-width: 680px;
   height: auto;
   border-radius: 4px;
+  margin: 0 auto;
 }
 
 .parking-section__desc {
   max-width: 680px;
   margin-top: var(--space-md);
+  margin-left: auto;
+  margin-right: auto;
   font-family: var(--font-body);
   font-weight: 300;
   font-size: var(--text-base);
