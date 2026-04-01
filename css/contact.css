@@ -206,6 +206,10 @@
   .map-col {
     position: static;
   }
+
+  .parking-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 
@@ -244,20 +248,31 @@
   margin-bottom: var(--space-lg);
 }
 
+.parking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+  text-align: left;
+}
+
 .parking-photo {
   display: block;
   width: 100%;
-  max-width: 680px;
   height: auto;
   border-radius: 4px;
-  margin: 0 auto;
+}
+
+.parking-streetview {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: none;
+  display: block;
+  border-radius: 4px;
 }
 
 .parking-section__desc {
-  max-width: 680px;
   margin-top: var(--space-md);
-  margin-left: auto;
-  margin-right: auto;
   font-family: var(--font-body);
   font-weight: 300;
   font-size: var(--text-base);
