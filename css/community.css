@@ -1,0 +1,401 @@
+/* ============================================================
+   Yoga in the Grove — Community Page
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   Nav: transparent over dark opening, cream once scrolled
+   ------------------------------------------------------------ */
+.site-nav {
+  background-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.site-nav.is-scrolled {
+  background-color: color-mix(in srgb, var(--warm-cream) 92%, transparent);
+  border-bottom-color: var(--cream-dark);
+}
+
+.nav-wordmark,
+.nav-links a {
+  color: var(--warm-cream);
+}
+
+.site-nav.is-scrolled .nav-wordmark,
+.site-nav.is-scrolled .nav-links a {
+  color: var(--warm-bark);
+}
+
+.site-nav.is-scrolled .nav-links a:hover {
+  color: var(--deep-forest);
+}
+
+.nav-toggle span {
+  background-color: var(--warm-cream);
+}
+
+.site-nav.is-scrolled .nav-toggle span {
+  background-color: var(--warm-bark);
+}
+
+@media (max-width: 800px) {
+  .nav-links a { color: var(--warm-bark); }
+}
+
+
+/* ------------------------------------------------------------
+   1. Opening
+   ------------------------------------------------------------ */
+.community-opening {
+  min-height: 80vh;
+  background-color: var(--deep-forest);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--nav-height) + var(--space-xl)) var(--space-md) var(--space-xl);
+  position: relative;
+}
+
+.community-opening::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 55%, transparent 40%, rgba(0,0,0,0.2) 100%);
+  pointer-events: none;
+}
+
+.community-opening__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.community-opening__label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: var(--space-md);
+}
+
+.community-opening__headline {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--warm-cream);
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+}
+
+.community-opening__sub {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-md);
+  color: rgba(245, 240, 232, 0.68);
+  line-height: var(--leading-body);
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+
+/* ------------------------------------------------------------
+   2. Body prose sections
+   ------------------------------------------------------------ */
+.community-prose {
+  padding: var(--space-xl) var(--space-md);
+}
+
+.community-prose--light { background-color: var(--warm-cream); }
+.community-prose--earth { background-color: var(--warm-bark); }
+
+.community-prose__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.community-prose__label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.community-prose--light .community-prose__label { color: var(--sage); }
+.community-prose--earth .community-prose__label { color: var(--ochre-muted); }
+
+.community-prose__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.75rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+.community-prose--light .community-prose__heading { color: var(--deep-forest); }
+.community-prose--earth .community-prose__heading { color: var(--warm-cream); }
+
+.community-prose__body p {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-md);
+  line-height: var(--leading-body);
+}
+
+.community-prose--light .community-prose__body p { color: var(--warm-bark); }
+.community-prose--earth .community-prose__body p { color: rgba(245, 240, 232, 0.72); }
+
+.community-prose__body p + p { margin-top: var(--space-md); }
+
+
+/* ------------------------------------------------------------
+   3. Community board
+   ------------------------------------------------------------ */
+.community-board {
+  background-color: var(--cream-dark);
+  padding: var(--space-xl) var(--space-md);
+}
+
+.community-board__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.community-board__header {
+  max-width: var(--content-width);
+  margin: 0 auto var(--space-lg);
+}
+
+.community-board__label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: var(--space-sm);
+}
+
+.community-board__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--deep-forest);
+  margin-bottom: var(--space-sm);
+}
+
+.community-board__note {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  color: var(--sage);
+  font-style: italic;
+}
+
+/* Posts grid */
+.board-posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  max-width: var(--max-width);
+  margin: 0 auto var(--space-xl);
+}
+
+.board-post {
+  background-color: var(--warm-cream);
+  padding: var(--space-md);
+  border-top: 2px solid var(--sage-light);
+  position: relative;
+}
+
+.board-post--pending {
+  border-top-color: var(--ochre-muted);
+  opacity: 0.85;
+}
+
+.board-post__badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.65rem;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--ochre);
+  margin-bottom: var(--space-xs);
+}
+
+.board-post__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-sm);
+}
+
+.board-post__author {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  color: var(--deep-forest);
+}
+
+.board-post__date {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  color: var(--sage-light);
+  white-space: nowrap;
+}
+
+.board-post__text {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  color: var(--warm-bark);
+  font-style: italic;
+}
+
+@media (max-width: 800px) {
+  .board-posts { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  .board-posts { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+/* ------------------------------------------------------------
+   Board submission form
+   ------------------------------------------------------------ */
+.board-form-wrap {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--warm-cream);
+  padding: var(--space-lg);
+}
+
+.board-form-wrap__heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-style: italic;
+  color: var(--deep-forest);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.board-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-field label {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  color: var(--warm-bark);
+}
+
+.form-optional {
+  color: var(--sage-light);
+  font-size: var(--text-xs);
+}
+
+.form-field input,
+.form-field textarea {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-base);
+  color: var(--deep-forest);
+  background-color: #fff;
+  border: 1px solid var(--cream-dark);
+  padding: 0.6rem 0.8rem;
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  -webkit-appearance: none;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--sage);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.board-form__moderation-note {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  color: var(--sage);
+  font-style: italic;
+  margin-top: -0.25rem;
+}
+
+.btn-board-submit {
+  align-self: flex-start;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: lowercase;
+  padding: 0.85rem 2rem;
+  border-radius: 2px;
+  background-color: var(--ochre);
+  color: var(--warm-cream);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.btn-board-submit:hover { background-color: #b3843e; }
+
+.board-form-success {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--sage);
+  text-align: center;
+  padding: var(--space-lg) 0;
+}
+
+
+/* ------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------ */
+.site-footer {
+  background-color: var(--deep-forest);
+  padding: var(--space-md);
+  text-align: center;
+  border-top: 1px solid rgba(122, 140, 110, 0.15);
+}
+
+.site-footer__inner {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: rgba(245, 240, 232, 0.3);
+  text-transform: lowercase;
+}
