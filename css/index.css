@@ -42,11 +42,10 @@
   background-color: var(--warm-bark);
 }
 
-/* Mobile drawer always uses dark text on cream background.
-   Higher specificity (0,2,0) ensures this beats the cream color set above (0,1,0). */
+/* Mobile drawer: white text */
 @media (max-width: 800px) {
   .site-nav .nav-links a {
-    color: var(--warm-bark);
+    color: #ffffff;
   }
 }
 
