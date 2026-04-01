@@ -324,6 +324,13 @@
     var activeView   = 'list';
     var activeFilter = 'all';
 
+    /* Grid navigation — start on current month, limit to 1 back / 2 forward */
+    var _today     = new Date();
+    var gridYear   = _today.getFullYear();
+    var gridMonth  = _today.getMonth();
+    var minGridAbs = _today.getFullYear() * 12 + _today.getMonth() - 1;
+    var maxGridAbs = _today.getFullYear() * 12 + _today.getMonth() + 2;
+
     /* ── DOM refs ───────────────────────────────────────── */
     var listEl     = document.getElementById('events-list');
     var gridEl     = document.getElementById('calendar-grid');
@@ -354,6 +361,9 @@
       var t = new Date(); t.setHours(0,0,0,0);
       return new Date(ev.year, ev.month, ev.day) < t;
     }
+
+    function canGoPrev() { return gridYear * 12 + gridMonth > minGridAbs; }
+    function canGoNext() { return gridYear * 12 + gridMonth < maxGridAbs; }
 
     function escHtml(str) {
       return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -411,9 +421,18 @@
       var firstDow = new Date(yr, mo, 1).getDay();
       var dim      = new Date(yr, mo + 1, 0).getDate();
 
+      /* Previous month info — for leading grayed-out days */
+      var prevMo  = mo === 0 ? 11 : mo - 1;
+      var prevYr  = mo === 0 ? yr - 1 : yr;
+      var prevDim = new Date(prevYr, prevMo + 1, 0).getDate();
+
       var html = '<div class="cal-month-block">' +
         '<div class="cal-month-header">' +
+          '<button class="cal-nav-btn" id="cal-prev" aria-label="Previous month"' +
+            (canGoPrev() ? '' : ' disabled aria-disabled="true"') + '>&#8249;</button>' +
           '<h2 class="cal-month-title">' + MONTH_NAME[mo] + ' ' + yr + '</h2>' +
+          '<button class="cal-nav-btn" id="cal-next" aria-label="Next month"' +
+            (canGoNext() ? '' : ' disabled aria-disabled="true"') + '>&#8250;</button>' +
         '</div>' +
         '<div class="cal-grid">';
 
@@ -421,8 +440,11 @@
         html += '<div class="cal-day-header">' + d + '</div>';
       });
 
+      /* Leading days from previous month — visible but grayed out */
       for (var i = 0; i < firstDow; i++) {
-        html += '<div class="cal-cell cal-cell--empty"></div>';
+        var prevDay = prevDim - firstDow + 1 + i;
+        html += '<div class="cal-cell cal-cell--prev-month">' +
+          '<span class="cal-cell__number">' + prevDay + '</span></div>';
       }
 
       for (var day = 1; day <= dim; day++) {
@@ -459,14 +481,10 @@
         byMonthDay[key][ev.day].push(ev);
       });
 
-      var html = '';
-      for (var m = 0; m < NUM_MONTHS; m++) {
-        var abs = START_MONTH + m;
-        var yr  = START_YEAR + Math.floor(abs / 12);
-        var mo  = abs % 12;
-        html += renderMonthGrid(yr, mo, byMonthDay[yr + '-' + mo] || {});
-      }
-      gridEl.innerHTML = html;
+      gridEl.innerHTML = renderMonthGrid(
+        gridYear, gridMonth,
+        byMonthDay[gridYear + '-' + gridMonth] || {}
+      );
     }
 
     /* ── View switching ─────────────────────────────────── */
@@ -578,6 +596,20 @@
 
     /* ── Event delegation ───────────────────────────────── */
     document.addEventListener('click', function (e) {
+
+      /* Grid month navigation */
+      if (e.target.closest('#cal-prev') && canGoPrev()) {
+        gridMonth--;
+        if (gridMonth < 0) { gridMonth = 11; gridYear--; }
+        renderGrid();
+        return;
+      }
+      if (e.target.closest('#cal-next') && canGoNext()) {
+        gridMonth++;
+        if (gridMonth > 11) { gridMonth = 0; gridYear++; }
+        renderGrid();
+        return;
+      }
 
       /* RSVP / chip buttons */
       var rsvp = e.target.closest('[data-rsvp]');

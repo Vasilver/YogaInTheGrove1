@@ -396,7 +396,7 @@
 .cal-month-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding-bottom: var(--space-md);
 }
 
@@ -406,6 +406,38 @@
   font-style: italic;
   color: var(--deep-forest);
   font-weight: 400;
+}
+
+/* Prev / next month navigation buttons */
+.cal-nav-btn {
+  font-size: var(--text-2xl);
+  line-height: 1;
+  color: var(--sage);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 var(--space-sm);
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.cal-nav-btn:hover:not(:disabled) {
+  color: var(--deep-forest);
+}
+
+.cal-nav-btn:disabled {
+  color: var(--cream-dark);
+  cursor: default;
+}
+
+/* Previous month's trailing days — shown grayed out */
+.cal-cell--prev-month {
+  background-color: var(--warm-cream);
+}
+
+.cal-cell--prev-month .cal-cell__number {
+  color: var(--sage-light);
+  opacity: 0.5;
 }
 
 .cal-grid {
