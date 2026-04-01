@@ -258,12 +258,12 @@
     var activeView   = 'list';
     var activeFilter = 'all';
 
-    /* Grid navigation — start on current month, limit to 1 back / 2 forward */
+    /* Grid navigation — start on current month, no past months, 3 months forward */
     var _today     = new Date();
     var gridYear   = _today.getFullYear();
     var gridMonth  = _today.getMonth();
-    var minGridAbs = _today.getFullYear() * 12 + _today.getMonth() - 1;
-    var maxGridAbs = _today.getFullYear() * 12 + _today.getMonth() + 2;
+    var minGridAbs = _today.getFullYear() * 12 + _today.getMonth();
+    var maxGridAbs = _today.getFullYear() * 12 + _today.getMonth() + 3;
 
     /* ── DOM refs ───────────────────────────────────────── */
     var listEl     = document.getElementById('events-list');
