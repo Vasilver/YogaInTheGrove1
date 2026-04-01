@@ -235,78 +235,12 @@
 
 
   <!-- ── Scripts ───────────────────────────────────────────── -->
+  <script src="js/events-data.js"></script>
   <script>
   (function () {
 
-    /* ── Configuration ──────────────────────────────────── */
-    var START_MONTH = 1;   // February (JS 0-indexed)
-    var START_YEAR  = 2026;
-    var NUM_MONTHS  = 3;   // Feb → Apr 2026
-
-    /* ── Generate events for all 6 months ──────────────── */
-    var EVENTS = (function () {
-      var list = [];
-      var id   = 1;
-
-      for (var m = 0; m < NUM_MONTHS; m++) {
-        var abs = START_MONTH + m;
-        var yr  = START_YEAR + Math.floor(abs / 12);
-        var mo  = abs % 12;
-        var dim = new Date(yr, mo + 1, 0).getDate();
-
-        for (var d = 1; d <= dim; d++) {
-          var dow = new Date(yr, mo, d).getDay();
-
-          if (dow === 3) {               /* Wed → Evening Hatha 6:00 pm */
-            list.push({
-              id: id++, title: 'Evening Hatha', teacher: 'Vishal Das',
-              year: yr, month: mo, day: d,
-              timeDisplay: '6:00 pm', duration: '75 min', type: 'asana',
-              desc: 'A grounded morning practice with emphasis on breath and slow alignment. No experience necessary — we meet you exactly where you are.'
-            });
-          }
-
-          if (dow === 6) {               /* Sat → Morning Hatha 9:00 am */
-            list.push({
-              id: id++, title: 'Morning Hatha', teacher: 'Vishal Das',
-              year: yr, month: mo, day: d,
-              timeDisplay: '9:00 am', duration: '75 min', type: 'asana',
-              desc: 'A grounded morning practice with emphasis on breath and slow alignment. No experience necessary — we meet you exactly where you are.'
-            });
-          }
-
-          if (dow === 3) {                /* Wed → Kirtan */
-            list.push({
-              id: id++, title: 'Kirtan in the Grove', teacher: 'Indranudzha Das',
-              year: yr, month: mo, day: d,
-              timeDisplay: '7:00 pm', duration: '90 min', type: 'kirtan',
-              desc: 'A candlelit evening of call-and-response chanting with live harmonium. Come as you are, voice and all. No musical experience required.'
-            });
-          }
-
-          if (dow === 0) {                /* Sun → Seva */
-            list.push({
-              id: id++, title: 'Community Seva Morning', teacher: 'Community',
-              year: yr, month: mo, day: d,
-              timeDisplay: '9:00 am', duration: '3 hrs', type: 'seva',
-              desc: 'A morning of collective service in Coconut Grove. We work together, share a meal, and leave having given something back to the neighborhood.'
-            });
-          }
-        }
-      }
-
-      /* One-off events */
-      [
-        { title: 'Seated Meditation',      teacher: '[Teacher Name]', year: 2026, month: 1, day: 11, timeDisplay: '6:30 pm', duration: '60 min',  type: 'meditation', desc: 'A guided sit for beginners and longtime practitioners alike. We start from stillness and investigate what arises — gently, without agenda.' },
-        { title: 'Yin & Alignment Workshop', teacher: '[Teacher Name]', year: 2026, month: 1, day: 21, timeDisplay: '2:00 pm', duration: '2 hrs', type: 'workshop',   desc: 'A deep dive into connective tissue — long holds, breath work, and careful attention to how the body opens when we stop pushing it.' }
-      ].forEach(function (ev) { ev.id = id++; list.push(ev); });
-
-      list.sort(function (a, b) {
-        return new Date(a.year, a.month, a.day) - new Date(b.year, b.month, b.day);
-      });
-
-      return list;
-    })();
+    /* Events loaded from js/events-data.js — edit that file to change the schedule */
+    var EVENTS = YOGA_EVENTS;
 
     var TYPE_LABELS = {
       asana:       'Asana',
