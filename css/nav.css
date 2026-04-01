@@ -1,0 +1,227 @@
+/* ============================================================
+   Yoga in the Grove — Navigation Component
+   All nav styles live here so colour changes in page stylesheets
+   cannot accidentally affect layout, positioning, or toggle logic.
+
+   Load order: global.css → nav.css → [page].css
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   Nav bar — fixed strip at top of every page
+   ------------------------------------------------------------ */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-md);
+
+  background-color: color-mix(in srgb, var(--warm-cream) 92%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--cream-dark);
+
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Dark variant — used on pages with dark hero sections */
+.site-nav.nav--dark {
+  background-color: color-mix(in srgb, var(--deep-forest) 90%, transparent);
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+
+.site-nav.nav--dark .nav-wordmark,
+.site-nav.nav--dark .nav-links a {
+  color: var(--warm-cream);
+}
+
+.site-nav.nav--dark .nav-links a::after {
+  background-color: var(--ochre);
+}
+
+
+/* ------------------------------------------------------------
+   Wordmark / Logo
+   ------------------------------------------------------------ */
+.nav-wordmark {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--deep-forest);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.nav-wordmark span {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.nav-wordmark:hover {
+  opacity: 0.75;
+}
+
+
+/* ------------------------------------------------------------
+   Desktop nav links
+   ------------------------------------------------------------ */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  color: var(--warm-bark);
+  text-transform: lowercase;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.25s ease;
+}
+
+/* Underline grows in on hover */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--ochre);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--deep-forest);
+}
+
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.nav-links a[aria-current="page"] {
+  font-weight: 400;
+}
+
+/* Dot separators between links */
+.nav-links a + a::before {
+  content: '·';
+  position: absolute;
+  left: calc(-1 * var(--space-md) / 2);
+  transform: translateX(-50%);
+  color: var(--sage-light);
+  font-size: var(--text-base);
+  pointer-events: none;
+}
+
+/* Keyboard focus ring */
+.nav-links a:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--ochre);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+
+/* ------------------------------------------------------------
+   Hamburger toggle — hidden on desktop, shown on mobile
+   ------------------------------------------------------------ */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--warm-bark);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+/* ------------------------------------------------------------
+   Mobile dropdown — structure, positioning, and open/close logic
+   IMPORTANT: Only edit colours below this block. The rules in
+   this section control whether the dropdown is visible at all.
+   ------------------------------------------------------------ */
+@media (max-width: 800px) {
+
+  /* backdrop-filter on .site-nav causes Android/WebKit to use the nav bar
+     (72px tall) as the containing block for position:fixed children.
+     top:72px and bottom:0 then resolve to the same point → zero height.
+     Removing it restores the viewport as the containing block. */
+  .site-nav {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Slide-in panel — hidden off the right edge until .is-open is added by JS */
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-links.is-open {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: var(--text-lg);
+  }
+
+  /* Hide dot separators on mobile */
+  .nav-links a + a::before {
+    display: none;
+  }
+
+
+  /* ----------------------------------------------------------
+     Mobile dropdown colours — safe to edit this section only
+     ---------------------------------------------------------- */
+  .nav-links {
+    background-color: var(--warm-cream);
+  }
+
+  .nav-links a {
+    color: var(--warm-bark);
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    color: var(--ochre);
+  }
+
+}
