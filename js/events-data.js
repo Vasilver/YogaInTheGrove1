@@ -59,6 +59,24 @@ var YOGA_EVENTS = (function () {
           desc: 'A morning of collective service in Coconut Grove. We work together, share a meal, and leave having given something back to the neighborhood.'
         });
       }
+
+      if (dow === 1) {               /* Monday — Community Seva 9:30 am */
+        list.push({
+          id: id++, title: 'Community Seva', teacher: 'Community',
+          year: yr, month: mo, day: d,
+          timeDisplay: '9:30 am', duration: '3 hrs', type: 'seva',
+          desc: 'A morning of collective service in Coconut Grove. We work together, share a meal, and leave having given something back to the neighborhood.'
+        });
+      }
+
+      if (dow === 1) {               /* Monday — Community Seva 5:00 pm */
+        list.push({
+          id: id++, title: 'Community Seva', teacher: 'Community',
+          year: yr, month: mo, day: d,
+          timeDisplay: '5:00 pm', duration: '3 hrs', type: 'seva',
+          desc: 'An evening of collective service in Coconut Grove. We work together, share a meal, and leave having given something back to the neighborhood.'
+        });
+      }
     }
   }
 
