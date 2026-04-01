@@ -210,6 +210,59 @@
 
 
 /* ------------------------------------------------------------
+   Parking section
+   ------------------------------------------------------------ */
+.parking-section {
+  background-color: var(--warm-cream);
+  padding: var(--space-xl) var(--space-md);
+  border-top: 1px solid var(--cream-dark);
+}
+
+.parking-section__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.parking-section__label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: var(--space-sm);
+}
+
+.parking-section__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--deep-forest);
+  margin-bottom: var(--space-lg);
+}
+
+.parking-photo {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.parking-section__desc {
+  max-width: 680px;
+  margin-top: var(--space-md);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  color: var(--warm-bark);
+}
+
+
+/* ------------------------------------------------------------
    Contact form section
    ------------------------------------------------------------ */
 .contact-form-section {
