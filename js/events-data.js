@@ -26,7 +26,7 @@ var YOGA_EVENTS = (function () {
 
       if (dow === 3) {               /* Wednesday — Evening Hatha 6:00 pm */
         list.push({
-          id: id++, title: 'Evening Hatha', teacher: 'Vishal Das',
+          id: id++, title: 'Hatha with Lorena', teacher: 'Lorena',
           year: yr, month: mo, day: d,
           timeDisplay: '6:00 pm', duration: '75 min', type: 'asana',
           desc: 'A grounded evening practice with emphasis on breath and slow alignment. No experience necessary — we meet you exactly where you are.'
