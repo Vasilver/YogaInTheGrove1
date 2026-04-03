@@ -160,7 +160,7 @@
 }
 
 .teacher-card__photo--loren {
-  background-image: url('../assets/images/Loren.jpg');
+  background-image: url('../img/Loren.jpg');
   background-size: cover;
   background-position: center top;
 }
