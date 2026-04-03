@@ -159,6 +159,16 @@
   display: none;
 }
 
+.teacher-card__photo--loren {
+  background-image: url('../assets/images/teachername.jpg');
+  background-size: cover;
+  background-position: center top;
+}
+
+.teacher-card__photo--loren .teacher-card__photo-label {
+  display: none;
+}
+
 /* Card body */
 .teacher-card__body {
   flex: 1;
