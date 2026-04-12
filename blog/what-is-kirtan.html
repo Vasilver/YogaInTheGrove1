@@ -16,161 +16,302 @@
   <meta property="og:url" content="https://yogainthegrove.org/blog/what-is-kirtan.html">
   <meta property="og:type" content="article">
 
-  <!-- Link back to your main stylesheet -->
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/nav.css">
+
+  <style>
+    .blog-post {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: calc(var(--nav-height) + var(--space-xl)) var(--space-md) var(--space-xl);
+    }
+    .blog-post header {
+      margin-bottom: var(--space-lg);
+      border-bottom: 1px solid var(--cream-dark);
+      padding-bottom: var(--space-md);
+    }
+    .blog-category {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.5rem;
+    }
+    .blog-post h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--deep-forest);
+      margin: 0.5rem 0;
+      line-height: 1.2;
+    }
+    .blog-meta {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      color: var(--warm-bark);
+      opacity: 0.7;
+      margin-top: 0.5rem;
+    }
+    .blog-post section {
+      margin-bottom: var(--space-lg);
+    }
+    .blog-post h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--deep-forest);
+      margin-bottom: var(--space-sm);
+    }
+    .blog-post p {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--warm-bark);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .blog-post ul {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--warm-bark);
+      line-height: 1.75;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .blog-post li {
+      margin-bottom: 0.4rem;
+    }
+    .blog-post a {
+      color: var(--deep-forest);
+    }
+    .blog-post a:hover {
+      color: var(--sage);
+    }
+    .video-caption {
+      font-size: var(--text-xs);
+      color: var(--warm-bark);
+      opacity: 0.65;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+  </style>
 </head>
 <body>
 
-<article class="blog-post">
-
+  <!-- ── Navigation ───────────────────────────────────────── -->
   <header>
-    <p class="blog-category">Kirtan · Bhakti · Community</p>
-    <h1>What is Kirtan? A Beginner's Guide for Miami</h1>
-    <p class="blog-meta">By Yoga in the Grove · Coconut Grove, Miami FL</p>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+
+      <a href="/" class="nav-wordmark">
+        yoga in <span>the grove</span>
+      </a>
+
+      <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="visually-hidden">Open menu</span>
+      </button>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="../index.html"                      >home</a></li>
+        <li><a href="../about.html"                      >our story</a></li>
+        <li><a href="../teachers.html"                   >teachers</a></li>
+        <li><a href="../practice.html"                   >practice</a></li>
+        <li><a href="../calendar.html"                   >gather</a></li>
+        <li><a href="../community.html"                  >community</a></li>
+        <li><a href="../contact.html"                    >find us</a></li>
+        <li><a href="../blog.html"                       >blog</a></li>
+      </ul>
+
+    </nav>
   </header>
 
-  <section>
-    <p>
-      If you've walked past our studio on Virginia Street on a Tuesday evening and heard
-      voices rising and falling together — that's Kirtan. And if you've never heard of it
-      before, you're not alone. Kirtan is one of yoga's oldest and most transformative
-      practices, and it's quietly finding a home in Miami.
-    </p>
-    <p>
-      Here's everything you need to know before you walk through the door.
-    </p>
-  </section>
+  <!-- ── Page Content ─────────────────────────────────────── -->
+  <main>
+    <article class="blog-post">
 
-  <section>
-    <h2>So, What Exactly is Kirtan?</h2>
-    <p>
-      Kirtan (pronounced <em>keer-tahn</em>) is devotional call-and-response chanting
-      rooted in the Bhakti yoga tradition of India. A lead singer — called a kirtania —
-      sings a phrase, usually in Sanskrit, and the room sings it back. This continues
-      in waves, sometimes for an hour or more, building gradually in energy before
-      settling into stillness.
-    </p>
-    <p>
-      It is not a performance. It is not a concert. It is closer to a collective act
-      of surrender — one that tends to dissolve the walls people carry into a room
-      with them.
-    </p>
-  </section>
+      <header>
+        <p class="blog-category">Kirtan · Bhakti · Community</p>
+        <h1>What is Kirtan? A Beginner's Guide for Miami</h1>
+        <p class="blog-meta">By Yoga in the Grove · Coconut Grove, Miami FL</p>
+      </header>
 
-  <section>
-    <h2>Where Does Kirtan Come From?</h2>
-    <p>
-      Kirtan has been practiced in India for thousands of years and is central to the
-      Bhakti tradition — the yoga of devotion. In the Bhakti path, love itself is the
-      method. The chanting of sacred names and mantras is understood not as entertainment
-      but as a direct pathway to the heart.
-    </p>
-    <p>
-      In the West, Kirtan was introduced largely through the Hare Krishna movement in
-      the 1960s and has since spread into yoga studios, festivals, and living rooms
-      across the world — including right here in Coconut Grove.
-    </p>
-  </section>
+      <section>
+        <p>
+          If you've walked past our studio on Virginia Street on a Tuesday evening and heard
+          voices rising and falling together — that's Kirtan. And if you've never heard of it
+          before, you're not alone. Kirtan is one of yoga's oldest and most transformative
+          practices, and it's quietly finding a home in Miami.
+        </p>
+        <p>
+          Here's everything you need to know before you walk through the door.
+        </p>
+      </section>
 
-  <section>
-    <h2>Do I Need to Be Musical?</h2>
-    <p>
-      Absolutely not. This is the question we hear most often, and the answer is always
-      the same: no musical experience, no singing ability, and no prior knowledge of
-      Sanskrit is required. The only qualification is a willingness to try.
-    </p>
-    <p>
-      Kirtan is not about hitting the right notes. It is about showing up with an open
-      heart and letting your voice be heard — however it sounds. In fifteen years of
-      leading Kirtan, our teachers have never once heard a wrong note in the room.
-    </p>
-  </section>
+      <section>
+        <h2>So, What Exactly is Kirtan?</h2>
+        <p>
+          Kirtan (pronounced <em>keer-tahn</em>) is devotional call-and-response chanting
+          rooted in the Bhakti yoga tradition of India. A lead singer — called a kirtania —
+          sings a phrase, usually in Sanskrit, and the room sings it back. This continues
+          in waves, sometimes for an hour or more, building gradually in energy before
+          settling into stillness.
+        </p>
+        <p>
+          It is not a performance. It is not a concert. It is closer to a collective act
+          of surrender — one that tends to dissolve the walls people carry into a room
+          with them.
+        </p>
+      </section>
 
-  <section>
-    <h2>Do I Need to Believe in Anything?</h2>
-    <p>
-      No. Kirtan is not a religious requirement and does not ask you to adopt any
-      particular belief system. Many of our Miami students come from Catholic, Jewish,
-      secular, and other backgrounds and find that Kirtan deepens — rather than
-      conflicts with — whatever they already hold.
-    </p>
-    <p>
-      What it does ask is presence. And in Miami, where life moves fast and the noise
-      is constant, an hour of presence turns out to be exactly what many people
-      didn't know they needed.
-    </p>
-  </section>
+      <section>
+        <h2>Where Does Kirtan Come From?</h2>
+        <p>
+          Kirtan has been practiced in India for thousands of years and is central to the
+          Bhakti tradition — the yoga of devotion. In the Bhakti path, love itself is the
+          method. The chanting of sacred names and mantras is understood not as entertainment
+          but as a direct pathway to the heart.
+        </p>
+        <p>
+          In the West, Kirtan was introduced largely through the Hare Krishna movement in
+          the 1960s and has since spread into yoga studios, festivals, and living rooms
+          across the world — including right here in Coconut Grove.
+        </p>
+      </section>
 
-  <section>
-    <h2>What Actually Happens at a Kirtan Evening?</h2>
-    <p>Here's what a typical Kirtan evening at Yoga in the Grove looks like:</p>
-    <ul>
-      <li>You arrive at 3220 Virginia Street and take a seat — cushions and chairs available</li>
-      <li>The kirtania opens with a simple mantra and invites the room to respond</li>
-      <li>The chanting builds slowly, moving through several different mantras</li>
-      <li>Instruments — harmonium, mrdangam, hand cymbals — carry the sound</li>
-      <li>The session closes in stillness and meditation</li>
-      <li>A complimentary vegetarian meal (prasadam) is shared together afterward</li>
-    </ul>
-    <p>
-      You are welcome to sing loudly, hum quietly, or simply sit and absorb.
-      There is no wrong way to be in the room.
-    </p>
-  </section>
+      <section>
+        <h2>Do I Need to Be Musical?</h2>
+        <p>
+          Absolutely not. This is the question we hear most often, and the answer is always
+          the same: no musical experience, no singing ability, and no prior knowledge of
+          Sanskrit is required. The only qualification is a willingness to try.
+        </p>
+        <p>
+          Kirtan is not about hitting the right notes. It is about showing up with an open
+          heart and letting your voice be heard — however it sounds. In fifteen years of
+          leading Kirtan, our teachers have never once heard a wrong note in the room.
+        </p>
+      </section>
 
-  <section>
-    <h2>Why is Kirtan Growing in Miami?</h2>
-    <p>
-      Miami is one of the most diverse, high-energy cities in the world — which also
-      means it can be one of the loneliest. People are craving genuine community,
-      real connection, and practices that address the whole person rather than just
-      the body.
-    </p>
-    <p>
-      Kirtan offers all of that. It asks nothing of your fitness level, your age,
-      your background, or your beliefs. It simply asks you to show up and add your
-      voice to something larger than yourself. In a city like Miami, that turns out
-      to be quietly radical.
-    </p>
-  </section>
+      <section>
+        <h2>Do I Need to Believe in Anything?</h2>
+        <p>
+          No. Kirtan is not a religious requirement and does not ask you to adopt any
+          particular belief system. Many of our Miami students come from Catholic, Jewish,
+          secular, and other backgrounds and find that Kirtan deepens — rather than
+          conflicts with — whatever they already hold.
+        </p>
+        <p>
+          What it does ask is presence. And in Miami, where life moves fast and the noise
+          is constant, an hour of presence turns out to be exactly what many people
+          didn't know they needed.
+        </p>
+      </section>
 
-  <section>
-    <h2>Come to Kirtan in Coconut Grove</h2>
-    <p>
-      We hold regular Kirtan evenings at Yoga in the Grove, 3220 Virginia Street,
-      Coconut Grove, FL 33133. No registration required — just show up.
-      A free vegetarian meal is served after every session.
-    </p>
-    <p>
-      Check our <a href="/calendar.html">calendar</a> for upcoming dates, or
-      <a href="/contact.html">get in touch</a> if you have questions.
-      We'd love to have you in the room.
-    </p>
-    <p><em>You don't have to be ready. You just have to arrive.</em></p>
-  </section>
+      <section>
+        <h2>What Actually Happens at a Kirtan Evening?</h2>
+        <p>Here's what a typical Kirtan evening at Yoga in the Grove looks like:</p>
+        <ul>
+          <li>You arrive at 3220 Virginia Street and take a seat — cushions and chairs available</li>
+          <li>The kirtania opens with a simple mantra and invites the room to respond</li>
+          <li>The chanting builds slowly, moving through several different mantras</li>
+          <li>Instruments — harmonium, mrdangam, hand cymbals — carry the sound</li>
+          <li>The session closes in stillness and meditation</li>
+          <li>A complimentary vegetarian meal (prasadam) is shared together afterward</li>
+        </ul>
+        <p>
+          You are welcome to sing loudly, hum quietly, or simply sit and absorb.
+          There is no wrong way to be in the room.
+        </p>
+      </section>
 
-  <section>
-    <h2>Watch: Kirtan at Yoga in the Grove</h2>
-    <div style="max-width: 480px; margin: 0 auto; padding: 2rem 1rem;">
-      <video width="100%" controls playsinline>
-        <source src="/videos/VID-20260402-WA0019.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p class="video-caption">Kirtan evening at Yoga in the Grove, Coconut Grove Miami</p>
+      <section>
+        <h2>Why is Kirtan Growing in Miami?</h2>
+        <p>
+          Miami is one of the most diverse, high-energy cities in the world — which also
+          means it can be one of the loneliest. People are craving genuine community,
+          real connection, and practices that address the whole person rather than just
+          the body.
+        </p>
+        <p>
+          Kirtan offers all of that. It asks nothing of your fitness level, your age,
+          your background, or your beliefs. It simply asks you to show up and add your
+          voice to something larger than yourself. In a city like Miami, that turns out
+          to be quietly radical.
+        </p>
+      </section>
+
+      <section>
+        <h2>Come to Kirtan in Coconut Grove</h2>
+        <p>
+          We hold regular Kirtan evenings at Yoga in the Grove, 3220 Virginia Street,
+          Coconut Grove, FL 33133. No registration required — just show up.
+          A free vegetarian meal is served after every session.
+        </p>
+        <p>
+          Check our <a href="../calendar.html">calendar</a> for upcoming dates, or
+          <a href="../contact.html">get in touch</a> if you have questions.
+          We'd love to have you in the room.
+        </p>
+        <p><em>You don't have to be ready. You just have to arrive.</em></p>
+      </section>
+
+      <section>
+        <h2>Watch: Kirtan at Yoga in the Grove</h2>
+        <div style="max-width: 480px; margin: 0 auto; padding: 2rem 1rem;">
+          <video width="100%" controls playsinline>
+            <source src="/videos/VID-20260402-WA0019.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="video-caption">Kirtan evening at Yoga in the Grove, Coconut Grove Miami</p>
+        </div>
+      </section>
+
+      <section>
+        <div style="max-width: 480px; margin: 0 auto; padding: 2rem 1rem;">
+          <video width="100%" controls playsinline>
+            <source src="/videos/VID-20260412-WA0046.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="video-caption">Kirtan at Yoga in the Grove, Coconut Grove Miami</p>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      yoga in the grove &nbsp;·&nbsp; 3220 virginia street, coconut grove fl 33133
     </div>
-  </section>
+  </footer>
 
-  <section>
-    <div style="max-width: 480px; margin: 0 auto; padding: 2rem 1rem;">
-      <video width="100%" controls playsinline>
-        <source src="/videos/VID-20260412-WA0046.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p class="video-caption">Kirtan at Yoga in the Grove, Coconut Grove Miami</p>
-    </div>
-  </section>
+  <!-- ── Scripts ───────────────────────────────────────────── -->
+  <script>
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var links  = document.querySelector('.nav-links');
+      if (!toggle || !links) return;
 
-</article>
+      toggle.addEventListener('click', function () {
+        var isOpen = links.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+
+      links.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          links.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
