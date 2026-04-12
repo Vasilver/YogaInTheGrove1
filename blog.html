@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Yoga in the Grove | Coconut Grove Miami</title>
+  <meta name="description" content="Articles about yoga, Kirtan, meditation, and community life from Yoga in the Grove — a neighborhood studio in Coconut Grove, Miami FL.">
+  <meta name="keywords" content="yoga blog Miami, Kirtan blog, yoga articles Coconut Grove, yoga community Miami blog">
+  <link rel="canonical" href="https://yogainthegrove.org/blog.html">
+  <meta property="og:title" content="Blog — Yoga in the Grove">
+  <meta property="og:description" content="Articles about yoga, Kirtan, meditation, and community life from Coconut Grove, Miami.">
+  <meta property="og:url" content="https://yogainthegrove.org/blog.html">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────── -->
+  <header>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+
+      <a href="/" class="nav-wordmark">
+        yoga in <span>the grove</span>
+      </a>
+
+      <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="visually-hidden">Open menu</span>
+      </button>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="index.html"                         >home</a></li>
+        <li><a href="about.html"                         >our story</a></li>
+        <li><a href="teachers.html"                      >teachers</a></li>
+        <li><a href="practice.html"                      >practice</a></li>
+        <li><a href="calendar.html"                      >gather</a></li>
+        <li><a href="community.html"                     >community</a></li>
+        <li><a href="contact.html"                       >find us</a></li>
+        <li><a href="blog.html"        aria-current="page">blog</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- ── Page Content ─────────────────────────────────────── -->
+  <main>
+
+    <div class="section-header" style="padding: 4rem 2rem 2rem;">
+      <span class="section-label">from the studio</span>
+      <h1 style="margin-top: 0.5rem;">Blog</h1>
+      <hr class="section-rule">
+    </div>
+
+    <div style="max-width: 720px; margin: 0 auto; padding: 0 2rem 4rem;">
+
+      <article style="margin-bottom: 3rem;">
+        <p style="font-size: 0.85rem; opacity: 0.6; margin-bottom: 0.25rem;">Kirtan · Bhakti · Community</p>
+        <h2 style="margin: 0 0 0.5rem;"><a href="blog/what-is-kirtan.html">What is Kirtan? A Beginner's Guide for Miami</a></h2>
+        <p>
+          If you've never heard of Kirtan before, you're not alone. Here's everything
+          you need to know before you walk through the door — no musical experience required.
+        </p>
+        <a href="blog/what-is-kirtan.html">Read more →</a>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      yoga in the grove &nbsp;·&nbsp; 3220 virginia street, coconut grove fl 33133
+    </div>
+  </footer>
+
+  <!-- ── Scripts ───────────────────────────────────────────── -->
+  <script>
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var links  = document.querySelector('.nav-links');
+      if (!toggle || !links) return;
+
+      toggle.addEventListener('click', function () {
+        var isOpen = links.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+
+      links.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          links.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
