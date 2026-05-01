@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food for Life — Free Meals in Coconut Grove | Yoga in the Grove</title>
+  <meta name="description" content="Every week, Yoga in the Grove serves a free organic vegetarian meal to 200 people in Coconut Grove — no registration required. Food for Life Miami.">
+  <meta name="keywords" content="Food for Life Miami, free vegetarian meal Coconut Grove, prasadam Miami, free food Coconut Grove, yoga and food Miami, homeless outreach Coconut Grove">
+  <link rel="canonical" href="https://yogainthegrove.org/foodforlife.html">
+  <meta property="og:title" content="Food for Life — Free Meals in Coconut Grove | Yoga in the Grove">
+  <meta property="og:description" content="Every week, Yoga in the Grove serves a free organic vegetarian meal to 200 people. No questions asked. No registration required. You are welcome at our table.">
+  <meta property="og:url" content="https://yogainthegrove.org/foodforlife.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://yogainthegrove.org/photos/Food.jpg">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/nav.css">
+
+  <style>
+    /* ── Opening hero ───────────────────────────────────────── */
+    .ffl-opening {
+      padding: calc(var(--nav-height) + var(--space-xl)) var(--space-md) var(--space-lg);
+      background-color: var(--warm-cream);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .ffl-opening__inner {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .ffl-opening__label {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+
+    .ffl-opening__headline {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--deep-forest);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .ffl-opening__sub {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: var(--text-md);
+      color: var(--warm-bark);
+      line-height: var(--leading-body);
+      max-width: 600px;
+    }
+
+    /* ── Content sections ───────────────────────────────────── */
+    .ffl-section {
+      padding: var(--space-xl) var(--space-md);
+    }
+
+    .ffl-section--earth {
+      background-color: #f0ebe0;
+    }
+
+    .ffl-section--forest {
+      background-color: var(--deep-forest);
+    }
+
+    .ffl-section__inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .ffl-section__label {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: var(--space-sm);
+    }
+
+    .ffl-section--forest .ffl-section__label {
+      color: rgba(245,240,232,0.5);
+    }
+
+    .ffl-section__heading {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--deep-forest);
+      line-height: 1.25;
+      margin: 0 0 var(--space-md);
+    }
+
+    .ffl-section--forest .ffl-section__heading {
+      color: var(--warm-cream);
+    }
+
+    .ffl-section__body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: var(--text-base);
+      color: var(--warm-bark);
+      line-height: var(--leading-body);
+    }
+
+    .ffl-section--forest .ffl-section__body {
+      color: rgba(245,240,232,0.75);
+    }
+
+    .ffl-section__body p + p {
+      margin-top: 1rem;
+    }
+
+    /* ── Highlighted item blocks ────────────────────────────── */
+    .ffl-item {
+      border-left: 2px solid var(--ochre);
+      padding-left: var(--space-md);
+      margin: var(--space-md) 0;
+    }
+
+    .ffl-item__title {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: var(--text-base);
+      letter-spacing: var(--tracking-wide);
+      color: var(--deep-forest);
+      margin-bottom: 0.35rem;
+    }
+
+    .ffl-item__body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: var(--text-base);
+      color: var(--warm-bark);
+      line-height: var(--leading-body);
+    }
+
+    /* ── Callout quote ──────────────────────────────────────── */
+    .ffl-callout {
+      padding: var(--space-xl) var(--space-md);
+      background-color: var(--deep-forest);
+      text-align: center;
+    }
+
+    .ffl-callout__inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .ffl-callout__quote {
+      font-family: var(--font-heading);
+      font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--warm-cream);
+      line-height: 1.5;
+    }
+
+    /* ── CTA links ──────────────────────────────────────────── */
+    .ffl-cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: var(--space-md);
+    }
+
+    .ffl-cta {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: var(--text-base);
+      color: var(--deep-forest);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: opacity 0.2s ease;
+    }
+
+    .ffl-cta:hover {
+      opacity: 0.65;
+    }
+
+    /* ── Footer tagline ─────────────────────────────────────── */
+    .ffl-tagline {
+      padding: var(--space-lg) var(--space-md);
+      background-color: var(--warm-cream);
+      border-top: 1px solid var(--cream-dark);
+      text-align: center;
+    }
+
+    .ffl-tagline p {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: var(--text-sm);
+      letter-spacing: var(--tracking-wide);
+      color: var(--warm-bark);
+      line-height: 1.8;
+    }
+
+    .ffl-tagline a {
+      color: var(--deep-forest);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  </style>
+
+  <!-- ============================================================
+       YOGA IN THE GROVE — Local Business Schema Markup
+       ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Yoga in the Grove",
+    "alternateName": "Yogainthegrove",
+    "url": "https://yogainthegrove.org",
+    "logo": "https://yogainthegrove.org/logo.png",
+    "image": "https://yogainthegrove.org/photos/Food.jpg",
+    "description": "Yoga in the Grove is a neighborhood yoga studio in Coconut Grove, Miami, FL offering traditional Hatha Asana classes, Kirtan chanting, and community gatherings for all levels. A complimentary vegetarian meal is served after every class.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3220 Virginia Street",
+      "addressLocality": "Coconut Grove",
+      "addressRegion": "FL",
+      "postalCode": "33133",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 25.7285,
+      "longitude": -80.2406
+    },
+    "telephone": "929-944-2045",
+    "email": "info@yogainthegrove.org",
+    "sameAs": [
+      "https://www.facebook.com/yogainthegrove",
+      "https://www.instagram.com/yogainthegrove",
+      "https://www.yelp.com/biz/yoga-in-the-grove-miami"
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ],
+    "priceRange": "$",
+    "servesCuisine": "Vegetarian",
+    "hasMap": "https://maps.google.com/?q=3220+Virginia+Street+Coconut+Grove+FL+33133",
+    "areaServed": [
+      { "@type": "City", "name": "Coconut Grove" },
+      { "@type": "City", "name": "Miami" },
+      { "@type": "State", "name": "Florida" }
+    ],
+    "knowsAbout": [
+      "Hatha Yoga", "Kirtan", "Meditation", "Seva", "Community Yoga", "Food for Life", "Prasadam"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────── -->
+  <header>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+
+      <a href="/" class="nav-wordmark">
+        yoga in <span>the grove</span>
+      </a>
+
+      <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">
+        <span></span><span></span><span></span>
+        <span class="visually-hidden">Open menu</span>
+      </button>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="/">home</a></li>
+        <li><a href="about.html">our story</a></li>
+        <li><a href="teachers.html">teachers</a></li>
+        <li><a href="practice.html">practice</a></li>
+        <li><a href="calendar.html">calendar</a></li>
+        <li><a href="community.html">community</a></li>
+        <li><a href="contact.html">find us</a></li>
+        <li><a href="blog.html">blog</a></li>
+        <li><a href="foodforlife.html" aria-current="page">food for life</a></li>
+        <li class="nav-social-mobile">
+          <a href="https://www.instagram.com/yoga.inthegrove" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+            instagram
+          </a>
+          <a href="https://www.facebook.com/YogaInTheGrove" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            facebook
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-social">
+        <a href="https://www.instagram.com/yoga.inthegrove" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/YogaInTheGrove" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <!-- ── Page Content ─────────────────────────────────────── -->
+  <main>
+
+    <!-- ── Opening ──────────────────────────────────────────── -->
+    <section class="ffl-opening">
+      <div class="ffl-opening__inner">
+        <span class="ffl-opening__label">food for life</span>
+        <h1 class="ffl-opening__headline">
+          Feed the body.<br>Serve the soul.
+        </h1>
+        <p class="ffl-opening__sub">
+          Every week, Yoga in the Grove serves a free, organic, vegetarian meal to roughly
+          200 people in our community — no questions asked, no registration required.
+          You are welcome at our table simply because you arrived.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ── What is Food for Life ────────────────────────────── -->
+    <section class="ffl-section">
+      <div class="ffl-section__inner">
+        <p class="ffl-section__label">what is food for life</p>
+        <h2 class="ffl-section__heading">A global tradition of pure giving</h2>
+        <div class="ffl-section__body">
+          <p>
+            Food for Life is a global initiative rooted in the ancient tradition of
+            <em>prasadam</em> — food prepared with intention, offered as a spiritual act.
+            From New York City to London to Cape Town, thousands of volunteers feed
+            millions of people each year under this same simple principle: pure food,
+            freely given, can heal the world.
+          </p>
+          <p>
+            We are proud to be Coconut Grove's home for Food for Life. Like our sister
+            programs in cities around the world, we believe that no one should go hungry —
+            and that a meal made with love nourishes something deeper than the body.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Our kitchen, your table ──────────────────────────── -->
+    <section class="ffl-section ffl-section--earth">
+      <div class="ffl-section__inner">
+        <p class="ffl-section__label">our kitchen, your table</p>
+        <h2 class="ffl-section__heading">Two hundred people. Every week. Free.</h2>
+        <div class="ffl-section__body">
+          <p>
+            After every class and event, we prepare and share a full community meal —
+            traditional Krishna <em>prasadam</em>, cooked with care from organic,
+            vegetarian ingredients. Every week, we feed roughly 200 people, completely
+            free, in two ways:
+          </p>
+        </div>
+
+        <div class="ffl-item">
+          <p class="ffl-item__title">100 people at our center</p>
+          <p class="ffl-item__body">
+            Neighbors, students, first-timers, and longtime friends gather after class
+            to share a hot meal together at 3220 Virginia Street.
+          </p>
+        </div>
+
+        <div class="ffl-item">
+          <p class="ffl-item__title">100 people in the streets</p>
+          <p class="ffl-item__body">
+            As part of a dedicated outreach program, we bring meals directly to homeless
+            members of our community in the Coconut Grove and Miami area.
+            No one has to come to us. We go to them.
+          </p>
+        </div>
+
+        <div class="ffl-section__body" style="margin-top: var(--space-md);">
+          <p>
+            There is no form to fill out. No ID to show. Just food, made with love, offered freely.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── How it works ─────────────────────────────────────── -->
+    <section class="ffl-section">
+      <div class="ffl-section__inner">
+        <p class="ffl-section__label">how it works</p>
+        <h2 class="ffl-section__heading">Simple by design</h2>
+
+        <div class="ffl-item">
+          <p class="ffl-item__title">At the center</p>
+          <p class="ffl-item__body">
+            A hot meal is served following our regular classes and events.
+            The kitchen runs on devotion, and the table is always set.
+          </p>
+        </div>
+
+        <div class="ffl-item">
+          <p class="ffl-item__title">In the community</p>
+          <p class="ffl-item__body">
+            Volunteers take meals directly to homeless individuals in the neighborhood
+            each week, as an act of <em>seva</em> — selfless service that extends
+            beyond our walls.
+          </p>
+        </div>
+
+        <div class="ffl-item">
+          <p class="ffl-item__title">Organic, vegetarian, and prepared with love</p>
+          <p class="ffl-item__body">
+            All food is made from scratch using organic ingredients, cooked with care
+            and offered in the spirit of pure giving.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Callout quote ─────────────────────────────────────── -->
+    <section class="ffl-callout">
+      <div class="ffl-callout__inner">
+        <p class="ffl-callout__quote">
+          "Food for Life is the world's largest plant-based food relief program,
+          active in over 60 countries. We are honored to carry that mission here,
+          in the heart of Coconut Grove."
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ── Get involved ──────────────────────────────────────── -->
+    <section class="ffl-section">
+      <div class="ffl-section__inner">
+        <p class="ffl-section__label">get involved</p>
+        <h2 class="ffl-section__heading">The kitchen is always open to helpers</h2>
+        <div class="ffl-section__body">
+          <p>
+            Our Food for Life program runs because of volunteers who show up to chop,
+            cook, serve, and wash dishes. If you'd like to be part of the kitchen,
+            we'd love to have you.
+          </p>
+        </div>
+        <div class="ffl-cta-group">
+          <a href="/contact.html" class="ffl-cta">Volunteer with us &rarr;</a>
+          <a href="#donate" class="ffl-cta">Make a donation &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Footer tagline ────────────────────────────────────── -->
+    <div class="ffl-tagline">
+      <p>
+        yoga in the grove &nbsp;&middot;&nbsp; 3220 virginia street, coconut grove fl 33133<br>
+        Meals served after class &mdash; see the <a href="/practice.html">schedule</a> for times.
+      </p>
+    </div>
+
+  </main>
+
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      yoga in the grove &nbsp;&middot;&nbsp; 3220 virginia street, coconut grove fl 33133
+      <div class="footer-social">
+        <a href="https://www.instagram.com/yoga.inthegrove" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/YogaInTheGrove" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ── Scripts ───────────────────────────────────────────── -->
+  <script>
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var links  = document.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = links.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      links.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          links.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
