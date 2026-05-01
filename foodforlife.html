@@ -188,6 +188,44 @@
       opacity: 0.65;
     }
 
+    /* ── Donation QR grid ───────────────────────────────────── */
+    .ffl-donate {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+
+    .ffl-donate__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ffl-donate__item img {
+      width: 100%;
+      max-width: 140px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--cream-dark);
+    }
+
+    .ffl-donate__label {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--warm-bark);
+    }
+
+    @media (max-width: 600px) {
+      .ffl-donate {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     /* ── Footer tagline ─────────────────────────────────────── */
     .ffl-tagline {
       padding: var(--space-lg) var(--space-md);
@@ -466,6 +504,25 @@
         <div class="ffl-cta-group">
           <a href="/contact.html" class="ffl-cta">Volunteer with us &rarr;</a>
           <a href="#donate" class="ffl-cta">Make a donation &rarr;</a>
+        </div>
+
+        <div class="ffl-donate" id="donate">
+          <div class="ffl-donate__item">
+            <img src="photos/Cashapp.jpg" alt="Cash App QR code for Yoga in the Grove donations">
+            <span class="ffl-donate__label">Cash App</span>
+          </div>
+          <div class="ffl-donate__item">
+            <img src="photos/Zelle.jpg" alt="Zelle QR code for Yoga in the Grove donations">
+            <span class="ffl-donate__label">Zelle</span>
+          </div>
+          <div class="ffl-donate__item">
+            <img src="photos/Venmo.jpg" alt="Venmo QR code for Yoga in the Grove donations">
+            <span class="ffl-donate__label">Venmo</span>
+          </div>
+          <div class="ffl-donate__item">
+            <img src="photos/Paypal.jpg" alt="PayPal QR code for Yoga in the Grove donations">
+            <span class="ffl-donate__label">PayPal</span>
+          </div>
         </div>
       </div>
     </section>
