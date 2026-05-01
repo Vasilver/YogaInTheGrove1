@@ -226,6 +226,51 @@
       }
     }
 
+    /* ── Section photo layouts ──────────────────────────────── */
+    .ffl-opening__inner {
+      max-width: 1000px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .ffl-opening__text {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .ffl-section__inner--with-image {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .ffl-section__photo,
+    .ffl-opening__photo {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+      display: block;
+    }
+
+    @media (max-width: 700px) {
+      .ffl-opening__inner,
+      .ffl-section__inner--with-image {
+        grid-template-columns: 1fr;
+      }
+
+      .ffl-opening__photo,
+      .ffl-section__photo {
+        order: -1;
+      }
+    }
+
     /* ── Footer tagline ─────────────────────────────────────── */
     .ffl-tagline {
       padding: var(--space-lg) var(--space-md);
@@ -367,77 +412,86 @@
     <!-- ── Opening ──────────────────────────────────────────── -->
     <section class="ffl-opening">
       <div class="ffl-opening__inner">
-        <span class="ffl-opening__label">food for life</span>
-        <h1 class="ffl-opening__headline">
-          Feed the body.<br>Serve the soul.
-        </h1>
-        <p class="ffl-opening__sub">
-          Every week, Yoga in the Grove serves a free, organic, vegetarian meal to roughly
-          200 people in our community — no questions asked, no registration required.
-          You are welcome at our table simply because you arrived.
-        </p>
+        <div class="ffl-opening__text">
+          <span class="ffl-opening__label">food for life</span>
+          <h1 class="ffl-opening__headline">
+            Feed the body.<br>Serve the soul.
+          </h1>
+          <p class="ffl-opening__sub">
+            Every week, Yoga in the Grove serves a free, organic, vegetarian meal to roughly
+            200 people in our community — no questions asked, no registration required.
+            You are welcome at our table simply because you arrived.
+          </p>
+        </div>
+        <img src="photos/Food.jpg" alt="Community meal at Yoga in the Grove" class="ffl-opening__photo">
       </div>
     </section>
 
 
     <!-- ── What is Food for Life ────────────────────────────── -->
     <section class="ffl-section">
-      <div class="ffl-section__inner">
-        <p class="ffl-section__label">what is food for life</p>
-        <h2 class="ffl-section__heading">A global tradition of pure giving</h2>
-        <div class="ffl-section__body">
-          <p>
-            Food for Life is a global initiative rooted in the ancient tradition of
-            <em>prasadam</em> — food prepared with intention, offered as a spiritual act.
-            From New York City to London to Cape Town, thousands of volunteers feed
-            millions of people each year under this same simple principle: pure food,
-            freely given, can heal the world.
-          </p>
-          <p>
-            We are proud to be Coconut Grove's home for Food for Life. Like our sister
-            programs in cities around the world, we believe that no one should go hungry —
-            and that a meal made with love nourishes something deeper than the body.
-          </p>
+      <div class="ffl-section__inner--with-image">
+        <div>
+          <p class="ffl-section__label">what is food for life</p>
+          <h2 class="ffl-section__heading">A global tradition of pure giving</h2>
+          <div class="ffl-section__body">
+            <p>
+              Food for Life is a global initiative rooted in the ancient tradition of
+              <em>prasadam</em> — food prepared with intention, offered as a spiritual act.
+              From New York City to London to Cape Town, thousands of volunteers feed
+              millions of people each year under this same simple principle: pure food,
+              freely given, can heal the world.
+            </p>
+            <p>
+              We are proud to be Coconut Grove's home for Food for Life. Like our sister
+              programs in cities around the world, we believe that no one should go hungry —
+              and that a meal made with love nourishes something deeper than the body.
+            </p>
+          </div>
         </div>
+        <img src="photos/Food1.jpg" alt="Prasadam meal prepared at Yoga in the Grove" class="ffl-section__photo">
       </div>
     </section>
 
 
     <!-- ── Our kitchen, your table ──────────────────────────── -->
     <section class="ffl-section ffl-section--earth">
-      <div class="ffl-section__inner">
-        <p class="ffl-section__label">our kitchen, your table</p>
-        <h2 class="ffl-section__heading">Two hundred people. Every week. Free.</h2>
-        <div class="ffl-section__body">
-          <p>
-            After every class and event, we prepare and share a full community meal —
-            traditional Krishna <em>prasadam</em>, cooked with care from organic,
-            vegetarian ingredients. Every week, we feed roughly 200 people, completely
-            free, in two ways:
-          </p>
-        </div>
+      <div class="ffl-section__inner--with-image">
+        <img src="photos/Food2.jpg" alt="Volunteers serving meals at Yoga in the Grove" class="ffl-section__photo">
+        <div>
+          <p class="ffl-section__label">our kitchen, your table</p>
+          <h2 class="ffl-section__heading">Two hundred people. Every week. Free.</h2>
+          <div class="ffl-section__body">
+            <p>
+              After every class and event, we prepare and share a full community meal —
+              traditional Krishna <em>prasadam</em>, cooked with care from organic,
+              vegetarian ingredients. Every week, we feed roughly 200 people, completely
+              free, in two ways:
+            </p>
+          </div>
 
-        <div class="ffl-item">
-          <p class="ffl-item__title">100 people at our center</p>
-          <p class="ffl-item__body">
-            Neighbors, students, first-timers, and longtime friends gather after class
-            to share a hot meal together at 3220 Virginia Street.
-          </p>
-        </div>
+          <div class="ffl-item">
+            <p class="ffl-item__title">100 people at our center</p>
+            <p class="ffl-item__body">
+              Neighbors, students, first-timers, and longtime friends gather after class
+              to share a hot meal together at 3220 Virginia Street.
+            </p>
+          </div>
 
-        <div class="ffl-item">
-          <p class="ffl-item__title">100 people in the streets</p>
-          <p class="ffl-item__body">
-            As part of a dedicated outreach program, we bring meals directly to homeless
-            members of our community in the Coconut Grove and Miami area.
-            No one has to come to us. We go to them.
-          </p>
-        </div>
+          <div class="ffl-item">
+            <p class="ffl-item__title">100 people in the streets</p>
+            <p class="ffl-item__body">
+              As part of a dedicated outreach program, we bring meals directly to homeless
+              members of our community in the Coconut Grove and Miami area.
+              No one has to come to us. We go to them.
+            </p>
+          </div>
 
-        <div class="ffl-section__body" style="margin-top: var(--space-md);">
-          <p>
-            There is no form to fill out. No ID to show. Just food, made with love, offered freely.
-          </p>
+          <div class="ffl-section__body" style="margin-top: var(--space-md);">
+            <p>
+              There is no form to fill out. No ID to show. Just food, made with love, offered freely.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -445,34 +499,37 @@
 
     <!-- ── How it works ─────────────────────────────────────── -->
     <section class="ffl-section">
-      <div class="ffl-section__inner">
-        <p class="ffl-section__label">how it works</p>
-        <h2 class="ffl-section__heading">Simple by design</h2>
+      <div class="ffl-section__inner--with-image">
+        <div>
+          <p class="ffl-section__label">how it works</p>
+          <h2 class="ffl-section__heading">Simple by design</h2>
 
-        <div class="ffl-item">
-          <p class="ffl-item__title">At the center</p>
-          <p class="ffl-item__body">
-            A hot meal is served following our regular classes and events.
-            The kitchen runs on devotion, and the table is always set.
-          </p>
-        </div>
+          <div class="ffl-item">
+            <p class="ffl-item__title">At the center</p>
+            <p class="ffl-item__body">
+              A hot meal is served following our regular classes and events.
+              The kitchen runs on devotion, and the table is always set.
+            </p>
+          </div>
 
-        <div class="ffl-item">
-          <p class="ffl-item__title">In the community</p>
-          <p class="ffl-item__body">
-            Volunteers take meals directly to homeless individuals in the neighborhood
-            each week, as an act of <em>seva</em> — selfless service that extends
-            beyond our walls.
-          </p>
-        </div>
+          <div class="ffl-item">
+            <p class="ffl-item__title">In the community</p>
+            <p class="ffl-item__body">
+              Volunteers take meals directly to homeless individuals in the neighborhood
+              each week, as an act of <em>seva</em> — selfless service that extends
+              beyond our walls.
+            </p>
+          </div>
 
-        <div class="ffl-item">
-          <p class="ffl-item__title">Organic, vegetarian, and prepared with love</p>
-          <p class="ffl-item__body">
-            All food is made from scratch using organic ingredients, cooked with care
-            and offered in the spirit of pure giving.
-          </p>
+          <div class="ffl-item">
+            <p class="ffl-item__title">Organic, vegetarian, and prepared with love</p>
+            <p class="ffl-item__body">
+              All food is made from scratch using organic ingredients, cooked with care
+              and offered in the spirit of pure giving.
+            </p>
+          </div>
         </div>
+        <img src="photos/Food3.jpg" alt="Organic vegetarian food prepared at Yoga in the Grove" class="ffl-section__photo">
       </div>
     </section>
 
@@ -491,37 +548,40 @@
 
     <!-- ── Get involved ──────────────────────────────────────── -->
     <section class="ffl-section">
-      <div class="ffl-section__inner">
-        <p class="ffl-section__label">get involved</p>
-        <h2 class="ffl-section__heading">The kitchen is always open to helpers</h2>
-        <div class="ffl-section__body">
-          <p>
-            Our Food for Life program runs because of volunteers who show up to chop,
-            cook, serve, and wash dishes. If you'd like to be part of the kitchen,
-            we'd love to have you.
-          </p>
-        </div>
-        <div class="ffl-cta-group">
-          <a href="/contact.html" class="ffl-cta">Volunteer with us &rarr;</a>
-          <a href="#donate" class="ffl-cta">Make a donation &rarr;</a>
-        </div>
+      <div class="ffl-section__inner--with-image">
+        <img src="photos/Food4.jpg" alt="Community gathering and sharing a meal at Yoga in the Grove" class="ffl-section__photo">
+        <div>
+          <p class="ffl-section__label">get involved</p>
+          <h2 class="ffl-section__heading">The kitchen is always open to helpers</h2>
+          <div class="ffl-section__body">
+            <p>
+              Our Food for Life program runs because of volunteers who show up to chop,
+              cook, serve, and wash dishes. If you'd like to be part of the kitchen,
+              we'd love to have you.
+            </p>
+          </div>
+          <div class="ffl-cta-group">
+            <a href="/contact.html" class="ffl-cta">Volunteer with us &rarr;</a>
+            <a href="#donate" class="ffl-cta">Make a donation &rarr;</a>
+          </div>
 
-        <div class="ffl-donate" id="donate">
-          <div class="ffl-donate__item">
-            <img src="photos/Cashapp.jpg" alt="Cash App QR code for Yoga in the Grove donations">
-            <span class="ffl-donate__label">Cash App</span>
-          </div>
-          <div class="ffl-donate__item">
-            <img src="photos/Zelle.jpg" alt="Zelle QR code for Yoga in the Grove donations">
-            <span class="ffl-donate__label">Zelle</span>
-          </div>
-          <div class="ffl-donate__item">
-            <img src="photos/Venmo.jpg" alt="Venmo QR code for Yoga in the Grove donations">
-            <span class="ffl-donate__label">Venmo</span>
-          </div>
-          <div class="ffl-donate__item">
-            <img src="photos/Paypal.jpg" alt="PayPal QR code for Yoga in the Grove donations">
-            <span class="ffl-donate__label">PayPal</span>
+          <div class="ffl-donate" id="donate">
+            <div class="ffl-donate__item">
+              <img src="photos/Cashapp.jpg" alt="Cash App QR code for Yoga in the Grove donations">
+              <span class="ffl-donate__label">Cash App</span>
+            </div>
+            <div class="ffl-donate__item">
+              <img src="photos/Zelle.jpg" alt="Zelle QR code for Yoga in the Grove donations">
+              <span class="ffl-donate__label">Zelle</span>
+            </div>
+            <div class="ffl-donate__item">
+              <img src="photos/Venmo.jpg" alt="Venmo QR code for Yoga in the Grove donations">
+              <span class="ffl-donate__label">Venmo</span>
+            </div>
+            <div class="ffl-donate__item">
+              <img src="photos/Paypal.jpg" alt="PayPal QR code for Yoga in the Grove donations">
+              <span class="ffl-donate__label">PayPal</span>
+            </div>
           </div>
         </div>
       </div>
