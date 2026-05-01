@@ -33,11 +33,11 @@ var YOGA_EVENTS = (function () {
         });
       }
 
-      if (dow === 6) {               /* Saturday — Morning Hatha 9:00 am */
+      if (dow === 6) {               /* Saturday — Morning Hatha 9:30 am */
         list.push({
           id: id++, title: 'Morning Hatha', teacher: 'Vishal Das',
           year: yr, month: mo, day: d,
-          timeDisplay: '9:00 am', duration: '75 min', type: 'asana',
+          timeDisplay: '9:30 am', duration: '75 min', type: 'asana',
           desc: 'A grounded morning practice with emphasis on breath and slow alignment. No experience necessary — we meet you exactly where you are.'
         });
       }
