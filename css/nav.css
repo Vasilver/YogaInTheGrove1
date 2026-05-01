@@ -225,3 +225,56 @@
   }
 
 }
+
+
+/* ------------------------------------------------------------
+   Social icons — nav bar and footer
+   ------------------------------------------------------------ */
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: var(--space-sm);
+}
+
+.nav-social a {
+  display: flex;
+  align-items: center;
+  color: var(--warm-bark);
+  opacity: 0.65;
+  transition: opacity 0.25s ease, color 0.25s ease;
+}
+
+.nav-social a:hover {
+  opacity: 1;
+  color: var(--deep-forest);
+}
+
+.site-nav.nav--dark .nav-social a {
+  color: var(--warm-cream);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  color: rgba(245, 240, 232, 0.35);
+  transition: color 0.25s ease;
+}
+
+.footer-social a:hover {
+  color: rgba(245, 240, 232, 0.75);
+}
+
+@media (max-width: 800px) {
+  .nav-social {
+    display: none;
+  }
+}
