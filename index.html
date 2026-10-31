@@ -118,7 +118,7 @@ p{margin:0}
    radial-gradient(12% 8% at 35% 80%,rgba(255,250,240,.6),transparent 70%);
   animation:drift 22s ease-in-out infinite alternate}
 @keyframes drift{to{transform:translate(4%,-3%) rotate(2deg) scale(1.05)}}
-.hero-inner{position:relative;padding-block:clamp(96px,15vw,180px) clamp(72px,10vw,120px);display:grid;gap:28px;justify-items:center;text-align:center}
+.hero-inner{position:relative;padding-block:clamp(80px,12vw,140px) clamp(60px,8vw,96px);display:grid;gap:22px;justify-items:center;text-align:center}
 .hero .eyebrow{color:rgba(246,242,233,.8);text-transform:uppercase;letter-spacing:.22em;font-size:.78rem}
 .hero h1{font-size:clamp(1.7rem,6.2vw,5.25rem);font-weight:400;max-width:none;line-height:1.08}
 .hero h1 em{font-style:italic;font-weight:300}
@@ -133,8 +133,8 @@ p{margin:0}
 .hero-meta span:first-child::before{content:none;margin:0}
 
 /* ---------- sections ---------- */
-section{padding-block:clamp(64px,9vw,120px)}
-.sec-head{display:grid;gap:14px;margin-bottom:clamp(32px,5vw,56px)}
+section{padding-block:clamp(44px,5.5vw,76px)}
+.sec-head{display:grid;gap:12px;margin-bottom:clamp(22px,3vw,36px)}
 .sec-head h2{font-size:var(--step-3)}
 .rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 @keyframes rise{from{transform:translateY(18px)}to{transform:none}}
@@ -142,7 +142,7 @@ section{padding-block:clamp(64px,9vw,120px)}
 /* practices */
 .practices{display:grid;gap:0;border-top:1px solid var(--line)}
 .practice{border-bottom:1px solid var(--line)}
-.practice summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:4rem 1fr auto;align-items:baseline;gap:16px;padding-block:26px}
+.practice summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:4rem 1fr auto;align-items:baseline;gap:16px;padding-block:18px}
 .practice summary::-webkit-details-marker{display:none}
 .numeral{font-family:var(--font-display);font-style:italic;color:var(--clay);font-size:1.4rem}
 .practice h3{font-size:var(--step-2);transition:color .3s,transform .4s}
@@ -150,7 +150,7 @@ section{padding-block:clamp(64px,9vw,120px)}
 .practice .short{grid-column:2;color:var(--ink-soft);max-width:60ch;margin-top:6px}
 .plus{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .35s,background .3s}
 .practice[open] .plus{transform:rotate(45deg);background:var(--olive);color:var(--on-olive);border-color:var(--olive)}
-.practice .body{padding:0 0 30px 5rem;display:grid;gap:12px;max-width:72ch}
+.practice .body{padding:0 0 22px 5rem;display:grid;gap:12px;max-width:72ch}
 .practice .who{font-size:var(--step--1);color:var(--ink-soft)}
 .more{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center}
 .chip{border:1px solid var(--line);border-radius:999px;padding:.45em 1em;font-size:.9rem;text-decoration:none;color:var(--ink-soft);background:var(--paper)}
@@ -339,7 +339,7 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
 
 /* ---- Om symbol + Om pots photo ---- */
 .om{font-family:"Tiro Devanagari Sanskrit","Noto Serif Devanagari","Kohinoor Devanagari",serif;font-style:normal;color:var(--clay);line-height:1}
-.offer-intro{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,64px);align-items:center;margin-bottom:clamp(32px,5vw,56px)}
+.offer-intro{display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,36px);align-items:center;margin-bottom:clamp(22px,3vw,36px)}
 .offer-intro .sec-head{margin-bottom:0}
 .om-photo{margin:0;display:grid;gap:10px}
 .om-photo img{width:100%;max-width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);box-shadow:0 30px 60px -36px rgba(53,58,48,.45);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
@@ -382,6 +382,36 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
 @keyframes open{from{opacity:0;transform:translateY(-6px)}}
 .practice summary{transition:background .3s}
 .practice summary:hover .plus{background:var(--mist)}
+
+
+/* ---- practices as three side-by-side cards ---- */
+.practices{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;border-top:0;align-items:start}
+.practice{border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);overflow:hidden;transition:box-shadow .4s,border-color .3s}
+.practice:hover{border-color:var(--sage);box-shadow:0 22px 44px -30px rgba(53,58,48,.4)}
+.practice[open]{border-color:var(--sage)}
+.practice summary{grid-template-columns:auto 1fr auto;gap:6px 12px;padding:0 20px 20px}
+.practice .p-img{grid-column:1 / -1;margin:0 -20px 14px;aspect-ratio:4/3;max-width:none;display:grid;place-items:center;
+  background:repeating-linear-gradient(135deg,var(--beige) 0 14px,color-mix(in srgb,var(--beige) 70%,var(--paper)) 14px 28px);color:var(--ink-soft);font-size:.78rem;letter-spacing:.12em}
+.practice .p-img span{background:var(--paper);padding:.35em .9em;border-radius:999px;border:1px solid var(--line)}
+.practice .numeral{font-size:1.2rem}
+.practice h3{font-size:1.6rem}
+.practice summary:hover h3{transform:none}
+.practice .short{grid-column:2 / -1}
+.practice .body{padding:0 20px 22px;max-width:none}
+.practice .p-links{flex-direction:column;gap:10px}
+@media (max-width:860px){.practices{grid-template-columns:1fr}}
+@media (max-width:600px){.practice summary{grid-template-columns:auto 1fr auto}.practice .body{padding-left:20px}}
+
+
+/* ---- community photo collage (from A Glimpse Inside) ---- */
+.people-grid{align-items:start}
+.community-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;min-width:0}
+.community-photos .t-wide{grid-column:1 / -1}
+.community-photos .tile-open{min-height:0;height:auto;aspect-ratio:4/5}
+.community-photos .t-wide .tile-open{aspect-ratio:3/2}
+.community-photos .tile figcaption{font-size:1.05rem}
+.community-photos .credit{grid-column:1 / -1;margin-top:2px}
+.people .tile-open{background:color-mix(in srgb,var(--beige) 70%,var(--paper))}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
@@ -459,21 +489,21 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
 
     <div class="practices">
       <details class="practice">
-        <summary><span class="numeral">i.</span><div><h3>Hatha Asana</h3><p class="short">Breath, alignment, and steadiness.</p></div><span class="plus" aria-hidden="true">+</span></summary>
+        <summary><div class="p-img" role="img" aria-label="Photo placeholder for Hatha Asana"><span>photo · hatha asana</span></div><span class="numeral">i.</span><div><h3>Hatha Asana</h3><p class="short">Breath, alignment, and steadiness.</p></div><span class="plus" aria-hidden="true">+</span></summary>
         <div class="body">
           <p>A traditional yoga practice centered on mindful movement, breath, and alignment. Whether you're stepping onto the mat for the first time or deepening an existing practice, there's a place for you here. We meet you exactly where you are, every time.</p>
           <div class="p-links"><a class="link" href="/calendar.html">Find a Hatha class <span aria-hidden="true">→</span></a><a class="link" href="/teachers.html">Meet the teachers <span aria-hidden="true">→</span></a></div>
         </div>
       </details>
       <details class="practice">
-        <summary><span class="numeral">ii.</span><div><h3>Kirtan</h3><p class="short">Where connections grow.</p></div><span class="plus" aria-hidden="true">+</span></summary>
+        <summary><div class="p-img" role="img" aria-label="Photo placeholder for Kirtan"><span>photo · kirtan</span></div><span class="numeral">ii.</span><div><h3>Kirtan</h3><p class="short">Where connections grow.</p></div><span class="plus" aria-hidden="true">+</span></summary>
         <div class="body">
           <p>Kirtan is a shared practice of call-and-response chanting, rooted in devotion, connection, and community. It's your space to slow down, open your heart, and experience the joy of coming together. No experience is necessary. Whether you join in or simply listen, you're part of something meaningful.</p>
           <div class="p-links"><a class="link" href="/calendar.html">See kirtan dates <span aria-hidden="true">→</span></a><a class="link" href="/practice.html">About the practice <span aria-hidden="true">→</span></a></div>
         </div>
       </details>
       <details class="practice">
-        <summary><span class="numeral">iii.</span><div><h3>Seva</h3><p class="short">Taking the practice beyond the mat and into our community.</p></div><span class="plus" aria-hidden="true">+</span></summary>
+        <summary><div class="p-img" role="img" aria-label="Photo placeholder for Seva"><span>photo · seva</span></div><span class="numeral">iii.</span><div><h3>Seva</h3><p class="short">Taking the practice beyond the mat and into our community.</p></div><span class="plus" aria-hidden="true">+</span></summary>
         <div class="body">
           <p>Seva is the practice of selfless service, rooted in kindness, compassion, and connection. It's about showing up for one another and giving back to the community we call home. Through small acts of service and shared purpose, we bring the spirit of yoga into everyday life.</p>
           <p class="who"><strong style="color:var(--ink);font-weight:500">Our Community Initiatives:</strong> Morning Seva in Coconut Grove and Food for Life meal deliveries.</p>
@@ -482,37 +512,6 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
       </details>
     </div>
 
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="glimpse" id="glimpse" aria-labelledby="glimpse-title">
-  <div class="wrap">
-    <div class="sec-head glimpse-head">
-      <p class="eyebrow" style="text-transform:none">A Glimpse Inside</p>
-      <h2 id="glimpse-title">This is what it feels like to arrive.</h2>
-    </div>
-    <div class="mosaic">
-      <figure class="tile t-wide">
-        <button type="button" class="tile-open" data-full="/img/gallery-meditation.jpg" data-cap="Meditation and kirtan in the temple room." aria-label="Open photo: meditation and kirtan in the temple room">
-          <img src="/img/gallery-meditation.jpg" alt="People of all ages sitting on cushions in a sunlit temple room during meditation and kirtan" width="1800" height="1200" loading="lazy">
-        </button>
-        <figcaption>Sitting together, eyes closed, voices rising.</figcaption>
-      </figure>
-      <figure class="tile t-tall">
-        <button type="button" class="tile-open" data-full="/img/gallery-asana.jpg" data-cap="Hatha Asana, open to every level." aria-label="Open photo: Hatha Asana practice">
-          <img src="/img/gallery-asana.jpg" alt="A student in a side stretch on a red yoga mat during Hatha Asana class" width="733" height="1100" loading="lazy">
-        </button>
-        <figcaption>Hatha Asana, at your own pace.</figcaption>
-      </figure>
-      <figure class="tile t-tall">
-        <button type="button" class="tile-open" data-full="/img/gallery-prabhupada.jpg" data-cap="Srila Prabhupada, whose teachings carry the Bhakti tradition we practice." aria-label="Open photo: Srila Prabhupada">
-          <img src="/img/gallery-prabhupada.jpg" alt="Murti of Srila Prabhupada in saffron robes with a flower garland" width="743" height="1100" loading="lazy">
-        </button>
-        <figcaption>Rooted in the Bhakti tradition of Srila Prabhupada.</figcaption>
-      </figure>
-    </div>
-    <p class="credit">Photos: Erik Jimenez Photography</p>
   </div>
 </section>
 
@@ -531,11 +530,26 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
       <p>This is not a fitness studio with a loyalty program. It's a gathering place — a living room, a porch, a circle of regulars who leave the door open for anyone new. We've had beginners and longtime practitioners sit side by side for years, and that's exactly how we like it. Whatever brought you here, you belong in the room.</p>
       <p style="margin-top:26px"><a class="link" href="/community.html">meet the community</a></p>
     </div>
-    <!-- Uses the site's own studio video and kirtan photo -->
-    <div class="moments" aria-hidden="true">
-      <div class="moment m1"><video src="/videos/VID-20260331-WA0013.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video><span><small>at the studio</small>beginners and regulars, side by side</span></div>
-      <div class="moment m2" style="--tile-img:url('/img/kirtan.jpg.png')"><span><small>kirtan</small>candlelight and harmonium</span></div>
-      <div class="moment m3"><span><small>after class</small>stay and eat together</span></div>
+        <div class="community-photos">
+      <figure class="tile t-wide">
+        <button type="button" class="tile-open" data-full="/img/gallery-meditation.jpg" data-cap="Meditation and kirtan in the temple room." aria-label="Open photo: meditation and kirtan in the temple room">
+          <img src="/img/gallery-meditation.jpg" alt="People of all ages sitting on cushions in a sunlit temple room during meditation and kirtan" width="1800" height="1200" loading="lazy">
+        </button>
+        <figcaption>Sitting together, eyes closed, voices rising.</figcaption>
+      </figure>
+      <figure class="tile t-tall">
+        <button type="button" class="tile-open" data-full="/img/gallery-asana.jpg" data-cap="Hatha Asana, open to every level." aria-label="Open photo: Hatha Asana practice">
+          <img src="/img/gallery-asana.jpg" alt="A student in a side stretch on a red yoga mat during Hatha Asana class" width="733" height="1100" loading="lazy">
+        </button>
+        <figcaption>Hatha Asana, at your own pace.</figcaption>
+      </figure>
+      <figure class="tile t-tall">
+        <button type="button" class="tile-open" data-full="/img/gallery-prabhupada.jpg" data-cap="Srila Prabhupada, whose teachings carry the Bhakti tradition we practice." aria-label="Open photo: Srila Prabhupada">
+          <img src="/img/gallery-prabhupada.jpg" alt="Murti of Srila Prabhupada in saffron robes with a flower garland" width="743" height="1100" loading="lazy">
+        </button>
+        <figcaption>Rooted in the Bhakti tradition of Srila Prabhupada.</figcaption>
+      </figure>
+      <p class="credit">Photos: Erik Jimenez Photography</p>
     </div>
   </div>
 </section>
@@ -583,7 +597,7 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
     </div>
 
     <div class="gather-foot">
-      <a class="btn" href="/calendar.html">view the full schedule <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn" href="/calendar.html">Full Month Calendar Here <span class="arrow" aria-hidden="true">→</span></a>
       <span>new dates go up on <a class="link" href="https://www.instagram.com/yoga.inthegrove">instagram</a> first</span>
     </div>
   </div>
