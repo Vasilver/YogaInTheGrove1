@@ -26,6 +26,8 @@ Do not introduce frameworks, build tools, CMSs or paid services without written 
 /                     one .html file per page (index, about, teachers, practice,
                       calendar, community, contact, blog, foodforlife)
 /blog/                blog articles, one .html file each
+/css/site.css         NEW shared design: tokens + building blocks for every page (section 3)
+/js/site.js           NEW shared behavior: header, menu, dropdown, join dialog, forms, lightbox, map embeds
 /css/global.css       OLD design system — not used by redesigned pages (see section 3)
 /css/<page>.css       OLD page styles — not used by redesigned pages
 /js/events-data.js    SINGLE SOURCE for all classes and events (calendar + homepage)
@@ -46,10 +48,12 @@ Do not introduce frameworks, build tools, CMSs or paid services without written 
 
 **The homepage `index.html` on `redesign` is the signed-off design (4 Nov 2026) and the reference for every other page.** When in doubt, copy how the homepage does it. Do not use `css/global.css`, `css/<page>.css` or `_template.html` — they belong to the old design.
 
-### 3.1 Where the styles live
+### 3.1 Where the styles and scripts live
 
-- The homepage keeps all its CSS in one `<style>` block in the `<head>`.
-- **When the second page is built**, move everything shared (tokens, base, header, nav dropdown, buttons, links, sections, cards, FAQ, closing, footer, join dialog, lightbox) into `css/site.css`, link it from `index.html` and the new page, and keep only page-specific styles inline. From then on every page links `css/site.css`. Check the homepage still looks identical after the move.
+- **`css/site.css`** holds everything shared: tokens, base, header, nav dropdown, buttons, links, sections, cards, FAQ, closing, footer, join dialog, lightbox and the inner-page blocks (3.4). Every page links it.
+- **`js/site.js`** holds the shared behavior: header on scroll, mobile menu, community dropdown, scroll reveal, join dialog, Formspree forms, lightbox, click-to-load embeds. Every page loads it with `<script src="js/site.js" defer>` (from `/blog/` use `../`).
+- Page-specific styles stay in a small `<style>` block in that page's `<head>`, page-specific scripts in a small inline `<script>` (e.g. the homepage hero and filters).
+- A new shared look or behavior goes into `site.css` / `site.js`, never copied into single pages. These two files affect every page — tell the other person before changing them.
 
 ### 3.2 Tokens (CSS variables on `:root`)
 
@@ -92,7 +96,20 @@ Always use these variables. Never hard-code a color or font size.
 - **FAQ:** `.faq` with `<details><summary>` question + answer paragraph, plus a matching `FAQPage` JSON-LD block.
 - **Closing:** big italic H2, join button, address + opening hours, faded Om mark.
 - **Join dialog:** every page includes the same `#joinDialog` (Formspree form, see 5.7) opened by any `[data-open-join]` button.
-- **Footer:** beige, Om + name + address, footer nav incl. instagram and facebook.
+- **Footer:** beige, Om + name + address, clickable phone + email (`.foot-contact`), footer nav incl. instagram and facebook.
+
+Inner pages (see `about.html`, `contact.html`, `blog.html` as examples):
+
+- **Page hero:** `.page-hero` = light version (ivory + window light). `.page-hero.photo` = photo version: first child `<img class="ph-bg">` (real `<img>` with alt text), darker shade at the bottom, text bottom-left. Eyebrow + H1 + `.lede`, optional `.ph-actions`.
+- **Text on photos must be easy to read:** eyebrow white, weight 500, uppercase; lede white, weight 400; strong shade + text shadow. Never thin or semi-transparent text on a photo.
+- **Current page in the nav:** add `aria-current="page"` to the page's own nav link.
+- **Split:** `.split` (text + photo side by side, `.flip` swaps sides). **Prose:** `.prose` reading column. **Callout:** `.callout` big italic quote band (beige).
+- **Info cards:** `.info` + `.card` (address, hours as `<dl class="hours-list">`, contact). **Steps:** `ol.steps` (roman numerals).
+- **Click-to-load embeds:** `.embed[data-src]` with a `[data-load]` button for Google Maps / Street View, so nothing loads until the visitor asks for it.
+- **Forms outside the dialog:** `.form-card` + `form.join-form[data-formspree][data-done="<id of success box>"]`, success box `.form-done` with `hidden`.
+- **Article cards:** `.posts` + `a.post` (image, `.meta`, title, excerpt, "read the guide →").
+- **One CTA per page end:** the closing section is the page's call to action. Don't stack a second CTA band right above it; adapt the closing's eyebrow and text instead (see `blog.html`).
+- Backgrounds: `.bg-mist`, `.bg-beige`, `.bg-paper`; window light on any section with `.light`.
 
 ### 3.5 Motion and accessibility
 
@@ -246,4 +263,4 @@ JSON-LD `openingHoursSpecification` must match exactly: Mo–Fr `07:00`–`20:00
 
 ---
 
-*Last updated: 2026-11-04 — new design from the signed-off homepage; work directly on `redesign`.*
+*Last updated: 2026-11-04 — shared `css/site.css` + `js/site.js`, inner-page building blocks (Our Story, Find Us, Blog).*
