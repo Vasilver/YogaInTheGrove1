@@ -108,6 +108,7 @@ Inner pages (see `about.html`, `contact.html`, `blog.html` as examples):
 - **Click-to-load embeds:** `.embed[data-src]` with a `[data-load]` button for Google Maps / Street View, so nothing loads until the visitor asks for it.
 - **Forms outside the dialog:** `.form-card` + `form.join-form[data-formspree][data-done="<id of success box>"]`, success box `.form-done` with `hidden`.
 - **Article cards:** `.posts` + `a.post` (image, `.meta`, title, excerpt, "read the guide →").
+- **Blog articles:** use `blog/what-is-kirtan.html` as the template: light page hero (back link, eyebrow, H1, byline with reading time), centered `.prose` column, videos with `poster` + `preload="none"`, the closing adapted as the article's CTA, `Article` + `BreadcrumbList` JSON-LD. Pages in `/blog/` use `../` for every link, image, video, CSS and JS path.
 - **One CTA per page end:** the closing section is the page's call to action. Don't stack a second CTA band right above it; adapt the closing's eyebrow and text instead (see `blog.html`).
 - Backgrounds: `.bg-mist`, `.bg-beige`, `.bg-paper`; window light on any section with `.light`.
 
