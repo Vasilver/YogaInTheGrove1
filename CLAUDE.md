@@ -26,17 +26,17 @@ Do not introduce frameworks, build tools, CMSs or paid services without written 
 /                     one .html file per page (index, about, teachers, practice,
                       calendar, community, contact, blog, foodforlife)
 /blog/                blog articles, one .html file each
-/css/global.css       design system: colors, fonts, spacing (see section 3)
-/css/<page>.css       page-specific styles
+/css/global.css       OLD design system — not used by redesigned pages (see section 3)
+/css/<page>.css       OLD page styles — not used by redesigned pages
 /js/events-data.js    SINGLE SOURCE for all classes and events (calendar + homepage)
 /img/, /photos/       images
 /videos/              video files
-/_template.html       starting point for every new page
+/_template.html       OLD page template — don't use; new pages start from index.html
 /sitemap.xml          must list every public page (see 5.8)
 /components/nav.html  OUTDATED — do not copy from it (see below)
 ```
 
-**Navigation:** there is no shared include. Every page contains its own copy of the nav and footer. When the nav or footer changes, update **every page** in the same commit. Use the nav from `index.html` as the reference, not `components/nav.html`.
+**Navigation:** there is no shared include. Every page contains its own copy of the header, nav, join dialog and footer. When any of these change, update **every page** in the same commit. The reference is always `index.html` on `redesign`, never `components/nav.html`.
 
 **Schedule changes:** edit only `js/events-data.js`. Never hard-code dates or class times in page HTML.
 
@@ -44,28 +44,80 @@ Do not introduce frameworks, build tools, CMSs or paid services without written 
 
 ## 3. Design system
 
-> **Being redesigned.** The values below describe the old design. The new homepage on the `redesign` branch sets the new design. Once it is signed off, this section gets updated with the new colors, fonts and spacing, and every other page follows it. Until then, ask before applying the old values to new pages.
+**The homepage `index.html` on `redesign` is the signed-off design (4 Nov 2026) and the reference for every other page.** When in doubt, copy how the homepage does it. Do not use `css/global.css`, `css/<page>.css` or `_template.html` — they belong to the old design.
 
-- Use the CSS variables in `css/global.css` for all colors, fonts and sizes. Never hard-code a hex color or font size in page CSS.
-- Colors: `--deep-forest` #2b2d22, `--warm-cream` #f5f0e8, `--sage` #7a8c6e, `--ochre` #c4954a, `--warm-bark` #4a3f30 (+ tints `--sage-light`, `--cream-dark`, `--ochre-muted`).
-- Fonts: Cormorant Garamond (headings), Jost 300 (body).
-- New pages start from `_template.html`.
-- Mobile first: every change must work at 390 px width.
-- Tone of voice: warm, calm, inviting, lowercase nav labels. Keep it.
+### 3.1 Where the styles live
+
+- The homepage keeps all its CSS in one `<style>` block in the `<head>`.
+- **When the second page is built**, move everything shared (tokens, base, header, nav dropdown, buttons, links, sections, cards, FAQ, closing, footer, join dialog, lightbox) into `css/site.css`, link it from `index.html` and the new page, and keep only page-specific styles inline. From then on every page links `css/site.css`. Check the homepage still looks identical after the move.
+
+### 3.2 Tokens (CSS variables on `:root`)
+
+Always use these variables. Never hard-code a color or font size.
+
+| Variable | Value | Use |
+|---|---|---|
+| `--ivory` | #F8F4EC | page background |
+| `--paper` | #FAF6EE | cards, raised surfaces, dialogs |
+| `--beige` | #E8DCC4 | warm sections (community), footer |
+| `--mist` | #E6ECDF | pale sage sections (what's happening) |
+| `--moss` | #6F8A69 | buttons, food section, accents |
+| `--olive` | #4E5C4B | button hover, emphasis in headings |
+| `--sage` | #A8BFA1 | link underlines, hover borders, Om mark |
+| `--clay` | #C57B57 | Om symbol, kirtan accents, FAQ "+", focus ring |
+| `--flame` | #D8C3A5 | soft sand tile background |
+| `--ink` | #353A30 | main text |
+| `--ink-soft` | #5E6457 | secondary text |
+| `--line` | #DDD2BC | borders, dividers |
+| `--on-olive` | #F4EEE2 | text on moss/olive |
+| `--radius` | 14px | cards, images, dialogs |
+| `--step--1` … `--step-4` | .875rem → clamp(2.5rem,7vw,5rem) | type scale |
+
+### 3.3 Typography
+
+- Headings (H1–H3): **Cormorant Garamond**, weight 400, *italic*, line-height 1.08. The second half of a heading is often wrapped in `<em>` in `--olive` ("Come for the practice. *Stay for the people.*").
+- Body: **Jost** weight 300, 1.0625rem, line-height 1.7. Bold labels use weight 500–600.
+- Om symbol ॐ: font "Tiro Devanagari Sanskrit" (loaded only for that one character), color `--clay`, `aria-hidden="true"`. Used in the logo, footer and as a large faded mark in the closing section.
+- Eyebrows above section headings: small, lowercase, letter-spaced (`.eyebrow`).
+
+### 3.4 Building blocks (reuse, don't reinvent)
+
+- **Header:** sticky, logo "ॐ Yoga in *the Grove* ॐ", nav: our story · schedule · community ▾ (our community, teachers, practice, food for life) · find us · blog. The "join us on the mat" button appears in the nav after scrolling past the hero. Mobile: "menu" pill button.
+- **Buttons:** `.btn` = moss pill with arrow → that slides on hover; `.btn.small`, `.btn.ghost`. Text links: `.link` (moss, sage underline).
+- **Page width:** `.wrap` max 1160px, 20px side padding; reading text `.narrow` (max 64ch).
+- **Sections:** `section` with generous vertical padding; `.sec-head` = eyebrow + H2 + short intro. Alternate backgrounds down the page: ivory → beige → mist → moss → ivory. The soft moving "window light" stripes are used on beige/ivory sections.
+- **Cards:** `.g` (paper, line border, radius, lifts on hover) with `.when` label, H3, short text, `.tag`. Filter chips: `.filters` buttons with `aria-pressed`.
+- **Practice cards:** `<details class="practice">` with image, roman numeral (i. ii. iii.), H3, short line, "+" that rotates when open.
+- **Photo tiles:** `<figure class="tile">` with `.tile-open` button that opens the lightbox; italic caption; photo credit "Photos: Erik Jimenez Photography" where his photos are used.
+- **FAQ:** `.faq` with `<details><summary>` question + answer paragraph, plus a matching `FAQPage` JSON-LD block.
+- **Closing:** big italic H2, join button, address + opening hours, faded Om mark.
+- **Join dialog:** every page includes the same `#joinDialog` (Formspree form, see 5.7) opened by any `[data-open-join]` button.
+- **Footer:** beige, Om + name + address, footer nav incl. instagram and facebook.
+
+### 3.5 Motion and accessibility
+
+- Gentle motion only: sections rise in on scroll, hero text fades in, hover lifts. Everything must switch off under `prefers-reduced-motion: reduce` (the homepage already does this — keep that block).
+- Visible focus ring (`--clay`), skip link, `aria-*` on menu, dropdown and dialogs as on the homepage.
+
+### 3.6 General
+
+- Mobile first: every page must work at 390 px width.
+- Tone of voice: warm, calm, inviting, lowercase nav labels and eyebrows. Keep it.
+- After the design changes in a way that affects all pages, update this section in the same commit.
 
 ---
 
 ## 4. How we work (two people, two Claude chats)
 
-**During the relaunch:** all new work is based on the branch `redesign`, not `main`. `main` stays as the old live site until the relaunch is finished and `redesign` is merged into `main`.
+**During the relaunch:** all new work goes **directly onto the branch `redesign`**. `main` is the live site and stays untouched until the relaunch is finished and `redesign` is merged into `main` (that merge is the launch).
 
-1. Always start from the latest `redesign`.
-2. Work on a branch: `feature/<short-name>`, `fix/<short-name>` or `claude/<short-name>`. Never commit straight to `redesign` or `main`.
-3. Open a pull request into `redesign`. The **other** person reviews and merges.
-4. Merge finished work quickly — don't leave branches open for days.
-5. Don't edit the same page on two branches at the same time. Split work by page.
-6. Commit messages: `type(scope): description` — e.g. `feat(calendar): hide past events`, `fix(seo): add H1 to teachers page`.
-7. Never commit passwords, API keys or personal data of students (form submissions, emails, phone numbers).
+1. Always pull the latest `redesign` before you start, and push as soon as a page or change is done.
+2. Commit straight to `redesign` — no feature branches or pull requests needed during the relaunch.
+3. **Never commit or push to `main`.** Only the launch merge touches `main`, and only when both of us have agreed.
+4. Split work by page and agree who does which. Never work on the same page at the same time. Changes to shared parts (header, nav, footer, join dialog, `css/site.css`) are announced to the other person first, because they touch every page.
+5. Commit messages: `type(scope): description` — e.g. `feat(teachers): rebuild page in new design`, `fix(seo): add H1 to teachers page`. Say in the message or the chat who it was (Anna / Anne), since we share one GitHub account.
+6. Never commit passwords, API keys or personal data of students (form submissions, emails, phone numbers).
+7. Don't leave helper files in the repo (screenshots, fonts, test pages). The repo is the website.
 
 ---
 
@@ -99,7 +151,7 @@ Do not introduce frameworks, build tools, CMSs or paid services without written 
 - Mention "Coconut Grove" and/or "Miami" where it reads naturally. Never keyword-stuff.
 - Every page links to the calendar (booking) at least once, with a clear call to action.
 - Internal links use descriptive text ("see the class schedule"), not "click here".
-- No placeholder text on a live page — no `[Teacher Name]`, "Lorem ipsum", "TBD". If content is missing, leave the section out and list it in the pull request.
+- No placeholder text on a live page — no `[Teacher Name]`, "Lorem ipsum", "TBD". If content is missing, leave the section out and tell the person you're working with what's missing.
 - No invented testimonials or reviews. Only real quotes, with the person's consent.
 
 ### 5.4 Images
@@ -109,7 +161,7 @@ Do not introduce frameworks, build tools, CMSs or paid services without written 
   - Describe what is visible + context: `alt="Vishal Das leading a hatha yoga class at Yoga in the Grove"`.
   - Include the location only where natural. Max ~125 characters.
   - Decorative images: `alt=""`.
-  - **Don't guess.** If you can't tell who or what is in the photo, write `alt="TODO: describe"` and list it in the pull request.
+  - **Don't guess.** If you can't tell who or what is in the photo, write `alt="TODO: describe"` and tell the person you're working with.
 - File names: lowercase, hyphens, descriptive — `vishal-das-hatha-class.webp`, not `1000029697.jpg` or `kirtan.jpg.png`.
 - Format: WebP (keep a JPG fallback only if needed). Max 1920 px wide. **Target under 200 KB**, hero image under 300 KB.
 - Always set `width` and `height` attributes (prevents layout shift).
@@ -117,7 +169,7 @@ Do not introduce frameworks, build tools, CMSs or paid services without written 
 
 ### 5.5 Structured data (JSON-LD)
 
-- **Site-wide:** one `LocalBusiness` block (type `ExerciseGym`) in every page's `<head>`, with the exact NAP data from section 5.6. Remove `servesCuisine` and `HealthAndBeautyBusiness`.
+- **Site-wide:** one `LocalBusiness` block (type `ExerciseGym`) in every page's `<head>`, with the exact NAP data from section 5.6 (incl. `email`). Remove `servesCuisine` and `HealthAndBeautyBusiness`. `YogaStudio` is not a schema.org type — don't use it.
 - **Calendar + homepage:** `Event` schema for upcoming classes, generated from `js/events-data.js` in the same script that renders the events (name, startDate with time zone, endDate, location, organizer, `eventAttendanceMode`, `eventStatus`, `offers` if there is a price/donation).
 - **Blog articles:** `Article` schema (headline, author, datePublished, dateModified, image).
 - **Optional:** `BreadcrumbList` on blog articles.
@@ -145,6 +197,7 @@ JSON-LD `openingHoursSpecification` must match exactly: Mo–Fr `07:00`–`20:00
 - Every form posts to Formspree (`action="https://formspree.io/f/<FORM_ID>"`, `method="POST"`). No form may exist that sends nothing.
 - Until separate form IDs exist, all forms use the existing ID `xgolnjqv` and include a hidden field `<input type="hidden" name="form" value="contact|reservation|community">` plus a matching `_subject`, so submissions can be told apart in the inbox.
 - Show the success message **only after** Formspree confirms (HTTP 200). On error, show a friendly error with the email address.
+- The homepage join form only really sends on yogainthegrove.org. In any preview it shows the success message without sending. Keep that behavior on all pages, and do the real test-send after launch.
 - Add a honeypot field (`_gotcha`) against spam.
 - Short privacy note under every form, linking to the privacy policy **[CONFIRM — client to provide policy]**.
 - Never log, copy or commit form submissions.
@@ -164,20 +217,21 @@ JSON-LD `openingHoursSpecification` must match exactly: Mo–Fr `07:00`–`20:00
 
 ---
 
-## 6. Definition of done — check before every pull request
+## 6. Definition of done — check before every push
 
 - [ ] One H1, logical H2/H3 order
 - [ ] Title ≤ 60 characters, description 120–155 characters, both unique
 - [ ] Canonical, OG tags (page-specific image), favicon links present
-- [ ] Every `<img>` has alt text (or `alt=""` if decorative); no `TODO` left unless listed in the PR
+- [ ] Every `<img>` has alt text (or `alt=""` if decorative); no `TODO` left unless flagged to the other person
 - [ ] Images WebP, < 200 KB, width/height set, lazy-loaded below the fold
 - [ ] JSON-LD valid (Rich Results Test), NAP matches section 5.6
 - [ ] No placeholder text
 - [ ] Forms actually submit to Formspree
-- [ ] Nav and footer identical on all pages
+- [ ] Header, nav, join dialog and footer identical to `index.html`
+- [ ] Uses the tokens and building blocks from section 3, no old `global.css`
 - [ ] `sitemap.xml` updated if pages were added/removed
 - [ ] Checked on mobile (390 px) and desktop
-- [ ] PR description lists anything that still needs client input
+- [ ] Anything that still needs client input is listed in the chat / to-do list
 
 ---
 
@@ -188,8 +242,8 @@ JSON-LD `openingHoursSpecification` must match exactly: Mo–Fr `07:00`–`20:00
 3. Do only what was asked. No extra features, libraries or pages.
 4. Never invent facts about the studio (names, times, prices, quotes). Ask, or mark as TODO.
 5. Keep diffs small: one logical change per commit.
-6. When a new convention is agreed, propose an update to this file in the same pull request.
+6. When a new convention is agreed, update this file in the same commit.
 
 ---
 
-*Last updated: 2026-10-28 — full rewrite by Élan Social Studios (replaces the empty template from 2026-02-21).*
+*Last updated: 2026-11-04 — new design from the signed-off homepage; work directly on `redesign`.*
