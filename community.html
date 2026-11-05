@@ -95,13 +95,13 @@
 #teachers,#gather,#food-for-life,#belong{scroll-margin-top:72px}
 
 /* practice · connect · nourish */
-.pillars{padding-block:clamp(40px,5vw,64px) clamp(28px,4vw,48px)}
+.pillars{--sun-glow:#F29A55;--sun-orange:#D9773A;padding-block:clamp(40px,5vw,64px) clamp(28px,4vw,48px)}
 .pillars-title{text-align:center;font-size:var(--step-3);margin-bottom:clamp(20px,3vw,34px)}
 .pillars-title em{color:var(--olive)}
 .pillar-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid var(--line)}
 .pillar{position:relative;display:grid;justify-items:center;align-content:start;gap:6px;text-align:center;padding:clamp(26px,3.5vw,40px) clamp(16px,2.5vw,32px);color:var(--ink);text-decoration:none;isolation:isolate}
 .pillar + .pillar{border-left:1px solid var(--line)}
-.pillar::before{content:"";position:absolute;inset:10px;z-index:-1;border-radius:var(--radius);background:radial-gradient(70% 60% at 50% 30%,var(--mist),transparent 75%);opacity:0;transition:opacity .45s}
+.pillar::before{content:"";position:absolute;inset:10px;z-index:-1;border-radius:var(--radius);background:radial-gradient(70% 60% at 50% 30%,color-mix(in srgb,var(--sun-glow) 26%,transparent),transparent 75%);opacity:0;transition:opacity .45s}
 .pillar.reveal.rise{animation-delay:calc(var(--i,0) * 110ms)}
 .p-icon{width:62px;height:62px;color:var(--clay);transition:transform .5s cubic-bezier(.2,.7,.2,1),color .3s}
 .p-icon svg{width:100%;height:100%;display:block}
@@ -112,7 +112,7 @@
 .p-go{margin-top:10px;font-weight:500;color:var(--olive);font-size:.92rem;border-bottom:1px solid var(--sage);padding-bottom:2px;display:inline-flex;gap:.45em}
 .p-go .arrow{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .pillar:hover::before,.pillar:focus-visible::before{opacity:1}
-.pillar:hover .p-icon,.pillar:focus-visible .p-icon{transform:translateY(-4px);color:var(--olive)}
+.pillar:hover .p-icon,.pillar:focus-visible .p-icon{transform:translateY(-4px);color:var(--sun-orange)}
 .pillar:hover .p-go .arrow,.pillar:focus-visible .p-go .arrow{transform:translateX(5px)}
 .pillar:focus-visible{outline:2px solid var(--clay);outline-offset:-6px;border-radius:var(--radius)}
 @media (max-width:760px){.pillar-row{grid-template-columns:1fr}.pillar + .pillar{border-left:0;border-top:1px solid var(--line)}}
@@ -189,7 +189,7 @@
       <a href="about.html">Our Story</a>
       <a href="calendar.html">Schedule</a>
       <div class="dd" id="ddCommunity">
-        <button type="button" class="dd-btn" aria-expanded="false" aria-controls="ddMenu">Community <span class="caret" aria-hidden="true">⌄</span></button>
+        <a class="dd-link" href="community.html" aria-current="page">Community</a><button type="button" class="dd-btn" aria-expanded="false" aria-controls="ddMenu" aria-label="Show Community links"><span class="caret" aria-hidden="true">⌄</span></button>
         <div class="dd-menu" id="ddMenu">
           <a href="community.html#teachers">Teachers</a>
           <a href="community.html#gather">Practice</a>
