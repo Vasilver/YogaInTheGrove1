@@ -89,7 +89,7 @@ p{margin:0}
 .nav .nav-cta{opacity:0;pointer-events:none;transform:translateY(4px);transition:.35s}
 .site-header.scrolled .nav-cta{opacity:1;pointer-events:auto;transform:none}
 .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font:inherit;color:var(--ink);cursor:pointer}
-@media (max-width:900px){
+@media (max-width:1080px){
   .menu-btn{display:block}
   .nav{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:flex-start;gap:4px;background:var(--paper);border-bottom:1px solid var(--line);padding:12px max(20px,env(safe-area-inset-right,0px)) 20px max(20px,env(safe-area-inset-left,0px));display:none}
   .nav.open{display:flex}
@@ -303,8 +303,9 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
 
 
 /* ---- community dropdown ---- */
-.dd{position:relative}
-.dd-btn{font:inherit;font-size:.95rem;background:none;border:0;color:var(--ink-soft);cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:.35em}
+.dd{position:relative;display:inline-flex;align-items:center;gap:.15em}
+.dd-btn{font:inherit;font-size:.95rem;background:none;border:0;color:var(--ink-soft);cursor:pointer;padding:4px 6px;margin-right:-6px;display:inline-flex;align-items:center;gap:.35em;border-radius:6px}
+.dd:hover .dd-link,.dd.open .dd-link{color:var(--ink)}
 .dd-btn:hover,.dd.open .dd-btn{color:var(--ink)}
 .caret{display:inline-block;transition:transform .3s;line-height:1;transform:translateY(-2px)}
 .dd.open .caret{transform:translateY(1px) rotate(180deg)}
@@ -314,10 +315,11 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
 .dd.open .dd-menu{opacity:1;visibility:visible;transform:none}
 .dd-menu a{padding:.55em .8em;border-radius:8px;color:var(--ink-soft)}
 .dd-menu a:hover,.dd-menu a:focus-visible{background:var(--beige);color:var(--ink)}
-@media (hover:hover) and (min-width:901px){.dd:hover .dd-menu{opacity:1;visibility:visible;transform:none}.dd:hover .caret{transform:translateY(1px) rotate(180deg)}}
-@media (max-width:900px){
-  .dd{width:100%}
-  .dd-btn{font-size:1.05rem;padding:8px 0}
+@media (hover:hover) and (min-width:1081px){.dd:hover .dd-menu{opacity:1;visibility:visible;transform:none}.dd:hover .caret{transform:translateY(1px) rotate(180deg)}}
+@media (max-width:1080px){
+  .dd{width:100%;flex-wrap:wrap}
+  .dd-btn{font-size:1.05rem;padding:8px 10px;margin:0}
+  .dd-menu{flex-basis:100%}
   .dd-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;border-left:1px solid var(--line);border-radius:0;padding:0 0 0 14px;margin:2px 0 6px;min-width:0;display:none}
   .dd.open .dd-menu{display:grid}
 }
@@ -370,7 +372,7 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
 .tile figcaption{font-family:var(--font-display);font-style:italic;font-size:1.15rem;color:var(--ink-soft)}
 .t-wide .tile-open img{object-position:50% 45%}
 .credit{margin-top:18px;font-size:.75rem;letter-spacing:.08em;color:var(--ink-soft);text-align:right}
-@media (max-width:900px){.mosaic{grid-template-columns:1fr 1fr}.t-wide{grid-column:1 / -1}.t-wide .tile-open{min-height:260px;aspect-ratio:3/2}.tile-open{min-height:300px}}
+@media (max-width:1080px){.mosaic{grid-template-columns:1fr 1fr}.t-wide{grid-column:1 / -1}.t-wide .tile-open{min-height:260px;aspect-ratio:3/2}.tile-open{min-height:300px}}
 @media (max-width:520px){.mosaic{grid-template-columns:1fr}.tile-open{min-height:0;aspect-ratio:4/5}.t-wide .tile-open{aspect-ratio:3/2}}
 .lightbox{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);max-height:92vh;overflow:visible}
 .lightbox::backdrop{background:rgba(30,33,27,.82);backdrop-filter:blur(4px)}
@@ -455,7 +457,7 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
       <a href="about.html">Our Story</a>
       <a href="calendar.html">Schedule</a>
       <div class="dd" id="ddCommunity">
-        <button type="button" class="dd-btn" aria-expanded="false" aria-controls="ddMenu">Community <span class="caret" aria-hidden="true">⌄</span></button>
+        <a class="dd-link" href="community.html">Community</a><button type="button" class="dd-btn" aria-expanded="false" aria-controls="ddMenu" aria-label="Show Community links"><span class="caret" aria-hidden="true">⌄</span></button>
         <div class="dd-menu" id="ddMenu">
           <a href="community.html#teachers">Teachers</a>
           <a href="community.html#gather">Practice</a>
@@ -789,8 +791,8 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
   window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
 
   var btn=document.getElementById('menuBtn'), nav=document.getElementById('siteNav');
-  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'close':'menu';});
-  nav.addEventListener('click',function(e){if(e.target.closest('a')&&nav.classList.contains('open')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='menu';}});
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu';});
+  nav.addEventListener('click',function(e){if(e.target.closest('a')&&nav.classList.contains('open')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';}});
 
   var buttons=document.querySelectorAll('.filters button'), cards=document.querySelectorAll('#gList .g');
   buttons.forEach(function(b){b.addEventListener('click',function(){
@@ -837,7 +839,7 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
   /* join dialog + Formspree */
   var dlg=document.getElementById('joinDialog'), form=document.getElementById('joinForm'), done=document.getElementById('joinDone'), msg=document.getElementById('formMsg');
   document.querySelectorAll('[data-open-join]').forEach(function(b){b.addEventListener('click',function(){
-    if(nav.classList.contains('open')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='menu';}
+    if(nav.classList.contains('open')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';}
     if(dlg.showModal){dlg.showModal();}else{dlg.setAttribute('open','');}
     setTimeout(function(){document.getElementById('jf-name').focus();},50);
   });});
