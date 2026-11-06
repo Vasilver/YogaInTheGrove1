@@ -447,9 +447,10 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
 .practice:hover{border-color:var(--sage);box-shadow:0 22px 44px -30px rgba(53,58,48,.4)}
 .practice[open]{border-color:var(--sage)}
 .practice summary{grid-template-columns:auto 1fr auto;gap:6px 12px;padding:0 20px 20px}
-.practice .p-img{grid-column:1 / -1;margin:0 -20px 14px;aspect-ratio:4/3;max-width:none;display:grid;place-items:center;
-  background:repeating-linear-gradient(135deg,var(--beige) 0 14px,color-mix(in srgb,var(--beige) 70%,var(--paper)) 14px 28px);color:var(--ink-soft);font-size:.78rem;letter-spacing:.12em}
-.practice .p-img span{background:var(--paper);padding:.35em .9em;border-radius:999px;border:1px solid var(--line)}
+.practice .p-img{grid-column:1 / -1;margin:0 -20px 14px;aspect-ratio:4/3;max-width:none;overflow:hidden;background:var(--beige);border-radius:calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0}
+.practice .p-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.practice summary:hover .p-img img{transform:scale(1.04)}
+@media (prefers-reduced-motion:reduce){.practice .p-img img{transition:none}}
 .practice .numeral{font-size:1.2rem}
 .practice h3{font-size:1.6rem}
 .practice summary:hover h3{transform:none}
@@ -548,21 +549,21 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
 
     <div class="practices">
       <details class="practice">
-        <summary><div class="p-img" role="img" aria-label="Photo placeholder for Hatha Asana"><span>Photo · Hatha Asana</span></div><span class="numeral">i.</span><div><h3>Hatha Asana</h3><p class="short">Breath, alignment, and steadiness.</p></div><span class="plus" aria-hidden="true">+</span></summary>
+        <summary><div class="p-img"><img src="img/hatha-asana-side-stretch.webp" alt="A student in a side stretch on a red yoga mat during Hatha Asana class at Yoga in the Grove" width="900" height="1350" loading="lazy" style="object-position:50% 40%"></div><span class="numeral">i.</span><div><h3>Hatha Asana</h3><p class="short">Breath, alignment, and steadiness.</p></div><span class="plus" aria-hidden="true">+</span></summary>
         <div class="body">
           <p>A traditional yoga practice centered on mindful movement, breath, and alignment. Whether you're stepping onto the mat for the first time or deepening an existing practice, there's a place for you here. We meet you exactly where you are, every time.</p>
           <div class="p-links"><a class="link" href="calendar.html">Find a Hatha class <span aria-hidden="true">→</span></a><a class="link" href="teachers.html">Meet the teachers <span aria-hidden="true">→</span></a></div>
         </div>
       </details>
       <details class="practice">
-        <summary><div class="p-img" role="img" aria-label="Photo placeholder for Kirtan"><span>Photo · Kirtan</span></div><span class="numeral">ii.</span><div><h3>Kirtan</h3><p class="short">Where connections grow.</p></div><span class="plus" aria-hidden="true">+</span></summary>
+        <summary><div class="p-img"><img src="img/kirtan-harmonium-card.webp" alt="A kirtan at Yoga in the Grove: harmonium and drum in the center, people sitting around them singing along" width="1400" height="933" loading="lazy"></div><span class="numeral">ii.</span><div><h3>Kirtan</h3><p class="short">Where connections grow.</p></div><span class="plus" aria-hidden="true">+</span></summary>
         <div class="body">
           <p>Kirtan is a shared practice of call-and-response chanting, rooted in devotion, connection, and community. It's your space to slow down, open your heart, and experience the joy of coming together. No experience is necessary. Whether you join in or simply listen, you're part of something meaningful.</p>
           <div class="p-links"><a class="link" href="calendar.html">See kirtan dates <span aria-hidden="true">→</span></a><a class="link" href="practice.html">About the practice <span aria-hidden="true">→</span></a></div>
         </div>
       </details>
       <details class="practice">
-        <summary><div class="p-img" role="img" aria-label="Photo placeholder for Seva"><span>Photo · Seva</span></div><span class="numeral">iii.</span><div><h3>Seva</h3><p class="short">Taking the practice beyond the mat and into our community.</p></div><span class="plus" aria-hidden="true">+</span></summary>
+        <summary><div class="p-img"><img src="img/volunteers-serving-meals.webp" alt="Food for Life volunteers dishing out hot vegetarian food from serving trays" width="960" height="1200" loading="lazy"></div><span class="numeral">iii.</span><div><h3>Seva</h3><p class="short">Taking the practice beyond the mat and into our community.</p></div><span class="plus" aria-hidden="true">+</span></summary>
         <div class="body">
           <p>Seva is the practice of selfless service, rooted in kindness, compassion, and connection. It's about showing up for one another and giving back to the community we call home. Through small acts of service and shared purpose, we bring the spirit of yoga into everyday life.</p>
           <p class="who"><strong style="color:var(--ink);font-weight:500">Our Community Initiatives:</strong> Morning Seva in Coconut Grove and Food for Life meal deliveries.</p>
