@@ -10,8 +10,8 @@
 
   /* mobile menu */
   var btn=document.getElementById('menuBtn'), nav=document.getElementById('siteNav');
-  function closeMenu(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='menu';}
-  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'close':'menu';});
+  function closeMenu(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';}
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu';});
   nav.addEventListener('click',function(e){if(e.target.closest('a')&&nav.classList.contains('open'))closeMenu();});
 
   /* community dropdown */
@@ -42,12 +42,12 @@
       if(!name){msg.textContent='Please add your name.'; form.elements.name.focus(); return;}
       if(!/^\S+@\S+\.\S+$/.test(email)){msg.textContent='Please add a valid email so we can reach you.'; form.elements.email.focus(); return;}
       if(form.elements.message && form.elements.message.required && !form.elements.message.value.trim()){msg.textContent='Please add a short message.'; form.elements.message.focus(); return;}
-      var sendBtn=form.querySelector('[type=submit]'); sendBtn.disabled=true; sendBtn.firstChild.textContent='sending… ';
-      var finish=function(){sendBtn.disabled=false; sendBtn.firstChild.textContent='send '; onDone();};
+      var sendBtn=form.querySelector('[type=submit]'); sendBtn.disabled=true; sendBtn.firstChild.textContent='Sending… ';
+      var finish=function(){sendBtn.disabled=false; sendBtn.firstChild.textContent='Send '; onDone();};
       if(!/yogainthegrove\.org$/.test(location.hostname)){ setTimeout(finish,600); return; }
       fetch(form.getAttribute('action'),{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
         .then(function(r){ if(r.ok){finish();} else { throw 0; } })
-        .catch(function(){ sendBtn.disabled=false; sendBtn.firstChild.textContent='send '; msg.innerHTML="That didn't go through. Please try again, or email us at <a href=\"mailto:marjazz2012@gmail.com\">marjazz2012@gmail.com</a>."; });
+        .catch(function(){ sendBtn.disabled=false; sendBtn.firstChild.textContent='Send '; msg.innerHTML="That didn't go through. Please try again, or email us at <a href=\"mailto:marjazz2012@gmail.com\">marjazz2012@gmail.com</a>."; });
     });
   }
 

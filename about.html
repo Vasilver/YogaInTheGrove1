@@ -41,36 +41,10 @@
 .entry .ety{color:var(--ink-soft);border-top:1px solid var(--line);padding-top:14px;margin-top:6px}
 @media (max-width:820px){.define{grid-template-columns:1fr}}
 
-/* ---- EXAMPLE on Our Story only (6 Nov): centered photo hero, new closing, new footer.
-        Once approved, move into css/site.css for all pages. ---- */
+/* centered photo hero (Our Story) */
 .page-hero.photo .ph-inner{justify-items:center;text-align:center}
 .page-hero.photo .ph-inner > *{margin-inline:auto}
 
-.closing{padding-block:clamp(72px,9vw,128px)}
-.closing-grid{grid-template-columns:1.1fr 1fr;align-items:start;gap:clamp(36px,7vw,112px)}
-.closing .eyebrow{font-size:1rem;letter-spacing:.2em;color:var(--clay);font-weight:500;margin-bottom:18px}
-.closing h2{max-width:11ch;line-height:1.02}
-.closing .cta-row{margin-top:36px}
-.closing .cta-row .btn{font-size:1.05rem;padding:1.05em 1.9em}
-.closing address{margin-top:calc(1rem * 1.7 + 18px);background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(26px,3vw,40px);display:grid;gap:12px;font-size:var(--step-1);line-height:1.5}
-.closing address .place{font-family:var(--font-display);font-style:italic;font-size:var(--step-2);color:var(--ink);line-height:1.1}
-.closing address .link{font-size:1rem}
-.closing .hours{font-size:1.05rem;gap:6px 22px;margin-top:14px;padding-top:18px;border-top:1px solid var(--line)}
-.closing .hours span:nth-child(odd){color:var(--ink);font-weight:500}
-@media (max-width:820px){.closing-grid{grid-template-columns:1fr;gap:32px}.closing address{margin-top:0}}
-
-.foot2{background:var(--beige);border-top:1px solid var(--line);padding-block:clamp(48px,6vw,72px) 28px;color:var(--ink-soft);font-size:1rem}
-.foot2 .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:clamp(28px,4vw,56px)}
-.foot2 .brand{display:grid;gap:10px;align-content:start}
-.foot2 .brand .name{font-family:var(--font-display);font-style:italic;font-size:var(--step-2);color:var(--ink);line-height:1.1}
-.foot2 .brand .om{color:var(--clay)}
-.foot2 address{font-style:normal;display:grid;gap:4px}
-.foot2 .label{font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);font-weight:500;margin-bottom:12px}
-.foot2 nav{display:grid;gap:8px;align-content:start}
-.foot2 a{text-decoration:none;color:var(--ink-soft)}
-.foot2 a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--sage);text-underline-offset:4px}
-.foot2 .base{margin-top:clamp(36px,5vw,56px);padding-top:20px;border-top:1px solid color-mix(in srgb,var(--line) 70%,var(--ink-soft));display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;font-size:.85rem}
-@media (max-width:820px){.foot2 .cols{grid-template-columns:1fr 1fr}.foot2 .brand{grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -106,7 +80,7 @@
   <img class="ph-bg" src="img/temple-room-meditation-kirtan.webp" alt="People of all ages sitting together on cushions in the sunlit temple room at Yoga in the Grove" width="1800" height="1200" fetchpriority="high">
   <span class="ph-credit">Photo: Erik Jimenez Photography</span>
   <div class="wrap ph-inner">
-    <p class="eyebrow">our story</p>
+    <p class="eyebrow">Our Story</p>
     <h1 id="page-title">Our story. <em>Bhakti &amp; Hatha yoga in Coconut Grove.</em></h1>
     <p class="lede">Long before there were studio schedules and branded mats, there were people sitting close enough to hear one another breathe.</p>
   </div>
@@ -115,13 +89,13 @@
 <section class="tradition" aria-labelledby="trad-title">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">the tradition</p>
+      <p class="eyebrow">The Tradition</p>
       <h2 id="trad-title">We practice at the intersection <em>of two ancient rivers.</em></h2>
     </div>
     <div class="rivers">
       <div class="split">
         <div class="text story-col">
-          <p class="kicker">i. the yoga of devotion</p>
+          <p class="kicker">I. The Yoga of Devotion</p>
           <h3>Bhakti Yoga</h3>
           <p>The yoga of devotion. In the Bhakti tradition, the path to union runs through the heart — through love, through longing, through the particular quality of attention that chanting can summon in a room full of people who have agreed, for one hour, to mean it.</p>
           <p>Bhakti teaches that love itself is the method. That the practice of surrendering to something larger than yourself can open what effort alone cannot. At Yoga in the Grove, this tradition lives in our <a class="link" href="calendar.html">Kirtan evenings</a>, in the way we begin and end every class, and in the understanding that this practice is not performance but offering.</p>
@@ -129,16 +103,16 @@
         <aside class="lineage" aria-label="Srila Prabhupada">
           <img src="img/srila-prabhupada.webp" alt="Portrait of Srila Prabhupada wearing a flower garland" width="300" height="294" loading="lazy">
           <p>No conversation about bhakti in the western world can go without mention of Srila Prabhupada.</p>
-          <a class="link" href="https://www.prabhupada.net/" target="_blank" rel="noopener">learn about Srila Prabhupada <span aria-hidden="true">→</span></a>
+          <a class="link" href="https://www.prabhupada.net/" target="_blank" rel="noopener">Learn About Srila Prabhupada <span aria-hidden="true">→</span></a>
         </aside>
       </div>
       <div class="split flip">
         <div class="text story-col">
-          <p class="kicker">ii. the yoga of the body</p>
+          <p class="kicker">II. The Yoga of the Body</p>
           <h3>Hatha Yoga</h3>
           <p>The yoga of the body. Hatha works with physical form — posture, breath, the slow negotiation between effort and surrender — as a doorway to the subtle. In this tradition, the body is not an obstacle to transcend but a precise and trustworthy teacher.</p>
           <p>Every pose holds an inquiry. Every breath is a conversation with the nervous system. We practice Hatha not to achieve shapes but to develop the quality of attention that allows us to inhabit our own lives more fully — on the mat and far from it.</p>
-          <p><a class="link" href="calendar.html">find a Hatha class <span aria-hidden="true">→</span></a></p>
+          <p><a class="link" href="calendar.html">Find a Hatha Class <span aria-hidden="true">→</span></a></p>
         </div>
         <figure>
           <img src="img/hatha-asana-side-stretch.webp" alt="A student in a side stretch on a red yoga mat during Hatha Asana class at Yoga in the Grove" width="900" height="1350" loading="lazy">
@@ -163,7 +137,7 @@
       <p class="ety">From Sanskrit <i>yuj</i> — to yoke, to join, to unite. Related to Latin <i>iugum</i>, English <i>yoke</i>.</p>
     </div>
     <div class="prose">
-      <p class="eyebrow">what the word means</p>
+      <p class="eyebrow">What the Word Means</p>
       <h2 id="union-title" style="margin-top:0">Yoga means <em>union.</em></h2>
       <p>It is the practice of yoking together what daily life works to separate: body from mind, self from other, the individual from something larger and less anxious than the individual. We carry the word lightly here — not as doctrine, not as brand, but as direction.</p>
       <p>A reminder that wholeness is not a state to be achieved and maintained through discipline. It is a way of paying attention. Every class we teach, every kirtan we gather for, every morning we sweep the floor before the first student arrives — these are acts in that direction. Small, repeated, sincere.</p>
@@ -175,7 +149,7 @@
 <section class="light why" aria-labelledby="why-title">
   <div class="wrap">
     <div class="prose">
-      <p class="eyebrow">why we're here</p>
+      <p class="eyebrow">Why We're Here</p>
       <h2 id="why-title" style="margin-top:0">A room, a tradition we love, <em>and an open door.</em></h2>
       <p class="lead">We started this studio because we believed that yoga — not its athletic cousin, but the thing itself — had a particular power: to address the whole person at once.</p>
       <p>The body and the mind and the spirit that moves between them, the part of us that needs beauty and silence and other people in the same room doing something real.</p>
@@ -190,15 +164,15 @@
 <section class="closing" aria-labelledby="close-title">
   <div class="wrap closing-grid">
     <div>
-      <p class="eyebrow">come as you are</p>
+      <p class="eyebrow">Come as You Are</p>
       <h2 id="close-title">We'll save you <em>a spot on the mat.</em></h2>
       <p class="cta-row"><button type="button" class="btn" data-open-join style="border:0;font:inherit;font-weight:500;cursor:pointer">Come Join Us on the Mat <span class="arrow" aria-hidden="true">→</span></button></p>
     </div>
     <address>
       <span class="place">Yoga in the Grove</span>
       <span>3220 Virginia Street<br>Coconut Grove, FL 33133</span>
-      <a class="link" style="justify-self:start" href="https://www.google.com/maps/dir/?api=1&amp;destination=3220+Virginia+Street+Coconut+Grove+FL+33133">get directions</a>
-      <div class="hours"><span>mon – fri</span><span>7:00 am – 8:00 pm</span><span>sat</span><span>8:00 am – 6:00 pm</span><span>sun</span><span>9:00 am – 2:00 pm</span></div>
+      <a class="link" style="justify-self:start" href="https://www.google.com/maps/dir/?api=1&amp;destination=3220+Virginia+Street+Coconut+Grove+FL+33133">Get Directions</a>
+      <div class="hours"><span>Mon to Fri</span><span>7:00 am to 8:00 pm</span><span>Sat</span><span>8:00 am to 6:00 pm</span><span>Sun</span><span>9:00 am to 2:00 pm</span></div>
     </address>
   </div>
 </section>
@@ -248,7 +222,7 @@
   </div>
 </dialog>
 
-<footer class="foot2">
+<footer class="site-foot">
   <div class="wrap">
     <div class="cols">
       <div class="brand">
@@ -284,7 +258,7 @@
     </div>
     <div class="base">
       <span>© 2026 Yoga in the Grove · Coconut Grove, Miami</span>
-      <span>Mon–Fri 7 am – 8 pm · Sat 8 am – 6 pm · Sun 9 am – 2 pm</span>
+      <span>Mon to Fri 7 am to 8 pm · Sat 8 am to 6 pm · Sun 9 am to 2 pm</span>
     </div>
   </div>
 </footer>

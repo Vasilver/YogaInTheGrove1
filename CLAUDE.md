@@ -52,7 +52,7 @@ Do not introduce frameworks, build tools, CMSs or paid services without written 
 
 - **`css/site.css`** holds everything shared: tokens, base, header, nav dropdown, buttons, links, sections, cards, FAQ, closing, footer, join dialog, lightbox and the inner-page blocks (3.4). Every page links it.
 - **`js/site.js`** holds the shared behavior: header on scroll, mobile menu, community dropdown, scroll reveal, join dialog, Formspree forms, lightbox, click-to-load embeds. Every page loads it with `<script src="js/site.js" defer>` (from `/blog/` use `../`).
-- Page-specific styles stay in a small `<style>` block in that page's `<head>`, page-specific scripts in a small inline `<script>` (e.g. the homepage hero and filters).
+- Page-specific styles stay in a small `<style>` block in that page's `<head>`, page-specific scripts in a small inline `<script>` (e.g. the homepage hero and filters). The homepage links `site.css` too; only homepage-only styles stay inline. Never copy the shared styles back into a page.
 - A new shared look or behavior goes into `site.css` / `site.js`, never copied into single pages. These two files affect every page — tell the other person before changing them.
 
 ### 3.2 Tokens (CSS variables on `:root`)
@@ -82,11 +82,11 @@ Always use these variables. Never hard-code a color or font size.
 - Headings (H1–H3): **Cormorant Garamond**, weight 400, *italic*, line-height 1.08. The second half of a heading is often wrapped in `<em>` in `--olive` ("Come for the practice. *Stay for the people.*").
 - Body: **Jost** weight 300, 1.0625rem, line-height 1.7. Bold labels use weight 500–600.
 - Om symbol ॐ: font "Tiro Devanagari Sanskrit" (loaded only for that one character), color `--clay`, `aria-hidden="true"`. Used in the logo, footer and as a large faded mark in the closing section.
-- Eyebrows above section headings: small, lowercase, letter-spaced (`.eyebrow`).
+- Eyebrows above section headings: small, letter-spaced, **Title Case** (`.eyebrow`, no lowercase transform). On photo headers they are uppercase.
 
 ### 3.4 Building blocks (reuse, don't reinvent)
 
-- **Header:** sticky, logo "ॐ Yoga in *the Grove* ॐ", nav: our story · schedule · community ▾ (our community, teachers, practice, food for life) · find us · blog. The "join us on the mat" button appears in the nav after scrolling past the hero. Mobile: "menu" pill button.
+- **Header:** sticky, logo "ॐ Yoga in *the Grove* ॐ", nav: Our Story · Schedule · Community ▾ (Teachers, Practice, Food for Life, Volunteer) · Volunteer · Find Us · Blog. The "Join Us on the Mat" button appears in the nav after scrolling past the hero. Below 1080 px the nav collapses into the "Menu" pill button. Copy the header from `index.html`.
 - **Buttons:** `.btn` = moss pill with arrow → that slides on hover; `.btn.small`, `.btn.ghost`. Text links: `.link` (moss, sage underline).
 - **Page width:** `.wrap` max 1160px, 20px side padding; reading text `.narrow` (max 64ch).
 - **Sections:** `section` with generous vertical padding; `.sec-head` = eyebrow + H2 + short intro. Alternate backgrounds down the page: ivory → beige → mist → moss → ivory. The soft moving "window light" stripes are used on beige/ivory sections.
@@ -94,9 +94,9 @@ Always use these variables. Never hard-code a color or font size.
 - **Practice cards:** `<details class="practice">` with image, roman numeral (i. ii. iii.), H3, short line, "+" that rotates when open.
 - **Photo tiles:** `<figure class="tile">` with `.tile-open` button that opens the lightbox; italic caption; photo credit "Photos: Erik Jimenez Photography" where his photos are used.
 - **FAQ:** `.faq` with `<details><summary>` question + answer paragraph, plus a matching `FAQPage` JSON-LD block.
-- **Closing:** big italic H2, join button, address + opening hours, faded Om mark.
+- **Closing (v2, 6 Nov 2026):** `.closing` + `.closing-grid`: left = clay eyebrow, big italic H2, `.cta-row` with the join button; right = address card top-aligned with the H2 (`.place` name, address on two lines, Get Directions, hours as Mon to Fri / Sat / Sun). **No Om mark.** The homepage keeps its own two-invite closing (`.close-head`, `.invites`, `.close-visit`).
 - **Join dialog:** every page includes the same `#joinDialog` (Formspree form, see 5.7) opened by any `[data-open-join]` button.
-- **Footer:** beige, Om + name + address, clickable phone + email (`.foot-contact`), footer nav incl. instagram and facebook.
+- **Footer (v2, 6 Nov 2026):** `<footer class="site-foot">` on every new-design page, identical everywhere: brand column (Om + name, address, phone, email) · Visit · Community · Follow, plus a base line with © and opening hours. Copy it from `about.html`; pages in `/blog/` use `../` paths.
 
 Inner pages (see `about.html`, `contact.html`, `blog.html` as examples):
 
@@ -120,7 +120,7 @@ Inner pages (see `about.html`, `contact.html`, `blog.html` as examples):
 ### 3.6 General
 
 - Mobile first: every page must work at 390 px width.
-- Tone of voice: warm, calm, inviting, lowercase nav labels and eyebrows. Keep it.
+- Tone of voice: warm, calm, inviting. Nav labels, eyebrows, buttons and links in Title Case ("Get Directions", "Come Join Us on the Mat").
 - After the design changes in a way that affects all pages, update this section in the same commit.
 
 ---
@@ -264,4 +264,4 @@ JSON-LD `openingHoursSpecification` must match exactly: Mo–Fr `07:00`–`20:00
 
 ---
 
-*Last updated: 2026-11-04 — shared `css/site.css` + `js/site.js`, inner-page building blocks (Our Story, Find Us, Blog).*
+*Last updated: 2026-11-06 — homepage reconnected to `css/site.css`; closing v2, footer v2, Title Case, nav breakpoint 1080 px.*
