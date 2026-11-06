@@ -48,22 +48,23 @@
 <header class="site-header" id="top">
   <div class="wrap bar">
     <a class="logo" href="./"><span class="om" aria-hidden="true">ॐ</span> Yoga in <em>the Grove</em> <span class="om" aria-hidden="true">ॐ</span></a>
-    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav">menu</button>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Menu</button>
     <nav class="nav" id="siteNav" aria-label="main">
-      <a href="about.html" aria-current="page">our story</a>
-      <a href="calendar.html">schedule</a>
+      <a href="about.html" aria-current="page">Our Story</a>
+      <a href="calendar.html">Schedule</a>
       <div class="dd" id="ddCommunity">
-        <button type="button" class="dd-btn" aria-expanded="false" aria-controls="ddMenu">community <span class="caret" aria-hidden="true">⌄</span></button>
+        <a class="dd-link" href="community.html">Community</a><button type="button" class="dd-btn" aria-expanded="false" aria-controls="ddMenu" aria-label="Show Community links"><span class="caret" aria-hidden="true">⌄</span></button>
         <div class="dd-menu" id="ddMenu">
-          <a href="community.html">our community</a>
-          <a href="teachers.html">teachers</a>
-          <a href="practice.html">practice</a>
-          <a href="foodforlife.html">food for life</a>
+          <a href="community.html#teachers">Teachers</a>
+          <a href="community.html#gather">Practice</a>
+          <a href="community.html#food-for-life">Food for Life</a>
+          <a href="volunteer.html">Volunteer</a>
         </div>
       </div>
-      <a href="contact.html">find us</a>
-      <a href="blog.html">blog</a>
-      <button type="button" class="btn small nav-cta" data-open-join style="border:0;font:inherit;font-weight:500;cursor:pointer">join us on the mat <span class="arrow" aria-hidden="true">→</span></button>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="contact.html">Find Us</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="btn small nav-cta" data-open-join style="border:0;font:inherit;font-weight:500;cursor:pointer">Join Us on the Mat <span class="arrow" aria-hidden="true">→</span></button>
     </nav>
   </div>
 </header>
@@ -182,38 +183,38 @@
   <!-- FORMSPREE: same form already used by /calendar.html (xgolnjqv). Swap the ID to route sign-ups to a separate form. -->
   <form class="join-form" id="joinForm" action="https://formspree.io/f/xgolnjqv" method="POST" novalidate>
     <div class="row2">
-      <label for="jf-name">name<input id="jf-name" name="name" type="text" autocomplete="name" required></label>
-      <label for="jf-phone">phone <span style="font-weight:400;color:var(--ink-soft)">(optional)</span><input id="jf-phone" name="phone" type="tel" autocomplete="tel"></label>
+      <label for="jf-name">Name<input id="jf-name" name="name" type="text" autocomplete="name" required></label>
+      <label for="jf-phone">Phone <span style="font-weight:400;color:var(--ink-soft)">(optional)</span><input id="jf-phone" name="phone" type="tel" autocomplete="tel"></label>
     </div>
-    <label for="jf-email">email<input id="jf-email" name="email" type="email" autocomplete="email" required></label>
+    <label for="jf-email">Email<input id="jf-email" name="email" type="email" autocomplete="email" required></label>
     <fieldset>
-      <legend>what calls to you?</legend>
+      <legend>What calls to you?</legend>
       <div class="pills">
-        <label><input type="checkbox" name="interests" value="Hatha Asana" id="jf-i1"><span>hatha asana</span></label>
-        <label><input type="checkbox" name="interests" value="Kirtan" id="jf-i2"><span>kirtan</span></label>
-        <label><input type="checkbox" name="interests" value="Meditation" id="jf-i3"><span>meditation</span></label>
-        <label><input type="checkbox" name="interests" value="Seva" id="jf-i4"><span>seva</span></label>
-        <label><input type="checkbox" name="interests" value="Food for Life" id="jf-i5"><span>food for life</span></label>
+        <label><input type="checkbox" name="interests" value="Hatha Asana" id="jf-i1"><span>Hatha Asana</span></label>
+        <label><input type="checkbox" name="interests" value="Kirtan" id="jf-i2"><span>Kirtan</span></label>
+        <label><input type="checkbox" name="interests" value="Meditation" id="jf-i3"><span>Meditation</span></label>
+        <label><input type="checkbox" name="interests" value="Seva" id="jf-i4"><span>Seva</span></label>
+        <label><input type="checkbox" name="interests" value="Food for Life" id="jf-i5"><span>Food for Life</span></label>
       </div>
     </fieldset>
     <fieldset>
-      <legend>have you practiced with us before?</legend>
+      <legend>Have you practiced with us before?</legend>
       <div class="pills">
-        <label><input type="radio" name="first_visit" value="First time" id="jf-f1" checked><span>this would be my first time</span></label>
-        <label><input type="radio" name="first_visit" value="Returning" id="jf-f2"><span>i've been before</span></label>
+        <label><input type="radio" name="first_visit" value="First time" id="jf-f1" checked><span>This would be my first time</span></label>
+        <label><input type="radio" name="first_visit" value="Returning" id="jf-f2"><span>I've been before</span></label>
       </div>
     </fieldset>
-    <label for="jf-msg">anything we should know? <span style="font-weight:400;color:var(--ink-soft)">(optional)</span><textarea id="jf-msg" name="message" rows="3"></textarea></label>
+    <label for="jf-msg">Anything we should know? <span style="font-weight:400;color:var(--ink-soft)">(optional)</span><textarea id="jf-msg" name="message" rows="3"></textarea></label>
     <input type="hidden" name="_subject" value="New sign-up: Come Join Us on the Mat">
     <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <button type="submit" class="btn">send <span class="arrow" aria-hidden="true">→</span></button>
+    <button type="submit" class="btn">Send <span class="arrow" aria-hidden="true">→</span></button>
     <p class="form-msg" id="formMsg" aria-live="assertive"></p>
     <p class="form-note">We only use this to welcome you and share what's coming up.</p>
   </form>
   <div class="jd-done" id="joinDone" hidden>
     <h3>We'll see you on the mat.</h3>
     <p>Thank you. We'll be in touch within a day or two with what's coming up next.</p>
-    <button type="button" class="btn" data-close-join style="border:0;font:inherit;cursor:pointer">close</button>
+    <button type="button" class="btn" data-close-join style="border:0;font:inherit;cursor:pointer">Close</button>
   </div>
 </dialog>
 
@@ -224,16 +225,17 @@
       <div class="foot-contact"><a href="tel:+19299442045">929-944-2045</a><a href="mailto:marjazz2012@gmail.com">marjazz2012@gmail.com</a></div>
     </div>
     <nav aria-label="footer">
-      <a href="about.html">our story</a>
-      <a href="calendar.html">schedule</a>
-      <a href="community.html">community</a>
-      <a href="teachers.html">teachers</a>
-      <a href="practice.html">practice</a>
-      <a href="foodforlife.html">food for life</a>
-      <a href="contact.html">find us</a>
-      <a href="blog.html">blog</a>
-      <a href="https://www.instagram.com/yoga.inthegrove" aria-label="Yoga in the Grove on Instagram">instagram</a>
-      <a href="https://www.facebook.com/YogaInTheGrove" aria-label="Yoga in the Grove on Facebook">facebook</a>
+      <a href="about.html">Our Story</a>
+      <a href="calendar.html">Schedule</a>
+      <a href="community.html">Community</a>
+      <a href="teachers.html">Teachers</a>
+      <a href="practice.html">Practice</a>
+      <a href="foodforlife.html">Food for Life</a>
+      <a href="contact.html">Find Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="donate.html">Donate</a>
+      <a href="https://www.instagram.com/yoga.inthegrove" aria-label="Yoga in the Grove on Instagram">Instagram</a>
+      <a href="https://www.facebook.com/YogaInTheGrove" aria-label="Yoga in the Grove on Facebook">Facebook</a>
     </nav>
   </div>
 </footer>
