@@ -39,13 +39,24 @@
 .vol-hero .ph-actions .btn{background:var(--ivory);color:var(--olive)}
 .vol-hero .ph-actions .btn:hover{background:var(--beige)}
 
-/* the meaning of seva */
-.seva-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,5vw,72px);align-items:start}
-.seva .sec-head{margin-bottom:0}
+/* the meaning of seva: dictionary card like Our Story's "yoga" entry */
+.define{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,80px);align-items:start}
+.entry{position:relative;isolation:isolate;background:var(--ivory);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(26px,4vw,44px);display:grid;gap:10px;
+  box-shadow:0 0 0 1px color-mix(in srgb,#F29A55 10%,transparent),0 18px 60px -30px color-mix(in srgb,#F29A55 55%,transparent)}
+/* warm aura behind the card, same orange glow as the sun on the Community page */
+.entry::before{content:"";position:absolute;inset:-14% -10%;z-index:-1;border-radius:50%;pointer-events:none;
+  background:radial-gradient(closest-side,color-mix(in srgb,#F29A55 42%,transparent),color-mix(in srgb,#F2C27A 22%,transparent) 55%,transparent 100%);
+  filter:blur(14px);animation:sevaAura 7s ease-in-out infinite}
+@keyframes sevaAura{0%,100%{transform:scale(.96);opacity:.75}50%{transform:scale(1.06);opacity:1}}
+.entry .word{font-family:var(--font-display);font-style:italic;font-size:var(--step-4);line-height:1;color:var(--ink)}
+.entry .pron{color:var(--ink-soft);letter-spacing:.04em}
+.entry .pron i{color:var(--clay);font-style:italic}
+.entry .ety{color:var(--ink-soft);border-top:1px solid var(--line);padding-top:14px;margin-top:6px}
 .seva-text{display:grid;gap:16px;color:var(--ink-soft);max-width:62ch}
+.seva-text h2{font-size:var(--step-3);margin-top:-4px}
 .seva-lead{font-family:var(--font-display);font-style:italic;font-size:var(--step-2);line-height:1.3;color:var(--ink)}
 .seva-quote{font-family:var(--font-display);font-style:italic;font-size:var(--step-1);color:var(--clay);border-left:2px solid var(--sage);padding-left:16px;margin-top:6px}
-@media (max-width:820px){.seva-grid{grid-template-columns:1fr}}
+@media (max-width:820px){.define{grid-template-columns:1fr}}
 
 /* ways to get involved */
 .way-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
@@ -65,24 +76,23 @@
 .way-pick:hover .arrow,.way-pick:focus-visible .arrow{transform:translateX(5px)}
 @media (max-width:900px){.way-grid{grid-template-columns:1fr;max-width:560px}}
 
-/* impact */
-.impact{background:color-mix(in srgb,var(--olive) 88%,var(--ink));color:var(--on-olive)}
-.impact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,6vw,80px);align-items:center}
-.impact .eyebrow{color:var(--sage)}
-.impact-stat{font-family:var(--font-display);font-style:italic;font-weight:300;font-size:clamp(5rem,13vw,9.5rem);line-height:.9;color:var(--ivory);font-variant-numeric:tabular-nums;margin:6px 0 4px}
-.impact h2{font-size:var(--step-3)}
+/* impact: one row right under the hero */
+.impact{background:color-mix(in srgb,var(--olive) 88%,var(--ink));color:var(--on-olive);padding-block:clamp(28px,4vw,44px)}
+.impact-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"label label label" "main facts link";gap:10px clamp(24px,3.5vw,48px);align-items:center}
+.impact-label{grid-area:label;color:var(--sage)}
+.impact-main{grid-area:main;display:flex;align-items:center;gap:18px}
+.impact-num{font-family:var(--font-display);font-style:italic;font-weight:300;font-size:clamp(3.2rem,5vw,4.4rem);line-height:.9;color:var(--ivory);font-variant-numeric:tabular-nums}
+.impact h2{font-size:clamp(1.4rem,2vw,1.75rem);line-height:1.1}
+@media (min-width:1001px){.impact h2{white-space:nowrap}}
 .impact h2 em{color:var(--flame)}
-.impact-text > p:not(.eyebrow):not(.impact-stat){color:var(--on-olive);opacity:.9;margin-top:14px;max-width:52ch}
-.impact-list{list-style:none;margin:22px 0 24px;padding:0;display:grid;gap:10px}
-.impact-list li{display:grid;grid-template-columns:6.5rem 1fr;gap:12px;padding-top:10px;border-top:1px solid color-mix(in srgb,var(--on-olive) 25%,transparent)}
-.impact-list b{font-weight:600}
-.impact .link{color:var(--ivory);border-color:color-mix(in srgb,var(--ivory) 55%,transparent)}
-.impact-photos{position:relative;padding-bottom:clamp(48px,8vw,90px);min-width:0}
-.impact-photos figure{margin:0;border-radius:var(--radius);overflow:hidden}
-.impact-photos img{display:block;width:100%;height:100%;object-fit:cover}
-.ip-a{aspect-ratio:4/3;width:88%}
-.ip-b{position:absolute;right:0;bottom:0;width:56%;aspect-ratio:4/3;border:6px solid color-mix(in srgb,var(--olive) 88%,var(--ink))}
-@media (max-width:820px){.impact-grid{grid-template-columns:1fr}}
+.impact-facts{grid-area:facts;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,36px);padding-left:clamp(20px,3vw,40px);border-left:1px solid color-mix(in srgb,var(--on-olive) 25%,transparent)}
+.impact-facts dt{font-weight:600;color:var(--ivory)}
+.impact-facts dd{margin:2px 0 0;font-size:.9rem;opacity:.9;line-height:1.45}
+.impact-link{grid-area:link;color:var(--ivory);border-color:color-mix(in srgb,var(--ivory) 55%,transparent);white-space:nowrap}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:1180px){.impact h2{white-space:normal}}
+@media (max-width:1000px){.impact-row{grid-template-columns:1fr;grid-template-areas:"label" "main" "facts" "link";gap:18px}.impact-facts{padding-left:0;border-left:0;border-top:1px solid color-mix(in srgb,var(--on-olive) 25%,transparent);padding-top:16px}.impact-link{justify-self:start}}
+@media (max-width:520px){.impact-facts{grid-template-columns:1fr}}
 
 /* form */
 .vform-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:start}
@@ -93,7 +103,7 @@
 /* closing */
 .close-copy{color:var(--ink-soft);margin-top:18px;max-width:44ch}
 
-@media (prefers-reduced-motion:reduce){.way,.way-photo img{transition:none}}
+@media (prefers-reduced-motion:reduce){.way,.way-photo img{transition:none}.entry::before{animation:none}}
 </style>
 </head>
 <body>
@@ -136,15 +146,35 @@
   </div>
 </section>
 
+<!-- OUR COMMUNITY IMPACT: one row right under the hero.
+     Figures from the Food for Life page ("roughly 200 people" every week). TODO (client): confirm before launch. -->
+<section class="impact" aria-labelledby="impact-title">
+  <div class="wrap impact-row">
+    <p class="eyebrow impact-label">Our Community Impact</p>
+    <div class="impact-main">
+      <span class="impact-num" data-to="200" aria-hidden="true">200</span>
+      <h2 id="impact-title"><span class="sr-only">About 200 </span>neighbors nourished <em>every week.</em></h2>
+    </div>
+    <dl class="impact-facts">
+      <div><dt>Sundays</dt><dd>About 100 people share a meal at our center for a small donation.</dd></div>
+      <div><dt>Mondays</dt><dd>About 100 free meals are served to unhoused neighbors downtown.</dd></div>
+    </dl>
+    <a class="link impact-link" href="community.html#food-for-life">More About Food for Life <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
 <!-- 2. THE MEANING OF SEVA (from the Seva text on the Practice page) -->
 <section class="light seva" aria-labelledby="seva-title">
-  <div class="wrap seva-grid">
-    <div class="sec-head">
-      <p class="eyebrow">The Meaning of Seva</p>
-      <h2 id="seva-title">Love <em>in motion.</em></h2>
+  <div class="wrap define">
+    <div class="entry" aria-label="dictionary entry: seva">
+      <span class="word" aria-hidden="true">seva</span>
+      <span class="pron">SAY-vuh · <i>noun</i></span>
+      <p class="ety">From Sanskrit <i>seva</i>: service, devotion, attending to others. Selfless service, offered without expectation of reward or recognition.</p>
     </div>
     <div class="seva-text">
-      <p class="seva-lead">In Sanskrit, seva means service offered without expectation of reward or recognition. It is the yoga of action: showing up for something beyond yourself.</p>
+      <p class="eyebrow">The Meaning of Seva</p>
+      <h2 id="seva-title">Love <em>in motion.</em></h2>
+      <p class="seva-lead">Seva is the yoga of action: showing up for something beyond yourself, simply because it needs doing.</p>
       <p>We believe yoga practiced only on the mat is incomplete. Seva is how the attention we cultivate in practice finds its way into the kitchen, onto the street, and into the way we care for our corner of Miami. You don't need any experience or background in the tradition. You only need to be willing to help.</p>
       <p class="seva-quote">"The real test is what you carry out the door."</p>
     </div>
@@ -196,27 +226,6 @@
   </div>
 </section>
 
-<!-- 4. OUR COMMUNITY IMPACT
-     Figures from the Food for Life page ("roughly 200 people" every week). TODO (client): confirm before launch. -->
-<section class="impact" aria-labelledby="impact-title">
-  <div class="wrap impact-grid">
-    <div class="impact-text">
-      <p class="eyebrow">Our Community Impact</p>
-      <p class="impact-stat" aria-hidden="true"><span class="impact-num" data-to="200">200</span></p>
-      <h2 id="impact-title">About 200 neighbors <em>nourished every week.</em></h2>
-      <p>Each one is a person, not a number: someone who stayed after class, someone who found a warm plate downtown on a Monday. No questions asked, no registration required. Just food, made with love, offered freely.</p>
-      <ul class="impact-list">
-        <li><b>Sundays</b><span>About 100 people share a meal at our center for a small donation.</span></li>
-        <li><b>Mondays</b><span>About 100 free meals are served to unhoused neighbors in downtown Miami.</span></li>
-      </ul>
-      <a class="link" href="community.html#food-for-life">More About Food for Life <span aria-hidden="true">→</span></a>
-    </div>
-    <div class="impact-photos">
-      <figure class="ip-a reveal"><img src="img/volunteer-meal-under-overpass.webp" alt="Volunteers serving a line of neighbors beneath an overpass in downtown Miami" width="1000" height="753" loading="lazy"></figure>
-      <figure class="ip-b reveal" style="--i:1"><img src="img/volunteer-serving-downtown.webp" alt="A Food for Life volunteer in an orange shirt handing out meals downtown" width="1000" height="753" loading="lazy"></figure>
-    </div>
-  </div>
-</section>
 
 <!-- 5. VOLUNTEER INQUIRY FORM (existing Formspree form, told apart by the hidden "form" field) -->
 <section class="light" id="volunteer-form" aria-labelledby="form-title">
@@ -354,11 +363,10 @@
   /* the 200 counts up once when it comes into view */
   var n=document.querySelector('.impact-num');
   if(!n || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if(n.getBoundingClientRect().top < innerHeight) return;
   var to=+n.dataset.to; n.textContent='0';
   var io=new IntersectionObserver(function(es){ if(!es[0].isIntersecting) return; io.disconnect();
     var t0=performance.now(); (function step(t){ var p=Math.min(1,(t-t0)/1400); n.textContent=Math.round(to*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(step); })(t0);
-  },{threshold:.6}); io.observe(n);
+  },{threshold:.4}); io.observe(n);
 })();
 </script>
 
