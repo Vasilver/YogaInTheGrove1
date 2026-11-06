@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Donate to Food for Life | Yoga in the Grove</title>
+<meta name="description" content="Support Food for Life at Yoga in the Grove in Coconut Grove, Miami. Give through Cash App, Zelle, Venmo, or PayPal and help share meals with neighbors.">
+<link rel="canonical" href="https://yogainthegrove.org/donate">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Yoga in the Grove">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://yogainthegrove.org/donate">
+<meta property="og:title" content="Donate to Food for Life | Yoga in the Grove">
+<meta property="og:description" content="Support Food for Life at Yoga in the Grove in Coconut Grove, Miami. Give through Cash App, Zelle, Venmo, or PayPal and help share meals with neighbors.">
+<meta property="og:image" content="https://yogainthegrove.org/img/og-donate.jpg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ExerciseGym", "name": "Yoga in the Grove", "url": "https://yogainthegrove.org/", "image": "https://yogainthegrove.org/img/og-donate.jpg", "telephone": "+1-929-944-2045", "email": "marjazz2012@gmail.com", "address": {"@type": "PostalAddress", "streetAddress": "3220 Virginia Street", "addressLocality": "Coconut Grove", "addressRegion": "FL", "postalCode": "33133", "addressCountry": "US"}, "geo": {"@type": "GeoCoordinates", "latitude": 25.7285, "longitude": -80.2406}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "14:00"}], "sameAs": ["https://www.instagram.com/yoga.inthegrove", "https://www.facebook.com/YogaInTheGrove"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://yogainthegrove.org/"},
+{"@type":"ListItem","position":2,"name":"Food for Life","item":"https://yogainthegrove.org/community.html#food-for-life"},
+{"@type":"ListItem","position":3,"name":"Donate","item":"https://yogainthegrove.org/donate"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&text=%E0%A5%90&display=swap">
+<link rel="stylesheet" href="css/site.css">
+<style>
+.eyebrow{text-transform:none}
+#ways-to-give{scroll-margin-top:72px}
+
+/* hero: light, minimal, a soft warm glow behind the words */
+.don-hero{text-align:center;padding-block:clamp(72px,10vw,132px) clamp(52px,7vw,88px)}
+.don-hero .ph-inner{justify-items:center}
+.don-hero .ph-inner > *{margin-inline:auto}
+.don-hero .eyebrow{color:var(--moss)}
+.don-hero h1 em{color:var(--moss)}
+.don-hero .lede{max-width:60ch}
+.don-copy{color:var(--ink-soft);max-width:60ch}
+.don-whisper{font-family:var(--font-display);font-style:italic;font-size:var(--step-2);line-height:1.3;color:var(--ink);margin-top:4px}
+.don-whisper em{color:var(--clay)}
+.don-glow{position:absolute;left:50%;top:44%;width:min(760px,120vw);aspect-ratio:1.4;translate:-50% -50%;z-index:-1;pointer-events:none;border-radius:50%;
+  background:radial-gradient(closest-side,color-mix(in srgb,#F29A55 20%,transparent),color-mix(in srgb,#F2C27A 12%,transparent) 55%,transparent);filter:blur(10px)}
+
+/* donation methods */
+.ways-give{background:var(--ivory);border-top:1px solid var(--line)}
+.don-head{text-align:center;justify-items:center;max-width:640px;margin-inline:auto}
+.don-head .eyebrow{color:var(--moss)}
+.don-head h2 em{color:var(--moss)}
+.don-note{color:var(--ink-soft)}
+.pay-grid{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,24px)}
+.pay{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(14px,1.8vw,20px);display:grid;grid-template-rows:auto 1fr;gap:14px;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s,border-color .3s}
+.pay:hover,.pay:focus-within{transform:translateY(-4px);border-color:var(--sage);box-shadow:0 22px 44px -30px color-mix(in srgb,var(--moss) 70%,transparent)}
+.pay-qr{margin:0;aspect-ratio:1;background:#fff;border-radius:10px;padding:6px;box-sizing:border-box}
+.pay-qr img{width:100%;height:100%;object-fit:contain;display:block}
+.pay-body{display:grid;gap:6px;align-content:start;text-align:center;justify-items:center}
+.pay h3{font-family:var(--font-body);font-weight:500;font-style:normal;font-size:.95rem;letter-spacing:.14em;text-transform:uppercase;color:var(--olive)}
+.pay-handle{color:var(--ink);font-size:.95rem;line-height:1.4;overflow-wrap:anywhere}
+.pay-how{color:var(--ink-soft);font-size:.9rem;line-height:1.5}
+.pay-link{margin-top:auto;font:inherit;font-size:.92rem;font-weight:500;color:var(--moss);background:none;border:0;border-bottom:1px solid var(--sage);padding:8px 0 2px;cursor:pointer;display:inline-flex;gap:.4em;text-decoration:none}
+.pay-link .arrow{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.pay-link:hover .arrow,.pay-link:focus-visible .arrow{transform:translateX(4px)}
+.pay-status{text-align:center;color:var(--moss);min-height:1.7em;margin-top:14px;font-size:.92rem}
+@media (max-width:960px){.pay-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:620px}}
+/* phones: one card per row, code beside the details so the tap link is easy to reach */
+@media (max-width:560px){
+  .pay-grid{grid-template-columns:1fr}
+  .pay{grid-template-columns:132px 1fr;grid-template-rows:none;align-items:center}
+  .pay-body{text-align:left;justify-items:start}
+}
+
+/* why we give */
+.why-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,6vw,80px);align-items:center}
+.why-photo{margin:0;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--flame)}
+.why-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.why-text{display:grid;gap:16px;max-width:56ch}
+.why-text .eyebrow{color:var(--moss)}
+.why-text h2{font-size:var(--step-3)}
+.why-text h2 em{color:var(--moss)}
+.why-text p:not(.eyebrow){color:var(--ink-soft)}
+@media (max-width:820px){.why-grid{grid-template-columns:1fr}.why-photo{aspect-ratio:4/3;max-width:560px}}
+
+/* thank you */
+.don-thanks{text-align:center}
+.don-thanks .wrap{display:grid;gap:16px;justify-items:center}
+.don-thanks h2{font-size:var(--step-3);max-width:20ch}
+.don-thanks h2 em{color:var(--moss)}
+.don-thanks p{color:var(--ink-soft);max-width:52ch}
+@media (max-width:700px){.don-thanks .om-mark{display:none}}
+
+@media (prefers-reduced-motion:reduce){.pay{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap bar">
+    <a class="logo" href="./"><span class="om" aria-hidden="true">ॐ</span> Yoga in <em>the Grove</em> <span class="om" aria-hidden="true">ॐ</span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Menu</button>
+    <nav class="nav" id="siteNav" aria-label="main">
+      <a href="about.html">Our Story</a>
+      <a href="calendar.html">Schedule</a>
+      <div class="dd" id="ddCommunity">
+        <a class="dd-link" href="community.html">Community</a><button type="button" class="dd-btn" aria-expanded="false" aria-controls="ddMenu" aria-label="Show Community links"><span class="caret" aria-hidden="true">⌄</span></button>
+        <div class="dd-menu" id="ddMenu">
+          <a href="community.html#teachers">Teachers</a>
+          <a href="community.html#gather">Practice</a>
+          <a href="community.html#food-for-life">Food for Life</a>
+          <a href="volunteer.html">Volunteer</a>
+        </div>
+      </div>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="contact.html">Find Us</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="btn small nav-cta" data-open-join style="border:0;font:inherit;font-weight:500;cursor:pointer">Join Us on the Mat <span class="arrow" aria-hidden="true">→</span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1. HERO: a warm, minimal invitation (no photo, ivory with window light) -->
+<section class="page-hero don-hero" aria-labelledby="page-title">
+  <span class="don-glow" aria-hidden="true"></span>
+  <div class="wrap ph-inner">
+    <p class="eyebrow">Give From the Heart</p>
+    <h1 id="page-title">A Little Love <em>Goes a Long Way.</em></h1>
+    <p class="lede">Whether you give your time or make a contribution, every gesture of generosity helps support the spirit of Seva and the community we're building together.</p>
+    <p class="don-whisper">Give what you can, when you can. <em>Every gesture matters.</em></p>
+    <div class="ph-actions"><a class="btn" href="#ways-to-give">Choose a Way to Give <span class="arrow" aria-hidden="true">↓</span></a></div>
+  </div>
+</section>
+
+<!-- 2. DONATION METHODS: the client's original QR codes, resized to WebP (each copy checked to scan to the same address).
+     Links are the exact addresses encoded in each QR code. Zelle has no web payment link, so it offers the email to copy. -->
+<section class="ways-give" id="ways-to-give" aria-labelledby="ways-title">
+  <div class="wrap">
+    <div class="sec-head don-head">
+      <p class="eyebrow">Ways to Give</p>
+      <h2 id="ways-title">Choose your <em>preferred way to give.</em></h2>
+      <p class="don-note">On a computer, scan a code with your phone's camera. On your phone, tap the link under each code.</p>
+    </div>
+    <ul class="pay-grid">
+      <li class="pay">
+        <figure class="pay-qr"><img src="img/donate-qr-cashapp.webp" alt="Cash App QR code to give to $miamiiskcon" width="800" height="800" loading="lazy"></figure>
+        <div class="pay-body">
+          <h3>Cash App</h3>
+          <p class="pay-handle">$miamiiskcon</p>
+          <p class="pay-how">Scan with your camera, or tap below to open Cash App and enter any amount.</p>
+          <a class="pay-link" href="https://cash.app/$MiamiISKCON" target="_blank" rel="noopener" aria-label="Give with Cash App (opens in a new tab)">Open Cash App <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </li>
+      <li class="pay">
+        <figure class="pay-qr"><img src="img/donate-qr-zelle.webp" alt="Zelle QR code to give to ISKCON Miami" width="800" height="800" loading="lazy"></figure>
+        <div class="pay-body">
+          <h3>Zelle</h3>
+          <p class="pay-handle">devotionalservice@<wbr>iskconmiami.org</p>
+          <p class="pay-how">Scan the code in your banking app's Zelle section, or send to the email above.</p>
+          <button type="button" class="pay-link pay-copy" data-copy="devotionalservice@iskconmiami.org" aria-label="Copy the Zelle email address">Copy Email <span class="arrow" aria-hidden="true">→</span></button>
+        </div>
+      </li>
+      <li class="pay">
+        <figure class="pay-qr"><img src="img/donate-qr-venmo.webp" alt="Venmo QR code to give to @iskcon-miami" width="800" height="800" loading="lazy"></figure>
+        <div class="pay-body">
+          <h3>Venmo</h3>
+          <p class="pay-handle">@iskcon-miami</p>
+          <p class="pay-how">Scan with your camera or the Venmo app, or tap below to open Venmo.</p>
+          <a class="pay-link" href="https://venmo.com/code?user_id=4538270809589597511" target="_blank" rel="noopener" aria-label="Give with Venmo (opens in a new tab)">Open Venmo <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </li>
+      <li class="pay">
+        <figure class="pay-qr"><img src="img/donate-qr-paypal.webp" alt="PayPal QR code for the ISKCON Miami donation page" width="800" height="800" loading="lazy"></figure>
+        <div class="pay-body">
+          <h3>PayPal</h3>
+          <p class="pay-handle">iskconmiami.org</p>
+          <p class="pay-how">Scan with your camera, or tap below to give through the PayPal donation page.</p>
+          <a class="pay-link" href="https://iskconmiami.org/donations_paypal.php" target="_blank" rel="noopener" aria-label="Give with PayPal (opens in a new tab)">Give With PayPal <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </li>
+    </ul>
+    <p class="pay-status" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- 3. WHY WE GIVE: short, one photo from the Food for Life page, no claims about how gifts are allocated -->
+<section class="bg-beige why" aria-labelledby="why-title">
+  <div class="wrap why-grid">
+    <figure class="why-photo"><img src="img/volunteers-serving-meals.webp" alt="Food for Life volunteers serving hot vegetarian meals to neighbors in downtown Miami" width="960" height="1200" loading="lazy"></figure>
+    <div class="why-text">
+      <p class="eyebrow">Why We Give</p>
+      <h2 id="why-title">More Than a Meal. <em>A Moment of Connection.</em></h2>
+      <p>Food for Life is rooted in the spirit of Seva, the practice of selfless service. Through shared meals and acts of kindness, Yoga in the Grove brings its community together while extending care beyond the mat.</p>
+      <p><a class="link" href="volunteer.html">Prefer to Give Your Time? Volunteer With Us</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. THANK YOU -->
+<section class="closing don-thanks" aria-labelledby="close-title">
+  <span class="om om-mark" aria-hidden="true">ॐ</span>
+  <div class="wrap">
+    <h2 id="close-title">Thank You for Being Part of <em>Our Community.</em></h2>
+    <p>Every act of generosity, big or small, is a reminder of what we can create when we come together.</p>
+    <p>From all of us at Yoga in the Grove, thank you for helping us carry the spirit of giving forward.</p>
+  </div>
+</section>
+</main>
+
+<dialog class="join-dialog" id="joinDialog" aria-labelledby="jd-title">
+  <div class="jd-head">
+    <h2 id="jd-title">Come join us on the mat.</h2>
+    <p>Tell us a little about you and we'll send you the next class, kirtan, and gathering.</p>
+    <button type="button" class="jd-close" data-close-join aria-label="close">×</button>
+  </div>
+  <!-- FORMSPREE: same form already used by /calendar.html (xgolnjqv). Swap the ID to route sign-ups to a separate form. -->
+  <form class="join-form" id="joinForm" action="https://formspree.io/f/xgolnjqv" method="POST" novalidate>
+    <div class="row2">
+      <label for="jf-name">Name<input id="jf-name" name="name" type="text" autocomplete="name" required></label>
+      <label for="jf-phone">Phone <span style="font-weight:400;color:var(--ink-soft)">(optional)</span><input id="jf-phone" name="phone" type="tel" autocomplete="tel"></label>
+    </div>
+    <label for="jf-email">Email<input id="jf-email" name="email" type="email" autocomplete="email" required></label>
+    <fieldset>
+      <legend>What calls to you?</legend>
+      <div class="pills">
+        <label><input type="checkbox" name="interests" value="Hatha Asana" id="jf-i1"><span>Hatha Asana</span></label>
+        <label><input type="checkbox" name="interests" value="Kirtan" id="jf-i2"><span>Kirtan</span></label>
+        <label><input type="checkbox" name="interests" value="Meditation" id="jf-i3"><span>Meditation</span></label>
+        <label><input type="checkbox" name="interests" value="Seva" id="jf-i4"><span>Seva</span></label>
+        <label><input type="checkbox" name="interests" value="Food for Life" id="jf-i5"><span>Food for Life</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Have you practiced with us before?</legend>
+      <div class="pills">
+        <label><input type="radio" name="first_visit" value="First time" id="jf-f1" checked><span>This would be my first time</span></label>
+        <label><input type="radio" name="first_visit" value="Returning" id="jf-f2"><span>I've been before</span></label>
+      </div>
+    </fieldset>
+    <label for="jf-msg">Anything we should know? <span style="font-weight:400;color:var(--ink-soft)">(optional)</span><textarea id="jf-msg" name="message" rows="3"></textarea></label>
+    <input type="hidden" name="_subject" value="New sign-up: Come Join Us on the Mat">
+    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit" class="btn">Send <span class="arrow" aria-hidden="true">→</span></button>
+    <p class="form-msg" id="formMsg" aria-live="assertive"></p>
+    <p class="form-note">We only use this to welcome you and share what's coming up.</p>
+  </form>
+  <div class="jd-done" id="joinDone" hidden>
+    <h3>We'll see you on the mat.</h3>
+    <p>Thank you. We'll be in touch within a day or two with what's coming up next.</p>
+    <button type="button" class="btn" data-close-join style="border:0;font:inherit;cursor:pointer">Close</button>
+  </div>
+</dialog>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <span><span class="om" aria-hidden="true">ॐ</span>&nbsp; Yoga in the Grove &nbsp;<span class="om" aria-hidden="true">ॐ</span> · 3220 Virginia Street, Coconut Grove, FL 33133</span>
+      <div class="foot-contact"><a href="tel:+19299442045">929-944-2045</a><a href="mailto:marjazz2012@gmail.com">marjazz2012@gmail.com</a></div>
+    </div>
+    <nav aria-label="footer">
+      <a href="about.html">Our Story</a>
+      <a href="calendar.html">Schedule</a>
+      <a href="community.html">Community</a>
+      <a href="teachers.html">Teachers</a>
+      <a href="practice.html">Practice</a>
+      <a href="foodforlife.html">Food for Life</a>
+      <a href="contact.html">Find Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="donate.html">Donate</a>
+      <a href="https://www.instagram.com/yoga.inthegrove" aria-label="Yoga in the Grove on Instagram">Instagram</a>
+      <a href="https://www.facebook.com/YogaInTheGrove" aria-label="Yoga in the Grove on Facebook">Facebook</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/site.js" defer></script>
+<script>
+(function(){
+  /* Zelle has no web link: copy the email instead */
+  var status=document.querySelector('.pay-status');
+  document.querySelectorAll('.pay-copy').forEach(function(b){b.addEventListener('click',function(){
+    var label=b.firstChild, email=b.dataset.copy;
+    function done(){label.nodeValue='Email Copied ';status.textContent='Zelle email copied: '+email;setTimeout(function(){label.nodeValue='Copy Email ';},2200);}
+    if(navigator.clipboard){navigator.clipboard.writeText(email).then(done,function(){status.textContent='Zelle email: '+email;});}
+    else{status.textContent='Zelle email: '+email;}
+  });});
+})();
+</script>
+
+</body>
+</html>
