@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Page Not Found | Yoga in the Grove</title>
+<meta name="description" content="This page doesn't exist. Find our class schedule, directions to 3220 Virginia Street in Coconut Grove, or start again on the homepage.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&text=%E0%A5%90&display=swap">
+<link rel="stylesheet" href="/css/site.css">
+<style>
+.nf{min-height:min(78vh,760px);display:grid;align-items:center;text-align:center}
+.nf .wrap{display:grid;gap:20px;justify-items:center}
+.nf .om-big{font-family:"Tiro Devanagari Sanskrit",serif;font-size:clamp(4.5rem,12vw,7.5rem);line-height:1;color:var(--clay);opacity:.85}
+.nf h1{font-size:var(--step-4);font-weight:300;max-width:16ch}
+.nf h1 em{color:var(--olive)}
+.nf .lede{color:var(--ink-soft);font-size:var(--step-1);max-width:46ch;line-height:1.55}
+.nf .links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 26px;align-items:center;margin-top:10px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+<header class="site-header" id="top">
+  <div class="wrap bar">
+    <a class="logo" href="/"><span class="om" aria-hidden="true">ॐ</span> Yoga in <em>the Grove</em> <span class="om" aria-hidden="true">ॐ</span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Menu</button>
+    <nav class="nav" id="siteNav" aria-label="main">
+      <a href="/about.html">Our Story</a>
+      <a href="/calendar.html">Schedule</a>
+      <div class="dd" id="ddCommunity">
+        <a class="dd-link" href="/community.html">Community</a><button type="button" class="dd-btn" aria-expanded="false" aria-controls="ddMenu" aria-label="Show Community links"><span class="caret" aria-hidden="true">⌄</span></button>
+        <div class="dd-menu" id="ddMenu">
+          <a href="/community.html#teachers">Teachers</a>
+          <a href="/community.html#gather">Practice</a>
+          <a href="/community.html#food-for-life">Food for Life</a>
+          <a href="/volunteer.html">Volunteer</a>
+        </div>
+      </div>
+      <a href="/volunteer.html">Volunteer</a>
+      <a href="/contact.html">Find Us</a>
+      <a href="/blog.html">Blog</a>
+      <button type="button" class="btn small nav-cta" data-open-join style="border:0;font:inherit;font-weight:500;cursor:pointer">Join Us on the Mat <span class="arrow" aria-hidden="true">→</span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="nf light" aria-labelledby="page-title">
+  <div class="wrap">
+    <span class="om-big" aria-hidden="true">ॐ</span>
+    <p class="eyebrow">Page Not Found</p>
+    <h1 id="page-title">This path leads nowhere, <em>but you're still welcome here.</em></h1>
+    <p class="lede">The page you're looking for doesn't exist or has moved. Here's where most people are headed:</p>
+    <div class="links">
+      <a class="btn" href="/calendar.html">See the Schedule <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="link" href="/contact.html">Find Us</a>
+      <a class="link" href="/">Back to the Homepage</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<dialog class="join-dialog" id="joinDialog" aria-labelledby="jd-title">
+  <div class="jd-head">
+    <h2 id="jd-title">Come join us on the mat.</h2>
+    <p>Tell us a little about you and we'll send you the next class, kirtan, and gathering.</p>
+    <button type="button" class="jd-close" data-close-join aria-label="close">×</button>
+  </div>
+  <!-- FORMSPREE: same form already used by /calendar.html (xgolnjqv). Swap the ID to route sign-ups to a separate form. -->
+  <form class="join-form" id="joinForm" action="https://formspree.io/f/xgolnjqv" method="POST" novalidate>
+    <div class="row2">
+      <label for="jf-name">Name<input id="jf-name" name="name" type="text" autocomplete="name" required></label>
+      <label for="jf-phone">Phone <span style="font-weight:400;color:var(--ink-soft)">(optional)</span><input id="jf-phone" name="phone" type="tel" autocomplete="tel"></label>
+    </div>
+    <label for="jf-email">Email<input id="jf-email" name="email" type="email" autocomplete="email" required></label>
+    <fieldset>
+      <legend>What calls to you?</legend>
+      <div class="pills">
+        <label><input type="checkbox" name="interests" value="Hatha Asana" id="jf-i1"><span>Hatha Asana</span></label>
+        <label><input type="checkbox" name="interests" value="Kirtan" id="jf-i2"><span>Kirtan</span></label>
+        <label><input type="checkbox" name="interests" value="Meditation" id="jf-i3"><span>Meditation</span></label>
+        <label><input type="checkbox" name="interests" value="Seva" id="jf-i4"><span>Seva</span></label>
+        <label><input type="checkbox" name="interests" value="Food for Life" id="jf-i5"><span>Food for Life</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Have you practiced with us before?</legend>
+      <div class="pills">
+        <label><input type="radio" name="first_visit" value="First time" id="jf-f1" checked><span>This would be my first time</span></label>
+        <label><input type="radio" name="first_visit" value="Returning" id="jf-f2"><span>I've been before</span></label>
+      </div>
+    </fieldset>
+    <label for="jf-msg">Anything we should know? <span style="font-weight:400;color:var(--ink-soft)">(optional)</span><textarea id="jf-msg" name="message" rows="3"></textarea></label>
+    <input type="hidden" name="_subject" value="New sign-up: Come Join Us on the Mat">
+    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit" class="btn">Send <span class="arrow" aria-hidden="true">→</span></button>
+    <p class="form-msg" id="formMsg" aria-live="assertive"></p>
+    <p class="form-note">We only use this to welcome you and share what's coming up.</p>
+  </form>
+  <div class="jd-done" id="joinDone" hidden>
+    <h3>We'll see you on the mat.</h3>
+    <p>Thank you. We'll be in touch within a day or two with what's coming up next.</p>
+    <button type="button" class="btn" data-close-join style="border:0;font:inherit;cursor:pointer">Close</button>
+  </div>
+</dialog>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="name"><span class="om" aria-hidden="true">ॐ</span> Yoga in the Grove</span>
+        <address>
+          <span>3220 Virginia Street</span>
+          <span>Coconut Grove, FL 33133</span>
+        </address>
+        <a href="tel:+19299442045">929-944-2045</a>
+        <a href="mailto:marjazz2012@gmail.com">marjazz2012@gmail.com</a>
+      </div>
+      <nav aria-label="footer: visit">
+        <p class="label">Visit</p>
+        <a href="/about.html">Our Story</a>
+        <a href="/calendar.html">Schedule</a>
+        <a href="/contact.html">Find Us</a>
+        <a href="/blog.html">Blog</a>
+      </nav>
+      <nav aria-label="footer: community">
+        <p class="label">Community</p>
+        <a href="/community.html">Community</a>
+        <a href="/community.html#teachers">Teachers</a>
+        <a href="/community.html#gather">Practice</a>
+        <a href="/community.html#food-for-life">Food for Life</a>
+        <a href="/volunteer.html">Volunteer</a>
+        <a href="/donate.html">Donate</a>
+      </nav>
+      <nav aria-label="footer: follow">
+        <p class="label">Follow</p>
+        <a href="https://www.instagram.com/yoga.inthegrove" aria-label="Yoga in the Grove on Instagram">Instagram</a>
+        <a href="https://www.facebook.com/YogaInTheGrove" aria-label="Yoga in the Grove on Facebook">Facebook</a>
+      </nav>
+    </div>
+    <div class="base">
+      <span>© 2026 Yoga in the Grove · Coconut Grove, Miami</span>
+      <span>Mon to Fri 7 am to 8 pm · Sat 8 am to 6 pm · Sun 9 am to 2 pm</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/site.js" defer></script>
+</body>
+</html>
