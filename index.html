@@ -174,20 +174,51 @@ section{padding-block:clamp(44px,5.5vw,76px)}
 .moment small{display:block;font-family:var(--font-body);font-style:normal;font-size:.75rem;letter-spacing:.1em;opacity:.75;margin-bottom:4px}
 @media (max-width:820px){.people-grid{grid-template-columns:1fr}}
 
-/* gatherings */
+/* gatherings: our weekly rhythm. Cards reuse the Community page's sun aura (--sun-glow orange + --sun-gold yellow, .45s fade, 6s breath) */
+#gatherings{--sun-glow:#F29A55;--sun-gold:#C4893F;--sun-orange:#D9773A}
+#gatherings .sec-head{gap:14px;margin-bottom:clamp(26px,3.5vw,40px)}
+#gatherings .sec-head h2 em{color:var(--olive)}
+.g-intro{color:var(--ink-soft);max-width:60ch}
+.g-intro + .g-intro{margin-top:-6px}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-.filters button{font:inherit;font-size:.9rem;border:1px solid var(--line);background:transparent;color:var(--ink-soft);border-radius:999px;padding:.45em 1.05em;cursor:pointer}
-.filters button[aria-pressed="true"]{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
-.gatherings{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
-.g{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:grid;gap:10px;align-content:start;text-decoration:none;transition:transform .35s,border-color .3s}
-.g:hover{transform:translateY(-3px);border-color:var(--sage)}
+.filters button{position:relative;font:inherit;font-size:.9rem;border:1px solid var(--line);background:var(--ivory);color:var(--ink-soft);border-radius:999px;padding:.5em 1.15em;cursor:pointer;transition:background .3s,color .3s,border-color .3s,box-shadow .45s}
+.filters button:hover{border-color:var(--sage);color:var(--ink);box-shadow:0 0 0 4px color-mix(in srgb,var(--sun-glow) 14%,transparent),0 8px 22px -12px color-mix(in srgb,var(--sun-glow) 70%,transparent)}
+.filters button[aria-pressed="true"]{background:var(--moss);color:var(--on-olive);border-color:var(--moss);box-shadow:0 8px 22px -14px color-mix(in srgb,var(--sun-glow) 80%,transparent)}
+.filters button:focus-visible{outline:2px solid var(--clay);outline-offset:2px}
+.gatherings{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.g{position:relative;isolation:isolate;background:var(--ivory);border:1px solid var(--line);border-radius:var(--radius);padding:24px 24px 22px;display:grid;grid-template-rows:auto auto 1fr auto auto;gap:10px;align-content:start;text-decoration:none;color:var(--ink);
+  -webkit-tap-highlight-color:transparent;transition:transform .45s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .45s}
+/* the aura: same radial sun glow as the Community pillars, warmed with the sun's gold, fades in at .45s */
+.g::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .45s;
+  background:radial-gradient(80% 70% at 50% 18%,color-mix(in srgb,var(--sun-glow) 26%,transparent),color-mix(in srgb,var(--sun-gold) 12%,transparent) 55%,transparent 82%)}
+/* and a soft halo around the card that breathes like the Community sun (smAura, 6s) */
+.g::after{content:"";position:absolute;inset:-12px;z-index:-2;border-radius:calc(var(--radius) + 12px);pointer-events:none;opacity:0;transition:opacity .45s;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--sun-glow) 34%,transparent),color-mix(in srgb,var(--sun-gold) 18%,transparent) 60%,transparent);filter:blur(14px)}
+.g:hover,.g:focus-visible,.g.is-tap{transform:translateY(-4px);border-color:color-mix(in srgb,var(--sun-glow) 45%,var(--line));box-shadow:0 22px 46px -32px color-mix(in srgb,var(--sun-orange) 75%,transparent)}
+.g:hover::before,.g:focus-visible::before,.g.is-tap::before,.g:hover::after,.g:focus-visible::after,.g.is-tap::after{opacity:1}
+.g:hover::after,.g:focus-visible::after{animation:gAura 6s ease-in-out infinite}
+.g:active{transform:translateY(-1px) scale(.985);transition-duration:.12s}
+.g:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
 .g .when{font-size:var(--step--1);letter-spacing:.08em;color:var(--olive);font-weight:600}
-.g h3{font-size:1.35rem}
-.g p{color:var(--ink-soft);font-size:.95rem}
-.g .tag{justify-self:start;font-size:.75rem;letter-spacing:.08em;border-radius:999px;padding:.2em .7em;background:var(--ivory);border:1px solid var(--line);color:var(--ink-soft)}
 .g.kirtan .when{color:var(--clay)}
+.g h3{font-size:1.5rem;line-height:1.1}
+.g p{color:var(--ink-soft);font-size:.95rem;line-height:1.6}
+.g .g-next{font-size:.85rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:10px;margin-top:2px}
+.g .g-next b{font-weight:600;color:var(--ink)}
+.g .g-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 12px;margin-top:2px}
+.g .g-go{font-weight:600;font-size:.92rem;color:var(--moss);display:inline-flex;gap:.4em;border-bottom:1px solid var(--sage);padding-bottom:1px;transition:color .3s,border-color .3s}
+.g .g-go .arrow{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.g:hover .g-go,.g:focus-visible .g-go{color:var(--sun-orange);border-color:color-mix(in srgb,var(--sun-glow) 60%,transparent)}
+.g:hover .g-go .arrow,.g:focus-visible .g-go .arrow{transform:translateX(5px)}
+.g .tag{font-size:.75rem;letter-spacing:.08em;border-radius:999px;padding:.2em .7em;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft)}
 .g[hidden]{display:none}
-.gather-foot{margin-top:28px;display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;color:var(--ink-soft);font-size:.95rem}
+.g.g-in{animation:gIn .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--n,0) * 60ms)}
+@keyframes gIn{from{opacity:0;transform:translateY(10px)}}
+@keyframes gAura{50%{transform:scale(1.04);opacity:.75}}
+.g-status{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.gather-foot{margin-top:32px;display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;color:var(--ink-soft);font-size:.95rem}
+@media (max-width:560px){.gatherings{grid-template-columns:1fr}.g{padding:22px 20px 20px}}
+@media (prefers-reduced-motion:reduce){.g,.g::before,.g::after,.filters button{transition:none}.g:hover::after,.g:focus-visible::after,.g.g-in{animation:none}.g:hover,.g:focus-visible,.g.is-tap,.g:active{transform:none}}
 
 /* food */
 .food{background:var(--moss);color:#F8F4EC}
@@ -231,6 +262,15 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 .foot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
 .foot a{text-decoration:none}.foot a:hover{color:var(--ink)}
+/* footer donation invitation: small, warm, links to the unlisted Donate page */
+.foot-give{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid var(--line)}
+.foot-give-text{display:grid;gap:4px;max-width:52ch}
+.foot-give-title{font-family:var(--font-display);font-style:italic;font-size:1.45rem;line-height:1.15;color:var(--ink)}
+.foot-give-title em{color:var(--moss)}
+.foot-give-text p{margin:0;color:var(--ink-soft)}
+.foot-give .btn{flex:none;color:var(--on-olive)}
+.foot-give .btn:hover{color:var(--on-olive)}
+@media (max-width:640px){.foot-give{flex-direction:column;align-items:flex-start}}
 
 
 /* ---- interactive hero ---- */
@@ -327,7 +367,6 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
 
 /* ---- light & airy pass: sage wash + window light ---- */
 #gatherings{background:var(--mist)}
-#gatherings .g{background:var(--ivory)}
 .people,.closing,#first-visit{position:relative;isolation:isolate;overflow:hidden}
 .people::before,.closing::before,#first-visit::before{content:"";position:absolute;inset:-10% -20%;z-index:-1;pointer-events:none;opacity:.55;
   background:repeating-linear-gradient(118deg,transparent 0 90px,rgba(255,255,255,.55) 90px 150px,transparent 150px 260px,rgba(255,255,255,.35) 260px 300px,transparent 300px 420px);
@@ -581,16 +620,19 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
   </div>
 </section>
 
-<!-- GATHERINGS -->
+<!-- GATHERINGS: our weekly rhythm (Yoga in the Grove's own classes and gatherings).
+     Every card goes to the Schedule page. "Next" dates come from the shared schedule data, the same data the Schedule page uses;
+     cards with no upcoming date just invite people to the schedule. -->
 <section id="gatherings" aria-labelledby="gather-title">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">What's Happening</p>
-      <h2 id="gather-title">What's happening in the Grove.</h2>
-      <p class="narrow" style="color:var(--ink-soft)">The rhythm of the week at Yoga in the Grove. Exact dates and times are on the schedule.</p>
+      <p class="eyebrow">Our Weekly Rhythm</p>
+      <h2 id="gather-title">There's Always Something <em>Bringing Us Together.</em></h2>
+      <p class="g-intro">From daily practices and weekly gatherings to special monthly events, there's always a way to connect at Yoga in the Grove.</p>
+      <p class="g-intro">Explore what's happening, find what speaks to you, and come join us.</p>
     </div>
 
-    <div class="filters" role="group" aria-label="filter gatherings">
+    <div class="filters" role="group" aria-label="Filter by practice">
       <button type="button" data-f="all" aria-pressed="true">All</button>
       <button type="button" data-f="asana" aria-pressed="false">Asana</button>
       <button type="button" data-f="kirtan" aria-pressed="false">Kirtan</button>
@@ -598,33 +640,55 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
       <button type="button" data-f="seva" aria-pressed="false">Seva</button>
       <button type="button" data-f="workshop" aria-pressed="false">Workshop</button>
     </div>
+    <p class="g-status" aria-live="polite"></p>
 
     <div class="gatherings" id="gList">
-      <a class="g" data-cat="asana" href="calendar.html">
-        <span class="when">Through the Week</span><h3>Hatha Asana</h3>
-        <p>Posture, breath, and alignment, open to every level.</p><span class="tag">Asana</span></a>
+      <a class="g" data-cat="asana" href="calendar.html" data-next="type:asana">
+        <span class="when">Through the Week</span>
+        <h3>Hatha Asana</h3>
+        <p>Move, breathe, and reconnect through a practice that welcomes every level.</p>
+        <span class="g-next" hidden></span>
+        <span class="g-foot"><span class="g-go">Find Your Class <span class="arrow" aria-hidden="true">→</span></span><span class="tag">Asana</span></span></a>
+      <a class="g kirtan" data-cat="kirtan" href="calendar.html" data-next="title:Kirtan in the Grove">
+        <span class="when">Evening Gatherings</span>
+        <h3>Candlelit Kirtan</h3>
+        <p>An evening of devotion, live harmonium, and shared song. You do not need to be musical.</p>
+        <span class="g-next" hidden></span>
+        <span class="g-foot"><span class="g-go">Join a Gathering <span class="arrow" aria-hidden="true">→</span></span><span class="tag">Kirtan</span></span></a>
       <a class="g kirtan" data-cat="kirtan" href="calendar.html">
-        <span class="when">Monthly · Evening</span><h3>Candlelit Kirtan</h3>
-        <p>Live harmonium and collective singing. You do not need to be musical.</p><span class="tag">Kirtan</span></a>
-      <a class="g kirtan" data-cat="kirtan" href="calendar.html">
-        <span class="when">On the New Moon</span><h3>New Moon Kirtan</h3>
-        <p>A gathering of voices to mark the new moon.</p><span class="tag">Kirtan</span></a>
-      <a class="g" data-cat="meditation" href="calendar.html">
-        <span class="when">Through the Week</span><h3>Meditation</h3>
-        <p>You are welcome to it exactly as you are.</p><span class="tag">Meditation</span></a>
-      <a class="g" data-cat="seva" href="foodforlife.html">
-        <span class="when">Mondays</span><h3>Food for Life Deliveries</h3>
-        <p>Volunteers bring around 100 free meals to neighbors in downtown Miami.</p><span class="tag">Seva</span></a>
-      <a class="g" data-cat="seva" href="community.html">
-        <span class="when">Mornings</span><h3>Morning Seva</h3>
-        <p>Work gloves and a shared purpose at the edge of the Grove.</p><span class="tag">Seva</span></a>
-      <a class="g" data-cat="workshop" href="calendar.html">
-        <span class="when">See the Schedule</span><h3>Workshops &amp; Special Events</h3>
-        <p>Deeper sessions and seasonal gatherings.</p><span class="tag">Workshop</span></a>
+        <span class="when">On the New Moon</span>
+        <h3>New Moon Kirtan</h3>
+        <p>A gathering of voices to mark the new moon, with room for every voice.</p>
+        <span class="g-next" hidden></span>
+        <span class="g-foot"><span class="g-go">Join a Gathering <span class="arrow" aria-hidden="true">→</span></span><span class="tag">Kirtan</span></span></a>
+      <a class="g" data-cat="meditation" href="calendar.html" data-next="type:meditation">
+        <span class="when">See the Schedule</span>
+        <h3>Meditation</h3>
+        <p>Sit, settle, and come back to yourself. You are welcome exactly as you are.</p>
+        <span class="g-next" hidden></span>
+        <span class="g-foot"><span class="g-go">Explore Meditation <span class="arrow" aria-hidden="true">→</span></span><span class="tag">Meditation</span></span></a>
+      <a class="g" data-cat="seva" href="calendar.html">
+        <span class="when">Weekly · Mondays</span>
+        <h3>Food for Life Deliveries</h3>
+        <p>Extend your practice beyond the mat: volunteers bring around 100 free meals to neighbors in downtown Miami.</p>
+        <span class="g-next" hidden></span>
+        <span class="g-foot"><span class="g-go">See How to Participate <span class="arrow" aria-hidden="true">→</span></span><span class="tag">Seva</span></span></a>
+      <a class="g" data-cat="seva" href="calendar.html" data-next="title:Community Seva Morning">
+        <span class="when">Mornings</span>
+        <h3>Morning Seva</h3>
+        <p>Work gloves and a shared purpose at the edge of the Grove.</p>
+        <span class="g-next" hidden></span>
+        <span class="g-foot"><span class="g-go">Get Involved <span class="arrow" aria-hidden="true">→</span></span><span class="tag">Seva</span></span></a>
+      <a class="g" data-cat="workshop" href="calendar.html" data-next="type:workshop">
+        <span class="when">Special Dates</span>
+        <h3>Workshops &amp; Special Events</h3>
+        <p>Deeper sessions and seasonal gatherings for when you want to go further.</p>
+        <span class="g-next" hidden></span>
+        <span class="g-foot"><span class="g-go">Explore Upcoming Events <span class="arrow" aria-hidden="true">→</span></span><span class="tag">Workshop</span></span></a>
     </div>
 
     <div class="gather-foot">
-      <a class="btn" href="calendar.html">Full Month Calendar Here <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn" href="calendar.html">Explore the Full Schedule <span class="arrow" aria-hidden="true">→</span></a>
       <span>New dates go up on <a class="link" href="https://www.instagram.com/yoga.inthegrove">Instagram</a> first</span>
     </div>
   </div>
@@ -710,7 +774,7 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
     <div>
       <p class="eyebrow">Come as You Are</p>
       <h2 id="close-title">We'll save you <em>a spot on the mat.</em></h2>
-      <p style="margin-top:28px"><button type="button" class="btn" data-open-join style="border:0;font:inherit;font-weight:500;cursor:pointer">Come Join Us on the Mat <span class="arrow" aria-hidden="true">→</span></button></p>
+      <p style="margin-top:28px"><a class="btn" href="calendar.html" style="font-weight:500">Come Join Us on the Mat <span class="arrow" aria-hidden="true">→</span></a></p>
     </div>
     <address>
       <strong style="color:var(--ink)">Yoga in the Grove</strong>
@@ -768,6 +832,13 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
 </dialog>
 
 <footer>
+  <div class="wrap foot-give">
+    <div class="foot-give-text">
+      <p class="foot-give-title">A Little Love <em>Goes a Long Way.</em></p>
+      <p>Help us continue sharing nourishing meals and kindness through Food for Life.</p>
+    </div>
+    <a class="btn small" href="donate.html">Give From the Heart <span class="arrow" aria-hidden="true">→</span></a>
+  </div>
   <div class="wrap foot">
     <span><span class="om" aria-hidden="true">ॐ</span>&nbsp; Yoga in the Grove &nbsp;<span class="om" aria-hidden="true">ॐ</span> · 3220 Virginia Street, Coconut Grove, FL 33133</span>
     <nav aria-label="footer">
@@ -779,12 +850,14 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
       <a href="foodforlife.html">Food for Life</a>
       <a href="contact.html">Find Us</a>
       <a href="blog.html">Blog</a>
+      <a href="donate.html">Donate</a>
       <a href="https://www.instagram.com/yoga.inthegrove">Instagram</a>
       <a href="https://www.facebook.com/YogaInTheGrove">Facebook</a>
     </nav>
   </div>
 </footer>
 
+<script src="js/events-data.js"></script>
 <script>
 (function(){
   var header=document.querySelector('.site-header'), hero=document.querySelector('.hero');
@@ -795,12 +868,35 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
   btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu';});
   nav.addEventListener('click',function(e){if(e.target.closest('a')&&nav.classList.contains('open')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';}});
 
-  var buttons=document.querySelectorAll('.filters button'), cards=document.querySelectorAll('#gList .g');
+  var buttons=document.querySelectorAll('.filters button'), cards=document.querySelectorAll('#gList .g'), gStatus=document.querySelector('.g-status');
+  var calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
   buttons.forEach(function(b){b.addEventListener('click',function(){
-    var f=b.dataset.f;
+    var f=b.dataset.f, n=0;
     buttons.forEach(function(x){x.setAttribute('aria-pressed', x===b ? 'true':'false');});
-    cards.forEach(function(c){c.hidden = !(f==='all' || c.dataset.cat===f);});
+    cards.forEach(function(c){
+      var show=(f==='all' || c.dataset.cat===f);
+      c.hidden=!show; c.classList.remove('g-in');
+      if(show){ if(!calm){ c.style.setProperty('--n',n); void c.offsetWidth; c.classList.add('g-in'); } n++; }
+    });
+    gStatus.textContent='Showing '+n+(n===1?' gathering':' gatherings')+(f==='all'?'':' for '+b.textContent);
   });});
+  /* tap feedback on touch screens: a brief glow before the schedule opens */
+  cards.forEach(function(c){c.addEventListener('pointerdown',function(e){ if(e.pointerType!=='mouse'){ c.classList.add('is-tap'); setTimeout(function(){c.classList.remove('is-tap');},600);} });});
+  /* "Next" line from the shared schedule data (js/events-data.js). Only future dates; otherwise an invitation to the schedule. */
+  if(window.YOGA_EVENTS){
+    var today=new Date(); today.setHours(0,0,0,0);
+    var M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], D=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    cards.forEach(function(c){
+      var rule=c.dataset.next, out=c.querySelector('.g-next'); if(!out) return;
+      var ev=null;
+      if(rule){ var k=rule.split(':')[0], v=rule.slice(k.length+1);
+        for(var i=0;i<YOGA_EVENTS.length;i++){ var e=YOGA_EVENTS[i], dt=new Date(e.year,e.month,e.day);
+          if(dt>=today && (k==='type'? e.type===v : e.title===v)){ ev=e; break; } } }
+      if(ev){ var d=new Date(ev.year,ev.month,ev.day); out.innerHTML='Next: <b>'+D[d.getDay()]+', '+M[d.getMonth()]+' '+d.getDate()+'</b> · '+ev.timeDisplay; }
+      else { out.textContent='See the schedule for upcoming dates'; }
+      out.hidden=false;
+    });
+  }
 
   if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('rise');io.unobserve(e.target);}});},{rootMargin:'0px 0px -10% 0px'});
