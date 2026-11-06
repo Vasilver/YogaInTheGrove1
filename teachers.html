@@ -30,8 +30,25 @@
 .split figure img{max-height:620px}
 .tag-line{font-size:.85rem;letter-spacing:.14em;color:var(--clay);font-weight:500}
 
-.split figure img{aspect-ratio:4/5;object-fit:cover}
-.split .text p:not(.tag-line){color:var(--ink-soft)}
+.teachers{display:grid;gap:clamp(40px,5vw,64px);max-width:980px}
+.teacher{display:grid;grid-template-columns:240px 1fr;gap:clamp(24px,4vw,48px);align-items:start;padding-bottom:clamp(40px,5vw,64px);border-bottom:1px solid var(--line)}
+.teacher:last-child{border-bottom:0;padding-bottom:0}
+.teacher img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius)}
+.t-text{display:grid;gap:12px}
+.t-text h2{font-size:var(--step-3)}
+.t-text p:not(.tag-line){color:var(--ink-soft);font-size:1rem}
+.teacher details{display:grid;gap:12px}
+.teacher details p{margin-top:12px}
+.teacher summary{list-style:none;cursor:pointer;display:inline-flex;gap:.4em;align-items:center;font-weight:500;color:var(--moss);border-bottom:1px solid var(--sage);padding-bottom:2px;width:max-content}
+.teacher summary::-webkit-details-marker{display:none}
+.teacher summary .less-label{display:none}
+.teacher details[open] summary .more-label{display:none}
+.teacher details[open] summary .less-label{display:inline}
+.teacher .chev{transition:transform .3s;display:inline-block}
+.teacher details[open] .chev{transform:rotate(180deg)}
+.teacher details[open] summary{order:2}
+@media (max-width:640px){.teacher{grid-template-columns:1fr}.teacher img{max-width:280px}}
+.closing-grid h2{font-size:var(--step-3);max-width:20ch}
 </style>
 </head>
 <body>
@@ -72,47 +89,59 @@
 </section>
 
 <section aria-label="Teacher profiles">
-  <div class="wrap stack">
-      <article class="split" id="vishal-das" aria-labelledby="t-vishal-das">
-        <figure><img src="img/teacher-vishal-das.webp" alt="Vishal Das seated cross-legged on a yoga mat with his hands in prayer" width="800" height="1000" loading="lazy"></figure>
-        <div class="text">
+  <div class="wrap teachers">
+      <article class="teacher" id="vishal-das" aria-labelledby="t-vishal-das">
+        <img src="img/teacher-vishal-das.webp" alt="Vishal Das seated cross-legged on a yoga mat with his hands in prayer" width="800" height="1000" loading="lazy">
+        <div class="t-text">
           <p class="tag-line">Hatha · Alignment</p>
           <h2 id="t-vishal-das">Vishal Das</h2>
           <p>Vishal Das has been walking the path of Iyengar yoga for eight years, shaped by a formative year of deep study at an Iyengar Institute that honed his understanding of alignment, precision, and the intelligence held within each posture. His classes reflect a rich synthesis of movement traditions — between asanas, Vishal weaves in elements of Tai Chi and calisthenics, creating a practice that flows between stillness and dynamic movement, building core strength while awakening and sustaining energy throughout the body. At Yoga in the Grove, Vishal brings this integrated approach into a space of community and devotion, inviting students to explore not just what the body can do, but how movement itself can become a pathway to presence.</p>
-          <p>His teaching is grounded in the quiet rigor of Iyengar yoga, but animated by an even wider curiosity: how the body learns, adapts, and tells the truth when we actually listen. He's especially attentive to the small invisible actions — how the feet root, how the breath organizes the spine, how steadiness can be trained without hardening. Students often leave with a clearer sense of where they are in space, and a practical way to carry that awareness off the mat.</p>
-          <p>His aim is simple and oddly radical in a busy world: help people build a relationship with their own structure and energy that's both honest and kind. Whether you're new to yoga or refining a long-time practice, Vishal offers a container where precision supports freedom — so the work isn't just getting into a pose, but discovering the presence that's available inside it.</p>
+          <details>
+            <summary><span class="more-label">Read More About Vishal</span><span class="less-label">Show Less</span> <span aria-hidden="true" class="chev">⌄</span></summary>
+            <p>His teaching is grounded in the quiet rigor of Iyengar yoga, but animated by an even wider curiosity: how the body learns, adapts, and tells the truth when we actually listen. He's especially attentive to the small invisible actions — how the feet root, how the breath organizes the spine, how steadiness can be trained without hardening. Students often leave with a clearer sense of where they are in space, and a practical way to carry that awareness off the mat.</p>
+            <p>His aim is simple and oddly radical in a busy world: help people build a relationship with their own structure and energy that's both honest and kind. Whether you're new to yoga or refining a long-time practice, Vishal offers a container where precision supports freedom — so the work isn't just getting into a pose, but discovering the presence that's available inside it.</p>
+          </details>
         </div>
       </article>
-      <article class="split flip" id="indranudzha-das" aria-labelledby="t-indranudzha-das">
-        <figure><img src="img/teacher-indranudzha-das.webp" alt="Indranudzha Das leading kirtan with a microphone and harmonium, wearing a flower garland" width="800" height="1000" loading="lazy"></figure>
-        <div class="text">
+      <article class="teacher" id="indranudzha-das" aria-labelledby="t-indranudzha-das">
+        <img src="img/teacher-indranudzha-das.webp" alt="Indranudzha Das leading kirtan with a microphone and harmonium, wearing a flower garland" width="800" height="1000" loading="lazy">
+        <div class="t-text">
           <p class="tag-line">Kirtan · Bhakti</p>
           <h2 id="t-indranudzha-das">Indranudzha Das</h2>
           <p>Indranudzha Das is a devoted student of Chaitanya Chandra Charan Prabhu, whose heart lives in the practices of harinama and kirtan. A gifted kirtania, he leads souls into the transformative power of sacred sound with warmth, devotion, and an open heart. As an active member of the Zelenograd yatra, he leads a spiritual community group, creating space for seekers to come together in devotion and meaningful connection.</p>
-          <p>Alongside fellow Vaishnava devotees of Bhaktivruksha, Indranudzha co-founded “Bateryka” — a volunteer preaching club that blends music, discussion, and community in the spirit of genuine outreach. Through yoga evenings, Ayurveda gatherings, and online conversations, the club serves as a living expression of devotional service, bringing the teachings to life in accessible and joyful ways.</p>
-          <p>At Yoga in the Grove, Indranudzha brings this same spirit of seva and togetherness — understanding that every gathering, every kirtan, and every shared meal is an opportunity to deepen our connection to each other and to the Divine.</p>
+          <details>
+            <summary><span class="more-label">Read More About Indranudzha</span><span class="less-label">Show Less</span> <span aria-hidden="true" class="chev">⌄</span></summary>
+            <p>Alongside fellow Vaishnava devotees of Bhaktivruksha, Indranudzha co-founded “Bateryka” — a volunteer preaching club that blends music, discussion, and community in the spirit of genuine outreach. Through yoga evenings, Ayurveda gatherings, and online conversations, the club serves as a living expression of devotional service, bringing the teachings to life in accessible and joyful ways.</p>
+            <p>At Yoga in the Grove, Indranudzha brings this same spirit of seva and togetherness — understanding that every gathering, every kirtan, and every shared meal is an opportunity to deepen our connection to each other and to the Divine.</p>
+          </details>
         </div>
       </article>
-      <article class="split" id="chandra-das" aria-labelledby="t-chandra-das">
-        <figure><img src="img/teacher-chandra-das.webp" alt="Chandra Das carrying a mrdangam drum at an outdoor kirtan" width="800" height="1000" loading="lazy"></figure>
-        <div class="text">
+      <article class="teacher" id="chandra-das" aria-labelledby="t-chandra-das">
+        <img src="img/teacher-chandra-das.webp" alt="Chandra Das carrying a mrdangam drum at an outdoor kirtan" width="800" height="1000" loading="lazy">
+        <div class="t-text">
           <p class="tag-line">Kirtan · Meditation</p>
           <h2 id="t-chandra-das">Chandra Das</h2>
           <p>Kirtan has been the rhythm of my life since childhood, growing up in India surrounded by sacred sound. From a young age, I found myself leading kirtans in temples and gatherings — call and response rising and falling, mantras carrying the room into stillness. Over the years I've had the deep blessing of sharing this practice with communities around the world, and each gathering has only deepened my love for what kirtan does: it dissolves the barriers we carry and opens something in us that is already whole.</p>
-          <p>I play mrdangam and harmonium, instruments that have been my companions through decades of practice and prayer. The mrdangam's ancient rhythms ground the body while the harmonium lifts the voice — together they create a container where even someone who has never chanted before can find themselves fully absorbed in the sound.</p>
-          <p>Now rooted in Miami, my heart's intention is to bring kirtan home here. No musical background needed, no prior experience — just an open heart. Whether you come curious, seeking, or simply needing a place to exhale, kirtan is a practice that meets you exactly where you are. Come chant with us.</p>
+          <details>
+            <summary><span class="more-label">Read More About Chandra</span><span class="less-label">Show Less</span> <span aria-hidden="true" class="chev">⌄</span></summary>
+            <p>I play mrdangam and harmonium, instruments that have been my companions through decades of practice and prayer. The mrdangam's ancient rhythms ground the body while the harmonium lifts the voice — together they create a container where even someone who has never chanted before can find themselves fully absorbed in the sound.</p>
+            <p>Now rooted in Miami, my heart's intention is to bring kirtan home here. No musical background needed, no prior experience — just an open heart. Whether you come curious, seeking, or simply needing a place to exhale, kirtan is a practice that meets you exactly where you are. Come chant with us.</p>
+          </details>
         </div>
       </article>
-      <article class="split flip" id="lorena" aria-labelledby="t-lorena">
-        <figure><img src="img/teacher-lorena.webp" alt="Lorena in a seated split with her hands in prayer beneath stone arches" width="800" height="1000" loading="lazy"></figure>
-        <div class="text">
+      <article class="teacher" id="lorena" aria-labelledby="t-lorena">
+        <img src="img/teacher-lorena.webp" alt="Lorena in a seated split with her hands in prayer beneath stone arches" width="800" height="1000" loading="lazy">
+        <div class="t-text">
           <p class="tag-line">Ashtanga</p>
           <h2 id="t-lorena">Lorena</h2>
           <p>Lorena is a yoga teacher who creates intentional, heart-centered spaces for movement, breath, and connection. Her classes are rooted in vinyasa flow and inspired by yogic philosophy, while deeply grounded in the Ashtanga lineage in which she was trained.</p>
-          <p>She completed her 200-hour YTT at Ahana Yoga, where she refined her understanding of alignment, breath, and disciplined practice. Lorena loves offering hands-on assists during class, helping students feel supported while also gently pushing their limits to encourage growth, confidence, and deeper connection to their practice.</p>
-          <p>With a background in event management, she brings a natural ability to curate meaningful experiences — where every detail supports a sense of ease, presence, and community.</p>
-          <p>Her teaching is warm, grounded, and inviting, offering a space to simply be, breathe, and reconnect.</p>
-          <p>You can follow her journey on Instagram <a class="link" href="https://www.instagram.com/lorenaela" target="_blank" rel="noopener">@lorenaela</a>.</p>
+          <details>
+            <summary><span class="more-label">Read More About Lorena</span><span class="less-label">Show Less</span> <span aria-hidden="true" class="chev">⌄</span></summary>
+            <p>She completed her 200-hour YTT at Ahana Yoga, where she refined her understanding of alignment, breath, and disciplined practice. Lorena loves offering hands-on assists during class, helping students feel supported while also gently pushing their limits to encourage growth, confidence, and deeper connection to their practice.</p>
+            <p>With a background in event management, she brings a natural ability to curate meaningful experiences — where every detail supports a sense of ease, presence, and community.</p>
+            <p>Her teaching is warm, grounded, and inviting, offering a space to simply be, breathe, and reconnect.</p>
+            <p>You can follow her journey on Instagram <a class="link" href="https://www.instagram.com/lorenaela" target="_blank" rel="noopener">@lorenaela</a>.</p>
+          </details>
         </div>
       </article>
   </div>
