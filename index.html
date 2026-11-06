@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,11 +27,13 @@
 "sameAs":["https://www.instagram.com/yoga.inthegrove","https://www.facebook.com/YogaInTheGrove"]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Do I need any experience?","acceptedAnswer":{"@type":"Answer","text":"No. There are no advanced students in our classes. Every class is open to all levels."}},
-{"@type":"Question","name":"What is kirtan?","acceptedAnswer":{"@type":"Answer","text":"Call-and-response chanting with live harmonium and drum. You do not need to be musical."}},
-{"@type":"Question","name":"Where do I park?","acceptedAnswer":{"@type":"Answer","text":"Park on Day Street, behind the white fence. Walk around the building on your left to reach the studio."}},
-{"@type":"Question","name":"Can I come by train?","acceptedAnswer":{"@type":"Answer","text":"Yes. We're a short walk from the Coconut Grove Metrorail station."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+{"@type": "Question", "name": "Do I need any yoga experience?", "acceptedAnswer": {"@type": "Answer", "text": "Not at all. Whether it's your very first class or you've been practicing for years, there's a place for you here. Our teachers meet you where you are, helping you move, breathe, and grow at your own pace."}}, 
+{"@type": "Question", "name": "What is Kirtan?", "acceptedAnswer": {"@type": "Answer", "text": "Kirtan is a shared practice of call-and-response chanting that brings people together through sound, devotion, and connection. You don't need to know the words or have any musical experience. Simply come as you are, listen, and join in whenever you feel ready."}}, 
+{"@type": "Question", "name": "Do I need to sign up before coming?", "acceptedAnswer": {"@type": "Answer", "text": "We recommend checking our schedule before your visit to find a class or gathering that speaks to you. You can explore upcoming sessions and any registration details on our calendar."}}, 
+{"@type": "Question", "name": "Is there food?", "acceptedAnswer": {"@type": "Answer", "text": "Sharing food is part of our community tradition. We offer vegetarian prasadam, food prepared with care and offered in a spirit of generosity, at designated classes and gatherings. Check with us for details about when meals are available."}}, 
+{"@type": "Question", "name": "Where can I park?", "acceptedAnswer": {"@type": "Answer", "text": "We're located at 3220 Virginia Street in Coconut Grove. Parking options may vary depending on the time of your visit. We recommend planning a few extra minutes to arrive comfortably."}}, 
+{"@type": "Question", "name": "Can I get here by public transportation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you can explore public transportation options to Coconut Grove and plan the final part of your journey to our studio. Check your preferred transit app for the most convenient route to 3220 Virginia Street."}}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -248,30 +249,41 @@ section{padding-block:clamp(44px,5.5vw,76px)}
 .faq summary::after{content:"+";font-family:var(--font-display);font-size:1.4rem;line-height:1;color:var(--clay);transition:transform .3s}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq details p{padding-bottom:18px;color:var(--ink-soft);max-width:60ch}
+.faq .faq-go{display:table;margin-top:10px}
+.visit-intro{color:var(--ink-soft);margin-top:14px;max-width:46ch}
+#visit-title em{color:var(--olive)}
 @media (max-width:820px){.visit-grid{grid-template-columns:1fr}}
 
-/* closing */
-.closing{text-align:left;border-top:1px solid var(--line)}
-.closing h2{font-size:var(--step-4);font-weight:300;max-width:12ch}
+/* closing: one section, two invitations. Hover aura reuses the Community page sun glow */
+.closing{text-align:left;border-top:1px solid var(--line);--sun-glow:#F29A55;--sun-gold:#C4893F;--sun-orange:#D9773A}
+.close-head{display:grid;gap:14px;max-width:44rem;margin-bottom:clamp(30px,4.5vw,52px)}
+.closing h2{font-size:var(--step-4);font-weight:300;line-height:1.02}
 .closing h2 em{font-style:italic;color:var(--olive)}
-.closing-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end}
-.closing address{font-style:normal;color:var(--ink-soft);display:grid;gap:6px}
-.closing .hours{display:grid;grid-template-columns:auto 1fr;gap:2px 16px;font-size:.95rem;font-variant-numeric:tabular-nums;margin-top:10px}
-@media (max-width:820px){.closing-grid{grid-template-columns:1fr}}
+.close-lede{color:var(--ink-soft);font-size:var(--step-1);line-height:1.55;max-width:46ch}
+.invites{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.5vw,28px)}
+.invite{position:relative;isolation:isolate;overflow:hidden;border-radius:var(--radius);padding:clamp(28px,4vw,46px);display:grid;gap:12px;align-content:start;justify-items:start;
+  transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.invite-practice{background:color-mix(in srgb,var(--paper) 88%,transparent)}
+.invite-give{background:color-mix(in srgb,var(--beige) 78%,transparent)}
+.invite::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .45s;
+  background:radial-gradient(75% 70% at 30% 20%,color-mix(in srgb,var(--sun-glow) 26%,transparent),color-mix(in srgb,var(--sun-gold) 12%,transparent) 55%,transparent 82%)}
+.invite:hover,.invite:focus-within{transform:translateY(-3px);box-shadow:0 26px 50px -36px color-mix(in srgb,var(--sun-orange) 70%,transparent)}
+.invite:hover::before,.invite:focus-within::before{opacity:1}
+.invite-label{font-size:var(--step--1);letter-spacing:.14em;color:var(--moss);font-weight:500}
+.invite h3{font-size:clamp(1.7rem,2.8vw,2.3rem);line-height:1.08}
+.invite h3 em{color:var(--olive)}
+.invite p:not(.invite-label){color:var(--ink-soft)}
+.invite .btn{margin-top:10px}
+.close-visit{font-style:normal;color:var(--ink-soft);font-size:.92rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 28px;margin-top:clamp(24px,3vw,34px);padding-top:18px;border-top:1px solid var(--line)}
+.close-visit strong{color:var(--ink);font-weight:500}
+.close-visit .hours{display:flex;flex-wrap:wrap;gap:4px 18px;font-variant-numeric:tabular-nums}
+@media (max-width:820px){.invites{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.invite,.invite::before{transition:none}.invite:hover,.invite:focus-within{transform:none}}
 
 footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36px;font-size:.9rem;color:var(--ink-soft)}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 .foot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
 .foot a{text-decoration:none}.foot a:hover{color:var(--ink)}
-/* footer donation invitation: small, warm, links to the unlisted Donate page */
-.foot-give{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid var(--line)}
-.foot-give-text{display:grid;gap:4px;max-width:52ch}
-.foot-give-title{font-family:var(--font-display);font-style:italic;font-size:1.45rem;line-height:1.15;color:var(--ink)}
-.foot-give-title em{color:var(--moss)}
-.foot-give-text p{margin:0;color:var(--ink-soft)}
-.foot-give .btn{flex:none;color:var(--on-olive)}
-.foot-give .btn:hover{color:var(--on-olive)}
-@media (max-width:640px){.foot-give{flex-direction:column;align-items:flex-start}}
 
 
 /* ---- interactive hero ---- */
@@ -747,41 +759,53 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
   <div class="wrap visit-grid">
     <div>
       <p class="eyebrow">Your First Visit</p>
-      <h2 id="visit-title">Everything you need to know before you arrive.</h2>
+      <h2 id="visit-title">Come As You Are. <em>We'll Take It From Here.</em></h2>
+      <p class="visit-intro">New to yoga? New to our community? You're welcome exactly as you are. Here's everything you need to know before joining us on the mat.</p>
       <p class="quote">"If you can breathe, you can practice."</p>
     </div>
     <div class="faq">
-      <details open><summary>Do I need any experience?</summary>
-        <p>No. There are no advanced students in our classes. Every class is open to all levels, and we meet you exactly where you are.</p></details>
-      <details><summary>What is kirtan?</summary>
-        <p>Call-and-response chanting with live harmonium and drum. You do not need to be musical, and you don't need to know the words. Just listen, then join in when you're ready.</p></details>
-      <details><summary>Do I need to sign up?</summary>
-        <p>You're welcome to drop in anytime. Check the <a class="link" href="calendar.html">Schedule</a> for class times, or send us a note through the <a class="link" href="contact.html">Contact Page</a>. We reply within a day or two.</p></details>
-      <!-- TODO: add once confirmed with the studio — "What does it cost?" and "What should I bring?" -->
+      <details open><summary>Do I need any yoga experience?</summary>
+        <p>Not at all. Whether it's your very first class or you've been practicing for years, there's a place for you here. Our teachers meet you where you are, helping you move, breathe, and grow at your own pace.</p></details>
+      <details><summary>What is Kirtan?</summary>
+        <p>Kirtan is a shared practice of call-and-response chanting that brings people together through sound, devotion, and connection. You don't need to know the words or have any musical experience. Simply come as you are, listen, and join in whenever you feel ready.</p></details>
+      <details><summary>Do I need to sign up before coming?</summary>
+        <p>We recommend checking our schedule before your visit to find a class or gathering that speaks to you. You can explore upcoming sessions and any registration details on our calendar. <a class="link faq-go" href="calendar.html">Explore the Schedule <span aria-hidden="true">→</span></a></p></details>
       <details><summary>Is there food?</summary>
-        <p>Yes. A vegetarian prasadam meal is served after class. Stay and eat with us.</p></details>
-      <details><summary>Where do I park?</summary>
-        <p>Park on Day Street, behind the white fence. Walk around the building on your left to reach the studio.</p></details>
-      <details><summary>Can I come by train?</summary>
-        <p>Yes. We're a short walk from the Coconut Grove Metrorail station, and about five minutes by car from Brickell.</p></details>
+        <p>Sharing food is part of our community tradition. We offer vegetarian prasadam, food prepared with care and offered in a spirit of generosity, at designated classes and gatherings. Check with us for details about when meals are available.</p></details>
+      <details><summary>Where can I park?</summary>
+        <p>We're located at 3220 Virginia Street in Coconut Grove. Parking options may vary depending on the time of your visit. We recommend planning a few extra minutes to arrive comfortably. <a class="link faq-go" href="https://www.google.com/maps/dir/?api=1&amp;destination=3220+Virginia+Street+Coconut+Grove+FL+33133" target="_blank" rel="noopener">Get Directions <span aria-hidden="true">→</span></a></p></details>
+      <details><summary>Can I get here by public transportation?</summary>
+        <p>Yes, you can explore public transportation options to Coconut Grove and plan the final part of your journey to our studio. Check your preferred transit app for the most convenient route to 3220 Virginia Street. <a class="link faq-go" href="contact.html">Plan Your Visit <span aria-hidden="true">→</span></a></p></details>
     </div>
   </div>
 </section>
 
-<!-- CLOSING -->
+<!-- CLOSING: one invitation, two ways in (practice and give back) -->
 <section class="closing" aria-labelledby="close-title">
   <span class="om om-mark" aria-hidden="true">ॐ</span>
-  <div class="wrap closing-grid">
-    <div>
+  <div class="wrap">
+    <div class="close-head">
       <p class="eyebrow">Come as You Are</p>
-      <h2 id="close-title">We'll save you <em>a spot on the mat.</em></h2>
-      <p style="margin-top:28px"><a class="btn" href="calendar.html" style="font-weight:500">Come Join Us on the Mat <span class="arrow" aria-hidden="true">→</span></a></p>
+      <h2 id="close-title">There's a Place <em>for You Here.</em></h2>
+      <p class="close-lede">Whether you join us on the mat or help us give back, you're part of what makes this community special.</p>
     </div>
-    <address>
-      <strong style="color:var(--ink)">Yoga in the Grove</strong>
-      <span>3220 Virginia Street, Coconut Grove, FL 33133</span>
-      <a class="link" style="justify-self:start" href="https://www.google.com/maps/dir/?api=1&amp;destination=3220+Virginia+Street+Coconut+Grove+FL+33133">Get Directions</a>
-      <div class="hours"><span>Mon to Fri</span><span>7:00 am to 8:00 pm</span><span>Sat</span><span>8:00 am to 6:00 pm</span><span>Sun</span><span>9:00 am to 2:00 pm</span></div>
+    <div class="invites">
+      <div class="invite invite-practice">
+        <p class="invite-label">Practice</p>
+        <h3>We'll Save You a Spot <em>on the Mat.</em></h3>
+        <p>Come move, breathe, and find your people.</p>
+        <a class="btn" href="calendar.html">Come Join Us on the Mat <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+      <div class="invite invite-give">
+        <p class="invite-label">Give Back</p>
+        <h3>A Little Love <em>Goes a Long Way.</em></h3>
+        <p>Help us share nourishing meals and kindness through Food for Life.</p>
+        <a class="btn" href="donate.html">Give From the Heart <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <address class="close-visit">
+      <span><strong>Yoga in the Grove</strong> · 3220 Virginia Street, Coconut Grove, FL 33133 · <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=3220+Virginia+Street+Coconut+Grove+FL+33133">Get Directions</a></span>
+      <span class="hours"><span>Mon to Fri 7:00 am to 8:00 pm</span><span>Sat 8:00 am to 6:00 pm</span><span>Sun 9:00 am to 2:00 pm</span></span>
     </address>
   </div>
 </section>
@@ -833,13 +857,6 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
 </dialog>
 
 <footer>
-  <div class="wrap foot-give">
-    <div class="foot-give-text">
-      <p class="foot-give-title">A Little Love <em>Goes a Long Way.</em></p>
-      <p>Help us continue sharing nourishing meals and kindness through Food for Life.</p>
-    </div>
-    <a class="btn small" href="donate.html">Give From the Heart <span class="arrow" aria-hidden="true">→</span></a>
-  </div>
   <div class="wrap foot">
     <span><span class="om" aria-hidden="true">ॐ</span>&nbsp; Yoga in the Grove &nbsp;<span class="om" aria-hidden="true">ॐ</span> · 3220 Virginia Street, Coconut Grove, FL 33133</span>
     <nav aria-label="footer">
