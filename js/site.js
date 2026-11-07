@@ -51,6 +51,16 @@
     });
   }
 
+  /* mobile floating join button: hide it while the closing or footer is in view */
+  var fab=document.querySelector('.fab-join');
+  if(fab && 'IntersectionObserver' in window){
+    var inView=[];
+    var fio=new IntersectionObserver(function(es){es.forEach(function(e){
+      var i=inView.indexOf(e.target); if(e.isIntersecting&&i<0)inView.push(e.target); if(!e.isIntersecting&&i>-1)inView.splice(i,1);});
+      fab.classList.toggle('at-end',inView.length>0);});
+    document.querySelectorAll('.closing, .site-foot').forEach(function(el){fio.observe(el);});
+  }
+
   /* join dialog */
   var dlg=document.getElementById('joinDialog');
   if(dlg){
