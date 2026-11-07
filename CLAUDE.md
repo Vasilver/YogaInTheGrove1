@@ -86,7 +86,7 @@ Always use these variables. Never hard-code a color or font size.
 
 ### 3.4 Building blocks (reuse, don't reinvent)
 
-- **Header:** sticky, logo "ॐ Yoga in *the Grove* ॐ", nav: Our Story · Schedule · Community ▾ (Teachers, Practice, Food for Life: they jump to `community.html#teachers`, `#gather`, `#food-for-life`) · Volunteer · Find Us · Blog. The "Join Us on the Mat" button appears in the nav after scrolling past the hero (on desktop it takes no space until then). The header bar is wider than the content (max 1440px). Below 1080 px the nav collapses into the "Menu" pill button. Copy the header from `index.html`.
+- **Header:** sticky, logo "ॐ Yoga in *the Grove* ॐ", nav: Our Story · Schedule · Community ▾ (Teachers, Practice, Share a Meal with Us: they jump to `community.html#teachers`, `#gather`, `#food-for-life`) · Volunteer · Find Us · Blog. The "Join Us on the Mat" button appears in the nav after scrolling past the hero (on desktop it takes no space until then). The header bar is wider than the content (max 1440px). Below 1080 px the nav collapses into the "Menu" pill button. Copy the header from `index.html`.
 - **Buttons:** `.btn` = moss pill with arrow → that slides on hover; `.btn.small`, `.btn.ghost`. Text links: `.link` (moss, sage underline).
 - **Page width:** `.wrap` max 1160px, 20px side padding; reading text `.narrow` (max 64ch).
 - **Sections:** `section` with generous vertical padding; `.sec-head` = eyebrow + H2 + short intro. Alternate backgrounds down the page: ivory → beige → mist → moss → ivory. The soft moving "window light" stripes are used on beige/ivory sections.
