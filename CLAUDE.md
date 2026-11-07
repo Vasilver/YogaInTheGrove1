@@ -23,8 +23,10 @@ Do not introduce frameworks, build tools, CMSs or paid services without written 
 ## 2. Repository structure
 
 ```
-/                     one .html file per page (index, about, teachers, practice,
-                      calendar, community, contact, blog, foodforlife)
+/                     one .html file per page (index, about, calendar, community,
+                      volunteer, donate, contact, blog, 404)
+teachers.html, practice.html, foodforlife.html, food-for-life.html
+                      redirect stubs → sections of community.html (7 Nov 2026); not in the sitemap
 /blog/                blog articles, one .html file each
 /css/site.css         NEW shared design: tokens + building blocks for every page (section 3)
 /js/site.js           NEW shared behavior: header, menu, dropdown, join dialog, forms, lightbox, map embeds

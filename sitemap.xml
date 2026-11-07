@@ -18,20 +18,8 @@
   </url>
 
   <!-- Teachers -->
-  <url>
-    <loc>https://yogainthegrove.org/teachers.html</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
   <!-- Practice -->
-  <url>
-    <loc>https://yogainthegrove.org/practice.html</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
   <!-- Calendar / Gather -->
   <url>
@@ -45,6 +33,18 @@
   <url>
     <loc>https://yogainthegrove.org/community.html</loc>
     <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yogainthegrove.org/volunteer.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yogainthegrove.org/donate.html</loc>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -74,11 +74,5 @@
   </url>
 
   <!-- Food for Life -->
-  <url>
-    <loc>https://yogainthegrove.org/foodforlife.html</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
 </urlset>
