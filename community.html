@@ -167,11 +167,12 @@
 .food h2 em{color:var(--olive)}
 .food p{color:var(--ink-soft);margin-top:16px}
 .food .eyebrow{color:var(--clay);font-weight:500}
-.food ul{list-style:none;padding:0;margin:26px 0 30px;display:grid;gap:10px}
-.food li{display:grid;grid-template-columns:7.5rem 1fr;gap:12px;padding-top:10px;border-top:1px solid var(--line);color:var(--ink-soft)}
-.food li b{font-weight:600;color:var(--ink)}
-.food-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;max-width:100%}
-.food-photo img{width:100%;height:100%;object-fit:cover}
+.food-text{max-width:34rem}
+.food-line{font-family:var(--font-display);font-style:italic;font-size:var(--step-2);line-height:1.25;color:var(--ink)!important;margin-top:28px!important;padding-top:22px;border-top:1px solid var(--sage);max-width:32ch}
+.food-line em{color:var(--olive)}
+.food-cta{margin-top:26px!important}
+.food-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;max-width:440px;justify-self:center;width:100%}
+.food-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
 @media (max-width:820px){.food-grid{grid-template-columns:1fr}.food-photo{aspect-ratio:4/3}}
 
 @media (prefers-reduced-motion:reduce){.community-hero .ph-bg,.ch-light,.community-hero .ph-inner > *{animation:none!important}.t-photo img{transition:none}.sun-rays,.star,.sm-sun .sm-art::before{animation:none!important}.sm-art svg{transform:none!important;opacity:1!important}.pillar *{transition:none!important}}
@@ -391,22 +392,19 @@
   </div>
 </section>
 
-<!-- 5. NOURISH: Food for Life (same component and copy as the homepage) -->
+<!-- 5. NOURISH: the shared meal after practice -->
 <section class="food" id="food-for-life" aria-labelledby="food-title">
   <div class="wrap food-grid">
-    <div>
-      <p class="eyebrow">Nourish · Food for Life</p>
-      <h2 id="food-title">Feed the body. <em>Serve the soul.</em></h2>
-      <p>Food is provided after class: Krishna community prasadam, a spiritual offering prepared with love. Please stay and enjoy a nourishing meal in good company.</p>
-      <ul>
-        <li><b>After Class</b><span>A hot vegetarian meal follows regular classes and events.</span></li>
-        <li><b>Sundays</b><span>Meals served at the center for a small donation.</span></li>
-        <li><b>Mondays</b><span>About 100 free meals delivered to unhoused neighbors downtown.</span></li>
-      </ul>
-      <div style="display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center"><a class="btn" href="volunteer.html">Cook, Serve, or Give <span class="arrow" aria-hidden="true">→</span></a> <a class="link" href="donate.html">Make a Donation</a></div>
+    <div class="food-text">
+      <p class="eyebrow">Nourish · After the Practice</p>
+      <h2 id="food-title">The Practice Ends. <em>The Connection Continues.</em></h2>
+      <p>At Yoga in the Grove, the experience doesn't end when you step off the mat. After class, we come together to share a nourishing vegetarian meal, prepared with love and enjoyed in good company.</p>
+      <p>It's a moment to slow down, connect with familiar faces, meet someone new, and feel part of the community.</p>
+      <p class="food-line">Come for the practice. <em>Stay for the connection.</em></p>
+      <p class="food-cta"><a class="btn" href="calendar.html">Come Join Us on the Mat <span class="arrow" aria-hidden="true">→</span></a></p>
     </div>
     <figure class="food-photo" style="margin:0">
-      <img src="img/food-for-life-outreach.webp" alt="Food for Life volunteers serving free meals to neighbors under a downtown Miami overpass" loading="lazy" width="1200" height="904">
+      <img src="img/prasadam-after-kirtan-poster.webp" alt="Guests serving themselves a vegetarian meal from a buffet after kirtan at Yoga in the Grove" loading="lazy" width="480" height="848">
     </figure>
   </div>
 </section>
