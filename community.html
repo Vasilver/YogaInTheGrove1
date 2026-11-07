@@ -68,9 +68,10 @@
 .t-body{padding:22px 24px 24px;display:grid;gap:8px;align-content:start}
 .teacher h3{font-size:clamp(1.7rem,2.4vw,2.1rem)}
 .t-role{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--moss);font-weight:500;margin-top:-2px}
-.t-short{color:var(--ink);font-size:1.05rem;line-height:1.6}
+.t-short{color:var(--ink);font-size:.97rem;line-height:1.6;min-height:calc(1.6em * 4)}
+@media (min-width:1101px) and (max-width:1240px){.t-short{font-size:.9rem}.t-body{padding:20px 20px 22px}}
 .t-more{margin-top:6px}
-.t-more summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:.5em;color:var(--olive);font-weight:500;padding:.55em 1.05em;border:1px solid var(--line);border-radius:999px;background:var(--paper);transition:background .3s,border-color .3s,color .3s}
+.t-more summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;width:100%;box-sizing:border-box;white-space:nowrap;font-size:.92rem;align-items:center;gap:.5em;color:var(--olive);font-weight:500;padding:.55em 1.05em;border:1px solid var(--line);border-radius:999px;background:var(--paper);transition:background .3s,border-color .3s,color .3s}
 .t-more summary::-webkit-details-marker{display:none}
 .t-more summary::after{content:"+";font-family:var(--font-display);font-size:1.35rem;line-height:1;color:var(--clay);transition:transform .35s}
 .t-more summary:hover{border-color:var(--sage);background:var(--mist)}
