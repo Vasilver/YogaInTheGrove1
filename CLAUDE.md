@@ -79,8 +79,8 @@ Always use these variables. Never hard-code a color or font size.
 
 ### 3.3 Typography
 
-- Headings (H1–H3): **Cormorant Garamond**, weight 400, *italic*, line-height 1.08. The second half of a heading is often wrapped in `<em>` in `--olive` ("Come for the practice. *Stay for the people.*").
-- Body: **Jost** weight 300, 1.0625rem, line-height 1.7. Bold labels use weight 500–600.
+- Headings (H1–H3): **Cormorant Garamond**, weight 500, *italic*, line-height 1.08. The second half of a heading is often wrapped in `<em>` in `--olive` ("Come for the practice. *Stay for the people.*").
+- Body: **Jost** weight 400, 1.0625rem, line-height 1.7. Bold labels use weight 500–600. Nothing on the site uses weight 300 (Anna, 7 Nov 2026: all text one step bolder).
 - Om symbol ॐ: font "Tiro Devanagari Sanskrit" (loaded only for that one character), color `--clay`, `aria-hidden="true"`. Used in the logo, footer and as a large faded mark in the closing section.
 - Eyebrows above section headings: small, letter-spaced, **Title Case** (`.eyebrow`, no lowercase transform). On photo headers they are uppercase.
 
