@@ -1,714 +1,426 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yoga Schedule & Events in Coconut Grove Miami | Yoga in the Grove</title>
-  <meta name="description" content="View the latest yoga class schedule, Kirtan evenings, and community events at Yoga in the Grove — 3220 Virginia Street, Coconut Grove, Miami FL.">
-  <meta name="keywords" content="yoga schedule Miami, yoga classes this week Coconut Grove, Kirtan events Miami, yoga events South Florida">
-  <link rel="canonical" href="https://yogainthegrove.org/calendar.html">
-  <meta property="og:title" content="Yoga Schedule & Events in Coconut Grove Miami | Yoga in the Grove">
-  <meta property="og:description" content="Find upcoming yoga classes, Kirtan evenings, and community gatherings at Yoga in the Grove in Coconut Grove, Miami.">
-  <meta property="og:url" content="https://yogainthegrove.org/calendar.html">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://yogainthegrove.org/photos/Food.jpg">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Yoga Schedule in Coconut Grove, Miami | Yoga in the Grove</title>
+<meta name="description" content="See upcoming Hatha yoga, kirtan and community gatherings at Yoga in the Grove in Coconut Grove, Miami, and reserve your spot in a class in one click.">
+<link rel="canonical" href="https://yogainthegrove.org/calendar.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Yoga in the Grove">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://yogainthegrove.org/calendar.html">
+<meta property="og:title" content="Yoga Schedule in Coconut Grove, Miami | Yoga in the Grove">
+<meta property="og:description" content="See upcoming Hatha yoga, kirtan and community gatherings at Yoga in the Grove in Coconut Grove, Miami, and reserve your spot in a class in one click.">
+<meta property="og:image" content="https://yogainthegrove.org/img/og-practice.jpg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "ExerciseGym", "name": "Yoga in the Grove", "url": "https://yogainthegrove.org/", "image": "https://yogainthegrove.org/img/og-practice.jpg", "telephone": "+1-929-944-2045", "email": "marjazz2012@gmail.com", "address": {"@type": "PostalAddress", "streetAddress": "3220 Virginia Street", "addressLocality": "Coconut Grove", "addressRegion": "FL", "postalCode": "33133", "addressCountry": "US"}, "geo": {"@type": "GeoCoordinates", "latitude": 25.7285, "longitude": -80.2406}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "14:00"}], "sameAs": ["https://www.instagram.com/yoga.inthegrove", "https://www.facebook.com/YogaInTheGrove"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&text=%E0%A5%90&display=swap">
+<link rel="stylesheet" href="css/site.css">
+<style>
+/* ---- schedule page ---- */
+.sched-sec{--sun-glow:#F29A55;--sun-gold:#C4893F;--sun-orange:#D9773A;padding-top:clamp(8px,2vw,20px)}
+.sched-tools{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between;margin-bottom:26px}
+.seg{display:inline-flex;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px;gap:2px}
+.seg button{font:inherit;font-size:.92rem;border:0;background:none;color:var(--ink-soft);padding:.55em 1.1em;border-radius:999px;cursor:pointer;min-height:40px;transition:background .3s,color .3s}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--moss);color:var(--on-olive)}
+.sched-sec .filters{margin:0}
+.sched-sec .filters button{min-height:40px;background:var(--ivory);transition:background .3s,color .3s,border-color .3s,box-shadow .45s}
+.sched-sec .filters button:hover{border-color:var(--sage);color:var(--ink);box-shadow:0 0 0 4px color-mix(in srgb,var(--sun-glow) 14%,transparent)}
+.sched-sec .filters button[aria-pressed="true"]{background:var(--moss);color:var(--on-olive);border-color:var(--moss)}
+.seg button:focus-visible,.sched-sec .filters button:focus-visible{outline:2px solid var(--clay);outline-offset:2px}
 
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/calendar.css">
+.sched{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.row{position:relative;isolation:isolate;display:grid;grid-template-columns:86px minmax(0,1fr) auto;gap:clamp(16px,3vw,34px);align-items:center;
+  padding:16px clamp(16px,2.6vw,28px);background:var(--paper);border:1px solid transparent;border-radius:var(--radius);
+  transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s,border-color .3s}
+/* the Community page sun aura, very soft */
+.row::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .45s;
+  background:radial-gradient(70% 120% at 18% 50%,color-mix(in srgb,var(--sun-glow) 20%,transparent),color-mix(in srgb,var(--sun-gold) 9%,transparent) 55%,transparent 85%)}
+.row:hover,.row:focus-within{transform:translateY(-2px);border-color:color-mix(in srgb,var(--sun-glow) 35%,var(--line));box-shadow:0 18px 40px -30px color-mix(in srgb,var(--sun-orange) 70%,transparent)}
+.row:hover::before,.row:focus-within::before{opacity:1}
+.d-block{display:grid;justify-items:center;align-content:center;gap:3px;line-height:1;padding-right:clamp(14px,2.4vw,26px);border-right:1px solid var(--line);min-height:76px}
+.d-block .dow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);font-weight:500}
+.d-block .dnum{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:2.5rem;color:var(--ink)}
+.d-block .mon{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+.cls{display:grid;gap:4px;min-width:0}
+.cls .meta{font-size:.92rem;color:var(--ink-soft)}
+.cls .meta b{color:var(--ink);font-weight:500}
+.cls h3{font-size:clamp(1.4rem,2.2vw,1.7rem);line-height:1.12}
+.cls .who{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:.92rem;color:var(--ink-soft)}
+.cat{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:.2em .75em;background:var(--ivory);color:var(--ink-soft)}
+.cat.kirtan{color:var(--clay)}
+.row .btn{white-space:nowrap;border:0;font:inherit;font-weight:500;cursor:pointer}
+.next-label{justify-self:start;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--on-olive);background:var(--moss);border-radius:999px;padding:.3em .85em;margin-bottom:2px}
+.row.is-next{background:var(--ivory);border-color:color-mix(in srgb,var(--moss) 55%,var(--line));box-shadow:inset 4px 0 0 var(--moss)}
+.row.is-next .dnum{color:var(--olive)}
+.sched-more{display:flex;justify-content:center;margin-top:22px}
+.sched-more button{font:inherit;font-weight:500;color:var(--olive);background:none;border:1px solid var(--line);border-radius:999px;padding:.65em 1.4em;cursor:pointer}
+.sched-more button:hover{border-color:var(--sage);background:var(--paper)}
+.sched-empty{text-align:center;padding:clamp(36px,6vw,64px) 20px;background:var(--paper);border-radius:var(--radius);display:grid;gap:10px;justify-items:center}
+.sched-empty p:first-child{font-family:var(--font-display);font-style:italic;font-size:var(--step-2);line-height:1.25;color:var(--ink);max-width:30ch}
+.sched-empty p + p{color:var(--ink-soft)}
+.sr-only,.sched-status{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.row.g-in{animation:rowIn .45s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--n,0) * 40ms)}
+@keyframes rowIn{from{opacity:0;transform:translateY(8px)}}
+@media (max-width:640px){
+  .row{grid-template-columns:62px minmax(0,1fr);gap:10px 16px;padding:16px}
+  .d-block{min-height:64px;padding-right:14px}
+  .d-block .dnum{font-size:2.1rem}
+  .row .btn{grid-column:1 / -1;justify-content:center;width:100%;min-height:46px}
+  .sched-tools{gap:12px}
+  .seg{width:100%;justify-content:space-between}
+  .seg button{flex:1 1 auto;padding-inline:.6em}
+}
+@media (prefers-reduced-motion:reduce){.row,.row::before{transition:none}.row:hover,.row:focus-within{transform:none}.row.g-in{animation:none}}
 
-  <!-- ============================================================
-       YOGA IN THE GROVE — Local Business Schema Markup
-       ============================================================ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HealthAndBeautyBusiness",
-    "name": "Yoga in the Grove",
-    "alternateName": "Yogainthegrove",
-    "url": "https://yogainthegrove.org",
-    "logo": "https://yogainthegrove.org/logo.png",
-    "image": "https://yogainthegrove.org/logo.png",
-    "description": "Yoga in the Grove is a neighborhood yoga studio in Coconut Grove, Miami, FL offering traditional Hatha Asana classes, Kirtan chanting, and community gatherings for all levels. A complimentary vegetarian meal is served after every class.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "3220 Virginia Street",
-      "addressLocality": "Coconut Grove",
-      "addressRegion": "FL",
-      "postalCode": "33133",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 25.7285,
-      "longitude": -80.2406
-    },
-    "telephone": "929-944-2045",
-    "email": "info@yogainthegrove.org",
-    "sameAs": [
-      "https://www.facebook.com/yogainthegrove",
-      "https://www.instagram.com/yogainthegrove",
-      "https://www.yelp.com/biz/yoga-in-the-grove-miami"
-    ],
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday", "Sunday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      }
-    ],
-    "priceRange": "$",
-    "servesCuisine": "Vegetarian",
-    "hasMap": "https://maps.google.com/?q=3220+Virginia+Street+Coconut+Grove+FL+33133",
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Coconut Grove"
-      },
-      {
-        "@type": "City",
-        "name": "Miami"
-      },
-      {
-        "@type": "State",
-        "name": "Florida"
-      }
-    ],
-    "knowsAbout": [
-      "Hatha Yoga",
-      "Kirtan",
-      "Meditation",
-      "Seva",
-      "Community Yoga",
-      "Beginner Yoga"
-    ]
-  }
-  </script>
+/* reservation dialog: same look as the join dialog */
+.rsvp-when{font-size:.95rem;opacity:.9;margin-top:4px}
+.rsvp-label{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;opacity:.8;margin-bottom:6px}
+.join-form input[type=number]{font:inherit;font-weight:400;padding:.75em .9em;border:1px solid var(--line);border-radius:8px;background:var(--ivory);color:var(--ink);width:6.5rem}
+</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to Content</a>
 
-  <!-- ── Navigation ───────────────────────────────────────── -->
-  <header>
-    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-
-      <a href="/" class="nav-wordmark">
-        yoga in <span>the grove</span>
-      </a>
-
-      <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">
-        <span></span><span></span><span></span>
-        <span class="visually-hidden">Open menu</span>
-      </button>
-
-      <ul class="nav-links" id="nav-links" role="list">
-        <li><a href="/"                           >home</a></li>
-        <li><a href="about.html"                           >our story</a></li>
-        <li><a href="teachers.html"                        >teachers</a></li>
-        <li><a href="practice.html"                        >practice</a></li>
-        <li><a href="calendar.html" aria-current="page"        >calendar</a></li>
-        <li><a href="community.html"                       >community</a></li>
-        <li><a href="contact.html"                         >find us</a></li>
-        <li><a href="blog.html"                            >blog</a></li>
-        <li><a href="foodforlife.html"              >food for life</a></li>
-        <li class="nav-social-mobile">
-          <a href="https://www.instagram.com/yoga.inthegrove" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-            instagram
-          </a>
-          <a href="https://www.facebook.com/YogaInTheGrove" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            facebook
-          </a>
-        </li>
-      </ul>
-
-      <div class="nav-social">
-        <a href="https://www.instagram.com/yoga.inthegrove" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="https://www.facebook.com/YogaInTheGrove" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        </a>
+<header class="site-header" id="top">
+  <div class="wrap bar">
+    <a class="logo" href="index.html"><span class="om" aria-hidden="true">ॐ</span> Yoga in <em>the Grove</em> <span class="om" aria-hidden="true">ॐ</span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Menu</button>
+    <nav class="nav" id="siteNav" aria-label="main">
+      <a href="about.html">Our Story</a>
+      <a href="calendar.html" aria-current="page">Schedule</a>
+      <div class="dd" id="ddCommunity">
+        <a class="dd-link" href="community.html">Community</a><button type="button" class="dd-btn" aria-expanded="false" aria-controls="ddMenu" aria-label="Show Community links"><span class="caret" aria-hidden="true">⌄</span></button>
+        <div class="dd-menu" id="ddMenu">
+          <a href="community.html#teachers">Teachers</a>
+          <a href="community.html#gather">Practice</a>
+          <a href="community.html#food-for-life">Share a Meal with Us</a>
+        </div>
       </div>
-
+      <a href="volunteer.html">Volunteer</a>
+      <a href="contact.html">Find Us</a>
+      <a href="blog.html">Blog</a>
+      <button type="button" class="btn small nav-cta" data-open-join style="border:0;font:inherit;font-weight:500;cursor:pointer">Join Us on the Mat <span class="arrow" aria-hidden="true">→</span></button>
     </nav>
-  </header>
+  </div>
+</header>
 
+<main id="main">
 
-  <main class="page-content">
+<section class="page-hero light" aria-labelledby="page-title">
+  <div class="wrap ph-inner">
+    <p class="eyebrow">Come Join Us on the Mat</p>
+    <h1 id="page-title">Find Your <em>Next Practice.</em></h1>
+    <p class="lede">There's a place for you here. Explore upcoming classes and gatherings, and find the one that speaks to you.</p>
+  </div>
+</section>
 
-    <!-- ── Page header ──────────────────────────────────────── -->
-    <section class="cal-page-header">
-      <div class="cal-page-header__inner">
-        <div>
-          <span class="cal-page-header__label">calendar</span>
-          <h1 class="cal-page-header__title">What's coming up</h1>
-        </div>
-        <span class="cal-page-header__month" id="cal-month-display">February – April 2026</span>
+<!-- SCHEDULE: built from js/events-data.js (the single source of truth). Soonest first, past classes drop off on their own.
+     Sign Up opens the reservation form for that exact class (Formspree, same form ID as the rest of the site). -->
+<section class="sched-sec" id="schedule" aria-labelledby="sched-title">
+  <div class="wrap">
+    <h2 id="sched-title" class="sr-only">Upcoming classes and gatherings</h2>
+    <div class="sched-tools">
+      <div class="seg" role="group" aria-label="Show classes for">
+        <button type="button" data-when="week" aria-pressed="false">This Week</button>
+        <button type="button" data-when="next" aria-pressed="false">Next Week</button>
+        <button type="button" data-when="all" aria-pressed="true">All Upcoming</button>
       </div>
-    </section>
-
-
-    <!-- ── Controls ─────────────────────────────────────────── -->
-    <div class="cal-controls" role="toolbar" aria-label="Calendar controls">
-      <div class="cal-controls__inner">
-
-        <!-- View toggle -->
-        <div class="view-toggle" role="group" aria-label="View">
-          <button class="view-btn is-active" data-view="list">
-            <!-- List icon -->
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <rect x="1" y="2" width="14" height="2" rx="1" fill="currentColor"/>
-              <rect x="1" y="7" width="14" height="2" rx="1" fill="currentColor"/>
-              <rect x="1" y="12" width="14" height="2" rx="1" fill="currentColor"/>
-            </svg>
-            list
-          </button>
-          <button class="view-btn" data-view="grid">
-            <!-- Grid icon -->
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <rect x="1" y="1" width="6" height="6" rx="1" fill="currentColor"/>
-              <rect x="9" y="1" width="6" height="6" rx="1" fill="currentColor"/>
-              <rect x="1" y="9" width="6" height="6" rx="1" fill="currentColor"/>
-              <rect x="9" y="9" width="6" height="6" rx="1" fill="currentColor"/>
-            </svg>
-            grid
-          </button>
-        </div>
-
-        <!-- Filters -->
-        <div class="filter-bar" role="group" aria-label="Filter by type">
-          <button class="filter-btn is-active" data-filter="all">all</button>
-          <button class="filter-btn" data-filter="asana">asana</button>
-          <button class="filter-btn" data-filter="kirtan">kirtan</button>
-          <button class="filter-btn" data-filter="meditation">meditation</button>
-          <button class="filter-btn" data-filter="seva">seva</button>
-          <button class="filter-btn" data-filter="workshop">workshop</button>
-        </div>
-
+      <div class="filters" role="group" aria-label="Filter by practice">
+        <button type="button" data-f="all" aria-pressed="true">All</button>
+        <button type="button" data-f="asana" aria-pressed="false">Asana</button>
+        <button type="button" data-f="kirtan" aria-pressed="false">Kirtan</button>
+        <button type="button" data-f="meditation" aria-pressed="false">Meditation</button>
+        <button type="button" data-f="seva" aria-pressed="false">Seva</button>
+        <button type="button" data-f="workshop" aria-pressed="false">Workshop</button>
       </div>
     </div>
-
-
-    <!-- ── Calendar content ─────────────────────────────────── -->
-    <div class="cal-content">
-      <div class="cal-content__inner">
-        <div id="events-list"    class="events-list"></div>
-        <div id="calendar-grid"  class="calendar-grid-view is-hidden"></div>
-      </div>
+    <p class="sched-status" aria-live="polite"></p>
+    <ol class="sched" id="sched"></ol>
+    <div class="sched-empty" id="schedEmpty" hidden>
+      <p>Nothing on the calendar just yet.</p>
+      <p>Check back soon for more ways to practice and connect.</p>
     </div>
+    <div class="sched-more" id="schedMore" hidden><button type="button">Show More Dates</button></div>
+    <noscript><p>Please turn on JavaScript to see the schedule, or email us at <a href="mailto:marjazz2012@gmail.com">marjazz2012@gmail.com</a>.</p></noscript>
+  </div>
+</section>
 
-    <!-- ── Kirtan ───────────────────────────────────────────── -->
-    <section class="kirtan-feature" aria-labelledby="kirtan-heading">
-      <div class="kirtan-feature__inner">
-
-        <div class="kirtan-feature__text">
-          <span class="section-label">kirtan</span>
-          <h2 class="kirtan-feature__title" id="kirtan-heading">
-            Call and response.<br>
-            Heart and voice.
-          </h2>
-          <p class="kirtan-feature__body">
-            Kirtan is the practice of chanting ancient Sanskrit mantras together —
-            no experience required, no perfect pitch needed. Just show up, open
-            your mouth, and let the sound do the rest. We gather monthly at the
-            studio for candlelit evenings of live harmonium and collective singing.
-          </p>
-          <a href="#events-list" class="btn btn--ochre">see kirtan dates</a>
-        </div>
-
-
-      </div>
-    </section>
-
-  </main>
-
-
-  <!-- ── Footer ────────────────────────────────────────────── -->
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      yoga in the grove &nbsp;&middot;&nbsp; 3220 virginia street, coconut grove fl 33133
-      <div class="footer-social">
-        <a href="https://www.instagram.com/yoga.inthegrove" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="https://www.facebook.com/YogaInTheGrove" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        </a>
-      </div>
+<section class="closing" aria-labelledby="close-title">
+  <div class="wrap closing-grid">
+    <div>
+      <p class="eyebrow">Come as You Are</p>
+      <h2 id="close-title">We'll save you <em>a spot on the mat.</em></h2>
+      <p class="cta-row"><button type="button" class="btn" data-open-join style="border:0;font:inherit;font-weight:500;cursor:pointer">Come Join Us on the Mat <span class="arrow" aria-hidden="true">→</span></button></p>
     </div>
-  </footer>
+    <address>
+      <span class="place">Yoga in the Grove</span>
+      <span>3220 Virginia Street<br>Coconut Grove, FL 33133</span>
+      <a class="link" style="justify-self:start" href="https://www.google.com/maps/dir/?api=1&amp;destination=3220+Virginia+Street+Coconut+Grove+FL+33133">Get Directions</a>
+      <div class="hours"><span>Mon to Fri</span><span>7:00 am to 8:00 pm</span><span>Sat</span><span>8:00 am to 6:00 pm</span><span>Sun</span><span>9:00 am to 2:00 pm</span></div>
+    </address>
+  </div>
+</section>
+</main>
 
-
-  <!-- ── RSVP Modal ────────────────────────────────────────── -->
-  <div class="modal-overlay" id="modal-overlay" aria-hidden="true">
-    <div class="modal" id="rsvp-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-
-      <button class="modal__close" id="modal-close" aria-label="Close">&times;</button>
-
-      <!-- Form -->
-      <div id="modal-form-section">
-
-        <div class="modal__header">
-          <p class="modal__eyebrow">reserve your spot</p>
-          <h2 class="modal__title" id="modal-title">Loading&hellip;</h2>
-        </div>
-
-        <form class="rsvp-form" id="rsvp-form" novalidate>
-
-          <div class="form-row">
-            <div class="form-field">
-              <label for="field-first-name">First Name <span aria-hidden="true">*</span></label>
-              <input type="text" id="field-first-name" name="firstName"
-                     required autocomplete="given-name" placeholder="Sita">
-            </div>
-            <div class="form-field">
-              <label for="field-last-name">Last Name <span aria-hidden="true">*</span></label>
-              <input type="text" id="field-last-name" name="lastName"
-                     required autocomplete="family-name" placeholder="Ramachandran">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-field">
-              <label for="field-email">Email <span aria-hidden="true">*</span></label>
-              <input type="email" id="field-email" name="email"
-                     required autocomplete="email" placeholder="you@example.com">
-            </div>
-            <div class="form-field">
-              <label for="field-phone">
-                Phone <span class="form-optional">(optional)</span>
-              </label>
-              <input type="tel" id="field-phone" name="phone"
-                     autocomplete="tel" placeholder="(305) 555-0100">
-            </div>
-          </div>
-
-          <div class="form-field">
-            <label for="field-event">Event</label>
-            <input type="text" id="field-event" name="event" readonly>
-          </div>
-
-          <div class="form-row">
-            <div class="form-field">
-              <label for="field-attendees">Number of Attendees</label>
-              <input type="number" id="field-attendees" name="attendees"
-                     min="1" max="10" value="1">
-            </div>
-            <div class="form-field">
-              <fieldset class="form-fieldset">
-                <legend>Is this your first visit?</legend>
-                <div class="radio-group">
-                  <label class="radio-label">
-                    <input type="radio" name="firstVisit" value="yes"> Yes
-                  </label>
-                  <label class="radio-label">
-                    <input type="radio" name="firstVisit" value="no" checked> No
-                  </label>
-                </div>
-              </fieldset>
-            </div>
-          </div>
-
-          <div class="form-field">
-            <label for="field-message">
-              Anything you'd like us to know
-              <span class="form-optional">(optional)</span>
-            </label>
-            <textarea id="field-message" name="message" rows="3"
-                      placeholder="Injuries, questions, or just a hello&hellip;"></textarea>
-          </div>
-
-          <button type="submit" class="btn-submit">hold my spot</button>
-
-        </form>
-      </div><!-- /modal-form-section -->
-
-      <!-- Confirmation (shown after submit) -->
-      <div id="modal-confirm-section" class="modal-confirm is-hidden" role="status">
-        <span class="modal-confirm__mark" aria-hidden="true">&#10022;</span>
-        <p class="modal-confirm__message">
-          Your spot is held.<br>
-          We look forward to breathing with you.
-        </p>
-        <button class="modal-confirm__close" id="modal-confirm-close">close</button>
+<!-- RESERVATION: one form, filled in with the class the visitor chose -->
+<dialog class="join-dialog" id="rsvpDialog" aria-labelledby="rsvp-title">
+  <div class="jd-head">
+    <p class="rsvp-label">Reserve Your Spot</p>
+    <h2 id="rsvp-title">Class</h2>
+    <p class="rsvp-when" id="rsvpWhen"></p>
+    <button type="button" class="jd-close" data-close-rsvp aria-label="Close">×</button>
+  </div>
+  <form class="join-form" id="rsvpForm" action="https://formspree.io/f/xgolnjqv" method="POST" novalidate data-formspree data-done="rsvpDone">
+    <div class="row2">
+      <label for="rf-name">Name<input id="rf-name" name="name" type="text" autocomplete="name" required></label>
+      <label for="rf-email">Email<input id="rf-email" name="email" type="email" autocomplete="email" required></label>
+    </div>
+    <div class="row2">
+      <label for="rf-phone">Phone <span style="font-weight:400;color:var(--ink-soft)">(optional)</span><input id="rf-phone" name="phone" type="tel" autocomplete="tel"></label>
+      <label for="rf-count">How many people?<input id="rf-count" name="attendees" type="number" min="1" max="10" value="1"></label>
+    </div>
+    <fieldset>
+      <legend>Have you practiced with us before?</legend>
+      <div class="pills">
+        <label><input type="radio" name="first_visit" value="First time" checked><span>This would be my first time</span></label>
+        <label><input type="radio" name="first_visit" value="Returning"><span>I've been before</span></label>
       </div>
+    </fieldset>
+    <label for="rf-msg">Anything we should know? <span style="font-weight:400;color:var(--ink-soft)">(optional)</span><textarea id="rf-msg" name="message" rows="3"></textarea></label>
+    <input type="hidden" name="class" id="rf-class">
+    <input type="hidden" name="form" value="reservation">
+    <input type="hidden" name="_subject" id="rf-subject" value="New class reservation">
+    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit" class="btn">Send <span class="arrow" aria-hidden="true">→</span></button>
+    <p class="form-msg" aria-live="assertive"></p>
+    <p class="form-note">We only use your details for this reservation. We never share them.</p>
+  </form>
+  <div class="jd-done" id="rsvpDone" tabindex="-1" hidden>
+    <h3>Your spot is held.</h3>
+    <p>We look forward to breathing with you.</p>
+    <button type="button" class="btn" data-close-rsvp style="border:0;font:inherit;cursor:pointer">Close</button>
+  </div>
+</dialog>
 
-    </div><!-- /modal -->
-  </div><!-- /modal-overlay -->
+<dialog class="join-dialog" id="joinDialog" aria-labelledby="jd-title">
+  <div class="jd-head">
+    <h2 id="jd-title">Come join us on the mat.</h2>
+    <p>Tell us a little about you and we'll send you the next class, kirtan, and gathering.</p>
+    <button type="button" class="jd-close" data-close-join aria-label="close">×</button>
+  </div>
+  <!-- FORMSPREE: same form already used by /calendar.html (xgolnjqv). Swap the ID to route sign-ups to a separate form. -->
+  <form class="join-form" id="joinForm" action="https://formspree.io/f/xgolnjqv" method="POST" novalidate>
+    <div class="row2">
+      <label for="jf-name">Name<input id="jf-name" name="name" type="text" autocomplete="name" required></label>
+      <label for="jf-phone">Phone <span style="font-weight:400;color:var(--ink-soft)">(optional)</span><input id="jf-phone" name="phone" type="tel" autocomplete="tel"></label>
+    </div>
+    <label for="jf-email">Email<input id="jf-email" name="email" type="email" autocomplete="email" required></label>
+    <fieldset>
+      <legend>What calls to you?</legend>
+      <div class="pills">
+        <label><input type="checkbox" name="interests" value="Hatha Asana" id="jf-i1"><span>Hatha Asana</span></label>
+        <label><input type="checkbox" name="interests" value="Kirtan" id="jf-i2"><span>Kirtan</span></label>
+        <label><input type="checkbox" name="interests" value="Meditation" id="jf-i3"><span>Meditation</span></label>
+        <label><input type="checkbox" name="interests" value="Seva" id="jf-i4"><span>Seva</span></label>
+        <label><input type="checkbox" name="interests" value="Food for Life" id="jf-i5"><span>Food for Life</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Have you practiced with us before?</legend>
+      <div class="pills">
+        <label><input type="radio" name="first_visit" value="First time" id="jf-f1" checked><span>This would be my first time</span></label>
+        <label><input type="radio" name="first_visit" value="Returning" id="jf-f2"><span>I've been before</span></label>
+      </div>
+    </fieldset>
+    <label for="jf-msg">Anything we should know? <span style="font-weight:400;color:var(--ink-soft)">(optional)</span><textarea id="jf-msg" name="message" rows="3"></textarea></label>
+    <input type="hidden" name="_subject" value="New sign-up: Come Join Us on the Mat">
+    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit" class="btn">Send <span class="arrow" aria-hidden="true">→</span></button>
+    <p class="form-msg" id="formMsg" aria-live="assertive"></p>
+    <p class="form-note">We only use this to welcome you and share what's coming up.</p>
+  </form>
+  <div class="jd-done" id="joinDone" hidden>
+    <h3>We'll see you on the mat.</h3>
+    <p>Thank you. We'll be in touch within a day or two with what's coming up next.</p>
+    <button type="button" class="btn" data-close-join style="border:0;font:inherit;cursor:pointer">Close</button>
+  </div>
+</dialog>
 
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <span class="name"><span class="om" aria-hidden="true">ॐ</span> Yoga in the Grove</span>
+        <address>
+          <span>3220 Virginia Street</span>
+          <span>Coconut Grove, FL 33133</span>
+        </address>
+        <a href="tel:+19299442045">929-944-2045</a>
+        <a href="mailto:marjazz2012@gmail.com">marjazz2012@gmail.com</a>
+      </div>
+      <nav aria-label="footer: visit">
+        <p class="label">Visit</p>
+        <a href="about.html">Our Story</a>
+        <a href="calendar.html">Schedule</a>
+        <a href="contact.html">Find Us</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <nav aria-label="footer: community">
+        <p class="label">Community</p>
+        <a href="community.html">Community</a>
+        <a href="community.html#teachers">Teachers</a>
+        <a href="community.html#gather">Practice</a>
+        <a href="community.html#food-for-life">Share a Meal with Us</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="donate.html">Donate</a>
+      </nav>
+      <nav aria-label="footer: follow">
+        <p class="label">Follow</p>
+        <a href="https://www.instagram.com/yoga.inthegrove" aria-label="Yoga in the Grove on Instagram">Instagram</a>
+        <a href="https://www.facebook.com/YogaInTheGrove" aria-label="Yoga in the Grove on Facebook">Facebook</a>
+      </nav>
+    </div>
+    <div class="base">
+      <span>© 2026 Yoga in the Grove · Coconut Grove, Miami</span>
+      <span>Mon to Fri 7 am to 8 pm · Sat 8 am to 6 pm · Sun 9 am to 2 pm</span>
+    </div>
+  </div>
+</footer>
 
-  <!-- ── Scripts ───────────────────────────────────────────── -->
-  <script src="js/events-data.js"></script>
-  <script>
-  (function () {
+<script src="js/events-data.js"></script>
+<script>
+(function(){
+  var TZ='America/New_York';
+  var list=document.getElementById('sched'), empty=document.getElementById('schedEmpty'), more=document.getElementById('schedMore'), status=document.querySelector('.sched-status');
+  var DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], DOWL=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], MONL=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var CAT={asana:'Asana',kirtan:'Kirtan',meditation:'Meditation',seva:'Seva',workshop:'Workshop'};
+  var PAGE=20, state={when:'all',cat:'all',shown:PAGE};
 
-    /* Events loaded from js/events-data.js — edit that file to change the schedule */
-    var EVENTS = YOGA_EVENTS;
+  /* the studio's own clock (America/New_York), whatever the visitor's time zone */
+  function nyNow(){
+    var p={}; new Intl.DateTimeFormat('en-US',{timeZone:TZ,year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric',hourCycle:'h23'})
+      .formatToParts(new Date()).forEach(function(x){p[x.type]=+x.value;});
+    return {y:p.year,m:p.month-1,d:p.day,h:p.hour%24,min:p.minute};
+  }
+  function parseTime(t){ var m=/(\d{1,2}):(\d{2})\s*(am|pm)/i.exec(t||''); if(!m) return null; var h=+m[1]%12; if(/pm/i.test(m[3])) h+=12; return {h:h,min:+m[2]}; }
+  function parseDur(s){ var m=/([\d.]+)\s*(min|hr|hour)/i.exec(s||''); if(!m) return 60; return /min/i.test(m[2])? +m[1] : Math.round(+m[1]*60); }
+  function dayNo(y,m,d){ return Math.round(Date.UTC(y,m,d)/864e5); }
+  function pad(n){return (n<10?'0':'')+n;}
+  function offset(y,m,d){ /* e.g. -05:00 or -04:00 for that date in Miami */
+    try{ var s=new Intl.DateTimeFormat('en-US',{timeZone:TZ,timeZoneName:'longOffset'}).formatToParts(new Date(Date.UTC(y,m,d,17))).filter(function(x){return x.type==='timeZoneName';})[0].value;
+      var m2=/GMT([+-]\d{2}):?(\d{2})?/.exec(s); return m2? m2[1]+':'+(m2[2]||'00') : '-05:00'; }catch(e){ return '-05:00'; }
+  }
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 
-    var TYPE_LABELS = {
-      asana:       'Asana',
-      kirtan:      'Kirtan',
-      meditation:  'Meditation',
-      seva:        'Seva',
-      workshop:    'Workshop'
-    };
-
-    var DAY_ABBR   = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    var MONTH_NAME = ['January','February','March','April','May','June',
-                      'July','August','September','October','November','December'];
-
-    /* ── State ──────────────────────────────────────────── */
-    var activeView   = 'list';
-    var activeFilter = 'all';
-
-    /* Grid navigation — start on current month, no past months, 3 months forward */
-    var _today     = new Date();
-    var gridYear   = _today.getFullYear();
-    var gridMonth  = _today.getMonth();
-    var minGridAbs = _today.getFullYear() * 12 + _today.getMonth();
-    var maxGridAbs = _today.getFullYear() * 12 + _today.getMonth() + 3;
-
-    /* ── DOM refs ───────────────────────────────────────── */
-    var listEl     = document.getElementById('events-list');
-    var gridEl     = document.getElementById('calendar-grid');
-    var overlayEl  = document.getElementById('modal-overlay');
-    var formSect   = document.getElementById('modal-form-section');
-    var confSect   = document.getElementById('modal-confirm-section');
-    var rsvpForm   = document.getElementById('rsvp-form');
-    var titleEl    = document.getElementById('modal-title');
-    var eventField = document.getElementById('field-event');
-
-    /* ── Helpers ────────────────────────────────────────── */
-    function filtered() {
-      if (activeFilter === 'all') return EVENTS;
-      return EVENTS.filter(function (e) { return e.type === activeFilter; });
-    }
-
-    function formatDate(ev) {
-      var d = new Date(ev.year, ev.month, ev.day);
-      return DAY_ABBR[d.getDay()] + ', ' + MONTH_NAME[ev.month] + ' ' + ev.day;
-    }
-
-    function isToday(ev) {
-      var t = new Date();
-      return t.getFullYear() === ev.year && t.getMonth() === ev.month && t.getDate() === ev.day;
-    }
-
-    function isPast(ev) {
-      var t = new Date(); t.setHours(0,0,0,0);
-      return new Date(ev.year, ev.month, ev.day) < t;
-    }
-
-    function canGoPrev() { return gridYear * 12 + gridMonth > minGridAbs; }
-    function canGoNext() { return gridYear * 12 + gridMonth < maxGridAbs; }
-
-    function escHtml(str) {
-      return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-    }
-
-    /* ── Render: list ───────────────────────────────────── */
-    function renderList() {
-      var evs = filtered();
-      if (!evs.length) {
-        listEl.innerHTML = '<p class="no-events">No events of this type in the next 6 months.</p>';
-        return;
-      }
-
-      /* group by year+month, preserving chronological order */
-      var groups = [];
-      var keyMap  = {};
-      evs.forEach(function (ev) {
-        var key = ev.year + '-' + ev.month;
-        if (!keyMap[key]) {
-          keyMap[key] = { year: ev.year, month: ev.month, events: [] };
-          groups.push(keyMap[key]);
-        }
-        keyMap[key].events.push(ev);
-      });
-
-      listEl.innerHTML = groups.map(function (g) {
-        var cards = g.events.map(function (ev) {
-          var past = isPast(ev) ? ' event-card--past' : '';
-          return '<article class="event-card type--' + ev.type + past + '" data-id="' + ev.id + '">' +
-            '<span class="event-card__type type--' + ev.type + '">' + TYPE_LABELS[ev.type] + '</span>' +
-            '<h2 class="event-card__title">' + escHtml(ev.title) + '</h2>' +
-            '<p class="event-card__teacher">' + escHtml(ev.teacher) + '</p>' +
-            '<ul class="event-card__meta" role="list">' +
-              '<li>' + formatDate(ev) + '</li>' +
-              '<li>' + ev.timeDisplay + '</li>' +
-              '<li>' + ev.duration + '</li>' +
-            '</ul>' +
-            '<p class="event-card__desc">' + escHtml(ev.desc) + '</p>' +
-            '<button class="event-card__rsvp" data-rsvp="' + ev.id + '"' +
-              (isPast(ev) ? ' disabled aria-disabled="true"' : '') + '>' +
-              (isPast(ev) ? 'past' : 'rsvp') +
-            '</button>' +
-          '</article>';
-        }).join('');
-
-        return '<div class="events-month-group">' +
-          '<h3 class="events-month-label">' + MONTH_NAME[g.month] + ' ' + g.year + '</h3>' +
-          '<div class="events-month-cards">' + cards + '</div>' +
-          '</div>';
-      }).join('');
-    }
-
-    /* ── Render: grid ───────────────────────────────────── */
-    function renderMonthGrid(yr, mo, byDay) {
-      var firstDow = new Date(yr, mo, 1).getDay();
-      var dim      = new Date(yr, mo + 1, 0).getDate();
-
-      /* Previous month info — for leading grayed-out days */
-      var prevMo  = mo === 0 ? 11 : mo - 1;
-      var prevYr  = mo === 0 ? yr - 1 : yr;
-      var prevDim = new Date(prevYr, prevMo + 1, 0).getDate();
-
-      var html = '<div class="cal-month-block">' +
-        '<div class="cal-month-header">' +
-          '<button class="cal-nav-btn" id="cal-prev" aria-label="Previous month"' +
-            (canGoPrev() ? '' : ' disabled aria-disabled="true"') + '>&#8249;</button>' +
-          '<h2 class="cal-month-title">' + MONTH_NAME[mo] + ' ' + yr + '</h2>' +
-          '<button class="cal-nav-btn" id="cal-next" aria-label="Next month"' +
-            (canGoNext() ? '' : ' disabled aria-disabled="true"') + '>&#8250;</button>' +
-        '</div>' +
-        '<div class="cal-grid">';
-
-      DAY_ABBR.forEach(function (d) {
-        html += '<div class="cal-day-header">' + d + '</div>';
-      });
-
-      /* Leading days from previous month — visible but grayed out */
-      for (var i = 0; i < firstDow; i++) {
-        var prevDay = prevDim - firstDow + 1 + i;
-        html += '<div class="cal-cell cal-cell--prev-month">' +
-          '<span class="cal-cell__number">' + prevDay + '</span></div>';
-      }
-
-      for (var day = 1; day <= dim; day++) {
-        var ev0 = { year: yr, month: mo, day: day };
-        var cls = 'cal-cell';
-        if (isToday(ev0))     cls += ' cal-cell--today';
-        else if (isPast(ev0)) cls += ' cal-cell--past';
-
-        html += '<div class="' + cls + '"><span class="cal-cell__number">' + day + '</span>';
-
-        if (byDay[day]) {
-          byDay[day].forEach(function (ev) {
-            html += '<button class="cal-chip type--' + ev.type + '" data-rsvp="' + ev.id + '"' +
-              ' title="' + escHtml(ev.title) + ' — ' + ev.timeDisplay + '">' +
-              '<span class="cal-chip__time">' + ev.timeDisplay + '</span>' +
-              '<span class="cal-chip__title">' + escHtml(ev.title) + '</span>' +
-              '</button>';
-          });
-        }
-
-        html += '</div>';
-      }
-
-      html += '</div></div>'; /* .cal-grid .cal-month-block */
-      return html;
-    }
-
-    function renderGrid() {
-      var byMonthDay = {};
-      filtered().forEach(function (ev) {
-        var key = ev.year + '-' + ev.month;
-        if (!byMonthDay[key]) byMonthDay[key] = {};
-        if (!byMonthDay[key][ev.day]) byMonthDay[key][ev.day] = [];
-        byMonthDay[key][ev.day].push(ev);
-      });
-
-      gridEl.innerHTML = renderMonthGrid(
-        gridYear, gridMonth,
-        byMonthDay[gridYear + '-' + gridMonth] || {}
-      );
-    }
-
-    /* ── View switching ─────────────────────────────────── */
-    function setView(v) {
-      activeView = v;
-      document.querySelectorAll('.view-btn').forEach(function (btn) {
-        btn.classList.toggle('is-active', btn.dataset.view === v);
-      });
-      if (v === 'list') {
-        listEl.classList.remove('is-hidden');
-        gridEl.classList.add('is-hidden');
-        renderList();
-      } else {
-        listEl.classList.add('is-hidden');
-        gridEl.classList.remove('is-hidden');
-        renderGrid();
-      }
-    }
-
-    /* ── Filter ─────────────────────────────────────────── */
-    function setFilter(f) {
-      activeFilter = f;
-      document.querySelectorAll('.filter-btn').forEach(function (btn) {
-        btn.classList.toggle('is-active', btn.dataset.filter === f);
-      });
-      activeView === 'list' ? renderList() : renderGrid();
-    }
-
-    /* ── Modal ──────────────────────────────────────────── */
-    function openModal(id) {
-      var ev = null;
-      for (var i = 0; i < EVENTS.length; i++) {
-        if (EVENTS[i].id === id) { ev = EVENTS[i]; break; }
-      }
-      if (!ev) return;
-
-      /* populate */
-      titleEl.textContent = ev.title;
-      eventField.value    = ev.title + ' — ' + formatDate(ev) + ' at ' + ev.timeDisplay;
-
-      /* reset fields (except the readonly event field) */
-      rsvpForm.reset();
-      eventField.value = ev.title + ' — ' + formatDate(ev) + ' at ' + ev.timeDisplay;
-
-      /* show form, hide confirmation */
-      formSect.classList.remove('is-hidden');
-      confSect.classList.add('is-hidden');
-
-      /* open overlay */
-      overlayEl.classList.add('is-open');
-      overlayEl.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-
-      /* focus first field */
-      setTimeout(function () {
-        var f = document.getElementById('field-first-name');
-        if (f) f.focus();
-      }, 80);
-    }
-
-    function closeModal() {
-      overlayEl.classList.remove('is-open');
-      overlayEl.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    /* ── Form submit ────────────────────────────────────── */
-    rsvpForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      /* Basic required-field check */
-      var required = rsvpForm.querySelectorAll('[required]');
-      var valid = true;
-      required.forEach(function (el) {
-        if (!el.value.trim()) { el.focus(); valid = false; }
-      });
-      if (!valid) return;
-
-      /* Disable button while sending */
-      var submitBtn = rsvpForm.querySelector('.btn-submit');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'sending\u2026';
-
-      fetch('https://formspree.io/f/xgolnjqv', {
-        method:  'POST',
-        headers: { 'Accept': 'application/json' },
-        body:    new FormData(rsvpForm)
-      })
-      .then(function (res) {
-        if (res.ok) {
-          formSect.classList.add('is-hidden');
-          confSect.classList.remove('is-hidden');
-        } else {
-          return res.json().then(function (data) {
-            var msg = (data.errors || []).map(function (err) { return err.message; }).join(', ')
-                      || 'Something went wrong. Please try again.';
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'hold my spot';
-            alert(msg);
-          });
-        }
-      })
-      .catch(function () {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'hold my spot';
-        alert('Could not send. Please check your connection and try again.');
-      });
+  function upcoming(){
+    var n=nyNow(), nowKey=dayNo(n.y,n.m,n.d)*1440+n.h*60+n.min;
+    var out=[];
+    (window.YOGA_EVENTS||[]).forEach(function(e){
+      if(/\[|\]/.test((e.title||'')+(e.teacher||''))) return;          /* never publish placeholders */
+      var t=parseTime(e.timeDisplay); if(!t) return;
+      var day=dayNo(e.year,e.month,e.day), key=day*1440+t.h*60+t.min;
+      if(key<=nowKey) return;                                          /* started or past */
+      out.push({e:e,t:t,day:day,key:key});
     });
+    out.sort(function(a,b){return a.key-b.key;});
+    return {items:out,today:dayNo(n.y,n.m,n.d),dow:new Date(Date.UTC(n.y,n.m,n.d)).getUTCDay()};
+  }
 
-    /* ── Event delegation ───────────────────────────────── */
-    document.addEventListener('click', function (e) {
+  function inRange(it,u){
+    if(state.when==='all') return true;
+    var sinceMon=(u.dow+6)%7, weekEnd=u.today+(6-sinceMon);              /* weeks run Monday to Sunday */
+    if(state.when==='week') return it.day<=weekEnd;
+    return it.day>weekEnd && it.day<=weekEnd+7;
+  }
 
-      /* Grid month navigation */
-      if (e.target.closest('#cal-prev') && canGoPrev()) {
-        gridMonth--;
-        if (gridMonth < 0) { gridMonth = 11; gridYear--; }
-        renderGrid();
-        return;
-      }
-      if (e.target.closest('#cal-next') && canGoNext()) {
-        gridMonth++;
-        if (gridMonth > 11) { gridMonth = 0; gridYear++; }
-        renderGrid();
-        return;
-      }
+  function rowHTML(it,isNext,n){
+    var e=it.e, d=new Date(Date.UTC(e.year,e.month,e.day)), wd=d.getUTCDay();
+    var who=(e.teacher && e.teacher!=='Community')? 'With '+esc(e.teacher) : 'Together as a community';
+    var iso=e.year+'-'+pad(e.month+1)+'-'+pad(e.day)+'T'+pad(it.t.h)+':'+pad(it.t.min);
+    var label='Sign up for '+e.title+' on '+DOWL[wd]+', '+MONL[e.month]+' '+e.day+' at '+e.timeDisplay;
+    return '<li class="row'+(isNext?' is-next':'')+' g-in" style="--n:'+n+'">'+
+      '<div class="d-block" aria-hidden="true"><span class="dow">'+DOW[wd]+'</span><span class="dnum">'+e.day+'</span><span class="mon">'+MON[e.month]+'</span></div>'+
+      '<div class="cls">'+(isNext?'<span class="next-label">Next Class</span>':'')+
+        '<p class="meta"><time datetime="'+iso+'"><b>'+DOWL[wd]+', '+MONL[e.month]+' '+e.day+' · '+esc(e.timeDisplay)+'</b></time>'+(e.duration?' · <span style="white-space:nowrap">'+esc(e.duration)+'</span>':'')+'</p>'+
+        '<h3>'+esc(e.title)+'</h3>'+
+        '<p class="who"><span>'+who+'</span><span class="cat '+esc(e.type)+'">'+(CAT[e.type]||esc(e.type))+'</span></p></div>'+
+      '<button type="button" class="btn" data-id="'+e.id+'" aria-label="'+esc(label)+'">Sign Up <span class="arrow" aria-hidden="true">→</span></button>'+
+    '</li>';
+  }
 
-      /* RSVP / chip buttons */
-      var rsvp = e.target.closest('[data-rsvp]');
-      if (rsvp && !rsvp.disabled) {
-        openModal(parseInt(rsvp.dataset.rsvp, 10));
-        return;
-      }
+  var calm=matchMedia('(prefers-reduced-motion: reduce)').matches, last=[];
+  function render(){
+    var u=upcoming();
+    last=u.items.filter(function(it){ return inRange(it,u) && (state.cat==='all' || it.e.type===state.cat); });
+    var shown=last.slice(0,state.shown);
+    list.innerHTML=shown.map(function(it,i){return rowHTML(it,i===0,calm?0:i);}).join('');
+    if(calm) list.querySelectorAll('.g-in').forEach(function(r){r.classList.remove('g-in');});
+    empty.hidden=last.length>0;
+    more.hidden=last.length<=state.shown;
+    status.textContent=last.length? ('Showing '+shown.length+' of '+last.length+(last.length===1?' class':' classes')) : 'Nothing on the calendar just yet.';
+    if(!jsonld){ addSchema(u.items.slice(0,20)); }
+  }
 
-      /* View toggle */
-      var vBtn = e.target.closest('.view-btn');
-      if (vBtn) { setView(vBtn.dataset.view); return; }
-
-      /* Filter */
-      var fBtn = e.target.closest('.filter-btn');
-      if (fBtn) { setFilter(fBtn.dataset.filter); return; }
-
-      /* Modal close button */
-      if (e.target.closest('#modal-close') || e.target.closest('#modal-confirm-close')) {
-        closeModal(); return;
-      }
-
-      /* Overlay click-outside */
-      if (e.target === overlayEl) { closeModal(); return; }
+  /* Event structured data for search engines, from the same data */
+  var jsonld=false;
+  function addSchema(items){
+    if(!items.length) return; jsonld=true;
+    var place={"@type":"Place","name":"Yoga in the Grove","address":{"@type":"PostalAddress","streetAddress":"3220 Virginia Street","addressLocality":"Coconut Grove","addressRegion":"FL","postalCode":"33133","addressCountry":"US"}};
+    var data=items.map(function(it){
+      var e=it.e, off=offset(e.year,e.month,e.day), s=new Date(Date.UTC(e.year,e.month,e.day,it.t.h,it.t.min)+parseDur(e.duration)*6e4);
+      var start=e.year+'-'+pad(e.month+1)+'-'+pad(e.day)+'T'+pad(it.t.h)+':'+pad(it.t.min)+':00'+off;
+      var end=s.getUTCFullYear()+'-'+pad(s.getUTCMonth()+1)+'-'+pad(s.getUTCDate())+'T'+pad(s.getUTCHours())+':'+pad(s.getUTCMinutes())+':00'+off;
+      return {"@context":"https://schema.org","@type":"Event","name":e.title,"description":e.desc||'',"startDate":start,"endDate":end,
+        "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled",
+        "location":place,"organizer":{"@type":"Organization","name":"Yoga in the Grove","url":"https://yogainthegrove.org/"}};
     });
+    var sc=document.createElement('script'); sc.type='application/ld+json'; sc.textContent=JSON.stringify(data); document.head.appendChild(sc);
+  }
 
-    /* Escape key */
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeModal();
-    });
+  function wire(sel,key,attr){
+    var bs=document.querySelectorAll(sel);
+    bs.forEach(function(b){b.addEventListener('click',function(){
+      bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      state[key]=b.getAttribute(attr); state.shown=PAGE; render();
+    });});
+  }
+  wire('.seg button','when','data-when');
+  wire('.sched-sec .filters button','cat','data-f');
+  more.querySelector('button').addEventListener('click',function(){ state.shown+=PAGE; render(); });
 
-    /* ── Mobile nav toggle ──────────────────────────────── */
-    (function () {
-      var toggle = document.querySelector('.nav-toggle');
-      var links  = document.querySelector('.nav-links');
-      if (!toggle || !links) return;
-      toggle.addEventListener('click', function () {
-        var open = links.classList.toggle('is-open');
-        toggle.setAttribute('aria-expanded', open);
-        document.body.style.overflow = open ? 'hidden' : '';
-      });
-      links.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', function () {
-          links.classList.remove('is-open');
-          toggle.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
-        });
-      });
-    })();
+  /* Sign Up: open the reservation form for that exact class */
+  var dlg=document.getElementById('rsvpDialog'), form=document.getElementById('rsvpForm'), done=document.getElementById('rsvpDone');
+  list.addEventListener('click',function(ev){
+    var b=ev.target.closest('[data-id]'); if(!b) return;
+    var it=null; last.forEach(function(x){ if(String(x.e.id)===b.dataset.id) it=x; }); if(!it) return;
+    var e=it.e, wd=new Date(Date.UTC(e.year,e.month,e.day)).getUTCDay(), when=DOWL[wd]+', '+MONL[e.month]+' '+e.day+' at '+e.timeDisplay;
+    form.reset(); form.hidden=false; done.hidden=true; form.querySelector('.form-msg').textContent='';
+    document.getElementById('rsvp-title').textContent=e.title;
+    document.getElementById('rsvpWhen').textContent=when+((e.teacher&&e.teacher!=='Community')?' · with '+e.teacher:'');
+    document.getElementById('rf-class').value=e.title+', '+when;
+    document.getElementById('rf-subject').value='New class reservation: '+e.title+', '+when;
+    if(dlg.showModal){dlg.showModal();}else{dlg.setAttribute('open','');}
+    setTimeout(function(){document.getElementById('rf-name').focus();},50);
+  });
+  document.querySelectorAll('[data-close-rsvp]').forEach(function(b){b.addEventListener('click',function(){dlg.close();});});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
 
-    /* ── Init ───────────────────────────────────────────── */
-    setView('list');
-
-  })();
-  </script>
-
+  render();
+  /* keep it honest while the page stays open: classes drop off once they start */
+  setInterval(function(){ var before=last.length; var u=upcoming(); if(u.items.length!==before || true){ var y=window.scrollY; render(); window.scrollTo(0,y); } },60000);
+})();
+</script>
+<script src="js/site.js" defer></script>
 </body>
 </html>
