@@ -75,7 +75,23 @@
 .way-pick{justify-self:start;margin-top:auto;padding-top:10px;font:inherit;font-weight:500;color:var(--olive);background:none;border:0;border-bottom:1px solid var(--sage);cursor:pointer;display:inline-flex;gap:.45em;padding:10px 0 2px}
 .way-pick .arrow{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .way-pick:hover .arrow,.way-pick:focus-visible .arrow{transform:translateX(5px)}
-@media (max-width:900px){.way-grid{grid-template-columns:1fr;max-width:560px}}
+/* warm aura on hover, same sun glow as the Community page */
+.way-grid{--sun-glow:#F29A55;--sun-gold:#C4893F;--sun-orange:#D9773A}
+.way{position:relative;isolation:isolate}
+.way::before{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .45s;
+  background:radial-gradient(80% 60% at 50% 100%,color-mix(in srgb,var(--sun-glow) 16%,transparent),color-mix(in srgb,var(--sun-gold) 7%,transparent) 55%,transparent 85%)}
+.way:hover::before,.way:focus-within::before{opacity:1}
+.way:hover,.way:focus-within{border-color:color-mix(in srgb,var(--sun-glow) 40%,var(--line));box-shadow:0 26px 50px -34px color-mix(in srgb,var(--sun-orange) 60%,transparent)}
+/* Sunday preparation: full-width card under the three */
+.way-feature{grid-column:1 / -1;flex-direction:row}
+.way-art{flex:0 0 38%;display:grid;place-items:center;background:linear-gradient(140deg,color-mix(in srgb,var(--beige) 85%,var(--flame)),color-mix(in srgb,var(--beige) 55%,var(--paper)));color:var(--clay)}
+.way-art svg{width:min(150px,45%);height:auto;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.way-feature:hover .way-art svg,.way-feature:focus-within .way-art svg{transform:scale(1.05)}
+.way-feature .way-body{padding:clamp(24px,3.5vw,40px)}
+.way-label{font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;color:var(--moss);font-weight:500;font-family:var(--font-body)}
+.way-feature h3 em{color:var(--olive)}
+@media (max-width:900px){.way-grid{grid-template-columns:1fr;max-width:560px}.way-feature{flex-direction:column}.way-art{flex-basis:auto;aspect-ratio:16/7}}
+@media (prefers-reduced-motion:reduce){.way::before,.way-art svg{transition:none}}
 
 /* impact: one row right under the hero */
 .impact{background:color-mix(in srgb,var(--olive) 88%,var(--ink));color:var(--on-olive);padding-block:clamp(28px,4vw,44px)}
@@ -182,7 +198,7 @@
       <h2 id="impact-title"><span class="sr-only">About 200 </span>neighbors nourished <em>every week.</em></h2>
     </div>
     <dl class="impact-facts">
-      <div><dt>Sundays</dt><dd>About 100 people share a meal at our center for a small donation.</dd></div>
+      <div><dt>Sundays</dt><dd>Volunteers wash and chop fresh vegetables, then about 100 people share a meal at our center for a small donation.</dd></div>
       <div><dt>Mondays</dt><dd>About 100 free meals are served to unhoused neighbors downtown.</dd></div>
     </dl>
     <a class="link impact-link" href="community.html#food-for-life">More About Food for Life <span aria-hidden="true">→</span></a>
@@ -248,6 +264,24 @@
           <button type="button" class="way-pick" data-pick="Connect">I'd Like to Connect <span class="arrow" aria-hidden="true">→</span></button>
         </div>
       </article>
+      <article class="way way-feature reveal" style="--i:3" aria-labelledby="way-sunday">
+        <div class="way-art" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 66h76a38 30 0 0 1-76 0Z"/><path d="M34 96h52"/>
+            <path d="M44 66c-4-14 2-26 14-30"/><path d="M58 36c-2 8-8 14-16 16"/>
+            <path d="M62 66c0-12 6-22 18-26"/><path d="M80 40c-1 7-6 13-14 15"/>
+            <path d="M70 66l10-30 8 4-12 26"/>
+          </svg>
+        </div>
+        <div class="way-body">
+          <span class="numeral">iv.</span>
+          <p class="way-label">Sunday Seva · Food Preparation</p>
+          <h3 id="way-sunday">A Little Preparation. <em>A Lot of Love.</em></h3>
+          <p>Every Sunday, our community comes together to wash, chop, and prepare fresh vegetables for the meals we share.</p>
+          <p>No experience needed. Just bring your helping hands and an open heart. It's a simple, meaningful way to connect with others while helping nourish our community.</p>
+          <button type="button" class="way-pick" data-pick="Sunday Vegetable Preparation">Join Us on Sunday <span class="arrow" aria-hidden="true">→</span></button>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -273,6 +307,7 @@
             <option value="Prepare">Prepare: help create nourishing meals</option>
             <option value="Serve">Serve: help share meals with the community</option>
             <option value="Connect">Connect: shared service and community</option>
+            <option value="Sunday Vegetable Preparation">Sunday vegetable preparation</option>
             <option value="Not sure yet" selected>I'm not sure yet</option>
           </select>
         </label>
