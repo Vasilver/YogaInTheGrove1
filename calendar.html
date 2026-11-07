@@ -86,6 +86,27 @@
 .rsvp-when{font-size:.95rem;opacity:.9;margin-top:4px}
 .rsvp-label{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;opacity:.8;margin-bottom:6px}
 .join-form input[type=number]{font:inherit;font-weight:400;padding:.75em .9em;border:1px solid var(--line);border-radius:8px;background:var(--ivory);color:var(--ink);width:6.5rem}
+
+/* ---- warmth & zen (Anna, 7 Nov 2026): terracotta sign-ups, sunrise on the next class ---- */
+.sched-sec,.page-hero{--terra:#A85F43;--terra-deep:#8D4D36;--peach:#F4E4D4;--warm-ivory:#F8F4ED;--sand-line:#E5D5C3}
+.cal-sun{display:block;width:34px;height:34px;color:#A85F43;margin-bottom:-4px}
+.row{background:var(--warm-ivory);border-color:var(--sand-line);transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s,border-color .4s}
+.row:hover,.row:focus-within{border-color:color-mix(in srgb,var(--sun-glow) 40%,var(--sand-line))}
+.d-block{border-right-color:var(--sand-line)}
+.d-block .dow{color:var(--terra-deep)}
+.d-block .mon{color:color-mix(in srgb,var(--terra-deep) 55%,var(--ink-soft))}
+.cat{border-color:var(--sand-line)}
+.row .btn{background:var(--terra);color:#FFFFFF;transition:background .35s,box-shadow .45s}
+.row .btn:hover,.row .btn:focus-visible{background:var(--terra-deep);color:#FFFFFF;box-shadow:0 0 0 5px color-mix(in srgb,var(--sun-glow) 22%,transparent),0 10px 26px -12px color-mix(in srgb,var(--terra) 75%,transparent)}
+.row.is-next{background:linear-gradient(115deg,var(--peach) 0%,var(--warm-ivory) 72%);border-color:var(--sand-line);box-shadow:inset 4px 0 0 var(--moss)}
+.row.is-next:hover,.row.is-next:focus-within{box-shadow:inset 4px 0 0 var(--moss),0 18px 40px -30px color-mix(in srgb,var(--sun-orange) 70%,transparent)}
+.next-label{background:var(--terra);color:#FFFFFF}
+.seg{border-color:var(--sand-line);background:var(--warm-ivory)}
+.seg button[aria-pressed="true"]{background:var(--peach);color:var(--terra-deep);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--terra) 35%,transparent)}
+.sched-sec .filters button{border-color:var(--sand-line)}
+.sched-sec .filters button[aria-pressed="true"]{background:var(--peach);color:var(--terra-deep);border-color:color-mix(in srgb,var(--terra) 45%,var(--sand-line))}
+.sched-more button{border-color:var(--sand-line)}
+@media (prefers-reduced-motion:reduce){.row .btn{transition:none}}
 </style>
 </head>
 <body>
@@ -118,6 +139,7 @@
 
 <section class="page-hero light" aria-labelledby="page-title">
   <div class="wrap ph-inner">
+    <svg class="cal-sun" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M8 34h32"/><path d="M14 34a10 10 0 0 1 20 0"/><path d="M24 14v4M12.7 18.7l2.8 2.8M35.3 18.7l-2.8 2.8M6 27.5h3.5M38.5 27.5H42"/></svg>
     <p class="eyebrow">Come Join Us on the Mat</p>
     <h1 id="page-title">Find Your <em>Next Practice.</em></h1>
     <p class="lede">There's a place for you here. Explore upcoming classes and gatherings, and find the one that speaks to you.</p>
