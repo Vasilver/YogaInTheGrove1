@@ -163,8 +163,8 @@
 .close-lede{color:var(--ink-soft);font-size:var(--step-1);line-height:1.55;max-width:46ch}
 .invites{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.5vw,28px)}
 .invite{position:relative;isolation:isolate;overflow:hidden;border-radius:var(--radius);padding:clamp(28px,4vw,46px);display:grid;gap:12px;align-content:start;justify-items:start; transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
-.invite-practice{background:color-mix(in srgb,var(--paper) 88%,transparent)}
-.invite-give{background:color-mix(in srgb,var(--beige) 78%,transparent)}
+/* both invitations share one warm sandstone, a shade deeper than the page */
+.invite-practice,.invite-give{background:color-mix(in srgb,var(--beige) 78%,var(--flame))}
 .invite::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .45s; background:radial-gradient(75% 70% at 30% 20%,color-mix(in srgb,var(--sun-glow) 26%,transparent),color-mix(in srgb,var(--sun-gold) 12%,transparent) 55%,transparent 82%)}
 .invite:hover,.invite:focus-within{transform:translateY(-3px);box-shadow:0 26px 50px -36px color-mix(in srgb,var(--sun-orange) 70%,transparent)}
 .invite:hover::before,.invite:focus-within::before{opacity:1}
@@ -173,9 +173,6 @@
 .invite h3 em{color:var(--olive)}
 .invite p:not(.invite-label){color:var(--ink-soft)}
 .invite .btn{margin-top:10px}
-.close-visit{font-style:normal;color:var(--ink-soft);font-size:.92rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 28px;margin-top:clamp(24px,3vw,34px);padding-top:18px;border-top:1px solid var(--line)}
-.close-visit strong{color:var(--ink);font-weight:500}
-.close-visit .hours{display:flex;flex-wrap:wrap;gap:4px 18px;font-variant-numeric:tabular-nums}
 @media (max-width:820px){
   .invites{grid-template-columns:1fr}
 }
@@ -255,7 +252,15 @@
 .practice .numeral{font-size:1.2rem}
 .practice h3{font-size:1.6rem}
 .practice summary:hover h3{transform:none}
-.practice .short{grid-column:2 / -1}
+/* the title sits beside the numeral, the short line runs the full width under the + so it stays on one line */
+.practice summary > div:not(.p-img){display:contents}
+.practice summary .numeral{grid-column:1;grid-row:2}
+.practice summary h3{grid-column:2;grid-row:2}
+.practice summary .plus{grid-column:3;grid-row:2;align-self:center}
+.practice summary .short{grid-row:3}
+.practice .short{grid-column:2 / -1;margin-top:0;white-space:nowrap}
+@media (max-width:360px){.practice .short{font-size:.92rem}}
+@media (min-width:861px) and (max-width:1020px){.practice .short{font-size:.88rem}}
 .practice .body{padding:0 20px 22px;max-width:none}
 .practice .p-links{flex-direction:column;gap:10px}
 @media (max-width:860px){
@@ -344,7 +349,7 @@
 
     <div class="practices">
       <details class="practice">
-        <summary><div class="p-img"><img src="img/hatha-asana-side-stretch.webp" alt="A student in a side stretch on a red yoga mat during Hatha Asana class at Yoga in the Grove" width="900" height="1350" loading="lazy" style="object-position:50% 40%"></div><span class="numeral">i.</span><div><h3>Hatha Asana</h3><p class="short">Breath, alignment, and steadiness.</p></div><span class="plus" aria-hidden="true">+</span></summary>
+        <summary><div class="p-img"><img src="img/hatha-asana-side-stretch.webp" alt="A student in a side stretch on a red yoga mat during Hatha Asana class at Yoga in the Grove" width="900" height="1350" loading="lazy" style="object-position:50% 40%"></div><span class="numeral">i.</span><div><h3>Hatha Asana</h3><p class="short">Breath, alignment, steadiness.</p></div><span class="plus" aria-hidden="true">+</span></summary>
         <div class="body">
           <p>A traditional yoga practice centered on mindful movement, breath, and alignment. Whether you're stepping onto the mat for the first time or deepening an existing practice, there's a place for you here. We meet you exactly where you are, every time.</p>
           <div class="p-links"><a class="link" href="calendar.html">Find a Hatha class <span aria-hidden="true">→</span></a><a class="link" href="teachers.html">Meet the teachers <span aria-hidden="true">→</span></a></div>
@@ -548,10 +553,6 @@
         <a class="btn" href="donate.html">Give From the Heart <span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
-    <address class="close-visit">
-      <span><strong>Yoga in the Grove</strong> · 3220 Virginia Street, Coconut Grove, FL 33133 · <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=3220+Virginia+Street+Coconut+Grove+FL+33133">Get Directions</a></span>
-      <span class="hours"><span>Mon to Fri 7:00 am to 8:00 pm</span><span>Sat 8:00 am to 6:00 pm</span><span>Sun 9:00 am to 2:00 pm</span></span>
-    </address>
   </div>
 </section>
 </main>
