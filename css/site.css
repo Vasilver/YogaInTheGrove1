@@ -281,6 +281,7 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
 .callout{background:var(--beige);text-align:center}
 .callout blockquote{margin:0 auto;max-width:28ch;font-family:var(--font-display);font-style:italic;font-weight:400;font-size:var(--step-3);line-height:1.2;color:var(--ink)}
 .callout blockquote::before{content:"\201C";display:block;font-size:2.2em;line-height:.6;color:var(--clay);margin-bottom:.15em}
+.callout blockquote::after{content:"\201D";display:block;font-size:2.2em;line-height:.6;color:var(--clay);margin-top:.45em}
 
 /* split: text + photo side by side */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:start}
