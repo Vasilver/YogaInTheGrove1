@@ -33,7 +33,7 @@ teachers.html, practice.html, foodforlife.html, food-for-life.html
 /css/global.css       OLD design system — not used by redesigned pages (see section 3)
 /css/<page>.css       OLD page styles — not used by redesigned pages
 /js/events-data.js    SINGLE SOURCE for all classes and events (calendar + homepage)
-/img/, /photos/       images
+/img/                 images (WebP, see 5.4)
 /videos/              video files
 /_template.html       OLD page template — don't use; new pages start from index.html
 /sitemap.xml          must list every public page (see 5.8)
