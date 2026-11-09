@@ -10,6 +10,7 @@ Maintained by Élan Social Studios (Anna & Anne).
 ## 1. Project facts
 
 - **What:** Website of Yoga in the Grove, a non-profit neighborhood yoga studio (Hatha, Kirtan, Meditation, Seva, Food for Life) at 3220 Virginia Street, Coconut Grove, FL 33133.
+- **Cost:** every class, Kirtan evening and gathering is free, always (Anne, 9 Nov 2026). JSON-LD: `priceRange: "Free"`, Events with `isAccessibleForFree` and an `Offer` of price 0.
 - **Main goal of the site:** turn visitors into class bookings (calendar reservations) and inquiries.
 - **Tech:** plain static HTML + CSS + vanilla JavaScript. No framework, no build step, no npm, no database.
 - **Hosting:** GitHub Pages from repo `Vasilver/YogaInTheGrove1`, branch `main`, repository root. Domain via `CNAME` → yogainthegrove.org. Whatever is merged into `main` is live within minutes.
