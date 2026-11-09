@@ -29,7 +29,7 @@ var YOGA_EVENTS = (function () {
           id: id++, title: 'Hatha with Lorena', teacher: 'Lorena',
           year: yr, month: mo, day: d,
           timeDisplay: '6:00 pm', duration: '75 min', type: 'asana',
-          desc: 'A grounded evening practice with emphasis on breath and slow alignment. No experience necessary — we meet you exactly where you are.'
+          desc: 'A grounded evening practice with emphasis on breath and slow alignment. No experience necessary, we meet you exactly where you are.'
         });
       }
 
@@ -38,7 +38,7 @@ var YOGA_EVENTS = (function () {
           id: id++, title: 'Morning Hatha', teacher: 'Vishal Das',
           year: yr, month: mo, day: d,
           timeDisplay: '9:30 am', duration: '75 min', type: 'asana',
-          desc: 'A grounded morning practice with emphasis on breath and slow alignment. No experience necessary — we meet you exactly where you are.'
+          desc: 'A grounded morning practice with emphasis on breath and slow alignment. No experience necessary, we meet you exactly where you are.'
         });
       }
 
@@ -82,8 +82,8 @@ var YOGA_EVENTS = (function () {
 
   /* One-off special events */
   [
-    { title: 'Seated Meditation',        teacher: '[Teacher Name]', year: 2026, month: 1, day: 11, timeDisplay: '6:30 pm', duration: '60 min', type: 'meditation', desc: 'A guided sit for beginners and longtime practitioners alike. We start from stillness and investigate what arises — gently, without agenda.' },
-    { title: 'Yin & Alignment Workshop', teacher: '[Teacher Name]', year: 2026, month: 1, day: 21, timeDisplay: '2:00 pm', duration: '2 hrs',  type: 'workshop',   desc: 'A deep dive into connective tissue — long holds, breath work, and careful attention to how the body opens when we stop pushing it.' }
+    { title: 'Seated Meditation',        teacher: '[Teacher Name]', year: 2026, month: 1, day: 11, timeDisplay: '6:30 pm', duration: '60 min', type: 'meditation', desc: 'A guided sit for beginners and longtime practitioners alike. We start from stillness and investigate what arises, gently and without agenda.' },
+    { title: 'Yin & Alignment Workshop', teacher: '[Teacher Name]', year: 2026, month: 1, day: 21, timeDisplay: '2:00 pm', duration: '2 hrs',  type: 'workshop',   desc: 'A deep dive into connective tissue: long holds, breath work, and careful attention to how the body opens when we stop pushing it.' }
   ].forEach(function (ev) { ev.id = id++; list.push(ev); });
 
   list.sort(function (a, b) {
