@@ -90,6 +90,14 @@
 .way-feature .way-body{padding:clamp(24px,3.5vw,40px)}
 .way-label{font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;color:var(--moss);font-weight:500;font-family:var(--font-body)}
 .way-feature h3 em{color:var(--olive)}
+/* the three cards share their rows (photo, numeral, title, line, text, button), so everything lines up */
+@media (min-width:901px){@supports (grid-template-rows:subgrid){
+  .way:not(.way-feature){display:grid;grid-row:span 6;grid-template-rows:subgrid;row-gap:8px}
+  .way:not(.way-feature) .way-body{display:contents}
+  .way:not(.way-feature) .way-body > *{margin-inline:24px}
+  .way:not(.way-feature) .way-photo{margin-bottom:14px}
+  .way:not(.way-feature) .way-pick{align-self:end;margin-bottom:24px}
+}}
 @media (max-width:900px){.way-grid{grid-template-columns:1fr;max-width:560px}.way-feature{flex-direction:column}.way-art{flex-basis:auto;aspect-ratio:16/7}}
 @media (prefers-reduced-motion:reduce){.way::before,.way-art svg{transition:none}}
 
