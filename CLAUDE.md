@@ -122,6 +122,7 @@ Inner pages (see `about.html`, `contact.html`, `blog.html` as examples):
 
 - Mobile first: every page must work at 390 px width.
 - Tone of voice: warm, calm, inviting. Nav labels, eyebrows, buttons and links in Title Case ("Get Directions", "Come Join Us on the Mat").
+- **No dashes (— or –) in any visible text** (Anne, 9 Nov 2026), including titles, descriptions, alt texts and `js/events-data.js`. Use a comma, colon, full stop or brackets instead; ranges are written with "to" ("7:00 am to 8:00 pm").
 - After the design changes in a way that affects all pages, update this section in the same commit.
 
 ---
@@ -161,6 +162,7 @@ Inner pages (see `about.html`, `contact.html`, `blog.html` as examples):
 
 - **Exactly one `<h1>` per page.** It contains the page's main keyword or the location. If the keyword isn't given in the task, ask before writing the H1.
 - Slogans ("You don't have to be ready…") can stay as visual headlines, but then as `<p class="…">` above or below the H1 — or the H1 combines both.
+- **Agreed pattern (9 Nov 2026):** the H1 is the small line above the slogan, styled as an eyebrow: `<h1 id="page-title" class="eyebrow">Yoga Classes in Coconut Grove, Miami</h1>`, followed by the slogan as `<p class="h1-look">…</p>` (same big italic look; styles in `site.css`). Used on the homepage, Schedule, Community, Volunteer and Donate.
 - `<h2>` for page sections, `<h3>` inside sections. Never skip a level (no H2 → H4).
 - Never use a heading tag just to make text big. Use a CSS class instead.
 

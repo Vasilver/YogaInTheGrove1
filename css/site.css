@@ -286,6 +286,16 @@ footer{background:var(--beige);border-top:1px solid var(--line);padding-block:36
 .page-hero.photo .lede{color:#FFFDF8;font-weight:400}
 .page-hero.photo .eyebrow{color:#FFFDF8;font-weight:500;letter-spacing:.18em;font-size:.85rem;text-transform:uppercase}
 .page-hero.photo .ph-inner{text-shadow:0 1px 2px rgba(20,24,16,.45),0 2px 24px rgba(20,24,16,.45)}
+/* Keyword H1 in eyebrow style (9 Nov 2026): the <h1 class="eyebrow"> carries the search keyword,
+   the slogan below is a <p class="h1-look"> that keeps the big heading look. */
+h1.eyebrow{font-family:var(--font-body);font-style:normal;font-weight:500;line-height:1.5}
+.page-hero h1.eyebrow{font-size:var(--step--1)}
+.page-hero.photo h1.eyebrow{font-size:.85rem}
+.h1-look{font-family:var(--font-display);font-weight:500;font-style:italic;line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.01em}
+.page-hero .h1-look{font-size:var(--step-4);font-weight:400}
+.page-hero .h1-look em{color:var(--olive)}
+.page-hero.photo .h1-look{font-weight:500}
+.page-hero.photo .h1-look em{color:#E8DCC4}
 .page-hero.photo .link{color:#FFFDF8;border-color:rgba(255,253,248,.6)}
 .page-hero.photo .link:hover{border-color:#FFFDF8}
 .page-hero .ph-credit{position:absolute;right:max(20px,env(safe-area-inset-right,0px));bottom:12px;font-size:.72rem;letter-spacing:.08em;color:rgba(255,253,248,.85);text-shadow:0 1px 2px rgba(20,24,16,.5)}

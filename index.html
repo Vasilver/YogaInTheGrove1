@@ -49,8 +49,9 @@
 @keyframes drift{to{transform:translate(4%,-3%) rotate(2deg) scale(1.05)}}
 .hero-inner{position:relative;padding-block:clamp(80px,12vw,140px) clamp(60px,8vw,96px);display:grid;gap:22px;justify-items:center;text-align:center}
 .hero .eyebrow{color:rgba(246,242,233,.8);text-transform:uppercase;letter-spacing:.22em;font-size:.78rem}
-.hero h1{font-size:clamp(1.7rem,6.2vw,5.25rem);font-weight:500;max-width:none;line-height:1.08}
-.hero h1 em{font-style:italic;font-weight:400}
+.hero .hero-slogan{font-size:clamp(1.7rem,6.2vw,5.25rem);font-weight:500;max-width:none;line-height:1.08}
+.hero .hero-slogan em{font-style:italic;font-weight:400}
+.hero h1.eyebrow{color:#fff;font-weight:600;font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;max-width:none}
 .hero .lede{max-width:52ch;font-size:var(--step-1);line-height:1.55;color:rgba(246,242,233,.9)}
 .hero-actions{display:flex;flex-direction:column;align-items:center;gap:14px}
 .hero .btn{background:#E8DCC4;color:#3B4639}
@@ -169,7 +170,7 @@
 .hero .hero-inner{text-shadow:0 1px 18px rgba(30,38,26,.35)}
 .sun{position:absolute;inset:0;pointer-events:none;mix-blend-mode:soft-light;opacity:1; background:radial-gradient(420px 320px at var(--sx,30%) var(--sy,25%),rgba(255,250,240,.6),transparent 70%)}
 .h-in{display:inline-block;animation:hin 1.1s cubic-bezier(.2,.7,.2,1) var(--d,0s) both}
-.hero h1 .h-in{display:block;white-space:nowrap}
+.hero .hero-slogan .h-in{display:block;white-space:nowrap}
 @keyframes hin{from{opacity:0;transform:translateY(14px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
 .word{font:inherit;color:#fff;background:none;border:0;padding:0 .05em;cursor:pointer;font-style:italic;font-family:var(--font-display);font-size:1.18em; background-image:linear-gradient(currentColor,currentColor);background-size:0% 1px;background-position:0 92%;background-repeat:no-repeat;transition:background-size .4s,color .3s}
 /* tappable words: white, bolder, with a soft underline; the underline thickens when hovered or chosen */
@@ -177,7 +178,7 @@
 .word:hover,.word[aria-pressed="true"]{background-image:linear-gradient(#fff,#fff);background-size:100% 2px}
 .word:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:4px}
 .word-note{min-height:3.2em;max-width:44ch;font-size:var(--step-0);color:rgba(246,242,233,.92);transition:opacity .35s}
-.word-note .hint{font-size:var(--step--1);letter-spacing:.14em;font-weight:600;color:#fff;text-shadow:0 1px 3px rgba(30,38,26,.6),0 1px 14px rgba(30,38,26,.5)}
+.word-note:empty{display:none} /* stays hidden until a word is tapped */
 .word-note a{color:#E8DCC4}
 .word-note.swap{opacity:0}
 .hero .btn.join{font:inherit;font-weight:500;letter-spacing:.06em;border:0;cursor:pointer;background:#F8F4EC;color:#4E5C4B;border-radius:999px;padding:1.05em 2.2em;position:relative;overflow:hidden}
@@ -303,14 +304,15 @@
   <div class="sun" id="sun" aria-hidden="true"></div>
   <div class="shade" aria-hidden="true"></div>
   <div class="wrap hero-inner">
-    <h1 id="hero-title"><span class="h-in" style="--d:.25s">You don't have to be ready.</span> <em class="h-in" style="--d:.6s">You just have to arrive.</em></h1>
+    <h1 id="hero-title" class="eyebrow h-in" style="--d:.1s">Yoga, Kirtan &amp; Meditation in Coconut Grove, Miami</h1>
+    <p class="h1-look hero-slogan"><span class="h-in" style="--d:.25s">You don't have to be ready.</span> <em class="h-in" style="--d:.6s">You just have to arrive.</em></p>
     <p class="lede h-in" style="--d:.9s">Some come for the
       <button type="button" class="word" data-w="movement" aria-controls="wordNote" aria-pressed="false">movement</button>. Others for the
       <button type="button" class="word" data-w="music" aria-controls="wordNote" aria-pressed="false">music</button>, the
       <button type="button" class="word" data-w="connection" aria-controls="wordNote" aria-pressed="false">connection</button>, or simply a moment to
       <button type="button" class="word" data-w="breathe" aria-controls="wordNote" aria-pressed="false">breathe</button>.
       Whatever brings you here, there's a place for you.</p>
-    <p class="word-note h-in" id="wordNote" aria-live="polite" style="--d:1.1s"><span class="hint">Tap a Word to Step Inside</span></p>
+    <p class="word-note h-in" id="wordNote" aria-live="polite" style="--d:1.1s"></p>
     <div class="hero-actions h-in" style="--d:1.25s">
       <button type="button" class="btn join" data-open-join>Come Join Us on the Mat <span class="arrow" aria-hidden="true">→</span></button>
       <p class="aside">First time? <a href="#first-visit">Here's What to Expect</a> · <a href="#gatherings">See What's Happening</a></p>
@@ -701,7 +703,7 @@
 
   /* hero: interactive words */
   var notes={
-    movement:'<b>Hatha Asana.</b> Breath, alignment, and steadiness — not performance. All levels. <a href="#practice">Explore the Practice</a>',
+    movement:'<b>Hatha Asana.</b> Breath, alignment, and steadiness, not performance. All levels. <a href="#practice">Explore the Practice</a>',
     music:'<b>Kirtan.</b> Call-and-response chanting by candlelight, with harmonium and drum. No musical experience necessary. <a href="#gatherings">See Kirtan Dates</a>',
     connection:'<b>Community.</b> Beginners and regulars side by side, seva in the neighborhood, and a shared meal after class. <a href="#first-visit">Plan Your First Visit</a>',
     breathe:'<b>Meditation.</b> You are welcome to it exactly as you are. <a href="#practice">Explore the Practice</a>'
