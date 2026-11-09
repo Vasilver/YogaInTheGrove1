@@ -11,6 +11,8 @@
 <meta property="og:url" content="https://yogainthegrove.org/">
 <meta property="og:title" content="Yoga Classes in Coconut Grove Miami | Yoga in the Grove">
 <meta property="og:description" content="A neighborhood yoga studio on Virginia Street: Hatha Asana, Kirtan, and community gatherings for all levels. Come as you are.">
+<meta property="og:site_name" content="Yoga in the Grove">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://yogainthegrove.org/img/og-home.jpg">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="48x48">
@@ -674,6 +676,8 @@
         "endDate":s.getUTCFullYear()+'-'+pad(s.getUTCMonth()+1)+'-'+pad(s.getUTCDate())+'T'+pad(s.getUTCHours())+':'+pad(s.getUTCMinutes())+':00'+off,
         "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled",
         "location":place,"organizer":{"@type":"Organization","name":"Yoga in the Grove","url":"https://yogainthegrove.org/"},
+        "image":"https://yogainthegrove.org/img/"+(e.type==="kirtan"?"og-kirtan.jpg":"og-practice.jpg"),
+        "performer":(e.teacher && e.teacher!=="Community")? {"@type":"Person","name":e.teacher} : {"@type":"Organization","name":"Yoga in the Grove"},
         "url":"https://yogainthegrove.org/calendar.html"});
     });
     if(!data.length) return;

@@ -66,6 +66,8 @@
 .sched-more button{font:inherit;font-weight:500;color:var(--olive);background:none;border:1px solid var(--line);border-radius:999px;padding:.65em 1.4em;cursor:pointer}
 .sched-more button:hover{border-color:var(--sage);background:var(--paper)}
 .sched-empty{text-align:center;padding:clamp(36px,6vw,64px) 20px;background:var(--paper);border-radius:var(--radius);display:grid;gap:10px;justify-items:center}
+.sched-empty[hidden]{display:none} /* otherwise the empty note flashes before the classes render */
+.sched:not(.ready){min-height:120vh} /* holds the space until the classes are rendered, so nothing below jumps */
 .sched-empty p:first-child{font-family:var(--font-display);font-style:italic;font-size:var(--step-2);line-height:1.25;color:var(--ink);max-width:30ch}
 .sched-empty p + p{color:var(--ink-soft)}
 .sr-only,.sched-status{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -304,7 +306,6 @@
         <a href="community.html">Community</a>
         <a href="community.html#teachers">Teachers</a>
         <a href="community.html#gather">Practice</a>
-        <a href="community.html#food-for-life">Share a Meal with Us</a>
         <a href="volunteer.html">Volunteer</a>
         <a href="donate.html">Donate</a>
       </nav>
@@ -385,6 +386,7 @@
 
   var calm=matchMedia('(prefers-reduced-motion: reduce)').matches, last=[];
   function render(){
+    list.classList.add('ready');
     var u=upcoming();
     last=u.items.filter(function(it){ return inRange(it,u) && (state.cat==='all' || it.e.type===state.cat); });
     var shown=last.slice(0,state.shown);
@@ -407,7 +409,9 @@
       var end=s.getUTCFullYear()+'-'+pad(s.getUTCMonth()+1)+'-'+pad(s.getUTCDate())+'T'+pad(s.getUTCHours())+':'+pad(s.getUTCMinutes())+':00'+off;
       return {"@context":"https://schema.org","@type":"Event","name":e.title,"description":e.desc||'',"startDate":start,"endDate":end,
         "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled",
-        "location":place,"organizer":{"@type":"Organization","name":"Yoga in the Grove","url":"https://yogainthegrove.org/"}};
+        "location":place,"organizer":{"@type":"Organization","name":"Yoga in the Grove","url":"https://yogainthegrove.org/"},
+        "image":"https://yogainthegrove.org/img/"+(e.type==="kirtan"?"og-kirtan.jpg":"og-practice.jpg"),
+        "performer":(e.teacher && e.teacher!=="Community")? {"@type":"Person","name":e.teacher} : {"@type":"Organization","name":"Yoga in the Grove"}};
     });
     var sc=document.createElement('script'); sc.type='application/ld+json'; sc.textContent=JSON.stringify(data); document.head.appendChild(sc);
   }
