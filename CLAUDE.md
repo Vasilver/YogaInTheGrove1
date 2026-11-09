@@ -35,12 +35,10 @@ teachers.html, practice.html, foodforlife.html, food-for-life.html
 /js/events-data.js    SINGLE SOURCE for all classes and events (calendar + homepage)
 /img/                 images (WebP, see 5.4)
 /videos/              video files
-/_template.html       OLD page template — don't use; new pages start from index.html
 /sitemap.xml          must list every public page (see 5.8)
-/components/nav.html  OUTDATED — do not copy from it (see below)
 ```
 
-**Navigation:** there is no shared include. Every page contains its own copy of the header, nav, join dialog and footer. When any of these change, update **every page** in the same commit. The reference is always `index.html` on `redesign`, never `components/nav.html`.
+**Navigation:** there is no shared include. Every page contains its own copy of the header, nav, join dialog and footer. When any of these change, update **every page** in the same commit. The reference is always `index.html` on `redesign`.
 
 **Schedule changes:** edit only `js/events-data.js`. Never hard-code dates or class times in page HTML.
 
@@ -48,7 +46,7 @@ teachers.html, practice.html, foodforlife.html, food-for-life.html
 
 ## 3. Design system
 
-**The homepage `index.html` on `redesign` is the signed-off design (4 Nov 2026) and the reference for every other page.** When in doubt, copy how the homepage does it. Do not use `css/global.css`, `css/<page>.css` or `_template.html` — they belong to the old design.
+**The homepage `index.html` on `redesign` is the signed-off design (4 Nov 2026) and the reference for every other page.** When in doubt, copy how the homepage does it. Do not use `css/global.css` or `css/<page>.css` — they belong to the old design. New pages start from `index.html`.
 
 ### 3.1 Where the styles and scripts live
 
