@@ -3,7 +3,7 @@
 Rules and context for anyone (human or AI) working on yogainthegrove.org.
 Claude reads this file before every task. **If a decision affects how the site is built, write it down here** — chats are not shared between team members, this file is.
 
-Maintained by Élan Social Studios (Anna & Anne). Lines marked **[CONFIRM]** still need confirmation from the client.
+Maintained by Élan Social Studios (Anna & Anne).
 
 ---
 
@@ -13,7 +13,7 @@ Maintained by Élan Social Studios (Anna & Anne). Lines marked **[CONFIRM]** sti
 - **Main goal of the site:** turn visitors into class bookings (calendar reservations) and inquiries.
 - **Tech:** plain static HTML + CSS + vanilla JavaScript. No framework, no build step, no npm, no database.
 - **Hosting:** GitHub Pages from repo `Vasilver/YogaInTheGrove1`, branch `main`, repository root. Domain via `CNAME` → yogainthegrove.org. Whatever is merged into `main` is live within minutes.
-- **Forms:** Formspree (client's existing account). Known form ID: `xgolnjqv` (calendar reservation form). Other form IDs: **[CONFIRM — agency has no account access yet]**.
+- **Forms:** Formspree (client's existing account). Form ID: `xgolnjqv`, used by every form on the site (see 5.7).
 - **Analytics:** none for now (no GA4, no tracking scripts). Do not add any without approval.
 
 Do not introduce frameworks, build tools, CMSs or paid services without written approval from the client.
@@ -220,7 +220,6 @@ JSON-LD `openingHoursSpecification` must match exactly: Mo–Fr `07:00`–`20:00
 - Show the success message **only after** Formspree confirms (HTTP 200). On error, show a friendly error with the email address.
 - The homepage join form only really sends on yogainthegrove.org. In any preview it shows the success message without sending. Keep that behavior on all pages, and do the real test-send after launch.
 - Add a honeypot field (`_gotcha`) against spam.
-- Short privacy note under every form, linking to the privacy policy **[CONFIRM — client to provide policy]**.
 - Never log, copy or commit form submissions.
 
 ### 5.8 Technical
