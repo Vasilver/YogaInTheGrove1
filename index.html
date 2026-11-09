@@ -37,7 +37,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&text=%E0%A5%90&display=swap">
 <link rel="stylesheet" href="css/site.css">
 <style>
@@ -172,12 +172,12 @@
 .hero h1 .h-in{display:block;white-space:nowrap}
 @keyframes hin{from{opacity:0;transform:translateY(14px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
 .word{font:inherit;color:#fff;background:none;border:0;padding:0 .05em;cursor:pointer;font-style:italic;font-family:var(--font-display);font-size:1.18em; background-image:linear-gradient(currentColor,currentColor);background-size:0% 1px;background-position:0 92%;background-repeat:no-repeat;transition:background-size .4s,color .3s}
-/* tappable words: always marked (sand colour + soft underline), brighter when hovered or chosen */
-.word{color:#F3DDB0;background-image:linear-gradient(rgba(243,221,176,.7),rgba(243,221,176,.7));background-size:100% 1px;text-shadow:0 1px 14px rgba(30,38,26,.55)}
-.word:hover,.word[aria-pressed="true"]{background-image:linear-gradient(#fff,#fff);background-size:100% 2px;color:#fff}
-.word:focus-visible{outline:2px solid #F3DDB0;outline-offset:3px;border-radius:4px}
+/* tappable words: white, bolder, with a soft underline; the underline thickens when hovered or chosen */
+.word{color:#fff;font-weight:600;background-image:linear-gradient(rgba(255,255,255,.75),rgba(255,255,255,.75));background-size:100% 1px;text-shadow:0 1px 3px rgba(30,38,26,.55),0 1px 16px rgba(30,38,26,.5)}
+.word:hover,.word[aria-pressed="true"]{background-image:linear-gradient(#fff,#fff);background-size:100% 2px}
+.word:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:4px}
 .word-note{min-height:3.2em;max-width:44ch;font-size:var(--step-0);color:rgba(246,242,233,.92);transition:opacity .35s}
-.word-note .hint{display:inline-block;font-size:var(--step--1);letter-spacing:.14em;font-weight:500;color:#fff;background:rgba(30,38,26,.42);border:1px solid rgba(243,221,176,.45);border-radius:999px;padding:.45em 1.15em;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.word-note .hint{font-size:var(--step--1);letter-spacing:.14em;font-weight:600;color:#fff;text-shadow:0 1px 3px rgba(30,38,26,.6),0 1px 14px rgba(30,38,26,.5)}
 .word-note a{color:#E8DCC4}
 .word-note.swap{opacity:0}
 .hero .btn.join{font:inherit;font-weight:500;letter-spacing:.06em;border:0;cursor:pointer;background:#F8F4EC;color:#4E5C4B;border-radius:999px;padding:1.05em 2.2em;position:relative;overflow:hidden}
