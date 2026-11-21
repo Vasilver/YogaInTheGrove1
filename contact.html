@@ -27,6 +27,9 @@
 <style>
 .find-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:clamp(24px,4vw,48px);align-items:center;margin-top:clamp(22px,3vw,36px)}
 @media (max-width:820px){.find-grid{grid-template-columns:1fr}}
+/* four info cards (address, temple hours, program hours, contact): two per row, times stay on one line */
+@media (min-width:700px){.find-info{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.find-info .hours-list dd{white-space:nowrap}
 .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,80px);align-items:start}
 @media (max-width:820px){.contact-grid{grid-template-columns:1fr}}
 .who-small{font-size:var(--step--1);color:var(--ink-soft)}
@@ -78,18 +81,28 @@
 <section aria-labelledby="studio-title">
   <div class="wrap">
     <h2 id="studio-title" class="eyebrow" style="font-family:var(--font-body);font-style:normal;font-size:var(--step--1);margin-bottom:16px">The Studio</h2>
-    <div class="info">
+    <div class="info find-info">
       <div class="card">
         <h3 style="font-size:1.5rem">Address</h3>
         <address>Yoga in the Grove<br>3220 Virginia Street<br>Coconut Grove, FL 33133</address>
         <a class="link" style="justify-self:start" href="https://www.google.com/maps/dir/?api=1&amp;destination=3220+Virginia+Street+Coconut+Grove+FL+33133" target="_blank" rel="noopener">Get Directions <span aria-hidden="true">→</span></a>
       </div>
       <div class="card">
-        <h3 style="font-size:1.5rem">Hours</h3>
+        <h3 style="font-size:1.5rem">Temple Hours</h3>
         <dl class="hours-list">
           <dt>Monday to Friday</dt><dd>7:00 am to 8:00 pm</dd>
           <dt>Saturday</dt><dd>8:00 am to 6:00 pm</dd>
           <dt>Sunday</dt><dd>9:00 am to 2:00 pm</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <!-- Weekly program as plain text (client request, 21 Nov 2026). Keep in step with js/events-data.js. -->
+        <h3 style="font-size:1.5rem">Program Hours</h3>
+        <p>Every Wednesday</p>
+        <dl class="hours-list">
+          <dt>6:00 pm</dt><dd>Hatha Yoga (60 minutes)</dd>
+          <dt>7:00 pm</dt><dd>Kirtan, until 8:30 pm</dd>
+          <dt>8:30 pm</dt><dd>Vegetarian meal together</dd>
         </dl>
         <a class="link" style="justify-self:start" href="calendar.html">See the Class Schedule <span aria-hidden="true">→</span></a>
       </div>

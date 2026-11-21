@@ -211,6 +211,8 @@ Name, address, phone, email and hours must be **identical** on the website, in J
 | Hours | Monday–Friday 7:00 am – 8:00 pm · Saturday 8:00 am – 6:00 pm · Sunday 9:00 am – 2:00 pm |
 | Geo | 25.7285, -80.2406 |
 
+**These are the temple's opening hours** (client, 21 Nov 2026). The program is separate: **every Wednesday, Hatha Yoga 6:00 pm (60 minutes), Kirtan 7:00 to 8:30 pm, then a vegetarian meal around 8:30 pm.** Find Us shows both, as "Temple Hours" and "Program Hours"; the Program Hours card is plain text by client request, so update it together with `js/events-data.js`.
+
 JSON-LD `openingHoursSpecification` must match exactly: Mo–Fr `07:00`–`20:00`, Sa `08:00`–`18:00`, Su `09:00`–`14:00`. JSON-LD `email` and `telephone` must match the table (the current JSON-LD still says info@yogainthegrove.org and wrong hours — fix on all pages).
 
 - Footer on every page: name, address, clickable phone (`<a href="tel:+19299442045">`), clickable email (`<a href="mailto:marjazz2012@gmail.com">`).
