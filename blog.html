@@ -24,6 +24,15 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&text=%E0%A5%90&display=swap">
 <link rel="stylesheet" href="css/site.css">
+<style>
+/* blog overview: article cards in two columns, image on top (22 Nov 2026) */
+@media (min-width:821px){
+  .blog-posts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .blog-posts .post{grid-template-columns:1fr}
+  .blog-posts .post img{min-height:0;aspect-ratio:3/2}
+  .blog-posts .post h2{font-size:var(--step-2)}
+}
+</style>
 
 </head>
 <body>
@@ -63,7 +72,7 @@
 </section>
 
 <section aria-label="articles" style="padding-top:0">
-  <div class="wrap posts">
+  <div class="wrap posts blog-posts">
     <a class="post" href="blog/what-is-kirtan.html">
       <img src="img/kirtan-harmonium-drum-through-leaves.webp" alt="Two musicians playing harmonium and drum during Kirtan at Yoga in the Grove, seen through green leaves" width="1000" height="1250" loading="lazy" style="object-position:50% 38%">
       <div class="post-body">
