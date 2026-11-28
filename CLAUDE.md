@@ -10,6 +10,8 @@ Maintained by Élan Social Studios (Anna & Anne).
 ## 1. Project facts
 
 - **What:** Website of Yoga in the Grove, a non-profit neighborhood yoga studio (Hatha, Kirtan, Meditation, Seva, Food for Life) at 3220 Virginia Street, Coconut Grove, FL 33133.
+- **Food for Life is not running anymore** (client, 18 Nov 2026). Don't present it as a current program; the Wednesday meal after the program still happens.
+- **Program (client, 18 Nov 2026):** every Wednesday, Hatha Yoga 6:00 pm (60 min), Kirtan 7:00 to 8:30 pm, vegetarian meal around 8:30 pm. Nothing else is on the schedule right now.
 - **Cost:** every class, Kirtan evening and gathering is free, always (Anne, 9 Nov 2026). JSON-LD: `priceRange: "Free"`, Events with `isAccessibleForFree` and an `Offer` of price 0.
 - **Main goal of the site:** turn visitors into class bookings (calendar reservations) and inquiries.
 - **Tech:** plain static HTML + CSS + vanilla JavaScript. No framework, no build step, no npm, no database.
@@ -95,7 +97,7 @@ Always use these variables. Never hard-code a color or font size.
 - **Practice cards:** `<details class="practice">` with image, roman numeral (i. ii. iii.), H3, short line, "+" that rotates when open.
 - **Photo tiles:** `<figure class="tile">` with `.tile-open` button that opens the lightbox; italic caption; photo credit "Photos: Erik Jimenez Photography" where his photos are used.
 - **FAQ:** `.faq` with `<details><summary>` question + answer paragraph, plus a matching `FAQPage` JSON-LD block.
-- **Closing (v2, 6 Nov 2026):** `.closing` + `.closing-grid`: left = clay eyebrow, big italic H2, `.cta-row` with the join button; right = address card top-aligned with the H2 (`.place` name, address on two lines, Get Directions, hours as Mon to Fri / Sat / Sun). **No Om mark.** The homepage keeps its own two-invite closing (`.close-head`, `.invites`, `.close-visit`).
+- **Closing (v2, 6 Nov 2026):** `.closing` + `.closing-grid`: left = clay eyebrow, big italic H2, `.cta-row` with the join button; right = address card top-aligned with the H2 (`.place` name, address on two lines, Get Directions, then `<span class="hours-label">Temple Hours</span>` and the hours as Mon to Fri / Sat / Sun). The footer base line also reads "Temple Hours: …" (28 Nov 2026). **No Om mark.** The homepage keeps its own two-invite closing (`.close-head`, `.invites`, `.close-visit`).
 - **"Join Us on the Mat" calls to action (11 Nov 2026):** every one of them (nav button, homepage hero, closings, floating button) is a link to the Schedule: `<a class="btn" href="calendar.html">` (`../calendar.html` in `/blog/`, `/calendar.html` on the 404 page, `#schedule` on the Schedule page). None of them opens a dialog.
 - **Join dialog:** every page still includes the same `#joinDialog` (Formspree form, see 5.7); since 11 Nov 2026 no button opens it (it would open for any `[data-open-join]` element).
 - **Floating join button (mobile only, 7 Nov 2026; links to the Schedule since 10 Nov 2026):** every page has `<a class="btn fab-join" href="calendar.html">Join Us on the Mat →</a>` right after `</main>` (`../calendar.html` in `/blog/`, `/calendar.html` on the 404 page, `#schedule` on the Schedule page itself) (it must be a sibling after the header). Up to 820 px it floats at the bottom once the hero is scrolled past, and hides while the closing or footer is in view and while the menu is open. Styles in `site.css`, hide logic in `site.js` (the homepage has the same few lines in its inline script, since it doesn't load `site.js`).
