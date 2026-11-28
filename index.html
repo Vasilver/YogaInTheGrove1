@@ -83,11 +83,6 @@
   .practice summary{grid-template-columns:2.4rem 1fr auto}
   .practice .body{padding-left:2.4rem}
 }
-.people{background:var(--beige)}
-.people-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
-.people h2{font-size:var(--step-3)}
-.people h2 em{font-style:italic;color:var(--olive)}
-.people p{color:var(--ink-soft);margin-top:18px}
 .moments{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .moment{border-radius:var(--radius);min-height:150px;padding:18px;display:flex;align-items:flex-end;font-family:var(--font-display);font-style:italic;font-size:1.35rem;line-height:1.2}
 .m1{background:var(--olive);color:#E8DCC4;grid-row:span 2;min-height:312px}
@@ -95,7 +90,6 @@
 .m3{background:var(--clay);color:#F4EEE2}
 .moment small{display:block;font-family:var(--font-body);font-style:normal;font-size:.75rem;letter-spacing:.1em;opacity:.75;margin-bottom:4px}
 @media (max-width:820px){
-  .people-grid{grid-template-columns:1fr}
 }
 #gatherings{--sun-glow:#F29A55;--sun-gold:#C4893F;--sun-orange:#D9773A}
 #gatherings .sec-head{gap:14px;margin-bottom:clamp(26px,3.5vw,40px)}
@@ -142,6 +136,9 @@
   .g:hover,.g:focus-visible,.g.is-tap,.g:active{transform:none}
 }
 .faq .faq-go{display:table;margin-top:10px}
+#offer-title em{color:var(--olive)}
+.offer-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px;margin-top:28px}
+.offer-foot .credit{margin:0}
 .visit-intro{color:var(--ink-soft);margin-top:14px;max-width:46ch}
 #visit-title em{color:var(--olive)}
 .closing{text-align:left;border-top:1px solid var(--line);--sun-glow:#F29A55;--sun-gold:#C4893F;--sun-orange:#D9773A}
@@ -267,14 +264,6 @@
   .practice summary{grid-template-columns:auto 1fr auto}
   .practice .body{padding-left:20px}
 }
-.people-grid{align-items:start}
-.community-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;min-width:0}
-.community-photos .t-wide{grid-column:1 / -1}
-.community-photos .tile-open{min-height:0;height:auto;aspect-ratio:4/5}
-.community-photos .t-wide .tile-open{aspect-ratio:3/2}
-.community-photos .tile figcaption{font-size:1.05rem}
-.community-photos .credit{grid-column:1 / -1;margin-top:2px}
-.people .tile-open{background:color-mix(in srgb,var(--beige) 70%,var(--paper))}
 </style>
 
 </head>
@@ -336,7 +325,7 @@
     <div class="offer-intro">
     <div class="sec-head">
       <p class="eyebrow" style="text-transform:none">What We Offer</p>
-      <h2 id="offer-title">Three ways in. One practice.</h2>
+      <h2 id="offer-title">Come for the practice. <em>Stay for the people.</em></h2>
       <p style="color:var(--ink-soft)">Hatha Asana, Kirtan and community, free and open to everyone.</p>
     </div>
     </div>
@@ -365,6 +354,10 @@
         </div>
       </details>
     </div>
+    <div class="offer-foot">
+      <a class="link" href="community.html">Meet the Community <span aria-hidden="true">→</span></a>
+      <span class="credit">Photos: Erik Jimenez Photography</span>
+    </div>
 
   </div>
 </section>
@@ -374,36 +367,6 @@
   <img id="lbImg" alt="">
   <p id="lbCap"></p>
 </dialog>
-
-<!-- PEOPLE -->
-<section class="people" aria-labelledby="people-title">
-  <div class="wrap people-grid">
-    <div>
-      <p class="eyebrow">The Community</p>
-      <h2 id="people-title">Come for the practice. <em>Stay for the people.</em></h2>
-      <p>This is not a fitness studio with a loyalty program. It's a gathering place: a living room, a porch, a circle of regulars who leave the door open for anyone new. We've had beginners and longtime practitioners sit side by side for years, and that's exactly how we like it. Whatever brought you here, you belong in the room.</p>
-      <p style="margin-top:26px"><a class="link" href="community.html">Meet the Community</a></p>
-    </div>
-        <div class="community-photos">
-      <figure class="tile t-wide">
-        <button type="button" class="tile-open" data-full="img/temple-room-meditation-kirtan.webp" data-cap="Meditation and kirtan in the temple room." aria-label="Open photo: meditation and kirtan in the temple room">
-          <img src="img/temple-room-meditation-kirtan.webp" alt="People of all ages sitting on cushions in a sunlit temple room during meditation and kirtan" width="1800" height="1200" loading="lazy">
-        </button>
-      </figure>
-      <figure class="tile t-tall">
-        <button type="button" class="tile-open" data-full="img/hatha-asana-side-stretch.webp" data-cap="Hatha Asana, open to every level." aria-label="Open photo: Hatha Asana practice">
-          <img src="img/hatha-asana-side-stretch.webp" alt="A student in a side stretch on a red yoga mat during Hatha Asana class" width="733" height="1100" loading="lazy">
-        </button>
-      </figure>
-      <figure class="tile t-tall">
-        <button type="button" class="tile-open" data-full="img/gallery-prabhupada.webp" data-cap="Srila Prabhupada, whose teachings carry the Bhakti tradition we practice." aria-label="Open photo: Srila Prabhupada">
-          <img src="img/gallery-prabhupada.webp" alt="Murti of Srila Prabhupada in saffron robes with a flower garland" width="743" height="1100" loading="lazy">
-        </button>
-      </figure>
-      <p class="credit">Photos: Erik Jimenez Photography</p>
-    </div>
-  </div>
-</section>
 
 <!-- GATHERINGS: our weekly rhythm (Yoga in the Grove's own classes and gatherings).
      Every card goes to the Schedule page. "Next" dates come from the shared schedule data, the same data the Schedule page uses;
@@ -693,7 +656,7 @@
 
   if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('rise');io.unobserve(e.target);}});},{rootMargin:'0px 0px -10% 0px'});
-    document.querySelectorAll('.sec-head, .practice, .g, .tile, .people-grid > *, .visit-grid > *').forEach(function(el){
+    document.querySelectorAll('.sec-head, .practice, .g, .tile, .visit-grid > *').forEach(function(el){
       if(el.getBoundingClientRect().top > window.innerHeight) io.observe(el);
     });
   }
