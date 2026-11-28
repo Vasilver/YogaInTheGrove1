@@ -24,67 +24,32 @@ var YOGA_EVENTS = (function () {
     for (var d = 1; d <= dim; d++) {
       var dow = new Date(yr, mo, d).getDay();
 
-      if (dow === 3) {               /* Wednesday — Evening Hatha 6:00 pm */
+      /* The program (client, 18 and 21 Nov 2026): every Wednesday, Hatha Yoga then Kirtan, then a vegetarian meal.
+         Keep the "Program Hours" card on contact.html (Find Us) in step with this file. */
+      if (dow === 3) {               /* Wednesday: Hatha Yoga 6:00 pm, 60 minutes */
         list.push({
-          id: id++, title: 'Hatha with Lorena', teacher: 'Lorena',
+          id: id++, title: 'Hatha Yoga', teacher: '',
           year: yr, month: mo, day: d,
-          timeDisplay: '6:00 pm', duration: '75 min', type: 'asana',
-          desc: 'A grounded evening practice with emphasis on breath and slow alignment. No experience necessary — we meet you exactly where you are.'
+          timeDisplay: '6:00 pm', duration: '60 min', type: 'asana',
+          desc: 'A grounded evening practice with emphasis on breath and slow alignment. No experience necessary, we meet you exactly where you are.'
         });
       }
 
-      if (dow === 6) {               /* Saturday — Morning Hatha 9:30 am */
-        list.push({
-          id: id++, title: 'Morning Hatha', teacher: 'Vishal Das',
-          year: yr, month: mo, day: d,
-          timeDisplay: '9:30 am', duration: '75 min', type: 'asana',
-          desc: 'A grounded morning practice with emphasis on breath and slow alignment. No experience necessary — we meet you exactly where you are.'
-        });
-      }
-
-      if (dow === 3) {               /* Wednesday — Kirtan in the Grove 7:00 pm */
+      if (dow === 3) {               /* Wednesday: Kirtan in the Grove 7:00 pm to 8:30 pm */
         list.push({
           id: id++, title: 'Kirtan in the Grove', teacher: 'Indranudzha Das',
           year: yr, month: mo, day: d,
           timeDisplay: '7:00 pm', duration: '90 min', type: 'kirtan',
-          desc: 'A candlelit evening of call-and-response chanting with live harmonium. Come as you are, voice and all. No musical experience required. Vegetarian meal provided after.'
-        });
-      }
-
-      if (dow === 0) {               /* Sunday — Community Seva Morning 9:00 am */
-        list.push({
-          id: id++, title: 'Community Seva Morning', teacher: 'Community',
-          year: yr, month: mo, day: d,
-          timeDisplay: '9:00 am', duration: '3 hrs', type: 'seva',
-          desc: 'A morning of collective service in Coconut Grove. We work together, share a meal, and leave having given something back to the neighborhood.'
-        });
-      }
-
-      if (dow === 1) {               /* Monday — Community Seva 9:30 am */
-        list.push({
-          id: id++, title: 'Community Seva', teacher: 'Community',
-          year: yr, month: mo, day: d,
-          timeDisplay: '9:30 am', duration: '3 hrs', type: 'seva',
-          desc: 'A morning of collective service in Coconut Grove. We work together, share a meal, and leave having given something back to the neighborhood.'
-        });
-      }
-
-      if (dow === 1) {               /* Monday — Community Seva 5:00 pm */
-        list.push({
-          id: id++, title: 'Community Seva', teacher: 'Community',
-          year: yr, month: mo, day: d,
-          timeDisplay: '5:00 pm', duration: '3 hrs', type: 'seva',
-          desc: 'An evening of collective service in Coconut Grove. We work together, share a meal, and leave having given something back to the neighborhood.'
+          desc: 'A candlelit evening of call-and-response chanting with live harmonium. Come as you are, voice and all. No musical experience required. Vegetarian meal around 8:30 pm.'
         });
       }
     }
   }
 
-  /* One-off special events */
-  [
-    { title: 'Seated Meditation',        teacher: '[Teacher Name]', year: 2026, month: 1, day: 11, timeDisplay: '6:30 pm', duration: '60 min', type: 'meditation', desc: 'A guided sit for beginners and longtime practitioners alike. We start from stillness and investigate what arises — gently, without agenda.' },
-    { title: 'Yin & Alignment Workshop', teacher: '[Teacher Name]', year: 2026, month: 1, day: 21, timeDisplay: '2:00 pm', duration: '2 hrs',  type: 'workshop',   desc: 'A deep dive into connective tissue — long holds, breath work, and careful attention to how the body opens when we stop pushing it.' }
-  ].forEach(function (ev) { ev.id = id++; list.push(ev); });
+  /* One-off special events: add them here, e.g.
+     { title: 'Workshop name', teacher: 'Name', year: 2027, month: 0, day: 15, timeDisplay: '2:00 pm', duration: '2 hrs', type: 'workshop', desc: '...' }
+     (month counts from 0 = January) */
+  [].forEach(function (ev) { ev.id = id++; list.push(ev); });
 
   list.sort(function (a, b) {
     return new Date(a.year, a.month, a.day) - new Date(b.year, b.month, b.day);
