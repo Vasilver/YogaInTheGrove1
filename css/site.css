@@ -399,6 +399,9 @@ h1.eyebrow{font-family:var(--font-body);font-style:normal;font-weight:500;line-h
 .closing address .link{font-size:1rem}
 .closing-grid .hours{font-size:1.05rem;gap:6px 22px;margin-top:14px;padding-top:18px;border-top:1px solid var(--line)}
 .closing-grid .hours span:nth-child(odd){color:var(--ink);font-weight:500}
+/* "Temple Hours" label above the hours in the closing card (28 Nov 2026): the opening hours are the temple's, the program is on the Schedule */
+.closing-grid .hours-label{margin-top:14px;padding-top:18px;border-top:1px solid var(--line);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--ink-soft)}
+.closing-grid .hours-label + .hours{margin-top:6px;padding-top:0;border-top:0}
 @media (max-width:820px){.closing-grid{grid-template-columns:1fr;gap:32px}.closing-grid address{margin-top:0}}
 .closing .om-mark{display:none}
 
