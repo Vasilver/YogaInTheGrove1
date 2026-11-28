@@ -133,15 +133,16 @@ Inner pages (see `about.html`, `contact.html`, `blog.html` as examples):
 
 ## 4. How we work (two people, two Claude chats)
 
-**During the relaunch:** all new work goes **directly onto the branch `redesign`**. `main` is the live site and stays untouched until the relaunch is finished and `redesign` is merged into `main` (that merge is the launch).
+**Launched on 28 Nov 2026:** `redesign` was merged into `main`; `main` is the live site.
 
-1. Always pull the latest `redesign` before you start, and push as soon as a page or change is done.
-2. Commit straight to `redesign` — no feature branches or pull requests needed during the relaunch.
-3. **Never commit or push to `main`.** Only the launch merge touches `main`, and only when both of us have agreed.
-4. Split work by page and agree who does which. Never work on the same page at the same time. Changes to shared parts (header, nav, footer, join dialog, `css/site.css`) are announced to the other person first, because they touch every page.
-5. Commit messages: `type(scope): description` — e.g. `feat(teachers): rebuild page in new design`, `fix(seo): add H1 to teachers page`. Say in the message or the chat who it was (Anna / Anne), since we share one GitHub account.
-6. Never commit passwords, API keys or personal data of students (form submissions, emails, phone numbers).
-7. Don't leave helper files in the repo (screenshots, fonts, test pages). The repo is the website.
+1. **Agency work (Anna, Anne) stays on `redesign`.** Always pull the latest `redesign` before you start, push when a change is done, and check it in the preview: `https://raw.githack.com/Vasilver/yogainthegrove1/redesign/index.html`.
+2. **Publishing = pull request `redesign` → `main`** on GitHub, then merge. Live within minutes. Agree with the other person first, so nothing half-finished goes live. Several changes can go out together.
+3. **Never commit agency work straight to `main`.**
+4. **The client may edit `main` directly** (e.g. in the GitHub web editor); that is live at once. Before the next pull request, bring those edits into `redesign` first (merge `main` into `redesign`), so nothing of theirs is overwritten. After the project ends, the client maintains the site on `main` himself.
+5. Split work by page and agree who does which. Never work on the same page at the same time. Changes to shared parts (header, nav, footer, join dialog, `css/site.css`) are announced to the other person first, because they touch every page. Pages: Anne = Our Story, Find Us, Blog, blog articles, 404; Anna = Home, Schedule, Community, Volunteer, Donate.
+6. Commit messages: `type(scope): description` — e.g. `feat(teachers): rebuild page in new design`, `fix(seo): add H1 to teachers page`. Say in the message or the chat who it was (Anna / Anne), since we share one GitHub account.
+7. Never commit passwords, API keys or personal data of students (form submissions, emails, phone numbers).
+8. Don't leave helper files in the repo (screenshots, fonts, test pages). The repo is the website.
 
 ---
 
